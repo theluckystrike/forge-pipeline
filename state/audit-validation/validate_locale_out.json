@@ -1,0 +1,3794 @@
+{
+ "medusajs/medusa": {
+  "ref": {
+   "repo": "medusajs/medusa",
+   "branch": "develop",
+   "commit_tree_sha": "e5ee47e03ad4f233956e4a1df783e8afdd52ca59",
+   "tree_truncated": false,
+   "n_files": 24190,
+   "measured_at": "2026-09-24T16:53:33+0700",
+   "definition": "gap = missing or empty or byte-identical to English",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
+     "en_keys": 2443,
+     "n_locales": 30
+    }
+   ],
+   "locale_group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/admin/dashboard/src/i18n/translations/en.json"
+   ],
+   "en_keys": 2443,
+   "en_neutral_keys": 16,
+   "format": "json",
+   "n_locales_total": 30,
+   "n_locales_measured": 29,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 30,
+   "locales": {
+    "ar": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ar.json"
+     ],
+     "locale_keys": 1897,
+     "present": 1876,
+     "missing": 567,
+     "identical": 25,
+     "gap_keys": 592,
+     "gap_pct": 24.2,
+     "missing_pct": 23.2,
+     "count_pct": 22.3
+    },
+    "bg": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/bg.json"
+     ],
+     "locale_keys": 1913,
+     "present": 1892,
+     "missing": 551,
+     "identical": 9,
+     "gap_keys": 560,
+     "gap_pct": 22.9,
+     "missing_pct": 22.6,
+     "count_pct": 21.7
+    },
+    "bs": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/bs.json"
+     ],
+     "locale_keys": 1934,
+     "present": 1915,
+     "missing": 528,
+     "identical": 27,
+     "gap_keys": 555,
+     "gap_pct": 22.7,
+     "missing_pct": 21.6,
+     "count_pct": 20.8
+    },
+    "cs": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/cs.json"
+     ],
+     "locale_keys": 2147,
+     "present": 2132,
+     "missing": 311,
+     "identical": 22,
+     "gap_keys": 333,
+     "gap_pct": 13.6,
+     "missing_pct": 12.7,
+     "count_pct": 12.1
+    },
+    "de": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/de.json"
+     ],
+     "locale_keys": 1800,
+     "present": 1778,
+     "missing": 665,
+     "identical": 44,
+     "gap_keys": 709,
+     "gap_pct": 29.0,
+     "missing_pct": 27.2,
+     "count_pct": 26.3
+    },
+    "el": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/el.json"
+     ],
+     "locale_keys": 1897,
+     "present": 1876,
+     "missing": 567,
+     "identical": 19,
+     "gap_keys": 586,
+     "gap_pct": 24.0,
+     "missing_pct": 23.2,
+     "count_pct": 22.3
+    },
+    "es": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/es.json"
+     ],
+     "locale_keys": 2171,
+     "present": 2154,
+     "missing": 289,
+     "identical": 25,
+     "gap_keys": 314,
+     "gap_pct": 12.9,
+     "missing_pct": 11.8,
+     "count_pct": 11.1
+    },
+    "fa": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fa.json"
+     ],
+     "locale_keys": 2376,
+     "present": 2358,
+     "missing": 85,
+     "identical": 9,
+     "gap_keys": 94,
+     "gap_pct": 3.8,
+     "missing_pct": 3.5,
+     "count_pct": 2.7
+    },
+    "fi": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fi.json"
+     ],
+     "locale_keys": 2438,
+     "present": 2438,
+     "missing": 5,
+     "identical": 11,
+     "gap_keys": 16,
+     "gap_pct": 0.7,
+     "missing_pct": 0.2,
+     "count_pct": 0.2
+    },
+    "fr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fr.json"
+     ],
+     "locale_keys": 1802,
+     "present": 1780,
+     "missing": 663,
+     "identical": 123,
+     "gap_keys": 786,
+     "gap_pct": 32.2,
+     "missing_pct": 27.1,
+     "count_pct": 26.2
+    },
+    "he": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/he.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 524,
+     "identical": 6,
+     "gap_keys": 530,
+     "gap_pct": 21.7,
+     "missing_pct": 21.4,
+     "count_pct": 20.8
+    },
+    "hr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/hr.json"
+     ],
+     "locale_keys": 2489,
+     "present": 2438,
+     "missing": 5,
+     "identical": 25,
+     "gap_keys": 30,
+     "gap_pct": 1.2,
+     "missing_pct": 0.2,
+     "count_pct": -1.9
+    },
+    "hu": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/hu.json"
+     ],
+     "locale_keys": 1928,
+     "present": 1908,
+     "missing": 535,
+     "identical": 25,
+     "gap_keys": 560,
+     "gap_pct": 22.9,
+     "missing_pct": 21.9,
+     "count_pct": 21.1
+    },
+    "id": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/id.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 524,
+     "identical": 47,
+     "gap_keys": 571,
+     "gap_pct": 23.4,
+     "missing_pct": 21.4,
+     "count_pct": 20.8
+    },
+    "it": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/it.json"
+     ],
+     "locale_keys": 1821,
+     "present": 1799,
+     "missing": 644,
+     "identical": 29,
+     "gap_keys": 673,
+     "gap_pct": 27.5,
+     "missing_pct": 26.4,
+     "count_pct": 25.5
+    },
+    "ja": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ja.json"
+     ],
+     "locale_keys": 2327,
+     "present": 2305,
+     "missing": 138,
+     "identical": 13,
+     "gap_keys": 151,
+     "gap_pct": 6.2,
+     "missing_pct": 5.6,
+     "count_pct": 4.7
+    },
+    "ko": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ko.json"
+     ],
+     "locale_keys": 1940,
+     "present": 1923,
+     "missing": 520,
+     "identical": 8,
+     "gap_keys": 528,
+     "gap_pct": 21.6,
+     "missing_pct": 21.3,
+     "count_pct": 20.6
+    },
+    "lt": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/lt.json"
+     ],
+     "locale_keys": 1930,
+     "present": 1908,
+     "missing": 535,
+     "identical": 10,
+     "gap_keys": 545,
+     "gap_pct": 22.3,
+     "missing_pct": 21.9,
+     "count_pct": 21.0
+    },
+    "mk": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/mk.json"
+     ],
+     "locale_keys": 1881,
+     "present": 1860,
+     "missing": 583,
+     "identical": 7,
+     "gap_keys": 590,
+     "gap_pct": 24.2,
+     "missing_pct": 23.9,
+     "count_pct": 23.0
+    },
+    "mn": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/mn.json"
+     ],
+     "locale_keys": 1881,
+     "present": 1860,
+     "missing": 583,
+     "identical": 9,
+     "gap_keys": 592,
+     "gap_pct": 24.2,
+     "missing_pct": 23.9,
+     "count_pct": 23.0
+    },
+    "nl": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/nl.json"
+     ],
+     "locale_keys": 1928,
+     "present": 1908,
+     "missing": 535,
+     "identical": 77,
+     "gap_keys": 612,
+     "gap_pct": 25.1,
+     "missing_pct": 21.9,
+     "count_pct": 21.1
+    },
+    "pl": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/pl.json"
+     ],
+     "locale_keys": 2540,
+     "present": 2438,
+     "missing": 5,
+     "identical": 26,
+     "gap_keys": 31,
+     "gap_pct": 1.3,
+     "missing_pct": 0.2,
+     "count_pct": -4.0
+    },
+    "ro": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ro.json"
+     ],
+     "locale_keys": 1885,
+     "present": 1864,
+     "missing": 579,
+     "identical": 33,
+     "gap_keys": 612,
+     "gap_pct": 25.1,
+     "missing_pct": 23.7,
+     "count_pct": 22.8
+    },
+    "ru": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ru.json"
+     ],
+     "locale_keys": 2514,
+     "present": 2397,
+     "missing": 46,
+     "identical": 15,
+     "gap_keys": 61,
+     "gap_pct": 2.5,
+     "missing_pct": 1.9,
+     "count_pct": -2.9
+    },
+    "sv": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/sv.json"
+     ],
+     "locale_keys": 2438,
+     "present": 2438,
+     "missing": 5,
+     "identical": 40,
+     "gap_keys": 45,
+     "gap_pct": 1.8,
+     "missing_pct": 0.2,
+     "count_pct": 0.2
+    },
+    "th": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/th.json"
+     ],
+     "locale_keys": 2147,
+     "present": 2132,
+     "missing": 311,
+     "identical": 11,
+     "gap_keys": 322,
+     "gap_pct": 13.2,
+     "missing_pct": 12.7,
+     "count_pct": 12.1
+    },
+    "tr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/tr.json"
+     ],
+     "locale_keys": 2458,
+     "present": 2438,
+     "missing": 5,
+     "identical": 15,
+     "gap_keys": 20,
+     "gap_pct": 0.8,
+     "missing_pct": 0.2,
+     "count_pct": -0.6
+    },
+    "uk": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/uk.json"
+     ],
+     "locale_keys": 1837,
+     "present": 1815,
+     "missing": 628,
+     "identical": 7,
+     "gap_keys": 635,
+     "gap_pct": 26.0,
+     "missing_pct": 25.7,
+     "count_pct": 24.8
+    },
+    "vi": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/vi.json"
+     ],
+     "locale_keys": 1962,
+     "present": 1945,
+     "missing": 498,
+     "identical": 13,
+     "gap_keys": 511,
+     "gap_pct": 20.9,
+     "missing_pct": 20.4,
+     "count_pct": 19.7
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 29.0,
+     "gap_keys": 709,
+     "missing": 665,
+     "identical": 44
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 32.2,
+     "gap_keys": 786,
+     "missing": 663,
+     "identical": 123
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 6.2,
+     "gap_keys": 151,
+     "missing": 138,
+     "identical": 13
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 12.9,
+     "gap_keys": 314,
+     "missing": 289,
+     "identical": 25
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 21.6,
+     "gap_keys": 528,
+     "missing": 520,
+     "identical": 8
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 27.5,
+     "gap_keys": 673,
+     "missing": 644,
+     "identical": 29
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 25.1,
+     "gap_keys": 612,
+     "missing": 535,
+     "identical": 77
+    }
+   },
+   "tier1_absent": [
+    "pt-BR",
+    "zh-CN"
+   ],
+   "worst": {
+    "locale": "fr",
+    "gap_pct": 32.2,
+    "gap_keys": 786
+   },
+   "worst_tier1": {
+    "target": "fr",
+    "locale": "fr",
+    "gap_pct": 32.2,
+    "gap_keys": 786
+   },
+   "total_gap_keys": 12164,
+   "median_gap_pct": 22.3,
+   "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
+  },
+  "default": {
+   "repo": "medusajs/medusa",
+   "branch": "develop",
+   "commit_tree_sha": "e5ee47e03ad4f233956e4a1df783e8afdd52ca59",
+   "tree_truncated": false,
+   "n_files": 24190,
+   "measured_at": "2026-09-24T16:53:42+0700",
+   "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
+     "en_keys": 2443,
+     "n_locales": 30
+    }
+   ],
+   "locale_group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/admin/dashboard/src/i18n/translations/en.json"
+   ],
+   "en_keys": 2443,
+   "en_neutral_keys": 16,
+   "format": "json",
+   "n_locales_total": 30,
+   "n_locales_measured": 29,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 30,
+   "locales": {
+    "ar": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ar.json"
+     ],
+     "locale_keys": 1897,
+     "present": 1876,
+     "missing": 567,
+     "identical": 22,
+     "gap_keys": 589,
+     "gap_pct": 24.1,
+     "missing_pct": 23.2,
+     "count_pct": 22.3
+    },
+    "bg": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/bg.json"
+     ],
+     "locale_keys": 1913,
+     "present": 1892,
+     "missing": 551,
+     "identical": 5,
+     "gap_keys": 556,
+     "gap_pct": 22.8,
+     "missing_pct": 22.6,
+     "count_pct": 21.7
+    },
+    "bs": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/bs.json"
+     ],
+     "locale_keys": 1934,
+     "present": 1915,
+     "missing": 528,
+     "identical": 23,
+     "gap_keys": 551,
+     "gap_pct": 22.6,
+     "missing_pct": 21.6,
+     "count_pct": 20.8
+    },
+    "cs": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/cs.json"
+     ],
+     "locale_keys": 2147,
+     "present": 2132,
+     "missing": 311,
+     "identical": 18,
+     "gap_keys": 329,
+     "gap_pct": 13.5,
+     "missing_pct": 12.7,
+     "count_pct": 12.1
+    },
+    "de": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/de.json"
+     ],
+     "locale_keys": 1800,
+     "present": 1778,
+     "missing": 665,
+     "identical": 39,
+     "gap_keys": 704,
+     "gap_pct": 28.8,
+     "missing_pct": 27.2,
+     "count_pct": 26.3
+    },
+    "el": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/el.json"
+     ],
+     "locale_keys": 1897,
+     "present": 1876,
+     "missing": 567,
+     "identical": 16,
+     "gap_keys": 583,
+     "gap_pct": 23.9,
+     "missing_pct": 23.2,
+     "count_pct": 22.3
+    },
+    "es": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/es.json"
+     ],
+     "locale_keys": 2171,
+     "present": 2154,
+     "missing": 289,
+     "identical": 20,
+     "gap_keys": 309,
+     "gap_pct": 12.6,
+     "missing_pct": 11.8,
+     "count_pct": 11.1
+    },
+    "fa": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fa.json"
+     ],
+     "locale_keys": 2376,
+     "present": 2358,
+     "missing": 85,
+     "identical": 6,
+     "gap_keys": 91,
+     "gap_pct": 3.7,
+     "missing_pct": 3.5,
+     "count_pct": 2.7
+    },
+    "fi": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fi.json"
+     ],
+     "locale_keys": 2438,
+     "present": 2438,
+     "missing": 5,
+     "identical": 7,
+     "gap_keys": 12,
+     "gap_pct": 0.5,
+     "missing_pct": 0.2,
+     "count_pct": 0.2
+    },
+    "fr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/fr.json"
+     ],
+     "locale_keys": 1802,
+     "present": 1780,
+     "missing": 663,
+     "identical": 120,
+     "gap_keys": 783,
+     "gap_pct": 32.1,
+     "missing_pct": 27.1,
+     "count_pct": 26.2
+    },
+    "he": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/he.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 524,
+     "identical": 4,
+     "gap_keys": 528,
+     "gap_pct": 21.6,
+     "missing_pct": 21.4,
+     "count_pct": 20.8
+    },
+    "hr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/hr.json"
+     ],
+     "locale_keys": 2489,
+     "present": 2438,
+     "missing": 5,
+     "identical": 20,
+     "gap_keys": 25,
+     "gap_pct": 1.0,
+     "missing_pct": 0.2,
+     "count_pct": -1.9
+    },
+    "hu": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/hu.json"
+     ],
+     "locale_keys": 1928,
+     "present": 1908,
+     "missing": 535,
+     "identical": 17,
+     "gap_keys": 552,
+     "gap_pct": 22.6,
+     "missing_pct": 21.9,
+     "count_pct": 21.1
+    },
+    "id": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/id.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 524,
+     "identical": 43,
+     "gap_keys": 567,
+     "gap_pct": 23.2,
+     "missing_pct": 21.4,
+     "count_pct": 20.8
+    },
+    "it": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/it.json"
+     ],
+     "locale_keys": 1821,
+     "present": 1799,
+     "missing": 644,
+     "identical": 22,
+     "gap_keys": 666,
+     "gap_pct": 27.3,
+     "missing_pct": 26.4,
+     "count_pct": 25.5
+    },
+    "ja": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ja.json"
+     ],
+     "locale_keys": 2327,
+     "present": 2305,
+     "missing": 138,
+     "identical": 9,
+     "gap_keys": 147,
+     "gap_pct": 6.0,
+     "missing_pct": 5.6,
+     "count_pct": 4.7
+    },
+    "ko": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ko.json"
+     ],
+     "locale_keys": 1940,
+     "present": 1923,
+     "missing": 520,
+     "identical": 5,
+     "gap_keys": 525,
+     "gap_pct": 21.5,
+     "missing_pct": 21.3,
+     "count_pct": 20.6
+    },
+    "lt": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/lt.json"
+     ],
+     "locale_keys": 1930,
+     "present": 1908,
+     "missing": 535,
+     "identical": 6,
+     "gap_keys": 541,
+     "gap_pct": 22.1,
+     "missing_pct": 21.9,
+     "count_pct": 21.0
+    },
+    "mk": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/mk.json"
+     ],
+     "locale_keys": 1881,
+     "present": 1860,
+     "missing": 583,
+     "identical": 4,
+     "gap_keys": 587,
+     "gap_pct": 24.0,
+     "missing_pct": 23.9,
+     "count_pct": 23.0
+    },
+    "mn": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/mn.json"
+     ],
+     "locale_keys": 1881,
+     "present": 1860,
+     "missing": 583,
+     "identical": 5,
+     "gap_keys": 588,
+     "gap_pct": 24.1,
+     "missing_pct": 23.9,
+     "count_pct": 23.0
+    },
+    "nl": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/nl.json"
+     ],
+     "locale_keys": 1928,
+     "present": 1908,
+     "missing": 535,
+     "identical": 70,
+     "gap_keys": 605,
+     "gap_pct": 24.8,
+     "missing_pct": 21.9,
+     "count_pct": 21.1
+    },
+    "pl": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/pl.json"
+     ],
+     "locale_keys": 2540,
+     "present": 2438,
+     "missing": 5,
+     "identical": 22,
+     "gap_keys": 27,
+     "gap_pct": 1.1,
+     "missing_pct": 0.2,
+     "count_pct": -4.0
+    },
+    "ro": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ro.json"
+     ],
+     "locale_keys": 1885,
+     "present": 1864,
+     "missing": 579,
+     "identical": 29,
+     "gap_keys": 608,
+     "gap_pct": 24.9,
+     "missing_pct": 23.7,
+     "count_pct": 22.8
+    },
+    "ru": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ru.json"
+     ],
+     "locale_keys": 2514,
+     "present": 2397,
+     "missing": 46,
+     "identical": 11,
+     "gap_keys": 57,
+     "gap_pct": 2.3,
+     "missing_pct": 1.9,
+     "count_pct": -2.9
+    },
+    "sv": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/sv.json"
+     ],
+     "locale_keys": 2438,
+     "present": 2438,
+     "missing": 5,
+     "identical": 35,
+     "gap_keys": 40,
+     "gap_pct": 1.6,
+     "missing_pct": 0.2,
+     "count_pct": 0.2
+    },
+    "th": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/th.json"
+     ],
+     "locale_keys": 2147,
+     "present": 2132,
+     "missing": 311,
+     "identical": 8,
+     "gap_keys": 319,
+     "gap_pct": 13.1,
+     "missing_pct": 12.7,
+     "count_pct": 12.1
+    },
+    "tr": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/tr.json"
+     ],
+     "locale_keys": 2458,
+     "present": 2438,
+     "missing": 5,
+     "identical": 11,
+     "gap_keys": 16,
+     "gap_pct": 0.7,
+     "missing_pct": 0.2,
+     "count_pct": -0.6
+    },
+    "uk": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/uk.json"
+     ],
+     "locale_keys": 1837,
+     "present": 1815,
+     "missing": 628,
+     "identical": 4,
+     "gap_keys": 632,
+     "gap_pct": 25.9,
+     "missing_pct": 25.7,
+     "count_pct": 24.8
+    },
+    "vi": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/vi.json"
+     ],
+     "locale_keys": 1962,
+     "present": 1945,
+     "missing": 498,
+     "identical": 9,
+     "gap_keys": 507,
+     "gap_pct": 20.8,
+     "missing_pct": 20.4,
+     "count_pct": 19.7
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 28.8,
+     "gap_keys": 704,
+     "missing": 665,
+     "identical": 39
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 32.1,
+     "gap_keys": 783,
+     "missing": 663,
+     "identical": 120
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 6.0,
+     "gap_keys": 147,
+     "missing": 138,
+     "identical": 9
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 12.6,
+     "gap_keys": 309,
+     "missing": 289,
+     "identical": 20
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 21.5,
+     "gap_keys": 525,
+     "missing": 520,
+     "identical": 5
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 27.3,
+     "gap_keys": 666,
+     "missing": 644,
+     "identical": 22
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 24.8,
+     "gap_keys": 605,
+     "missing": 535,
+     "identical": 70
+    }
+   },
+   "tier1_absent": [
+    "pt-BR",
+    "zh-CN"
+   ],
+   "worst": {
+    "locale": "fr",
+    "gap_pct": 32.1,
+    "gap_keys": 783
+   },
+   "worst_tier1": {
+    "target": "fr",
+    "locale": "fr",
+    "gap_pct": 32.1,
+    "gap_keys": 783
+   },
+   "total_gap_keys": 12044,
+   "median_gap_pct": 22.1,
+   "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
+  }
+ },
+ "strapi/strapi": {
+  "ref": {
+   "repo": "strapi/strapi",
+   "branch": "develop",
+   "commit_tree_sha": "e3a9201cd8231f89dd6afb329cc6fdc2e1cd6045",
+   "tree_truncated": false,
+   "n_files": 6771,
+   "measured_at": "2026-09-24T16:53:52+0700",
+   "definition": "gap = missing or empty or byte-identical to English",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/core/admin/admin/src/translations::*.json",
+     "en_keys": 930,
+     "n_locales": 35
+    }
+   ],
+   "locale_group": "flat::packages/core/admin/admin/src/translations::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/core/admin/admin/src/translations/en.json"
+   ],
+   "en_keys": 930,
+   "en_neutral_keys": 10,
+   "format": "json",
+   "n_locales_total": 35,
+   "n_locales_measured": 34,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 35,
+   "locales": {
+    "ar": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ar.json"
+     ],
+     "locale_keys": 773,
+     "present": 626,
+     "missing": 304,
+     "identical": 11,
+     "gap_keys": 315,
+     "gap_pct": 33.9,
+     "missing_pct": 32.7,
+     "count_pct": 16.9
+    },
+    "ca": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ca.json"
+     ],
+     "locale_keys": 481,
+     "present": 460,
+     "missing": 470,
+     "identical": 11,
+     "gap_keys": 481,
+     "gap_pct": 51.7,
+     "missing_pct": 50.5,
+     "count_pct": 48.3
+    },
+    "cs": {
+     "files": [
+      "packages/core/admin/admin/src/translations/cs.json"
+     ],
+     "locale_keys": 857,
+     "present": 843,
+     "missing": 87,
+     "identical": 60,
+     "gap_keys": 147,
+     "gap_pct": 15.8,
+     "missing_pct": 9.4,
+     "count_pct": 7.8
+    },
+    "da": {
+     "files": [
+      "packages/core/admin/admin/src/translations/da.json"
+     ],
+     "locale_keys": 410,
+     "present": 392,
+     "missing": 538,
+     "identical": 25,
+     "gap_keys": 563,
+     "gap_pct": 60.5,
+     "missing_pct": 57.8,
+     "count_pct": 55.9
+    },
+    "de": {
+     "files": [
+      "packages/core/admin/admin/src/translations/de.json"
+     ],
+     "locale_keys": 849,
+     "present": 847,
+     "missing": 83,
+     "identical": 54,
+     "gap_keys": 137,
+     "gap_pct": 14.7,
+     "missing_pct": 8.9,
+     "count_pct": 8.7
+    },
+    "es": {
+     "files": [
+      "packages/core/admin/admin/src/translations/es.json"
+     ],
+     "locale_keys": 807,
+     "present": 730,
+     "missing": 200,
+     "identical": 37,
+     "gap_keys": 237,
+     "gap_pct": 25.5,
+     "missing_pct": 21.5,
+     "count_pct": 13.2
+    },
+    "eu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/eu.json"
+     ],
+     "locale_keys": 562,
+     "present": 544,
+     "missing": 386,
+     "identical": 11,
+     "gap_keys": 397,
+     "gap_pct": 42.7,
+     "missing_pct": 41.5,
+     "count_pct": 39.6
+    },
+    "fi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/fi.json"
+     ],
+     "locale_keys": 845,
+     "present": 843,
+     "missing": 87,
+     "identical": 20,
+     "gap_keys": 107,
+     "gap_pct": 11.5,
+     "missing_pct": 9.4,
+     "count_pct": 9.1
+    },
+    "fr": {
+     "files": [
+      "packages/core/admin/admin/src/translations/fr.json"
+     ],
+     "locale_keys": 699,
+     "present": 652,
+     "missing": 278,
+     "identical": 40,
+     "gap_keys": 318,
+     "gap_pct": 34.2,
+     "missing_pct": 29.9,
+     "count_pct": 24.8
+    },
+    "gu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/gu.json"
+     ],
+     "locale_keys": 399,
+     "present": 378,
+     "missing": 552,
+     "identical": 5,
+     "gap_keys": 557,
+     "gap_pct": 59.9,
+     "missing_pct": 59.4,
+     "count_pct": 57.1
+    },
+    "he": {
+     "files": [
+      "packages/core/admin/admin/src/translations/he.json"
+     ],
+     "locale_keys": 300,
+     "present": 284,
+     "missing": 646,
+     "identical": 8,
+     "gap_keys": 654,
+     "gap_pct": 70.3,
+     "missing_pct": 69.5,
+     "count_pct": 67.7
+    },
+    "hi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/hi.json"
+     ],
+     "locale_keys": 480,
+     "present": 462,
+     "missing": 468,
+     "identical": 4,
+     "gap_keys": 472,
+     "gap_pct": 50.8,
+     "missing_pct": 50.3,
+     "count_pct": 48.4
+    },
+    "hu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/hu.json"
+     ],
+     "locale_keys": 562,
+     "present": 543,
+     "missing": 387,
+     "identical": 16,
+     "gap_keys": 403,
+     "gap_pct": 43.3,
+     "missing_pct": 41.6,
+     "count_pct": 39.6
+    },
+    "id": {
+     "files": [
+      "packages/core/admin/admin/src/translations/id.json"
+     ],
+     "locale_keys": 380,
+     "present": 365,
+     "missing": 565,
+     "identical": 17,
+     "gap_keys": 582,
+     "gap_pct": 62.6,
+     "missing_pct": 60.8,
+     "count_pct": 59.1
+    },
+    "it": {
+     "files": [
+      "packages/core/admin/admin/src/translations/it.json"
+     ],
+     "locale_keys": 880,
+     "present": 719,
+     "missing": 211,
+     "identical": 48,
+     "gap_keys": 259,
+     "gap_pct": 27.8,
+     "missing_pct": 22.7,
+     "count_pct": 5.4
+    },
+    "ja": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ja.json"
+     ],
+     "locale_keys": 891,
+     "present": 888,
+     "missing": 42,
+     "identical": 18,
+     "gap_keys": 60,
+     "gap_pct": 6.5,
+     "missing_pct": 4.5,
+     "count_pct": 4.2
+    },
+    "ko": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ko.json"
+     ],
+     "locale_keys": 891,
+     "present": 888,
+     "missing": 42,
+     "identical": 19,
+     "gap_keys": 61,
+     "gap_pct": 6.6,
+     "missing_pct": 4.5,
+     "count_pct": 4.2
+    },
+    "ml": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ml.json"
+     ],
+     "locale_keys": 480,
+     "present": 461,
+     "missing": 469,
+     "identical": 6,
+     "gap_keys": 475,
+     "gap_pct": 51.1,
+     "missing_pct": 50.4,
+     "count_pct": 48.4
+    },
+    "ms": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ms.json"
+     ],
+     "locale_keys": 186,
+     "present": 171,
+     "missing": 759,
+     "identical": 7,
+     "gap_keys": 766,
+     "gap_pct": 82.4,
+     "missing_pct": 81.6,
+     "count_pct": 80.0
+    },
+    "nl": {
+     "files": [
+      "packages/core/admin/admin/src/translations/nl.json"
+     ],
+     "locale_keys": 863,
+     "present": 844,
+     "missing": 86,
+     "identical": 75,
+     "gap_keys": 161,
+     "gap_pct": 17.3,
+     "missing_pct": 9.2,
+     "count_pct": 7.2
+    },
+    "no": {
+     "files": [
+      "packages/core/admin/admin/src/translations/no.json"
+     ],
+     "locale_keys": 286,
+     "present": 270,
+     "missing": 660,
+     "identical": 14,
+     "gap_keys": 674,
+     "gap_pct": 72.5,
+     "missing_pct": 71.0,
+     "count_pct": 69.2
+    },
+    "pl": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pl.json"
+     ],
+     "locale_keys": 868,
+     "present": 866,
+     "missing": 64,
+     "identical": 30,
+     "gap_keys": 94,
+     "gap_pct": 10.1,
+     "missing_pct": 6.9,
+     "count_pct": 6.7
+    },
+    "pt": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pt.json"
+     ],
+     "locale_keys": 187,
+     "present": 172,
+     "missing": 758,
+     "identical": 9,
+     "gap_keys": 767,
+     "gap_pct": 82.5,
+     "missing_pct": 81.5,
+     "count_pct": 79.9
+    },
+    "pt-BR": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pt-BR.json"
+     ],
+     "locale_keys": 543,
+     "present": 514,
+     "missing": 416,
+     "identical": 16,
+     "gap_keys": 432,
+     "gap_pct": 46.5,
+     "missing_pct": 44.7,
+     "count_pct": 41.6
+    },
+    "ru": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ru.json"
+     ],
+     "locale_keys": 772,
+     "present": 741,
+     "missing": 189,
+     "identical": 17,
+     "gap_keys": 206,
+     "gap_pct": 22.2,
+     "missing_pct": 20.3,
+     "count_pct": 17.0
+    },
+    "sa": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sa.json"
+     ],
+     "locale_keys": 480,
+     "present": 461,
+     "missing": 469,
+     "identical": 3,
+     "gap_keys": 472,
+     "gap_pct": 50.8,
+     "missing_pct": 50.4,
+     "count_pct": 48.4
+    },
+    "sk": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sk.json"
+     ],
+     "locale_keys": 863,
+     "present": 844,
+     "missing": 86,
+     "identical": 31,
+     "gap_keys": 117,
+     "gap_pct": 12.6,
+     "missing_pct": 9.2,
+     "count_pct": 7.2
+    },
+    "sv": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sv.json"
+     ],
+     "locale_keys": 561,
+     "present": 543,
+     "missing": 387,
+     "identical": 32,
+     "gap_keys": 419,
+     "gap_pct": 45.1,
+     "missing_pct": 41.6,
+     "count_pct": 39.7
+    },
+    "th": {
+     "files": [
+      "packages/core/admin/admin/src/translations/th.json"
+     ],
+     "locale_keys": 270,
+     "present": 255,
+     "missing": 675,
+     "identical": 5,
+     "gap_keys": 680,
+     "gap_pct": 73.1,
+     "missing_pct": 72.6,
+     "count_pct": 71.0
+    },
+    "tr": {
+     "files": [
+      "packages/core/admin/admin/src/translations/tr.json"
+     ],
+     "locale_keys": 733,
+     "present": 715,
+     "missing": 215,
+     "identical": 15,
+     "gap_keys": 230,
+     "gap_pct": 24.7,
+     "missing_pct": 23.1,
+     "count_pct": 21.2
+    },
+    "uk": {
+     "files": [
+      "packages/core/admin/admin/src/translations/uk.json"
+     ],
+     "locale_keys": 724,
+     "present": 703,
+     "missing": 227,
+     "identical": 13,
+     "gap_keys": 240,
+     "gap_pct": 25.8,
+     "missing_pct": 24.4,
+     "count_pct": 22.2
+    },
+    "vi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/vi.json"
+     ],
+     "locale_keys": 754,
+     "present": 752,
+     "missing": 178,
+     "identical": 18,
+     "gap_keys": 196,
+     "gap_pct": 21.1,
+     "missing_pct": 19.1,
+     "count_pct": 18.9
+    },
+    "zh": {
+     "files": [
+      "packages/core/admin/admin/src/translations/zh.json"
+     ],
+     "locale_keys": 563,
+     "present": 544,
+     "missing": 386,
+     "identical": 13,
+     "gap_keys": 399,
+     "gap_pct": 42.9,
+     "missing_pct": 41.5,
+     "count_pct": 39.5
+    },
+    "zh-Hans": {
+     "files": [
+      "packages/core/admin/admin/src/translations/zh-Hans.json"
+     ],
+     "locale_keys": 655,
+     "present": 636,
+     "missing": 294,
+     "identical": 11,
+     "gap_keys": 305,
+     "gap_pct": 32.8,
+     "missing_pct": 31.6,
+     "count_pct": 29.6
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 14.7,
+     "gap_keys": 137,
+     "missing": 83,
+     "identical": 54
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 34.2,
+     "gap_keys": 318,
+     "missing": 278,
+     "identical": 40
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 6.5,
+     "gap_keys": 60,
+     "missing": 42,
+     "identical": 18
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 25.5,
+     "gap_keys": 237,
+     "missing": 200,
+     "identical": 37
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 46.5,
+     "gap_keys": 432,
+     "missing": 416,
+     "identical": 16
+    },
+    "zh-CN": {
+     "locale": "zh-Hans",
+     "gap_pct": 32.8,
+     "gap_keys": 305,
+     "missing": 294,
+     "identical": 11
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 6.6,
+     "gap_keys": 61,
+     "missing": 42,
+     "identical": 19
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 27.8,
+     "gap_keys": 259,
+     "missing": 211,
+     "identical": 48
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 17.3,
+     "gap_keys": 161,
+     "missing": 86,
+     "identical": 75
+    }
+   },
+   "tier1_absent": [],
+   "worst": {
+    "locale": "pt",
+    "gap_pct": 82.5,
+    "gap_keys": 767
+   },
+   "worst_tier1": {
+    "target": "pt-BR",
+    "locale": "pt-BR",
+    "gap_pct": 46.5,
+    "gap_keys": 432
+   },
+   "total_gap_keys": 12383,
+   "median_gap_pct": 42.7,
+   "raw_url_example": "https://raw.githubusercontent.com/strapi/strapi/develop/packages/core/admin/admin/src/translations/en.json"
+  },
+  "default": {
+   "repo": "strapi/strapi",
+   "branch": "develop",
+   "commit_tree_sha": "e3a9201cd8231f89dd6afb329cc6fdc2e1cd6045",
+   "tree_truncated": false,
+   "n_files": 6771,
+   "measured_at": "2026-09-24T16:53:58+0700",
+   "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/core/admin/admin/src/translations::*.json",
+     "en_keys": 930,
+     "n_locales": 35
+    }
+   ],
+   "locale_group": "flat::packages/core/admin/admin/src/translations::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/core/admin/admin/src/translations/en.json"
+   ],
+   "en_keys": 930,
+   "en_neutral_keys": 10,
+   "format": "json",
+   "n_locales_total": 35,
+   "n_locales_measured": 34,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 35,
+   "locales": {
+    "ar": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ar.json"
+     ],
+     "locale_keys": 773,
+     "present": 626,
+     "missing": 304,
+     "identical": 5,
+     "gap_keys": 309,
+     "gap_pct": 33.2,
+     "missing_pct": 32.7,
+     "count_pct": 16.9
+    },
+    "ca": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ca.json"
+     ],
+     "locale_keys": 481,
+     "present": 460,
+     "missing": 470,
+     "identical": 8,
+     "gap_keys": 478,
+     "gap_pct": 51.4,
+     "missing_pct": 50.5,
+     "count_pct": 48.3
+    },
+    "cs": {
+     "files": [
+      "packages/core/admin/admin/src/translations/cs.json"
+     ],
+     "locale_keys": 857,
+     "present": 843,
+     "missing": 87,
+     "identical": 53,
+     "gap_keys": 140,
+     "gap_pct": 15.1,
+     "missing_pct": 9.4,
+     "count_pct": 7.8
+    },
+    "da": {
+     "files": [
+      "packages/core/admin/admin/src/translations/da.json"
+     ],
+     "locale_keys": 410,
+     "present": 392,
+     "missing": 538,
+     "identical": 21,
+     "gap_keys": 559,
+     "gap_pct": 60.1,
+     "missing_pct": 57.8,
+     "count_pct": 55.9
+    },
+    "de": {
+     "files": [
+      "packages/core/admin/admin/src/translations/de.json"
+     ],
+     "locale_keys": 849,
+     "present": 847,
+     "missing": 83,
+     "identical": 47,
+     "gap_keys": 130,
+     "gap_pct": 14.0,
+     "missing_pct": 8.9,
+     "count_pct": 8.7
+    },
+    "es": {
+     "files": [
+      "packages/core/admin/admin/src/translations/es.json"
+     ],
+     "locale_keys": 807,
+     "present": 730,
+     "missing": 200,
+     "identical": 30,
+     "gap_keys": 230,
+     "gap_pct": 24.7,
+     "missing_pct": 21.5,
+     "count_pct": 13.2
+    },
+    "eu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/eu.json"
+     ],
+     "locale_keys": 562,
+     "present": 544,
+     "missing": 386,
+     "identical": 8,
+     "gap_keys": 394,
+     "gap_pct": 42.4,
+     "missing_pct": 41.5,
+     "count_pct": 39.6
+    },
+    "fi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/fi.json"
+     ],
+     "locale_keys": 845,
+     "present": 843,
+     "missing": 87,
+     "identical": 13,
+     "gap_keys": 100,
+     "gap_pct": 10.8,
+     "missing_pct": 9.4,
+     "count_pct": 9.1
+    },
+    "fr": {
+     "files": [
+      "packages/core/admin/admin/src/translations/fr.json"
+     ],
+     "locale_keys": 699,
+     "present": 652,
+     "missing": 278,
+     "identical": 35,
+     "gap_keys": 313,
+     "gap_pct": 33.7,
+     "missing_pct": 29.9,
+     "count_pct": 24.8
+    },
+    "gu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/gu.json"
+     ],
+     "locale_keys": 399,
+     "present": 378,
+     "missing": 552,
+     "identical": 2,
+     "gap_keys": 554,
+     "gap_pct": 59.6,
+     "missing_pct": 59.4,
+     "count_pct": 57.1
+    },
+    "he": {
+     "files": [
+      "packages/core/admin/admin/src/translations/he.json"
+     ],
+     "locale_keys": 300,
+     "present": 284,
+     "missing": 646,
+     "identical": 4,
+     "gap_keys": 650,
+     "gap_pct": 69.9,
+     "missing_pct": 69.5,
+     "count_pct": 67.7
+    },
+    "hi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/hi.json"
+     ],
+     "locale_keys": 480,
+     "present": 462,
+     "missing": 468,
+     "identical": 1,
+     "gap_keys": 469,
+     "gap_pct": 50.4,
+     "missing_pct": 50.3,
+     "count_pct": 48.4
+    },
+    "hu": {
+     "files": [
+      "packages/core/admin/admin/src/translations/hu.json"
+     ],
+     "locale_keys": 562,
+     "present": 543,
+     "missing": 387,
+     "identical": 12,
+     "gap_keys": 399,
+     "gap_pct": 42.9,
+     "missing_pct": 41.6,
+     "count_pct": 39.6
+    },
+    "id": {
+     "files": [
+      "packages/core/admin/admin/src/translations/id.json"
+     ],
+     "locale_keys": 380,
+     "present": 365,
+     "missing": 565,
+     "identical": 11,
+     "gap_keys": 576,
+     "gap_pct": 61.9,
+     "missing_pct": 60.8,
+     "count_pct": 59.1
+    },
+    "it": {
+     "files": [
+      "packages/core/admin/admin/src/translations/it.json"
+     ],
+     "locale_keys": 880,
+     "present": 719,
+     "missing": 211,
+     "identical": 40,
+     "gap_keys": 251,
+     "gap_pct": 27.0,
+     "missing_pct": 22.7,
+     "count_pct": 5.4
+    },
+    "ja": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ja.json"
+     ],
+     "locale_keys": 891,
+     "present": 888,
+     "missing": 42,
+     "identical": 9,
+     "gap_keys": 51,
+     "gap_pct": 5.5,
+     "missing_pct": 4.5,
+     "count_pct": 4.2
+    },
+    "ko": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ko.json"
+     ],
+     "locale_keys": 891,
+     "present": 888,
+     "missing": 42,
+     "identical": 14,
+     "gap_keys": 56,
+     "gap_pct": 6.0,
+     "missing_pct": 4.5,
+     "count_pct": 4.2
+    },
+    "ml": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ml.json"
+     ],
+     "locale_keys": 480,
+     "present": 461,
+     "missing": 469,
+     "identical": 3,
+     "gap_keys": 472,
+     "gap_pct": 50.8,
+     "missing_pct": 50.4,
+     "count_pct": 48.4
+    },
+    "ms": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ms.json"
+     ],
+     "locale_keys": 186,
+     "present": 171,
+     "missing": 759,
+     "identical": 3,
+     "gap_keys": 762,
+     "gap_pct": 81.9,
+     "missing_pct": 81.6,
+     "count_pct": 80.0
+    },
+    "nl": {
+     "files": [
+      "packages/core/admin/admin/src/translations/nl.json"
+     ],
+     "locale_keys": 863,
+     "present": 844,
+     "missing": 86,
+     "identical": 67,
+     "gap_keys": 153,
+     "gap_pct": 16.5,
+     "missing_pct": 9.2,
+     "count_pct": 7.2
+    },
+    "no": {
+     "files": [
+      "packages/core/admin/admin/src/translations/no.json"
+     ],
+     "locale_keys": 286,
+     "present": 270,
+     "missing": 660,
+     "identical": 10,
+     "gap_keys": 670,
+     "gap_pct": 72.0,
+     "missing_pct": 71.0,
+     "count_pct": 69.2
+    },
+    "pl": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pl.json"
+     ],
+     "locale_keys": 868,
+     "present": 866,
+     "missing": 64,
+     "identical": 23,
+     "gap_keys": 87,
+     "gap_pct": 9.4,
+     "missing_pct": 6.9,
+     "count_pct": 6.7
+    },
+    "pt": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pt.json"
+     ],
+     "locale_keys": 187,
+     "present": 172,
+     "missing": 758,
+     "identical": 5,
+     "gap_keys": 763,
+     "gap_pct": 82.0,
+     "missing_pct": 81.5,
+     "count_pct": 79.9
+    },
+    "pt-BR": {
+     "files": [
+      "packages/core/admin/admin/src/translations/pt-BR.json"
+     ],
+     "locale_keys": 543,
+     "present": 514,
+     "missing": 416,
+     "identical": 12,
+     "gap_keys": 428,
+     "gap_pct": 46.0,
+     "missing_pct": 44.7,
+     "count_pct": 41.6
+    },
+    "ru": {
+     "files": [
+      "packages/core/admin/admin/src/translations/ru.json"
+     ],
+     "locale_keys": 772,
+     "present": 741,
+     "missing": 189,
+     "identical": 10,
+     "gap_keys": 199,
+     "gap_pct": 21.4,
+     "missing_pct": 20.3,
+     "count_pct": 17.0
+    },
+    "sa": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sa.json"
+     ],
+     "locale_keys": 480,
+     "present": 461,
+     "missing": 469,
+     "identical": 0,
+     "gap_keys": 469,
+     "gap_pct": 50.4,
+     "missing_pct": 50.4,
+     "count_pct": 48.4
+    },
+    "sk": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sk.json"
+     ],
+     "locale_keys": 863,
+     "present": 844,
+     "missing": 86,
+     "identical": 24,
+     "gap_keys": 110,
+     "gap_pct": 11.8,
+     "missing_pct": 9.2,
+     "count_pct": 7.2
+    },
+    "sv": {
+     "files": [
+      "packages/core/admin/admin/src/translations/sv.json"
+     ],
+     "locale_keys": 561,
+     "present": 543,
+     "missing": 387,
+     "identical": 28,
+     "gap_keys": 415,
+     "gap_pct": 44.6,
+     "missing_pct": 41.6,
+     "count_pct": 39.7
+    },
+    "th": {
+     "files": [
+      "packages/core/admin/admin/src/translations/th.json"
+     ],
+     "locale_keys": 270,
+     "present": 255,
+     "missing": 675,
+     "identical": 1,
+     "gap_keys": 676,
+     "gap_pct": 72.7,
+     "missing_pct": 72.6,
+     "count_pct": 71.0
+    },
+    "tr": {
+     "files": [
+      "packages/core/admin/admin/src/translations/tr.json"
+     ],
+     "locale_keys": 733,
+     "present": 715,
+     "missing": 215,
+     "identical": 8,
+     "gap_keys": 223,
+     "gap_pct": 24.0,
+     "missing_pct": 23.1,
+     "count_pct": 21.2
+    },
+    "uk": {
+     "files": [
+      "packages/core/admin/admin/src/translations/uk.json"
+     ],
+     "locale_keys": 724,
+     "present": 703,
+     "missing": 227,
+     "identical": 6,
+     "gap_keys": 233,
+     "gap_pct": 25.1,
+     "missing_pct": 24.4,
+     "count_pct": 22.2
+    },
+    "vi": {
+     "files": [
+      "packages/core/admin/admin/src/translations/vi.json"
+     ],
+     "locale_keys": 754,
+     "present": 752,
+     "missing": 178,
+     "identical": 12,
+     "gap_keys": 190,
+     "gap_pct": 20.4,
+     "missing_pct": 19.1,
+     "count_pct": 18.9
+    },
+    "zh": {
+     "files": [
+      "packages/core/admin/admin/src/translations/zh.json"
+     ],
+     "locale_keys": 563,
+     "present": 544,
+     "missing": 386,
+     "identical": 9,
+     "gap_keys": 395,
+     "gap_pct": 42.5,
+     "missing_pct": 41.5,
+     "count_pct": 39.5
+    },
+    "zh-Hans": {
+     "files": [
+      "packages/core/admin/admin/src/translations/zh-Hans.json"
+     ],
+     "locale_keys": 655,
+     "present": 636,
+     "missing": 294,
+     "identical": 5,
+     "gap_keys": 299,
+     "gap_pct": 32.2,
+     "missing_pct": 31.6,
+     "count_pct": 29.6
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 14.0,
+     "gap_keys": 130,
+     "missing": 83,
+     "identical": 47
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 33.7,
+     "gap_keys": 313,
+     "missing": 278,
+     "identical": 35
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 5.5,
+     "gap_keys": 51,
+     "missing": 42,
+     "identical": 9
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 24.7,
+     "gap_keys": 230,
+     "missing": 200,
+     "identical": 30
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 46.0,
+     "gap_keys": 428,
+     "missing": 416,
+     "identical": 12
+    },
+    "zh-CN": {
+     "locale": "zh-Hans",
+     "gap_pct": 32.2,
+     "gap_keys": 299,
+     "missing": 294,
+     "identical": 5
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 6.0,
+     "gap_keys": 56,
+     "missing": 42,
+     "identical": 14
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 27.0,
+     "gap_keys": 251,
+     "missing": 211,
+     "identical": 40
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 16.5,
+     "gap_keys": 153,
+     "missing": 86,
+     "identical": 67
+    }
+   },
+   "tier1_absent": [],
+   "worst": {
+    "locale": "pt",
+    "gap_pct": 82.0,
+    "gap_keys": 763
+   },
+   "worst_tier1": {
+    "target": "pt-BR",
+    "locale": "pt-BR",
+    "gap_pct": 46.0,
+    "gap_keys": 428
+   },
+   "total_gap_keys": 12203,
+   "median_gap_pct": 42.4,
+   "raw_url_example": "https://raw.githubusercontent.com/strapi/strapi/develop/packages/core/admin/admin/src/translations/en.json"
+  }
+ },
+ "baptisteArno/typebot.io": {
+  "ref": {
+   "repo": "baptisteArno/typebot.io",
+   "branch": "main",
+   "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
+   "tree_truncated": false,
+   "n_files": 4298,
+   "measured_at": "2026-09-24T16:54:03+0700",
+   "definition": "gap = missing or empty or byte-identical to English",
+   "candidate_groups": [
+    {
+     "group": "flat::apps/builder/src/i18n::*.json",
+     "en_keys": 625,
+     "n_locales": 9
+    }
+   ],
+   "locale_group": "flat::apps/builder/src/i18n::*.json",
+   "src": "en",
+   "src_files": [
+    "apps/builder/src/i18n/en.json"
+   ],
+   "en_keys": 625,
+   "en_neutral_keys": 5,
+   "format": "json",
+   "n_locales_total": 9,
+   "n_locales_measured": 8,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 9,
+   "locales": {
+    "de": {
+     "files": [
+      "apps/builder/src/i18n/de.json"
+     ],
+     "locale_keys": 240,
+     "present": 240,
+     "missing": 385,
+     "identical": 30,
+     "gap_keys": 415,
+     "gap_pct": 66.4,
+     "missing_pct": 61.6,
+     "count_pct": 61.6
+    },
+    "el": {
+     "files": [
+      "apps/builder/src/i18n/el.json"
+     ],
+     "locale_keys": 466,
+     "present": 464,
+     "missing": 161,
+     "identical": 37,
+     "gap_keys": 198,
+     "gap_pct": 31.7,
+     "missing_pct": 25.8,
+     "count_pct": 25.4
+    },
+    "es": {
+     "files": [
+      "apps/builder/src/i18n/es.json"
+     ],
+     "locale_keys": 245,
+     "present": 243,
+     "missing": 382,
+     "identical": 19,
+     "gap_keys": 401,
+     "gap_pct": 64.2,
+     "missing_pct": 61.1,
+     "count_pct": 60.8
+    },
+    "fr": {
+     "files": [
+      "apps/builder/src/i18n/fr.json"
+     ],
+     "locale_keys": 527,
+     "present": 527,
+     "missing": 98,
+     "identical": 46,
+     "gap_keys": 144,
+     "gap_pct": 23.0,
+     "missing_pct": 15.7,
+     "count_pct": 15.7
+    },
+    "it": {
+     "files": [
+      "apps/builder/src/i18n/it.json"
+     ],
+     "locale_keys": 466,
+     "present": 464,
+     "missing": 161,
+     "identical": 35,
+     "gap_keys": 196,
+     "gap_pct": 31.4,
+     "missing_pct": 25.8,
+     "count_pct": 25.4
+    },
+    "pt": {
+     "files": [
+      "apps/builder/src/i18n/pt.json"
+     ],
+     "locale_keys": 321,
+     "present": 319,
+     "missing": 306,
+     "identical": 23,
+     "gap_keys": 329,
+     "gap_pct": 52.6,
+     "missing_pct": 49.0,
+     "count_pct": 48.6
+    },
+    "pt-BR": {
+     "files": [
+      "apps/builder/src/i18n/pt-BR.json"
+     ],
+     "locale_keys": 529,
+     "present": 527,
+     "missing": 98,
+     "identical": 34,
+     "gap_keys": 132,
+     "gap_pct": 21.1,
+     "missing_pct": 15.7,
+     "count_pct": 15.4
+    },
+    "ro": {
+     "files": [
+      "apps/builder/src/i18n/ro.json"
+     ],
+     "locale_keys": 245,
+     "present": 243,
+     "missing": 382,
+     "identical": 17,
+     "gap_keys": 399,
+     "gap_pct": 63.8,
+     "missing_pct": 61.1,
+     "count_pct": 60.8
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 66.4,
+     "gap_keys": 415,
+     "missing": 385,
+     "identical": 30
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 23.0,
+     "gap_keys": 144,
+     "missing": 98,
+     "identical": 46
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 64.2,
+     "gap_keys": 401,
+     "missing": 382,
+     "identical": 19
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 21.1,
+     "gap_keys": 132,
+     "missing": 98,
+     "identical": 34
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 31.4,
+     "gap_keys": 196,
+     "missing": 161,
+     "identical": 35
+    }
+   },
+   "tier1_absent": [
+    "ja",
+    "zh-CN",
+    "ko",
+    "nl"
+   ],
+   "worst": {
+    "locale": "de",
+    "gap_pct": 66.4,
+    "gap_keys": 415
+   },
+   "worst_tier1": {
+    "target": "de",
+    "locale": "de",
+    "gap_pct": 66.4,
+    "gap_keys": 415
+   },
+   "total_gap_keys": 2214,
+   "median_gap_pct": 52.6,
+   "raw_url_example": "https://raw.githubusercontent.com/baptisteArno/typebot.io/main/apps/builder/src/i18n/en.json"
+  },
+  "default": {
+   "repo": "baptisteArno/typebot.io",
+   "branch": "main",
+   "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
+   "tree_truncated": false,
+   "n_files": 4298,
+   "measured_at": "2026-09-24T16:54:07+0700",
+   "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "candidate_groups": [
+    {
+     "group": "flat::apps/builder/src/i18n::*.json",
+     "en_keys": 625,
+     "n_locales": 9
+    }
+   ],
+   "locale_group": "flat::apps/builder/src/i18n::*.json",
+   "src": "en",
+   "src_files": [
+    "apps/builder/src/i18n/en.json"
+   ],
+   "en_keys": 625,
+   "en_neutral_keys": 5,
+   "format": "json",
+   "n_locales_total": 9,
+   "n_locales_measured": 8,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 9,
+   "locales": {
+    "de": {
+     "files": [
+      "apps/builder/src/i18n/de.json"
+     ],
+     "locale_keys": 240,
+     "present": 240,
+     "missing": 385,
+     "identical": 29,
+     "gap_keys": 414,
+     "gap_pct": 66.2,
+     "missing_pct": 61.6,
+     "count_pct": 61.6
+    },
+    "el": {
+     "files": [
+      "apps/builder/src/i18n/el.json"
+     ],
+     "locale_keys": 466,
+     "present": 464,
+     "missing": 161,
+     "identical": 34,
+     "gap_keys": 195,
+     "gap_pct": 31.2,
+     "missing_pct": 25.8,
+     "count_pct": 25.4
+    },
+    "es": {
+     "files": [
+      "apps/builder/src/i18n/es.json"
+     ],
+     "locale_keys": 245,
+     "present": 243,
+     "missing": 382,
+     "identical": 18,
+     "gap_keys": 400,
+     "gap_pct": 64.0,
+     "missing_pct": 61.1,
+     "count_pct": 60.8
+    },
+    "fr": {
+     "files": [
+      "apps/builder/src/i18n/fr.json"
+     ],
+     "locale_keys": 527,
+     "present": 527,
+     "missing": 98,
+     "identical": 44,
+     "gap_keys": 142,
+     "gap_pct": 22.7,
+     "missing_pct": 15.7,
+     "count_pct": 15.7
+    },
+    "it": {
+     "files": [
+      "apps/builder/src/i18n/it.json"
+     ],
+     "locale_keys": 466,
+     "present": 464,
+     "missing": 161,
+     "identical": 32,
+     "gap_keys": 193,
+     "gap_pct": 30.9,
+     "missing_pct": 25.8,
+     "count_pct": 25.4
+    },
+    "pt": {
+     "files": [
+      "apps/builder/src/i18n/pt.json"
+     ],
+     "locale_keys": 321,
+     "present": 319,
+     "missing": 306,
+     "identical": 22,
+     "gap_keys": 328,
+     "gap_pct": 52.5,
+     "missing_pct": 49.0,
+     "count_pct": 48.6
+    },
+    "pt-BR": {
+     "files": [
+      "apps/builder/src/i18n/pt-BR.json"
+     ],
+     "locale_keys": 529,
+     "present": 527,
+     "missing": 98,
+     "identical": 33,
+     "gap_keys": 131,
+     "gap_pct": 21.0,
+     "missing_pct": 15.7,
+     "count_pct": 15.4
+    },
+    "ro": {
+     "files": [
+      "apps/builder/src/i18n/ro.json"
+     ],
+     "locale_keys": 245,
+     "present": 243,
+     "missing": 382,
+     "identical": 16,
+     "gap_keys": 398,
+     "gap_pct": 63.7,
+     "missing_pct": 61.1,
+     "count_pct": 60.8
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 66.2,
+     "gap_keys": 414,
+     "missing": 385,
+     "identical": 29
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 22.7,
+     "gap_keys": 142,
+     "missing": 98,
+     "identical": 44
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 64.0,
+     "gap_keys": 400,
+     "missing": 382,
+     "identical": 18
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 21.0,
+     "gap_keys": 131,
+     "missing": 98,
+     "identical": 33
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 30.9,
+     "gap_keys": 193,
+     "missing": 161,
+     "identical": 32
+    }
+   },
+   "tier1_absent": [
+    "ja",
+    "zh-CN",
+    "ko",
+    "nl"
+   ],
+   "worst": {
+    "locale": "de",
+    "gap_pct": 66.2,
+    "gap_keys": 414
+   },
+   "worst_tier1": {
+    "target": "de",
+    "locale": "de",
+    "gap_pct": 66.2,
+    "gap_keys": 414
+   },
+   "total_gap_keys": 2201,
+   "median_gap_pct": 52.5,
+   "raw_url_example": "https://raw.githubusercontent.com/baptisteArno/typebot.io/main/apps/builder/src/i18n/en.json"
+  }
+ },
+ "Infisical/infisical": {
+  "ref": {
+   "repo": "Infisical/infisical",
+   "branch": "main",
+   "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
+   "tree_truncated": false,
+   "n_files": 14562,
+   "measured_at": "2026-09-24T16:54:10+0700",
+   "definition": "gap = missing or empty or byte-identical to English",
+   "candidate_groups": [
+    {
+     "group": "nested::frontend/public/locales",
+     "en_keys": 268,
+     "n_locales": 6
+    }
+   ],
+   "locale_group": "nested::frontend/public/locales",
+   "src": "en",
+   "src_files": [
+    "frontend/public/locales/en/translations.json"
+   ],
+   "en_keys": 268,
+   "en_neutral_keys": 1,
+   "format": "json",
+   "n_locales_total": 6,
+   "n_locales_measured": 5,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 6,
+   "locales": {
+    "es": {
+     "files": [
+      "frontend/public/locales/es/translations.json"
+     ],
+     "locale_keys": 252,
+     "present": 252,
+     "missing": 16,
+     "identical": 11,
+     "gap_keys": 27,
+     "gap_pct": 10.1,
+     "missing_pct": 6.0,
+     "count_pct": 6.0
+    },
+    "fr": {
+     "files": [
+      "frontend/public/locales/fr/translations.json"
+     ],
+     "locale_keys": 238,
+     "present": 238,
+     "missing": 30,
+     "identical": 8,
+     "gap_keys": 38,
+     "gap_pct": 14.2,
+     "missing_pct": 11.2,
+     "count_pct": 11.2
+    },
+    "ko": {
+     "files": [
+      "frontend/public/locales/ko/translations.json"
+     ],
+     "locale_keys": 204,
+     "present": 204,
+     "missing": 64,
+     "identical": 21,
+     "gap_keys": 85,
+     "gap_pct": 31.7,
+     "missing_pct": 23.9,
+     "count_pct": 23.9
+    },
+    "pt-BR": {
+     "files": [
+      "frontend/public/locales/pt-BR/translations.json"
+     ],
+     "locale_keys": 232,
+     "present": 232,
+     "missing": 36,
+     "identical": 6,
+     "gap_keys": 42,
+     "gap_pct": 15.7,
+     "missing_pct": 13.4,
+     "count_pct": 13.4
+    },
+    "tr": {
+     "files": [
+      "frontend/public/locales/tr/translations.json"
+     ],
+     "locale_keys": 250,
+     "present": 250,
+     "missing": 18,
+     "identical": 4,
+     "gap_keys": 22,
+     "gap_pct": 8.2,
+     "missing_pct": 6.7,
+     "count_pct": 6.7
+    }
+   },
+   "tier1": {
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 14.2,
+     "gap_keys": 38,
+     "missing": 30,
+     "identical": 8
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 10.1,
+     "gap_keys": 27,
+     "missing": 16,
+     "identical": 11
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 15.7,
+     "gap_keys": 42,
+     "missing": 36,
+     "identical": 6
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 31.7,
+     "gap_keys": 85,
+     "missing": 64,
+     "identical": 21
+    }
+   },
+   "tier1_absent": [
+    "de",
+    "ja",
+    "zh-CN",
+    "it",
+    "nl"
+   ],
+   "worst": {
+    "locale": "ko",
+    "gap_pct": 31.7,
+    "gap_keys": 85
+   },
+   "worst_tier1": {
+    "target": "ko",
+    "locale": "ko",
+    "gap_pct": 31.7,
+    "gap_keys": 85
+   },
+   "total_gap_keys": 214,
+   "median_gap_pct": 14.2,
+   "raw_url_example": "https://raw.githubusercontent.com/Infisical/infisical/main/frontend/public/locales/en/translations.json"
+  },
+  "default": {
+   "repo": "Infisical/infisical",
+   "branch": "main",
+   "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
+   "tree_truncated": false,
+   "n_files": 14562,
+   "measured_at": "2026-09-24T16:54:14+0700",
+   "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "candidate_groups": [
+    {
+     "group": "nested::frontend/public/locales",
+     "en_keys": 268,
+     "n_locales": 6
+    }
+   ],
+   "locale_group": "nested::frontend/public/locales",
+   "src": "en",
+   "src_files": [
+    "frontend/public/locales/en/translations.json"
+   ],
+   "en_keys": 268,
+   "en_neutral_keys": 1,
+   "format": "json",
+   "n_locales_total": 6,
+   "n_locales_measured": 5,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 6,
+   "locales": {
+    "es": {
+     "files": [
+      "frontend/public/locales/es/translations.json"
+     ],
+     "locale_keys": 252,
+     "present": 252,
+     "missing": 16,
+     "identical": 11,
+     "gap_keys": 27,
+     "gap_pct": 10.1,
+     "missing_pct": 6.0,
+     "count_pct": 6.0
+    },
+    "fr": {
+     "files": [
+      "frontend/public/locales/fr/translations.json"
+     ],
+     "locale_keys": 238,
+     "present": 238,
+     "missing": 30,
+     "identical": 8,
+     "gap_keys": 38,
+     "gap_pct": 14.2,
+     "missing_pct": 11.2,
+     "count_pct": 11.2
+    },
+    "ko": {
+     "files": [
+      "frontend/public/locales/ko/translations.json"
+     ],
+     "locale_keys": 204,
+     "present": 204,
+     "missing": 64,
+     "identical": 21,
+     "gap_keys": 85,
+     "gap_pct": 31.7,
+     "missing_pct": 23.9,
+     "count_pct": 23.9
+    },
+    "pt-BR": {
+     "files": [
+      "frontend/public/locales/pt-BR/translations.json"
+     ],
+     "locale_keys": 232,
+     "present": 232,
+     "missing": 36,
+     "identical": 6,
+     "gap_keys": 42,
+     "gap_pct": 15.7,
+     "missing_pct": 13.4,
+     "count_pct": 13.4
+    },
+    "tr": {
+     "files": [
+      "frontend/public/locales/tr/translations.json"
+     ],
+     "locale_keys": 250,
+     "present": 250,
+     "missing": 18,
+     "identical": 4,
+     "gap_keys": 22,
+     "gap_pct": 8.2,
+     "missing_pct": 6.7,
+     "count_pct": 6.7
+    }
+   },
+   "tier1": {
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 14.2,
+     "gap_keys": 38,
+     "missing": 30,
+     "identical": 8
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 10.1,
+     "gap_keys": 27,
+     "missing": 16,
+     "identical": 11
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 15.7,
+     "gap_keys": 42,
+     "missing": 36,
+     "identical": 6
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 31.7,
+     "gap_keys": 85,
+     "missing": 64,
+     "identical": 21
+    }
+   },
+   "tier1_absent": [
+    "de",
+    "ja",
+    "zh-CN",
+    "it",
+    "nl"
+   ],
+   "worst": {
+    "locale": "ko",
+    "gap_pct": 31.7,
+    "gap_keys": 85
+   },
+   "worst_tier1": {
+    "target": "ko",
+    "locale": "ko",
+    "gap_pct": 31.7,
+    "gap_keys": 85
+   },
+   "total_gap_keys": 214,
+   "median_gap_pct": 14.2,
+   "raw_url_example": "https://raw.githubusercontent.com/Infisical/infisical/main/frontend/public/locales/en/translations.json"
+  }
+ },
+ "hoppscotch/hoppscotch": {
+  "ref": {
+   "repo": "hoppscotch/hoppscotch",
+   "branch": "main",
+   "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
+   "tree_truncated": false,
+   "n_files": 2448,
+   "measured_at": "2026-09-24T16:54:18+0700",
+   "definition": "gap = missing or empty or byte-identical to English",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/hoppscotch-common/locales::*.json",
+     "en_keys": 2140,
+     "n_locales": 33
+    }
+   ],
+   "locale_group": "flat::packages/hoppscotch-common/locales::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/hoppscotch-common/locales/en.json"
+   ],
+   "en_keys": 2140,
+   "en_neutral_keys": 7,
+   "format": "json",
+   "n_locales_total": 33,
+   "n_locales_measured": 32,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 33,
+   "locales": {
+    "af": {
+     "files": [
+      "packages/hoppscotch-common/locales/af.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 506,
+     "gap_keys": 1718,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ar": {
+     "files": [
+      "packages/hoppscotch-common/locales/ar.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 42,
+     "gap_keys": 1254,
+     "gap_pct": 58.6,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ca": {
+     "files": [
+      "packages/hoppscotch-common/locales/ca.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 397,
+     "gap_keys": 1609,
+     "gap_pct": 75.2,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "cs": {
+     "files": [
+      "packages/hoppscotch-common/locales/cs.json"
+     ],
+     "locale_keys": 2001,
+     "present": 1998,
+     "missing": 142,
+     "identical": 155,
+     "gap_keys": 297,
+     "gap_pct": 13.9,
+     "missing_pct": 6.6,
+     "count_pct": 6.5
+    },
+    "da": {
+     "files": [
+      "packages/hoppscotch-common/locales/da.json"
+     ],
+     "locale_keys": 934,
+     "present": 933,
+     "missing": 1207,
+     "identical": 64,
+     "gap_keys": 1271,
+     "gap_pct": 59.4,
+     "missing_pct": 56.4,
+     "count_pct": 56.4
+    },
+    "de": {
+     "files": [
+      "packages/hoppscotch-common/locales/de.json"
+     ],
+     "locale_keys": 1049,
+     "present": 1044,
+     "missing": 1096,
+     "identical": 102,
+     "gap_keys": 1198,
+     "gap_pct": 56.0,
+     "missing_pct": 51.2,
+     "count_pct": 51.0
+    },
+    "el": {
+     "files": [
+      "packages/hoppscotch-common/locales/el.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 407,
+     "gap_keys": 1619,
+     "gap_pct": 75.7,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "es": {
+     "files": [
+      "packages/hoppscotch-common/locales/es.json"
+     ],
+     "locale_keys": 2032,
+     "present": 2030,
+     "missing": 110,
+     "identical": 123,
+     "gap_keys": 233,
+     "gap_pct": 10.9,
+     "missing_pct": 5.1,
+     "count_pct": 5.0
+    },
+    "fi": {
+     "files": [
+      "packages/hoppscotch-common/locales/fi.json"
+     ],
+     "locale_keys": 2078,
+     "present": 2078,
+     "missing": 62,
+     "identical": 89,
+     "gap_keys": 151,
+     "gap_pct": 7.1,
+     "missing_pct": 2.9,
+     "count_pct": 2.9
+    },
+    "fr": {
+     "files": [
+      "packages/hoppscotch-common/locales/fr.json"
+     ],
+     "locale_keys": 1674,
+     "present": 1674,
+     "missing": 466,
+     "identical": 106,
+     "gap_keys": 572,
+     "gap_pct": 26.7,
+     "missing_pct": 21.8,
+     "count_pct": 21.8
+    },
+    "he": {
+     "files": [
+      "packages/hoppscotch-common/locales/he.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 494,
+     "gap_keys": 1706,
+     "gap_pct": 79.7,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "hu": {
+     "files": [
+      "packages/hoppscotch-common/locales/hu.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 141,
+     "gap_keys": 1353,
+     "gap_pct": 63.2,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "hy": {
+     "files": [
+      "packages/hoppscotch-common/locales/hy.json"
+     ],
+     "locale_keys": 2001,
+     "present": 1998,
+     "missing": 142,
+     "identical": 152,
+     "gap_keys": 294,
+     "gap_pct": 13.7,
+     "missing_pct": 6.6,
+     "count_pct": 6.5
+    },
+    "id": {
+     "files": [
+      "packages/hoppscotch-common/locales/id.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 420,
+     "gap_keys": 1632,
+     "gap_pct": 76.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "it": {
+     "files": [
+      "packages/hoppscotch-common/locales/it.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 484,
+     "gap_keys": 1696,
+     "gap_pct": 79.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ja": {
+     "files": [
+      "packages/hoppscotch-common/locales/ja.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 350,
+     "gap_keys": 1562,
+     "gap_pct": 73.0,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ko": {
+     "files": [
+      "packages/hoppscotch-common/locales/ko.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 416,
+     "gap_keys": 1628,
+     "gap_pct": 76.1,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "mn": {
+     "files": [
+      "packages/hoppscotch-common/locales/mn.json"
+     ],
+     "locale_keys": 2061,
+     "present": 2061,
+     "missing": 79,
+     "identical": 46,
+     "gap_keys": 125,
+     "gap_pct": 5.8,
+     "missing_pct": 3.7,
+     "count_pct": 3.7
+    },
+    "nl": {
+     "files": [
+      "packages/hoppscotch-common/locales/nl.json"
+     ],
+     "locale_keys": 944,
+     "present": 927,
+     "missing": 1213,
+     "identical": 107,
+     "gap_keys": 1320,
+     "gap_pct": 61.7,
+     "missing_pct": 56.7,
+     "count_pct": 55.9
+    },
+    "no": {
+     "files": [
+      "packages/hoppscotch-common/locales/no.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 509,
+     "gap_keys": 1721,
+     "gap_pct": 80.4,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pl": {
+     "files": [
+      "packages/hoppscotch-common/locales/pl.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 507,
+     "gap_keys": 1719,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pt": {
+     "files": [
+      "packages/hoppscotch-common/locales/pt.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 506,
+     "gap_keys": 1718,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pt-BR": {
+     "files": [
+      "packages/hoppscotch-common/locales/pt-br.json"
+     ],
+     "locale_keys": 1101,
+     "present": 1097,
+     "missing": 1043,
+     "identical": 86,
+     "gap_keys": 1129,
+     "gap_pct": 52.8,
+     "missing_pct": 48.7,
+     "count_pct": 48.6
+    },
+    "ro": {
+     "files": [
+      "packages/hoppscotch-common/locales/ro.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 391,
+     "gap_keys": 1603,
+     "gap_pct": 74.9,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ru": {
+     "files": [
+      "packages/hoppscotch-common/locales/ru.json"
+     ],
+     "locale_keys": 929,
+     "present": 928,
+     "missing": 1212,
+     "identical": 92,
+     "gap_keys": 1304,
+     "gap_pct": 60.9,
+     "missing_pct": 56.6,
+     "count_pct": 56.6
+    },
+    "sr": {
+     "files": [
+      "packages/hoppscotch-common/locales/sr.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 486,
+     "gap_keys": 1698,
+     "gap_pct": 79.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "sv": {
+     "files": [
+      "packages/hoppscotch-common/locales/sv.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 507,
+     "gap_keys": 1719,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "th": {
+     "files": [
+      "packages/hoppscotch-common/locales/th.json"
+     ],
+     "locale_keys": 2078,
+     "present": 2078,
+     "missing": 62,
+     "identical": 177,
+     "gap_keys": 239,
+     "gap_pct": 11.2,
+     "missing_pct": 2.9,
+     "count_pct": 2.9
+    },
+    "tr": {
+     "files": [
+      "packages/hoppscotch-common/locales/tr.json"
+     ],
+     "locale_keys": 2032,
+     "present": 2030,
+     "missing": 110,
+     "identical": 75,
+     "gap_keys": 185,
+     "gap_pct": 8.6,
+     "missing_pct": 5.1,
+     "count_pct": 5.0
+    },
+    "tw": {
+     "files": [
+      "packages/hoppscotch-common/locales/tw.json"
+     ],
+     "locale_keys": 960,
+     "present": 944,
+     "missing": 1196,
+     "identical": 189,
+     "gap_keys": 1385,
+     "gap_pct": 64.7,
+     "missing_pct": 55.9,
+     "count_pct": 55.1
+    },
+    "uk": {
+     "files": [
+      "packages/hoppscotch-common/locales/uk.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 346,
+     "gap_keys": 1558,
+     "gap_pct": 72.8,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "vi": {
+     "files": [
+      "packages/hoppscotch-common/locales/vi.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 336,
+     "gap_keys": 1548,
+     "gap_pct": 72.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 56.0,
+     "gap_keys": 1198,
+     "missing": 1096,
+     "identical": 102
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 26.7,
+     "gap_keys": 572,
+     "missing": 466,
+     "identical": 106
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 73.0,
+     "gap_keys": 1562,
+     "missing": 1212,
+     "identical": 350
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 10.9,
+     "gap_keys": 233,
+     "missing": 110,
+     "identical": 123
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 52.8,
+     "gap_keys": 1129,
+     "missing": 1043,
+     "identical": 86
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 76.1,
+     "gap_keys": 1628,
+     "missing": 1212,
+     "identical": 416
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 79.3,
+     "gap_keys": 1696,
+     "missing": 1212,
+     "identical": 484
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 61.7,
+     "gap_keys": 1320,
+     "missing": 1213,
+     "identical": 107
+    }
+   },
+   "tier1_absent": [
+    "zh-CN"
+   ],
+   "worst": {
+    "locale": "no",
+    "gap_pct": 80.4,
+    "gap_keys": 1721
+   },
+   "worst_tier1": {
+    "target": "it",
+    "locale": "it",
+    "gap_pct": 79.3,
+    "gap_keys": 1696
+   },
+   "total_gap_keys": 38764,
+   "median_gap_pct": 72.3,
+   "raw_url_example": "https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/packages/hoppscotch-common/locales/en.json"
+  },
+  "default": {
+   "repo": "hoppscotch/hoppscotch",
+   "branch": "main",
+   "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
+   "tree_truncated": false,
+   "n_files": 2448,
+   "measured_at": "2026-09-24T16:54:25+0700",
+   "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "candidate_groups": [
+    {
+     "group": "flat::packages/hoppscotch-common/locales::*.json",
+     "en_keys": 2140,
+     "n_locales": 33
+    }
+   ],
+   "locale_group": "flat::packages/hoppscotch-common/locales::*.json",
+   "src": "en",
+   "src_files": [
+    "packages/hoppscotch-common/locales/en.json"
+   ],
+   "en_keys": 2140,
+   "en_neutral_keys": 7,
+   "format": "json",
+   "n_locales_total": 33,
+   "n_locales_measured": 32,
+   "sampled": false,
+   "en_variants_skipped": [],
+   "raw_fetches": 33,
+   "locales": {
+    "af": {
+     "files": [
+      "packages/hoppscotch-common/locales/af.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 506,
+     "gap_keys": 1718,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ar": {
+     "files": [
+      "packages/hoppscotch-common/locales/ar.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 42,
+     "gap_keys": 1254,
+     "gap_pct": 58.6,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ca": {
+     "files": [
+      "packages/hoppscotch-common/locales/ca.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 396,
+     "gap_keys": 1608,
+     "gap_pct": 75.1,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "cs": {
+     "files": [
+      "packages/hoppscotch-common/locales/cs.json"
+     ],
+     "locale_keys": 2001,
+     "present": 1998,
+     "missing": 142,
+     "identical": 154,
+     "gap_keys": 296,
+     "gap_pct": 13.8,
+     "missing_pct": 6.6,
+     "count_pct": 6.5
+    },
+    "da": {
+     "files": [
+      "packages/hoppscotch-common/locales/da.json"
+     ],
+     "locale_keys": 934,
+     "present": 933,
+     "missing": 1207,
+     "identical": 64,
+     "gap_keys": 1271,
+     "gap_pct": 59.4,
+     "missing_pct": 56.4,
+     "count_pct": 56.4
+    },
+    "de": {
+     "files": [
+      "packages/hoppscotch-common/locales/de.json"
+     ],
+     "locale_keys": 1049,
+     "present": 1044,
+     "missing": 1096,
+     "identical": 102,
+     "gap_keys": 1198,
+     "gap_pct": 56.0,
+     "missing_pct": 51.2,
+     "count_pct": 51.0
+    },
+    "el": {
+     "files": [
+      "packages/hoppscotch-common/locales/el.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 407,
+     "gap_keys": 1619,
+     "gap_pct": 75.7,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "es": {
+     "files": [
+      "packages/hoppscotch-common/locales/es.json"
+     ],
+     "locale_keys": 2032,
+     "present": 2030,
+     "missing": 110,
+     "identical": 120,
+     "gap_keys": 230,
+     "gap_pct": 10.7,
+     "missing_pct": 5.1,
+     "count_pct": 5.0
+    },
+    "fi": {
+     "files": [
+      "packages/hoppscotch-common/locales/fi.json"
+     ],
+     "locale_keys": 2078,
+     "present": 2078,
+     "missing": 62,
+     "identical": 84,
+     "gap_keys": 146,
+     "gap_pct": 6.8,
+     "missing_pct": 2.9,
+     "count_pct": 2.9
+    },
+    "fr": {
+     "files": [
+      "packages/hoppscotch-common/locales/fr.json"
+     ],
+     "locale_keys": 1674,
+     "present": 1674,
+     "missing": 466,
+     "identical": 105,
+     "gap_keys": 571,
+     "gap_pct": 26.7,
+     "missing_pct": 21.8,
+     "count_pct": 21.8
+    },
+    "he": {
+     "files": [
+      "packages/hoppscotch-common/locales/he.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 494,
+     "gap_keys": 1706,
+     "gap_pct": 79.7,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "hu": {
+     "files": [
+      "packages/hoppscotch-common/locales/hu.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 141,
+     "gap_keys": 1353,
+     "gap_pct": 63.2,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "hy": {
+     "files": [
+      "packages/hoppscotch-common/locales/hy.json"
+     ],
+     "locale_keys": 2001,
+     "present": 1998,
+     "missing": 142,
+     "identical": 151,
+     "gap_keys": 293,
+     "gap_pct": 13.7,
+     "missing_pct": 6.6,
+     "count_pct": 6.5
+    },
+    "id": {
+     "files": [
+      "packages/hoppscotch-common/locales/id.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 420,
+     "gap_keys": 1632,
+     "gap_pct": 76.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "it": {
+     "files": [
+      "packages/hoppscotch-common/locales/it.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 483,
+     "gap_keys": 1695,
+     "gap_pct": 79.2,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ja": {
+     "files": [
+      "packages/hoppscotch-common/locales/ja.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 350,
+     "gap_keys": 1562,
+     "gap_pct": 73.0,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ko": {
+     "files": [
+      "packages/hoppscotch-common/locales/ko.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 416,
+     "gap_keys": 1628,
+     "gap_pct": 76.1,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "mn": {
+     "files": [
+      "packages/hoppscotch-common/locales/mn.json"
+     ],
+     "locale_keys": 2061,
+     "present": 2061,
+     "missing": 79,
+     "identical": 45,
+     "gap_keys": 124,
+     "gap_pct": 5.8,
+     "missing_pct": 3.7,
+     "count_pct": 3.7
+    },
+    "nl": {
+     "files": [
+      "packages/hoppscotch-common/locales/nl.json"
+     ],
+     "locale_keys": 944,
+     "present": 927,
+     "missing": 1213,
+     "identical": 107,
+     "gap_keys": 1320,
+     "gap_pct": 61.7,
+     "missing_pct": 56.7,
+     "count_pct": 55.9
+    },
+    "no": {
+     "files": [
+      "packages/hoppscotch-common/locales/no.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 509,
+     "gap_keys": 1721,
+     "gap_pct": 80.4,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pl": {
+     "files": [
+      "packages/hoppscotch-common/locales/pl.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 507,
+     "gap_keys": 1719,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pt": {
+     "files": [
+      "packages/hoppscotch-common/locales/pt.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 506,
+     "gap_keys": 1718,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "pt-BR": {
+     "files": [
+      "packages/hoppscotch-common/locales/pt-br.json"
+     ],
+     "locale_keys": 1101,
+     "present": 1097,
+     "missing": 1043,
+     "identical": 86,
+     "gap_keys": 1129,
+     "gap_pct": 52.8,
+     "missing_pct": 48.7,
+     "count_pct": 48.6
+    },
+    "ro": {
+     "files": [
+      "packages/hoppscotch-common/locales/ro.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 391,
+     "gap_keys": 1603,
+     "gap_pct": 74.9,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "ru": {
+     "files": [
+      "packages/hoppscotch-common/locales/ru.json"
+     ],
+     "locale_keys": 929,
+     "present": 928,
+     "missing": 1212,
+     "identical": 92,
+     "gap_keys": 1304,
+     "gap_pct": 60.9,
+     "missing_pct": 56.6,
+     "count_pct": 56.6
+    },
+    "sr": {
+     "files": [
+      "packages/hoppscotch-common/locales/sr.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 486,
+     "gap_keys": 1698,
+     "gap_pct": 79.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "sv": {
+     "files": [
+      "packages/hoppscotch-common/locales/sv.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 507,
+     "gap_keys": 1719,
+     "gap_pct": 80.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "th": {
+     "files": [
+      "packages/hoppscotch-common/locales/th.json"
+     ],
+     "locale_keys": 2078,
+     "present": 2078,
+     "missing": 62,
+     "identical": 172,
+     "gap_keys": 234,
+     "gap_pct": 10.9,
+     "missing_pct": 2.9,
+     "count_pct": 2.9
+    },
+    "tr": {
+     "files": [
+      "packages/hoppscotch-common/locales/tr.json"
+     ],
+     "locale_keys": 2032,
+     "present": 2030,
+     "missing": 110,
+     "identical": 74,
+     "gap_keys": 184,
+     "gap_pct": 8.6,
+     "missing_pct": 5.1,
+     "count_pct": 5.0
+    },
+    "tw": {
+     "files": [
+      "packages/hoppscotch-common/locales/tw.json"
+     ],
+     "locale_keys": 960,
+     "present": 944,
+     "missing": 1196,
+     "identical": 189,
+     "gap_keys": 1385,
+     "gap_pct": 64.7,
+     "missing_pct": 55.9,
+     "count_pct": 55.1
+    },
+    "uk": {
+     "files": [
+      "packages/hoppscotch-common/locales/uk.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 346,
+     "gap_keys": 1558,
+     "gap_pct": 72.8,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    },
+    "vi": {
+     "files": [
+      "packages/hoppscotch-common/locales/vi.json"
+     ],
+     "locale_keys": 944,
+     "present": 928,
+     "missing": 1212,
+     "identical": 336,
+     "gap_keys": 1548,
+     "gap_pct": 72.3,
+     "missing_pct": 56.6,
+     "count_pct": 55.9
+    }
+   },
+   "tier1": {
+    "de": {
+     "locale": "de",
+     "gap_pct": 56.0,
+     "gap_keys": 1198,
+     "missing": 1096,
+     "identical": 102
+    },
+    "fr": {
+     "locale": "fr",
+     "gap_pct": 26.7,
+     "gap_keys": 571,
+     "missing": 466,
+     "identical": 105
+    },
+    "ja": {
+     "locale": "ja",
+     "gap_pct": 73.0,
+     "gap_keys": 1562,
+     "missing": 1212,
+     "identical": 350
+    },
+    "es": {
+     "locale": "es",
+     "gap_pct": 10.7,
+     "gap_keys": 230,
+     "missing": 110,
+     "identical": 120
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 52.8,
+     "gap_keys": 1129,
+     "missing": 1043,
+     "identical": 86
+    },
+    "ko": {
+     "locale": "ko",
+     "gap_pct": 76.1,
+     "gap_keys": 1628,
+     "missing": 1212,
+     "identical": 416
+    },
+    "it": {
+     "locale": "it",
+     "gap_pct": 79.2,
+     "gap_keys": 1695,
+     "missing": 1212,
+     "identical": 483
+    },
+    "nl": {
+     "locale": "nl",
+     "gap_pct": 61.7,
+     "gap_keys": 1320,
+     "missing": 1213,
+     "identical": 107
+    }
+   },
+   "tier1_absent": [
+    "zh-CN"
+   ],
+   "worst": {
+    "locale": "no",
+    "gap_pct": 80.4,
+    "gap_keys": 1721
+   },
+   "worst_tier1": {
+    "target": "it",
+    "locale": "it",
+    "gap_pct": 79.2,
+    "gap_keys": 1695
+   },
+   "total_gap_keys": 38744,
+   "median_gap_pct": 72.3,
+   "raw_url_example": "https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/packages/hoppscotch-common/locales/en.json"
+  }
+ }
+}

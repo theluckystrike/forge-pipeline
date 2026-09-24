@@ -1,0 +1,9 @@
+{
+ "issue": 97049,
+ "kept": false,
+ "confidence": null,
+ "reason": "C+ (situchan) marked it reviewed on 2026-08-23; the fix is backend and an internal backend contributor was requested",
+ "one_line": null,
+ "differs": null,
+ "triaged_by": "lead"
+}

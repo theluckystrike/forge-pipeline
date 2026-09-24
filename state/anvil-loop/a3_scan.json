@@ -1,0 +1,46 @@
+{
+ "fastapi/sqlmodel": [],
+ "litestar-org/litestar": [],
+ "pydantic/pydantic": [
+  {
+   "n": 13822,
+   "t": "Decide about fate of custom generic classes docs example",
+   "comments": 0
+  },
+  {
+   "n": 10790,
+   "t": "Execution order of model validators with model inheritance",
+   "comments": 8
+  },
+  {
+   "n": 10083,
+   "t": "General maintenance of documentation",
+   "comments": 1
+  },
+  {
+   "n": 9628,
+   "t": "Support for adding custom serializers for models (and any ne",
+   "comments": 9
+  },
+  {
+   "n": 9390,
+   "t": "Can't pickle generics in certain cases",
+   "comments": 7
+  },
+  {
+   "n": 8277,
+   "t": "Validators execution order",
+   "comments": 20
+  },
+  {
+   "n": 8061,
+   "t": "PostgresDsn fails to validate with misleading error when spe",
+   "comments": 21
+  },
+  {
+   "n": 7534,
+   "t": "Update V2 Documentation for Custom Fields / Custom Types",
+   "comments": 4
+  }
+ ]
+}

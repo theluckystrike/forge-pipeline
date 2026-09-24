@@ -1,0 +1,207 @@
+{
+ "n8n": {
+  "fullName": "n8n-io/n8n",
+  "stars": 205829,
+  "lang": "TypeScript",
+  "candidates": [
+   "n8n-io/n8n",
+   "Zie619/n8n-workflows",
+   "enescingoz/awesome-n8n-templates",
+   "czlonkowski/n8n-mcp",
+   "langbot-app/LangBot"
+  ]
+ },
+ "Novu": {
+  "fullName": "novuhq/novu",
+  "stars": 40052,
+  "lang": "TypeScript",
+  "candidates": [
+   "novuhq/novu",
+   "novus-package-manager/novus",
+   "novusengine/NovusCore",
+   "jozefcipa/novus",
+   "Salby/novum"
+  ]
+ },
+ "PostHog": {
+  "fullName": "PostHog/posthog",
+  "stars": 39913,
+  "lang": "Python",
+  "candidates": [
+   "PostHog/posthog",
+   "elie222/inbox-zero",
+   "vercel/next-forge",
+   "hexclave/hexclave",
+   "evloghq/evlog"
+  ]
+ },
+ "Supabase": {
+  "fullName": "supabase/supabase",
+  "stars": 110721,
+  "lang": "TypeScript",
+  "candidates": [
+   "supabase/supabase",
+   "appwrite/appwrite",
+   "onlook-dev/onlook",
+   "midday-ai/midday",
+   "illacloud/illa-builder"
+  ]
+ },
+ "Langfuse": {
+  "fullName": "langfuse/langfuse",
+  "stars": 34996,
+  "lang": "TypeScript",
+  "candidates": [
+   "langfuse/langfuse",
+   "santifer/cv-santiago",
+   "myccarl/ai-shortVideo-pipeline",
+   "NicholasGoh/fastapi-mcp-langgraph-template",
+   "langfuse/langfuse-python"
+  ]
+ },
+ "Flowise": {
+  "fullName": "FlowiseAI/Flowise",
+  "stars": 55474,
+  "lang": "TypeScript",
+  "candidates": [
+   "FlowiseAI/Flowise",
+   "Mintplex-Labs/vector-admin",
+   "kossakovsky/selfhost-ai",
+   "FlowiseAI/FlowiseChatEmbed",
+   "FlowiseAI/FlowiseDocs"
+  ]
+ },
+ "Budibase": {
+  "fullName": "Budibase/budibase",
+  "stars": 28302,
+  "lang": "TypeScript",
+  "candidates": [
+   "Budibase/budibase",
+   "steedos/steedos-platform",
+   "Budibase/plugins",
+   "Budibase/automations",
+   "Budibase/templates"
+  ]
+ },
+ "Appsmith": {
+  "fullName": "appsmithorg/appsmith",
+  "stars": 40930,
+  "lang": "TypeScript",
+  "candidates": [
+   "appsmithorg/appsmith",
+   "cloudtogo/pageplug",
+   "lowcoder-org/lowcoder",
+   "steedos/steedos-platform",
+   "smartxworks/sunmao-ui"
+  ]
+ },
+ "Dub": {
+  "fullName": "dubinc/dub",
+  "stars": 24809,
+  "lang": "TypeScript",
+  "candidates": [
+   "apache/dubbo",
+   "debpalash/VoiceStudio",
+   "dubinc/dub",
+   "jianchang512/pyvideotrans",
+   "Huanshere/VideoLingo"
+  ]
+ },
+ "Windmill": {
+  "fullName": "windmill-labs/windmill",
+  "stars": 18024,
+  "lang": "Rust",
+  "candidates": [
+   "windmill-labs/windmill",
+   "estevanmaito/windmill-dashboard",
+   "estevanmaito/windmill-dashboard-react",
+   "estevanmaito/windmill-react-ui",
+   "windmill/windmill"
+  ]
+ },
+ "Dokploy": {
+  "fullName": "Dokploy/dokploy",
+  "stars": 37493,
+  "lang": "TypeScript",
+  "candidates": [
+   "Dokploy/dokploy",
+   "KunMoe/kun-galgame-forum",
+   "fcakyon/claude-codex-settings",
+   "Dokploy/mcp",
+   "Dokploy/templates"
+  ]
+ },
+ "Plausible": {
+  "fullName": "plausible/analytics",
+  "stars": 29198,
+  "lang": "Elixir",
+  "candidates": [
+   "plausible/community-edition",
+   "Litlyx/litlyx",
+   "4lejandrito/next-plausible",
+   "google-deepmind/uncertain_ground_truth",
+   "nv-tlabs/ppisp"
+  ],
+  "note": "gh search top hit was plausible/community-edition (deploy wrapper); corrected by gh repo view plausible/analytics"
+ },
+ "Zed": {
+  "fullName": "zed-industries/zed",
+  "stars": 90807,
+  "lang": "Rust",
+  "candidates": [
+   "zed-industries/zed",
+   "haydenbleasel/ultracite",
+   "zedapp/zed",
+   "remorses/gpuix",
+   "vicanso/zedis"
+  ]
+ },
+ "Warp": {
+  "fullName": "warpdotdev/warp",
+  "stars": 65149,
+  "lang": "Rust",
+  "candidates": [
+   "x1xhlol/system-prompts-and-models-of-ai-tools",
+   "warpdotdev/warp",
+   "bia-pain-bache/BPB-Worker-Panel",
+   "daybrush/moveable",
+   "seanmonstar/warp"
+  ]
+ },
+ "Prefect": {
+  "fullName": "PrefectHQ/prefect",
+  "stars": 23915,
+  "lang": "Python",
+  "candidates": [
+   "PrefectHQ/prefect",
+   "prefect-archive/ControlFlow",
+   "bansalkanav/Ultimate-Data-Science-Toolkit---From-Python-Basics-to-GenerativeAI",
+   "king04aman/All-In-One-Python-Projects",
+   "Hamagistral/de-zoomcamp-ui"
+  ]
+ },
+ "MindsDB": {
+  "fullName": "mindsdb/mindshub",
+  "stars": 39764,
+  "lang": "Makefile",
+  "candidates": [
+   "mindsdb/mindshub",
+   "mindsdb/lightwood",
+   "lnxpy/hey",
+   "mindsdb/mindsdb_sql",
+   "codingforentrepreneurs/ai-travel-agent"
+  ]
+ },
+ "Wazuh": {
+  "fullName": "wazuh/wazuh",
+  "stars": 16985,
+  "lang": "C++",
+  "candidates": [
+   "wazuh/wazuh",
+   "socfortress/Wazuh-Rules",
+   "wazuh/wazuh-docker",
+   "wazuh/wazuh-dashboard-plugins",
+   "wazuh/wazuh-ruleset"
+  ]
+ }
+}

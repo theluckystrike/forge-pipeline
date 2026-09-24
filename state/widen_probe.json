@@ -1,0 +1,354 @@
+{
+  "ts": "2026-09-21T13:29:19.865072",
+  "queries": {
+    "A1_goodfirst_1to2comments": [
+      {
+        "repo": "gnn-tracking/gnn_tracking",
+        "number": 500,
+        "title": "Add perfectly-homogeneous and perfectly-inclusive metrics to debug perfect metric",
+        "comments": 1,
+        "labels": [
+          "good first issue",
+          "prio: normal",
+          "comp: metrics",
+          "objective: insight",
+          "effort: low"
+        ],
+        "state": "open",
+        "url": "https://github.com/gnn-tracking/gnn_tracking/issues/500",
+        "query": "A1_goodfirst_1to2comments"
+      },
+      {
+        "repo": "marqo-ai/marqo",
+        "number": 500,
+        "title": "Squash pip freeze on startup [ENHANCEMENT]",
+        "comments": 2,
+        "labels": [
+          "enhancement",
+          "good first issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/marqo-ai/marqo/issues/500",
+        "query": "A1_goodfirst_1to2comments"
+      },
+      {
+        "repo": "cashubtc/nutshell",
+        "number": 500,
+        "title": "[Mint] Refactor `request_mint` to return `MintQuoteResponses` and handle `Invoices` downst",
+        "comments": 1,
+        "labels": [
+          "wallet",
+          "code health",
+          "good first issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/cashubtc/nutshell/issues/500",
+        "query": "A1_goodfirst_1to2comments"
+      },
+      {
+        "repo": "aesara-devs/aesara",
+        "number": 500,
+        "title": "Behaviour of `scan` differs from documentation wrt variables with no taps",
+        "comments": 1,
+        "labels": [
+          "bug",
+          "documentation",
+          "enhancement",
+          "good first issue",
+          "help wanted",
+          "Scan"
+        ],
+        "state": "open",
+        "url": "https://github.com/aesara-devs/aesara/issues/500",
+        "query": "A1_goodfirst_1to2comments"
+      }
+    ],
+    "A2_helpwanted_1to2comments": [
+      {
+        "repo": "reticlehq/reticle",
+        "number": 1000,
+        "title": "[agent] `reticle doctor` reports a CSP blocking the bridge when none does, and misses the ",
+        "comments": 1,
+        "labels": [
+          "bug",
+          "help wanted",
+          "agent-reported",
+          "area/server",
+          "P1"
+        ],
+        "state": "open",
+        "url": "https://github.com/reticlehq/reticle/issues/1000",
+        "query": "A2_helpwanted_1to2comments"
+      },
+      {
+        "repo": "10up/classifai",
+        "number": 1000,
+        "title": "New Option: No \"Text2Speak\" Generation for Drafts",
+        "comments": 1,
+        "labels": [
+          "help wanted",
+          "type:good-first-issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/10up/classifai/issues/1000",
+        "query": "A2_helpwanted_1to2comments"
+      },
+      {
+        "repo": "modelcontextprotocol/typescript-sdk",
+        "number": 1000,
+        "title": "Bug Report-2: Missing Periodic Ping Implementation",
+        "comments": 1,
+        "labels": [
+          "enhancement",
+          "P2",
+          "v2",
+          "help wanted",
+          "needs decision"
+        ],
+        "state": "open",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/issues/1000",
+        "query": "A2_helpwanted_1to2comments"
+      },
+      {
+        "repo": "ros-tooling/action-ros-ci",
+        "number": 1000,
+        "title": "fail without information on Windows",
+        "comments": 2,
+        "labels": [
+          "bug",
+          "help wanted"
+        ],
+        "state": "open",
+        "url": "https://github.com/ros-tooling/action-ros-ci/issues/1000",
+        "query": "A2_helpwanted_1to2comments"
+      },
+      {
+        "repo": "thx/iconfont-plus",
+        "number": 1000,
+        "title": "\u56fe\u6807\u5f15\u7528\u65e0\u6cd5\u663e\u793a\u554a\uff1f\u8fd8\u6709\u4eba\u7ef4\u62a4\u5417\uff1f",
+        "comments": 1,
+        "labels": [
+          "help wanted"
+        ],
+        "state": "open",
+        "url": "https://github.com/thx/iconfont-plus/issues/1000",
+        "query": "A2_helpwanted_1to2comments"
+      }
+    ],
+    "B1_docsaxis": [
+      {
+        "repo": "Bike4Mind/bike4mind",
+        "number": 2000,
+        "title": "docs(image-gen): stale comments claim Gemini maps prompt_upsampling to enhancePrompt",
+        "comments": 1,
+        "labels": [
+          "documentation",
+          "b4m-core",
+          "P3"
+        ],
+        "state": "open",
+        "url": "https://github.com/Bike4Mind/bike4mind/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "aryandas2911/DailyForge",
+        "number": 2000,
+        "title": "Add Troubleshooting Guide and FAQ to Documentation",
+        "comments": 2,
+        "labels": [
+          "bug",
+          "documentation",
+          "enhancement",
+          "good first issue",
+          "feature"
+        ],
+        "state": "open",
+        "url": "https://github.com/aryandas2911/DailyForge/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "intrafind/ihub-apps",
+        "number": 2000,
+        "title": "Use atomic writes for admin tools create/update/toggle/script endpoints",
+        "comments": 1,
+        "labels": [
+          "documentation",
+          "backend",
+          "api",
+          "admin",
+          "testing"
+        ],
+        "state": "open",
+        "url": "https://github.com/intrafind/ihub-apps/pull/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "oils-for-unix/oils",
+        "number": 2000,
+        "title": "'view latest' released version in documentation - because old links are often surfaced",
+        "comments": 2,
+        "labels": [
+          "documentation",
+          "user-feedback",
+          "accepted"
+        ],
+        "state": "open",
+        "url": "https://github.com/oils-for-unix/oils/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "OpenRockets/web-dev-error-solutions",
+        "number": 2000,
+        "title": "Overcoming MongoDB's `$where` Performance Issues",
+        "comments": 0,
+        "labels": [
+          "documentation",
+          "web"
+        ],
+        "state": "open",
+        "url": "https://github.com/OpenRockets/web-dev-error-solutions/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "FusionAuth/fusionauth-site",
+        "number": 2000,
+        "title": "RelayState for FusionAuth\u2019s SAML v2 identity provider is not documented",
+        "comments": 0,
+        "labels": [
+          "documentation"
+        ],
+        "state": "open",
+        "url": "https://github.com/FusionAuth/fusionauth-site/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "pulp/pulpcore",
+        "number": 2000,
+        "title": "[EPIC] As a user, I have docs on how to integrate Pulp with external Authentication",
+        "comments": 2,
+        "labels": [
+          "Documentation",
+          "Wishlist",
+          "Feature"
+        ],
+        "state": "open",
+        "url": "https://github.com/pulp/pulpcore/issues/2000",
+        "query": "B1_docsaxis"
+      },
+      {
+        "repo": "PySimpleGUI/PySimpleGUI",
+        "number": 2000,
+        "title": "Bug or misunderstanding of examples in Cookbook Pattern 2B While True loop is being exited",
+        "comments": 1,
+        "labels": [
+          "documentation"
+        ],
+        "state": "open",
+        "url": "https://github.com/PySimpleGUI/PySimpleGUI/issues/2000",
+        "query": "B1_docsaxis"
+      }
+    ],
+    "B2_docsaxis_gfi": [
+      {
+        "repo": "MarSeventh/CloudFlare-ImgBed",
+        "number": 500,
+        "title": "\u3010\u516c\u544a\u3011\u53d1\u5e03 Issue \u524d\u987b\u77e5",
+        "comments": 0,
+        "labels": [
+          "documentation",
+          "good first issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/MarSeventh/CloudFlare-ImgBed/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "pangeo-data/pangeo-docker-images",
+        "number": 500,
+        "title": "DOCS: Add section how to install a few packages on top of notebook images",
+        "comments": 1,
+        "labels": [
+          "documentation",
+          "good first issue",
+          "help wanted"
+        ],
+        "state": "open",
+        "url": "https://github.com/pangeo-data/pangeo-docker-images/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "GoogleCloudPlatform/kubectl-ai",
+        "number": 500,
+        "title": "Docs: Add a guide for using kubectl-ai in a production environment",
+        "comments": 2,
+        "labels": [
+          "documentation",
+          "good first issue",
+          "help wanted"
+        ],
+        "state": "open",
+        "url": "https://github.com/GoogleCloudPlatform/kubectl-ai/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "Molara-Lab/Molara",
+        "number": 500,
+        "title": "Exemplary snapshots from Molara usage for the Readme file",
+        "comments": 0,
+        "labels": [
+          "documentation",
+          "good first issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/Molara-Lab/Molara/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "RealDevSquad/website-backend",
+        "number": 500,
+        "title": "Simplify the README",
+        "comments": 0,
+        "labels": [
+          "documentation",
+          "good first issue"
+        ],
+        "state": "open",
+        "url": "https://github.com/RealDevSquad/website-backend/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "aesara-devs/aesara",
+        "number": 500,
+        "title": "Behaviour of `scan` differs from documentation wrt variables with no taps",
+        "comments": 1,
+        "labels": [
+          "bug",
+          "documentation",
+          "enhancement",
+          "good first issue",
+          "help wanted",
+          "Scan"
+        ],
+        "state": "open",
+        "url": "https://github.com/aesara-devs/aesara/issues/500",
+        "query": "B2_docsaxis_gfi"
+      },
+      {
+        "repo": "biocore/empress",
+        "number": 500,
+        "title": "Add simple standalone example data",
+        "comments": 1,
+        "labels": [
+          "good first issue",
+          "documentation"
+        ],
+        "state": "open",
+        "url": "https://github.com/biocore/empress/issues/500",
+        "query": "B2_docsaxis_gfi"
+      }
+    ],
+    "B3_docs_pr": {
+      "error": "gh api search/issues?q=is%3Apr%20state%3Aopen%20label%3A%22documentation%22%20stars%3A%3E3000%20linked%3Anone%20updated%3A%3E2026-09-01&per_page=15&sort=updated&order=desc: gh: Validation Failed (HTTP"
+    }
+  }
+}

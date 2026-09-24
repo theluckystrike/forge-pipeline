@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locale Parity as a Service</title>
+<meta name="description" content="Missing translation keys filled and delivered as merge-ready pull requests. LLM translation, placeholder-exact, CI-validated, human spot check on 10% of strings.">
+<style>
+  :root {
+    --bg: #0b0e14;
+    --bg2: #12161f;
+    --text: #e6e9ef;
+    --muted: #8b93a7;
+    --accent: #4ade80;
+    --accent2: #60a5fa;
+    --border: #232a38;
+    --warn: #fbbf24;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 640px) { .wrap { padding: 0 24px; } }
+  header {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kicker {
+    text-transform: uppercase; letter-spacing: .12em; font-size: .78rem;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 18px; }
+  h1 .hl { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 1.15rem; max-width: 620px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.6rem; margin-bottom: 8px; }
+  h3.list-h { font-size: 1.05rem; margin: 28px 0 12px; color: var(--text); }
+  .sec-sub { color: var(--muted); margin-bottom: 28px; }
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .stat {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px; text-align: center;
+  }
+  .stat .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+  .pr-list { display: grid; gap: 10px; }
+  .pr {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .pr a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+  .pr a:hover { text-decoration: underline; }
+  .pr .tag { font-size: .8rem; color: var(--warn); }
+  .pr .tag.merged { color: var(--accent); }
+  .asof { color: var(--muted); font-size: .85rem; margin-top: 14px; }
+  .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .tier {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 26px; display: flex; flex-direction: column;
+  }
+  .tier.featured { border-color: var(--accent); }
+  .tier h3 { margin-bottom: 6px; }
+  .tier .price { font-size: 1.6rem; font-weight: 700; margin: 8px 0 14px; }
+  .tier .price span { font-size: .85rem; color: var(--muted); font-weight: 400; }
+  .tier ul { list-style: none; flex: 1; }
+  .tier li { padding: 5px 0 5px 18px; color: var(--text); position: relative; }
+  .tier li::before {
+    content: ""; position: absolute; left: 2px; top: 14px;
+    width: 8px; height: 8px; border-radius: 2px; background: var(--accent);
+  }
+  .cta {
+    display: inline-block; margin-top: 20px; padding: 14px 28px;
+    background: var(--accent); color: #06210f; font-weight: 700;
+    border-radius: 10px; text-decoration: none; text-align: center;
+  }
+  .cta:hover { background: #5bf28f; }
+  .alt { margin-top: 10px; font-size: .88rem; }
+  .alt a { color: var(--accent2); }
+  .process { display: grid; gap: 20px; }
+  .step { display: flex; gap: 16px; }
+  .step .n {
+    flex: 0 0 36px; height: 36px; border-radius: 50%;
+    background: var(--bg2); border: 1px solid var(--accent);
+    color: var(--accent); font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h4 { margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: .95rem; }
+  footer { padding: 40px 0 60px; text-align: center; color: var(--muted); font-size: .85rem; }
+  .muted { color: var(--muted); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">i18n contract work</div>
+    <h1>Locale parity, <span class="hl">as a service</span>.</h1>
+    <p class="sub">Missing translation keys filled and delivered as merge-ready
+      pull requests. Placeholder-exact and CI-validated, then kept green as new keys land.</p>
+  </header>
+
+  <section>
+    <h2>The problem</h2>
+    <p class="muted" style="max-width:640px">
+      Translation files drift. <code>en.json</code> grows, locale files fall behind, and
+      your users see raw keys or English fallbacks in their own language.
+      Most teams notice months later. I close the gap before it ships.
+    </p>
+  </section>
+
+  <section>
+    <h2>Track record</h2>
+    <p class="sec-sub">{{PROOF_SUB}}</p>
+    <div class="stats">
+{{STATS}}
+    </div>
+    <h3 class="list-h">Medusa admin dashboard locales</h3>
+    <div class="pr-list">
+{{MEDUSA_LIST}}
+    </div>
+    <h3 class="list-h">Other translation work</h3>
+    <div class="pr-list">
+{{OTHER_LIST}}
+    </div>
+    <p class="asof">PR states read from GitHub on {{ASOF}}. Key counts compare each
+      PR head against its base; every locale file in these PRs has 0 missing keys against
+      <code>en.json</code> at the PR head.</p>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="sec-sub">An automated pipeline with a human check on a sample.</p>
+    <div class="process">
+      <div class="step">
+        <div class="n">1</div>
+        <div><h4>Parity scan</h4><p>Every locale file is compared with <code>en.json</code> leaf key by leaf key, and every missing or placeholder-drifted string is flagged.</p></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div><h4>Translation and checks</h4><p>LLM translation, placeholder-exact, CI-validated, human spot check on 10% of strings.</p></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div><h4>Merge-ready PRs in under 48 hours</h4><p>Scoped pull requests that run against your CI. You review, you merge.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <p class="sec-sub">Fixed prices where the scope is fixed. Email me for anything else.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>One-off rescue</h3>
+        <div class="price">from $500</div>
+        <ul>
+          <li>Close the single worst drifting locale</li>
+          <li>Key-by-key audit report included</li>
+          <li>Merge-ready PR in under 48 hours</li>
+        </ul>
+        <a class="cta" href="mailto:mike@zovo.one?subject=One-off%20rescue">Get a quote</a>
+      </div>
+      <div class="tier featured">
+        <h3>Locale completion</h3>
+        <div class="price">$500<span> per locale</span></div>
+        <ul>
+          <li>One locale file brought to 100% key parity</li>
+          <li>Placeholder-exact, CI-validated</li>
+          <li>Human spot check on 10% of strings</li>
+        </ul>
+{{CTA_LOCALE}}
+      </div>
+      <div class="tier">
+        <h3>Retainer</h3>
+        <div class="price">$1,500<span> per month</span></div>
+        <ul>
+          <li>All locales kept at parity as new keys land</li>
+          <li>Continuous parity monitoring</li>
+          <li>Cancel any month</li>
+        </ul>
+{{CTA_RETAINER}}
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Locale parity as a service. LLM translation, placeholder-exact, CI-validated,
+    human spot check on 10% of strings.
+    <br><a class="muted" href="mailto:mike@zovo.one">mike@zovo.one</a>
+  </footer>
+</div>
+</body>
+</html>

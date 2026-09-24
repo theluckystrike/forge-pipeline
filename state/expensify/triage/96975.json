@@ -1,0 +1,9 @@
+{
+ "issue": 96975,
+ "kept": false,
+ "confidence": null,
+ "reason": "Already fixed: PR 97301 merged and deployed in 9.4.90-2, title says Due for payment 2026-09-28",
+ "one_line": null,
+ "differs": null,
+ "triaged_by": "lead"
+}

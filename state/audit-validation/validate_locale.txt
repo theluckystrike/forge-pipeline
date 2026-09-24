@@ -1,0 +1,53 @@
+
+== medusajs/medusa  stored en_file=packages/admin/dashboard/src/i18n/translations/en.json en_keys=2444  mine src=['packages/admin/dashboard/src/i18n/translations/en.json'] en_keys=2443
+locale   pass2 gap% mine --ref  diff pp |  default | seed cnt% mine cnt%   diff
+de             29.1       29.0     -0.1 |     28.8 |      26.3      26.3    0.0
+es             12.9       12.9      0.0 |     12.6 |         -      11.1      -
+fr             32.2       32.2      0.0 |     32.1 |         -      26.2      -
+it             27.6       27.5     -0.1 |     27.3 |      25.5      25.5    0.0
+ja              6.2        6.2      0.0 |      6.0 |         -       4.7      -
+ko             21.6       21.6      0.0 |     21.5 |         -      20.6      -
+mk                -       24.2        - |     24.0 |      23.0      23.0    0.0
+
+== strapi/strapi  stored en_file=packages/core/admin/admin/src/translations/en.json en_keys=923  mine src=['packages/core/admin/admin/src/translations/en.json'] en_keys=930
+locale   pass2 gap% mine --ref  diff pp |  default | seed cnt% mine cnt%   diff
+de             14.1       14.7      0.6 |     14.0 |         -       8.7      -
+es             24.9       25.5      0.6 |     24.7 |         -      13.2      -
+fr             33.7       34.2      0.5 |     33.7 |         -      24.8      -
+it             27.3       27.8      0.5 |     27.0 |         -       5.4      -
+ja              5.7        6.5      0.8 |      5.5 |         -       4.2      -
+ko              5.9        6.6      0.7 |      6.0 |         -       4.2      -
+pt             82.3       82.5      0.2 |     82.0 |         -      79.9      -
+pt-BR          46.0       46.5      0.5 |     46.0 |         -      41.6      -
+zh             42.5       42.9      0.4 |     42.5 |         -      39.5      -
+zh-Hans        32.3       32.8      0.5 |     32.2 |         -      29.6      -
+
+== baptisteArno/typebot.io  stored en_file=apps/builder/src/i18n/en.json en_keys=625  mine src=['apps/builder/src/i18n/en.json'] en_keys=625
+locale   pass2 gap% mine --ref  diff pp |  default | seed cnt% mine cnt%   diff
+de             66.4       66.4      0.0 |     66.2 |      61.6      61.6    0.0
+es             64.2       64.2      0.0 |     64.0 |      60.8      60.8    0.0
+fr             23.0       23.0      0.0 |     22.7 |         -      15.7      -
+it             31.4       31.4      0.0 |     30.9 |         -      25.4      -
+pt             52.6       52.6      0.0 |     52.5 |         -      48.6      -
+pt-BR          21.1       21.1      0.0 |     21.0 |         -      15.4      -
+ro                -       63.8        - |     63.7 |      60.8      60.8    0.0
+
+== Infisical/infisical  stored en_file=frontend/public/locales/en/translations.json en_keys=268  mine src=['frontend/public/locales/en/translations.json'] en_keys=268
+locale   pass2 gap% mine --ref  diff pp |  default | seed cnt% mine cnt%   diff
+es             10.1       10.1      0.0 |     10.1 |         -       6.0      -
+fr             14.2       14.2      0.0 |     14.2 |      11.2      11.2    0.0
+ko             31.7       31.7      0.0 |     31.7 |      23.9      23.9    0.0
+pt-BR          15.7       15.7      0.0 |     15.7 |      13.4      13.4    0.0
+
+== hoppscotch/hoppscotch  stored en_file=packages/hoppscotch-common/locales/en.json en_keys=2140  mine src=['packages/hoppscotch-common/locales/en.json'] en_keys=2140
+locale   pass2 gap% mine --ref  diff pp |  default | seed cnt% mine cnt%   diff
+de             56.0       56.0      0.0 |     56.0 |         -      51.0      -
+es             10.9       10.9      0.0 |     10.7 |         -       5.0      -
+fr             26.7       26.7      0.0 |     26.7 |         -      21.8      -
+it             79.3       79.3      0.0 |     79.2 |      55.9      55.9    0.0
+ja             73.0       73.0      0.0 |     73.0 |         -      55.9      -
+ko             76.1       76.1      0.0 |     76.1 |         -      55.9      -
+pt             80.3       80.3      0.0 |     80.3 |         -      55.9      -
+pt-br          52.8       52.8      0.0 |     52.8 |         -      48.6      -
+ru                -       60.9        - |     60.9 |      56.6      56.6    0.0
+vi                -       72.3        - |     72.3 |      55.9      55.9    0.0

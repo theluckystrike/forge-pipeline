@@ -1,0 +1,2608 @@
+{
+ "100728": {
+  "url": "https://github.com/Expensify/App/issues/100728",
+  "title": "Approver row is hidden on the workspace invite confirmation page for Dynamic External Workflow policies",
+  "days_open": 14,
+  "created": "2026-09-09",
+  "help_wanted_since": "2026-09-09",
+  "bounty_usd": null,
+  "competing_proposal_authors": 24,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "samranahm",
+   "ahmdshrif",
+   "abbasifaizan70",
+   "neerajbachani",
+   "wildan-m",
+   "dilshodmackbook-sketch",
+   "mukhrr",
+   "trasnake87",
+   "MelvinBot",
+   "nabi-ebrahimi",
+   "yusufdeveloper2903",
+   "amar-sheikh",
+   "PiyushChandra17",
+   "AlexMartin503",
+   "Abdukhamid000",
+   "Abdulloh0109",
+   "shivaansh74",
+   "annaweber830",
+   "KinshukAgarwal",
+   "bdtr065",
+   "princessdev01",
+   "dyk1454683243-sudo",
+   "gcoinstash-cmd",
+   "Shark1n4Suit"
+  ],
+  "proposals": [
+   {
+    "author": "samranahm",
+    "at": "2026-09-09T17:36",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606123579"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-09T17:36",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606133356"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-09T17:36",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606134466"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-09-09T17:37",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606141536"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-09T17:37",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606141938"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-09T17:40",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606178554"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-09T17:40",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606180348"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-09T17:40",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606181343"
+   },
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-09T17:43",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606222846"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-09T17:45",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606242526"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-09T18:01",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5606443516"
+   },
+   {
+    "author": "amar-sheikh",
+    "at": "2026-09-09T18:51",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5607064373"
+   },
+   {
+    "author": "PiyushChandra17",
+    "at": "2026-09-09T20:26",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5608246753"
+   },
+   {
+    "author": "AlexMartin503",
+    "at": "2026-09-10T02:41",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5611844769"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-10T04:03",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5612798392"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-10T10:45",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5617393469"
+   },
+   {
+    "author": "shivaansh74",
+    "at": "2026-09-10T22:03",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5626039468"
+   },
+   {
+    "author": "shivaansh74",
+    "at": "2026-09-10T22:13",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5626140496"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-09-11T05:20",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5629872211"
+   },
+   {
+    "author": "KinshukAgarwal",
+    "at": "2026-09-12T07:34",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5644494379"
+   },
+   {
+    "author": "bdtr065",
+    "at": "2026-09-12T10:23",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5645304123"
+   },
+   {
+    "author": "princessdev01",
+    "at": "2026-09-15T10:22",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5678576326"
+   },
+   {
+    "author": "dyk1454683243-sudo",
+    "at": "2026-09-17T05:43",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5709477213"
+   },
+   {
+    "author": "gcoinstash-cmd",
+    "at": "2026-09-19T09:01",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5740638527"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:45",
+    "url": "https://github.com/Expensify/App/issues/100728#issuecomment-5796967665"
+   }
+  ],
+  "comments": 68
+ },
+ "75905": {
+  "url": "https://github.com/Expensify/App/issues/75905",
+  "title": "[$250] Gesture - Safari on iPhone flickers previous screen on swipe-back gesture",
+  "days_open": 303,
+  "created": "2025-11-24",
+  "help_wanted_since": "2026-02-24",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 9,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "LorenzoBloedow",
+   "nabi-ebrahimi",
+   "mkhutornyi",
+   "apeyada",
+   "MelvinBot",
+   "wildan-m",
+   "annaweber830",
+   "mukhrr",
+   "samranahm"
+  ],
+  "proposals": [
+   {
+    "author": "LorenzoBloedow",
+    "at": "2025-11-25T12:01",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-3575310622"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-04-19T08:05",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4275477707"
+   },
+   {
+    "author": "mkhutornyi",
+    "at": "2026-05-20T17:00",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4500701279"
+   },
+   {
+    "author": "apeyada",
+    "at": "2026-05-25T05:41",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4531848661"
+   },
+   {
+    "author": "MelvinBot",
+    "at": "2026-05-25T11:01",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4533735858"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-06-04T17:37",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4624668705"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-07-12T11:32",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-4951015481"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-08-17T16:42",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-5317815395"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-22T01:41",
+    "url": "https://github.com/Expensify/App/issues/75905#issuecomment-5770033845"
+   }
+  ],
+  "comments": 127
+ },
+ "98319": {
+  "url": "https://github.com/Expensify/App/issues/98319",
+  "title": "Onboarding: make the \"Back\" caret header consistent (sticky) and a reusable component",
+  "days_open": 43,
+  "created": "2026-08-11",
+  "help_wanted_since": "2026-09-14",
+  "bounty_usd": null,
+  "competing_proposal_authors": 10,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "wildan-m",
+   "yusufdeveloper2903",
+   "dilshodmackbook-sketch",
+   "imgyf",
+   "Abdulloh0109",
+   "emkhalid",
+   "neerajbachani",
+   "mukhrr",
+   "nabi-ebrahimi",
+   "oqildev"
+  ],
+  "proposals": [
+   {
+    "author": "wildan-m",
+    "at": "2026-09-14T16:39",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5667383383"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-14T16:48",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5667504704"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-14T16:49",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5667507383"
+   },
+   {
+    "author": "imgyf",
+    "at": "2026-09-14T16:51",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5667538667"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-14T18:14",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5668559150"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-09-14T18:37",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5668849285"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-09-14T20:57",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5670706698"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-15T02:02",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5673540181"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-15T06:17",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5675666063"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-15T06:25",
+    "url": "https://github.com/Expensify/App/issues/98319#issuecomment-5675750512"
+   }
+  ],
+  "comments": 52
+ },
+ "70080": {
+  "url": "https://github.com/Expensify/App/issues/70080",
+  "title": "[$250] Reports - Back button on report view returns to different scroll position",
+  "days_open": 380,
+  "created": "2025-09-08",
+  "help_wanted_since": "2025-09-08",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 9,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "huult",
+   "wildan-m",
+   "x-dev90",
+   "mukhrr",
+   "8hatay9-commits",
+   "Fhatu12",
+   "Antonio60claude",
+   "realuca660-pixel",
+   "franklincg"
+  ],
+  "proposals": [
+   {
+    "author": "huult",
+    "at": "2025-09-10T08:52",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-3273973595"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-06-04T17:48",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-4624740432"
+   },
+   {
+    "author": "x-dev90",
+    "at": "2026-06-23T14:57",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-4780509608"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-08-17T10:53",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5315103037"
+   },
+   {
+    "author": "8hatay9-commits",
+    "at": "2026-08-21T21:17",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5375512304"
+   },
+   {
+    "author": "Fhatu12",
+    "at": "2026-09-04T15:29",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5542757965"
+   },
+   {
+    "author": "Antonio60claude",
+    "at": "2026-09-07T20:57",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5575571351"
+   },
+   {
+    "author": "realuca660-pixel",
+    "at": "2026-09-08T21:02",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5591817039"
+   },
+   {
+    "author": "franklincg",
+    "at": "2026-09-10T22:26",
+    "url": "https://github.com/Expensify/App/issues/70080#issuecomment-5626270639"
+   }
+  ],
+  "comments": 153
+ },
+ "99763": {
+  "url": "https://github.com/Expensify/App/issues/99763",
+  "title": "The Receipt Partners invite page bottom padding is too large",
+  "days_open": 26,
+  "created": "2026-08-28",
+  "help_wanted_since": "2026-09-07",
+  "bounty_usd": null,
+  "competing_proposal_authors": 11,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "yusufdeveloper2903",
+   "Abdulloh0109",
+   "oqildev",
+   "wildan-m",
+   "Javokhiir",
+   "nabi-ebrahimi",
+   "dilshodmackbook-sketch",
+   "Shivam1817",
+   "princessdev01",
+   "mukhrr"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-28T14:32",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5453803127"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-02T15:03",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5511680965"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-07T14:20",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5571992046"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-07T14:20",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5571992053"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-07T14:20",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5571992061"
+   },
+   {
+    "author": "Javokhiir",
+    "at": "2026-09-07T14:20",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5571992069"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-07T14:26",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5572058528"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-07T14:27",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5572069574"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-07T14:34",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5572166244"
+   },
+   {
+    "author": "Shivam1817",
+    "at": "2026-09-08T22:18",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5592628319"
+   },
+   {
+    "author": "princessdev01",
+    "at": "2026-09-11T14:33",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5636035071"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-14T14:28",
+    "url": "https://github.com/Expensify/App/issues/99763#issuecomment-5665587367"
+   }
+  ],
+  "comments": 37
+ },
+ "95445": {
+  "url": "https://github.com/Expensify/App/issues/95445",
+  "title": "[HOLD for #92834] [$250] Public Room - Public room does not display open after loging in as existing account",
+  "days_open": 79,
+  "created": "2026-07-06",
+  "help_wanted_since": "2026-07-06",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 11,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "ahmdshrif",
+   "shivang-goliyan",
+   "lorretheboy",
+   "samranahm",
+   "alazarlemma02",
+   "KJ21-ENG",
+   "abbasifaizan70",
+   "wildan-m",
+   "peri-Bot",
+   "annaweber830"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-06T21:35",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897823124"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-07-06T21:35",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897823570"
+   },
+   {
+    "author": "shivang-goliyan",
+    "at": "2026-07-06T21:35",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897823586"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-07-06T21:35",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897823593"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-07-06T21:35",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897823648"
+   },
+   {
+    "author": "alazarlemma02",
+    "at": "2026-07-06T21:36",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897830459"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-07-06T21:36",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897833066"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-07-06T21:44",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897887582"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-07-06T21:48",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4897919494"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-06T22:11",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4898070073"
+   },
+   {
+    "author": "peri-Bot",
+    "at": "2026-07-06T22:49",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4898310038"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-07-07T03:21",
+    "url": "https://github.com/Expensify/App/issues/95445#issuecomment-4899798378"
+   }
+  ],
+  "comments": 44
+ },
+ "96140": {
+  "url": "https://github.com/Expensify/App/issues/96140",
+  "title": "[$250] Remove `Onyx.connect()` for the key: `ONYXKEYS.SESSION` in `src/libs/actions/ClearReportActionErrors.ts`",
+  "days_open": 71,
+  "created": "2026-07-14",
+  "help_wanted_since": "2026-07-14",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 10,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "yusufdeveloper2903",
+   "lorretheboy",
+   "wildan-m",
+   "abbasifaizan70",
+   "dilshodmackbook-sketch",
+   "ZacLou",
+   "yuvrajangadsingh",
+   "hamzasaleem22",
+   "naro8259"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-14T22:03",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-4974409528"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-07-14T22:03",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-4974409945"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-07-14T22:03",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-4974410011"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-14T22:03",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-4974411355"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-07-14T22:04",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-4974418683"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-08-31T17:51",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5482273210"
+   },
+   {
+    "author": "ZacLou",
+    "at": "2026-09-03T11:28",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5525010429"
+   },
+   {
+    "author": "ZacLou",
+    "at": "2026-09-03T11:37",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5525118062"
+   },
+   {
+    "author": "yuvrajangadsingh",
+    "at": "2026-09-04T15:34",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5542828784"
+   },
+   {
+    "author": "hamzasaleem22",
+    "at": "2026-09-19T22:48",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5745903855"
+   },
+   {
+    "author": "naro8259",
+    "at": "2026-09-23T21:37",
+    "url": "https://github.com/Expensify/App/issues/96140#issuecomment-5803361123"
+   }
+  ],
+  "comments": 66
+ },
+ "99850": {
+  "url": "https://github.com/Expensify/App/issues/99850",
+  "title": "[Sentry: APP-JB3] HybridApp iOS AVCaptureSession stopRunning crash still active after #97103",
+  "days_open": 24,
+  "created": "2026-08-30",
+  "help_wanted_since": "2026-09-17",
+  "bounty_usd": null,
+  "competing_proposal_authors": 9,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "abbasifaizan70",
+   "oqildev",
+   "mukhrr",
+   "Abdukhamid000",
+   "yusufdeveloper2903",
+   "nabi-ebrahimi",
+   "princessdev01",
+   "Abdulloh0109",
+   "imgyf"
+  ],
+  "proposals": [
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-10T11:52",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618246827"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-10T11:52",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618246939"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-10T11:53",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618248201"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-10T12:00",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618341317"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-10T12:05",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618397378"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-10T12:06",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5618405622"
+   },
+   {
+    "author": "princessdev01",
+    "at": "2026-09-10T13:00",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5619076918"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-11T06:44",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5630574547"
+   },
+   {
+    "author": "imgyf",
+    "at": "2026-09-13T16:53",
+    "url": "https://github.com/Expensify/App/issues/99850#issuecomment-5654666894"
+   }
+  ],
+  "comments": 30
+ },
+ "97049": {
+  "url": "https://github.com/Expensify/App/issues/97049",
+  "title": "Concierge stops responding when a new message is sent while a follow-up response is still generating",
+  "days_open": 59,
+  "created": "2026-07-26",
+  "help_wanted_since": "2026-08-23",
+  "bounty_usd": null,
+  "competing_proposal_authors": 11,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "Abdulloh0109",
+   "oqildev",
+   "mukhrr",
+   "yusufdeveloper2903",
+   "ahmdshrif",
+   "KJ21-ENG",
+   "abbasifaizan70",
+   "annaweber830",
+   "amar-sheikh",
+   "emkhalid",
+   "nabi-ebrahimi"
+  ],
+  "proposals": [
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387636993"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387636998"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387637007"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387637037"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387637044"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-08-23T18:08",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387637291"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-08-23T18:16",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387676567"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-08-23T18:24",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5387715361"
+   },
+   {
+    "author": "amar-sheikh",
+    "at": "2026-08-25T07:47",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5407175275"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-08-26T06:30",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5421499508"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-08-28T07:04",
+    "url": "https://github.com/Expensify/App/issues/97049#issuecomment-5449503847"
+   }
+  ],
+  "comments": 69
+ },
+ "99450": {
+  "url": "https://github.com/Expensify/App/issues/99450",
+  "title": "Search - Last created expense appears in search results",
+  "days_open": 29,
+  "created": "2026-08-25",
+  "help_wanted_since": "2026-09-02",
+  "bounty_usd": null,
+  "competing_proposal_authors": 15,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "Javokhiir",
+   "annaweber830",
+   "abbasifaizan70",
+   "mukhrr",
+   "oqildev",
+   "Abdulloh0109",
+   "wildan-m",
+   "dilshodmackbook-sketch",
+   "samranahm",
+   "yusufdeveloper2903",
+   "nabi-ebrahimi",
+   "Abdukhamid000",
+   "trasnake87",
+   "realuca660-pixel"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-25T17:06",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5413936161"
+   },
+   {
+    "author": "Javokhiir",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756832"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756868"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756876"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756927"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756967"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508756993"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508757015"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-02T11:23",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508757025"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-02T11:25",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508778680"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-02T11:31",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508842963"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-02T11:41",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5508953703"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-02T11:47",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5509029428"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-04T06:19",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5536548352"
+   },
+   {
+    "author": "realuca660-pixel",
+    "at": "2026-09-08T21:03",
+    "url": "https://github.com/Expensify/App/issues/99450#issuecomment-5591837512"
+   }
+  ],
+  "comments": 50
+ },
+ "99755": {
+  "url": "https://github.com/Expensify/App/issues/99755",
+  "title": "BA - Industry classification code is not saved when user updates details of BA connection",
+  "days_open": 26,
+  "created": "2026-08-28",
+  "help_wanted_since": "2026-09-04",
+  "bounty_usd": null,
+  "competing_proposal_authors": 16,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "M00rish",
+   "Javokhiir",
+   "mukhrr",
+   "abbasifaizan70",
+   "wildan-m",
+   "Abdulloh0109",
+   "oqildev",
+   "dilshodmackbook-sketch",
+   "phuchoang23",
+   "samranahm",
+   "trasnake87",
+   "yusufdeveloper2903",
+   "Abdukhamid000",
+   "FitseTLT",
+   "abdullahitijani",
+   "realuca660-pixel"
+  ],
+  "proposals": [
+   {
+    "author": "M00rish",
+    "at": "2026-09-02T18:13",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5514220381"
+   },
+   {
+    "author": "Javokhiir",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541888947"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541888986"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541888990"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541889020"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541889051"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541889088"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-04T14:27",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541889133"
+   },
+   {
+    "author": "phuchoang23",
+    "at": "2026-09-04T14:28",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541895842"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-04T14:29",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541919046"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-04T14:33",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5541971210"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-04T14:38",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5542045655"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-04T15:06",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5542431113"
+   },
+   {
+    "author": "FitseTLT",
+    "at": "2026-09-04T23:50",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5547769090"
+   },
+   {
+    "author": "abdullahitijani",
+    "at": "2026-09-06T22:10",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5562529967"
+   },
+   {
+    "author": "realuca660-pixel",
+    "at": "2026-09-08T20:54",
+    "url": "https://github.com/Expensify/App/issues/99755#issuecomment-5591728822"
+   }
+  ],
+  "comments": 41
+ },
+ "91148": {
+  "url": "https://github.com/Expensify/App/issues/91148",
+  "title": "[$250] Contact Method- User is logged out after deleting secondary contact method",
+  "days_open": 126,
+  "created": "2026-05-20",
+  "help_wanted_since": "2026-05-20",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 8,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "MobileMage",
+   "yuvrajangadsingh",
+   "yusufdeveloper2903",
+   "oqildev",
+   "Abdulloh0109",
+   "woahwhattheheck",
+   "india123445t-pixel"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-05-20T03:34",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4494252212"
+   },
+   {
+    "author": "MobileMage",
+    "at": "2026-05-20T03:34",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4494253053"
+   },
+   {
+    "author": "yuvrajangadsingh",
+    "at": "2026-05-20T04:54",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4494641881"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-05-20T05:16",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4494743405"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-05-20T06:10",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4495076591"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-05-20T06:17",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-4495152720"
+   },
+   {
+    "author": "woahwhattheheck",
+    "at": "2026-09-07T00:06",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-5563229240"
+   },
+   {
+    "author": "india123445t-pixel",
+    "at": "2026-09-19T14:28",
+    "url": "https://github.com/Expensify/App/issues/91148#issuecomment-5742656852"
+   }
+  ],
+  "comments": 56
+ },
+ "96419": {
+  "url": "https://github.com/Expensify/App/issues/96419",
+  "title": "[$250] Saved search-Total spend is not shown right after saving the search results",
+  "days_open": 68,
+  "created": "2026-07-17",
+  "help_wanted_since": "2026-07-17",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 19,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "nabi-ebrahimi",
+   "MobileMage",
+   "ahmdshrif",
+   "samranahm",
+   "aswin-s",
+   "wildan-m",
+   "abbasifaizan70",
+   "KJ21-ENG",
+   "dilshodmackbook-sketch",
+   "lorretheboy",
+   "ahmad786mehar786-arch",
+   "mukhrr",
+   "annaweber830",
+   "emkhalid",
+   "yusufdeveloper2903",
+   "dyk1454683243-sudo",
+   "Shark1n4Suit",
+   "Mister124x"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-17T18:04",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006074851"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-07-17T18:05",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006075887"
+   },
+   {
+    "author": "MobileMage",
+    "at": "2026-07-17T18:05",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006075917"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-07-17T18:05",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006076009"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-07-17T18:05",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006076993"
+   },
+   {
+    "author": "aswin-s",
+    "at": "2026-07-17T18:06",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006086568"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-17T18:08",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006106610"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-07-17T18:09",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006110992"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-07-17T18:12",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006154204"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-07-17T18:14",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006170286"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-07-17T18:16",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006192256"
+   },
+   {
+    "author": "ahmad786mehar786-arch",
+    "at": "2026-07-17T18:26",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006303599"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-07-17T19:36",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5006842454"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-07-17T20:43",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5007311884"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-07-17T21:08",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5007491371"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-07-18T08:17",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5010555344"
+   },
+   {
+    "author": "dyk1454683243-sudo",
+    "at": "2026-09-21T15:03",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5762666628"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:45",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5796971245"
+   },
+   {
+    "author": "Mister124x",
+    "at": "2026-09-24T00:38",
+    "url": "https://github.com/Expensify/App/issues/96419#issuecomment-5805336692"
+   }
+  ],
+  "comments": 95
+ },
+ "100959": {
+  "url": "https://github.com/Expensify/App/issues/100959",
+  "title": "Wrong sorting on pinned elements in LHN when locale-specific letter is used",
+  "days_open": 12,
+  "created": "2026-09-11",
+  "help_wanted_since": "2026-09-22",
+  "bounty_usd": null,
+  "competing_proposal_authors": 15,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "wildan-m",
+   "dilshodmackbook-sketch",
+   "ahmdshrif",
+   "trasnake87",
+   "abbasifaizan70",
+   "samranahm",
+   "mukhrr",
+   "nabi-ebrahimi",
+   "preston-56",
+   "yusufdeveloper2903",
+   "sangnv00452",
+   "Abdulloh0109",
+   "KJ21-ENG",
+   "x-dev90",
+   "Shark1n4Suit"
+  ],
+  "proposals": [
+   {
+    "author": "wildan-m",
+    "at": "2026-09-22T17:19",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780854133"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-22T17:19",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780854259"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-22T17:19",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780860105"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-22T17:23",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780908946"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-22T17:23",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780915141"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-22T17:23",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780919154"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-22T17:24",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780931062"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-22T17:26",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5780956348"
+   },
+   {
+    "author": "preston-56",
+    "at": "2026-09-22T17:31",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5781024091"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-22T17:31",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5781032955"
+   },
+   {
+    "author": "sangnv00452",
+    "at": "2026-09-22T17:36",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5781098363"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-22T17:41",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5781165022"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-09-22T19:47",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5782943858"
+   },
+   {
+    "author": "x-dev90",
+    "at": "2026-09-23T07:55",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5791177145"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:44",
+    "url": "https://github.com/Expensify/App/issues/100959#issuecomment-5796951939"
+   }
+  ],
+  "comments": 28
+ },
+ "91935": {
+  "url": "https://github.com/Expensify/App/issues/91935",
+  "title": "[$250] Spend - Default sort is descending",
+  "days_open": 118,
+  "created": "2026-05-28",
+  "help_wanted_since": "2026-05-28",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 18,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "yusufdeveloper2903",
+   "MobileMage",
+   "trasnake87",
+   "dilshodmackbook-sketch",
+   "oqildev",
+   "Abdulloh0109",
+   "neerajbachani",
+   "emkhalid",
+   "annaweber830",
+   "lorretheboy",
+   "RichForget",
+   "woahwhattheheck",
+   "realuca660-pixel",
+   "thekekk",
+   "saumyagupta12",
+   "dyk1454683243-sudo",
+   "masaki12214"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-05-28T08:48",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562280411"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-05-28T08:49",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562281406"
+   },
+   {
+    "author": "MobileMage",
+    "at": "2026-05-28T08:49",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562281442"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-05-28T08:57",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562337488"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-05-28T08:57",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562340254"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-05-28T09:08",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562425096"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-05-28T09:09",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562432534"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-05-28T09:09",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562434033"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-05-28T09:51",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4562787492"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-05-29T00:18",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-4569368741"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-07-23T15:02",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5059990209"
+   },
+   {
+    "author": "RichForget",
+    "at": "2026-09-02T13:42",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5510490955"
+   },
+   {
+    "author": "woahwhattheheck",
+    "at": "2026-09-07T01:31",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5563758078"
+   },
+   {
+    "author": "realuca660-pixel",
+    "at": "2026-09-08T19:24",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5590602821"
+   },
+   {
+    "author": "thekekk",
+    "at": "2026-09-12T09:18",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5644969114"
+   },
+   {
+    "author": "saumyagupta12",
+    "at": "2026-09-13T08:21",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5652184449"
+   },
+   {
+    "author": "dyk1454683243-sudo",
+    "at": "2026-09-14T04:08",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5658870465"
+   },
+   {
+    "author": "woahwhattheheck",
+    "at": "2026-09-20T23:11",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5753370713"
+   },
+   {
+    "author": "masaki12214",
+    "at": "2026-09-21T17:13",
+    "url": "https://github.com/Expensify/App/issues/91935#issuecomment-5764512454"
+   }
+  ],
+  "comments": 120
+ },
+ "98364": {
+  "url": "https://github.com/Expensify/App/issues/98364",
+  "title": "Report - Map disappears everytime user goes offline after changing expense rate.",
+  "days_open": 43,
+  "created": "2026-08-11",
+  "help_wanted_since": "2026-08-31",
+  "bounty_usd": null,
+  "competing_proposal_authors": 10,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "wildan-m",
+   "abbasifaizan70",
+   "samarroy84",
+   "annaweber830",
+   "yusufdeveloper2903",
+   "lorretheboy",
+   "Abdukhamid000",
+   "emkhalid",
+   "FitseTLT"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-12T18:31",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5271078061"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-08-31T19:46",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483610486"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-08-31T19:50",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483662861"
+   },
+   {
+    "author": "samarroy84",
+    "at": "2026-08-31T19:52",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483687280"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-08-31T20:00",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483783214"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-08-31T20:01",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483802676"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-08-31T20:12",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5483936310"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-08-31T23:38",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5486297286"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-09-02T20:13",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5515761925"
+   },
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-03T20:53",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5531995092"
+   },
+   {
+    "author": "FitseTLT",
+    "at": "2026-09-04T14:16",
+    "url": "https://github.com/Expensify/App/issues/98364#issuecomment-5541727196"
+   }
+  ],
+  "comments": 59
+ },
+ "91581": {
+  "url": "https://github.com/Expensify/App/issues/91581",
+  "title": "[$250] [Exploratory]  - PR88287 - iOS - User was automatically logged out after pasting the verification code",
+  "days_open": 121,
+  "created": "2026-05-25",
+  "help_wanted_since": "2026-07-17",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 8,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "wildan-m",
+   "yusufdeveloper2903",
+   "jonathan-schack94",
+   "oqildev",
+   "lorretheboy",
+   "yuvrajangadsingh",
+   "trasnake87"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-17T00:17",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-4997705297"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-17T00:17",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-4997706414"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-07-17T00:29",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-4997781984"
+   },
+   {
+    "author": "jonathan-schack94",
+    "at": "2026-07-17T01:02",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-4997971360"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-07-17T06:30",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-4999705943"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-07-18T01:57",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-5009321708"
+   },
+   {
+    "author": "yuvrajangadsingh",
+    "at": "2026-09-04T17:21",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-5544092766"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-14T18:21",
+    "url": "https://github.com/Expensify/App/issues/91581#issuecomment-5668644171"
+   }
+  ],
+  "comments": 67
+ },
+ "101453": {
+  "url": "https://github.com/Expensify/App/issues/101453",
+  "title": "Auto  -Spend - \"Next\" arrow is disabled when user reaches 50 of 50 report",
+  "days_open": 6,
+  "created": "2026-09-17",
+  "help_wanted_since": "2026-09-22",
+  "bounty_usd": null,
+  "competing_proposal_authors": 16,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "Abdulloh0109",
+   "x-dev90",
+   "mukhrr",
+   "abbasifaizan70",
+   "dilshodmackbook-sketch",
+   "wildan-m",
+   "ahmdshrif",
+   "samranahm",
+   "trasnake87",
+   "yusufdeveloper2903",
+   "sangnv00452",
+   "preston-56",
+   "KJ21-ENG",
+   "nabi-ebrahimi",
+   "Shark1n4Suit"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-17T17:40",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5718730485"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474695"
+   },
+   {
+    "author": "x-dev90",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474713"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474755"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474812"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474875"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775474877"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-22T11:16",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775477029"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-22T11:20",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775522106"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-22T11:23",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775560805"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-22T11:30",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775654830"
+   },
+   {
+    "author": "sangnv00452",
+    "at": "2026-09-22T11:40",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775792226"
+   },
+   {
+    "author": "preston-56",
+    "at": "2026-09-22T11:41",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775798166"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-09-22T11:47",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5775887006"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-23T05:50",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5789780877"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:44",
+    "url": "https://github.com/Expensify/App/issues/101453#issuecomment-5796945266"
+   }
+  ],
+  "comments": 27
+ },
+ "96139": {
+  "url": "https://github.com/Expensify/App/issues/96139",
+  "title": "[$250] Remove `Onyx.connect()` for the key: `ONYXKEYS.SESSION` in `src/libs/actions/ClearReportActionErrors.ts`",
+  "days_open": 71,
+  "created": "2026-07-14",
+  "help_wanted_since": "2026-07-14",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 10,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "KJ21-ENG",
+   "yusufdeveloper2903",
+   "wildan-m",
+   "abbasifaizan70",
+   "Harxhit",
+   "skrohan5016-coder",
+   "ZacLou",
+   "Xinblack",
+   "naro8259"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-14T21:58",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4974380825"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-07-14T21:59",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4974381966"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-07-14T21:59",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4974384267"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-14T22:02",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4974402889"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-07-14T22:02",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4974403419"
+   },
+   {
+    "author": "Harxhit",
+    "at": "2026-07-15T05:57",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-4977376607"
+   },
+   {
+    "author": "skrohan5016-coder",
+    "at": "2026-08-13T06:22",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-5276726229"
+   },
+   {
+    "author": "ZacLou",
+    "at": "2026-09-03T11:27",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-5525006273"
+   },
+   {
+    "author": "ZacLou",
+    "at": "2026-09-03T11:37",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-5525118086"
+   },
+   {
+    "author": "Xinblack",
+    "at": "2026-09-08T16:49",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-5588718344"
+   },
+   {
+    "author": "naro8259",
+    "at": "2026-09-23T21:37",
+    "url": "https://github.com/Expensify/App/issues/96139#issuecomment-5803375371"
+   }
+  ],
+  "comments": 76
+ },
+ "93198": {
+  "url": "https://github.com/Expensify/App/issues/93198",
+  "title": "[$250] Show balance info for third-party company card programs",
+  "days_open": 105,
+  "created": "2026-06-10",
+  "help_wanted_since": "2026-06-23",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 4,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "yusufdeveloper2903",
+   "neerajbachani",
+   "bilalup",
+   "imgyf"
+  ],
+  "proposals": [
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-06-23T18:23",
+    "url": "https://github.com/Expensify/App/issues/93198#issuecomment-4782211315"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-06-23T18:30",
+    "url": "https://github.com/Expensify/App/issues/93198#issuecomment-4782266344"
+   },
+   {
+    "author": "bilalup",
+    "at": "2026-06-23T23:14",
+    "url": "https://github.com/Expensify/App/issues/93198#issuecomment-4784299614"
+   },
+   {
+    "author": "imgyf",
+    "at": "2026-09-09T04:28",
+    "url": "https://github.com/Expensify/App/issues/93198#issuecomment-5595795777"
+   }
+  ],
+  "comments": 44
+ },
+ "93659": {
+  "url": "https://github.com/Expensify/App/issues/93659",
+  "title": "[$250] Pay report dead-ends with generic error when cached report total is stale (\"amount changed\")",
+  "days_open": 99,
+  "created": "2026-06-16",
+  "help_wanted_since": "2026-06-16",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 14,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "ahmdshrif",
+   "lorretheboy",
+   "dilshodmackbook-sketch",
+   "x-dev90",
+   "KJ21-ENG",
+   "oqildev",
+   "yusufdeveloper2903",
+   "emkhalid",
+   "bilalup",
+   "naufalfx805-source",
+   "fantasytrap",
+   "woahwhattheheck",
+   "Shark1n4Suit"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-06-16T05:45",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715372728"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-06-16T05:45",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715373534"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-06-16T05:45",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715373604"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-06-16T05:45",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715373705"
+   },
+   {
+    "author": "x-dev90",
+    "at": "2026-06-16T05:45",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715373864"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-06-16T05:53",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715420487"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-06-16T05:59",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715455088"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-06-16T06:56",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4715808089"
+   },
+   {
+    "author": "emkhalid",
+    "at": "2026-06-16T10:41",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4717821865"
+   },
+   {
+    "author": "bilalup",
+    "at": "2026-06-21T22:38",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-4763504323"
+   },
+   {
+    "author": "naufalfx805-source",
+    "at": "2026-09-15T19:30",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-5686910621"
+   },
+   {
+    "author": "fantasytrap",
+    "at": "2026-09-18T06:56",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-5726370170"
+   },
+   {
+    "author": "woahwhattheheck",
+    "at": "2026-09-20T22:48",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-5753239350"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:29",
+    "url": "https://github.com/Expensify/App/issues/93659#issuecomment-5796699178"
+   }
+  ],
+  "comments": 118
+ },
+ "101700": {
+  "url": "https://github.com/Expensify/App/issues/101700",
+  "title": "[$175] Spend-\"Missing merchant\" error shown on scan expenses",
+  "days_open": 2,
+  "created": "2026-09-21",
+  "help_wanted_since": "2026-09-21",
+  "bounty_usd": 175,
+  "competing_proposal_authors": 16,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "abbasifaizan70",
+   "wildan-m",
+   "Dip-G-Git",
+   "mukhrr",
+   "samranahm",
+   "imgyf",
+   "trasnake87",
+   "nabi-ebrahimi",
+   "yusufdeveloper2903",
+   "neerajbachani",
+   "dilshodmackbook-sketch",
+   "mahenoorsalat",
+   "amar-sheikh",
+   "SARAMALI15792",
+   "iamhyde666",
+   "Shark1n4Suit"
+  ],
+  "proposals": [
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-21T22:54",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768635086"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-21T22:54",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768635360"
+   },
+   {
+    "author": "Dip-G-Git",
+    "at": "2026-09-21T22:54",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768636382"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-21T22:57",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768666552"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-09-21T22:59",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768677197"
+   },
+   {
+    "author": "imgyf",
+    "at": "2026-09-21T22:59",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768681172"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-21T23:01",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768701073"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-21T23:08",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768761944"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-21T23:13",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5768802186"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-09-21T23:49",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5769204963"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-22T06:09",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5771977247"
+   },
+   {
+    "author": "mahenoorsalat",
+    "at": "2026-09-22T08:15",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5773290091"
+   },
+   {
+    "author": "mahenoorsalat",
+    "at": "2026-09-22T10:04",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5774620474"
+   },
+   {
+    "author": "amar-sheikh",
+    "at": "2026-09-22T10:43",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5775088855"
+   },
+   {
+    "author": "SARAMALI15792",
+    "at": "2026-09-22T21:21",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5784365472"
+   },
+   {
+    "author": "iamhyde666",
+    "at": "2026-09-22T23:30",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5786087364"
+   },
+   {
+    "author": "Shark1n4Suit",
+    "at": "2026-09-23T14:44",
+    "url": "https://github.com/Expensify/App/issues/101700#issuecomment-5796956820"
+   }
+  ],
+  "comments": 54
+ },
+ "99881": {
+  "url": "https://github.com/Expensify/App/issues/99881",
+  "title": "Search - Exported and Exported To columns are blank past the first ~100 rows in to-do searches (Ready to Pay)",
+  "days_open": 23,
+  "created": "2026-08-31",
+  "help_wanted_since": "2026-08-31",
+  "bounty_usd": null,
+  "competing_proposal_authors": 18,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "abbasifaizan70",
+   "ahmdshrif",
+   "mukhrr",
+   "Javokhiir",
+   "wildan-m",
+   "Dip-G-Git",
+   "neerajbachani",
+   "lorretheboy",
+   "samranahm",
+   "KJ21-ENG",
+   "annaweber830",
+   "nabi-ebrahimi",
+   "Abdukhamid000",
+   "dilshodmackbook-sketch",
+   "safiya2610",
+   "Mister124x",
+   "yusufdeveloper2903"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-31T01:45",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5472687156"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480694637"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480694662"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480694678"
+   },
+   {
+    "author": "Javokhiir",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480694830"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480694841"
+   },
+   {
+    "author": "Dip-G-Git",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480696595"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480700863"
+   },
+   {
+    "author": "lorretheboy",
+    "at": "2026-08-31T15:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480702972"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-08-31T15:41",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5480721482"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-08-31T16:05",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5481011094"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-08-31T16:14",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5481126208"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-08-31T16:34",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5481356477"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-08-31T16:39",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5481423895"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-08-31T17:31",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5482039522"
+   },
+   {
+    "author": "safiya2610",
+    "at": "2026-08-31T18:23",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5482638023"
+   },
+   {
+    "author": "Mister124x",
+    "at": "2026-09-08T23:25",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5593274987"
+   },
+   {
+    "author": "Mister124x",
+    "at": "2026-09-14T05:17",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5659368663"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-14T15:30",
+    "url": "https://github.com/Expensify/App/issues/99881#issuecomment-5666447794"
+   }
+  ],
+  "comments": 78
+ },
+ "99090": {
+  "url": "https://github.com/Expensify/App/issues/99090",
+  "title": "Add a \"Bank account\" filter to the Bank Reconciliation / withdrawal filters (filter reimbursements by VBA)",
+  "days_open": 34,
+  "created": "2026-08-20",
+  "help_wanted_since": "2026-09-10",
+  "bounty_usd": null,
+  "competing_proposal_authors": 12,
+  "melvin_proposed": false,
+  "proposal_authors": [
+   "ahmdshrif",
+   "dilshodmackbook-sketch",
+   "mukhrr",
+   "abbasifaizan70",
+   "trasnake87",
+   "nabi-ebrahimi",
+   "yusufdeveloper2903",
+   "Abdukhamid000",
+   "princessdev01",
+   "Abdulloh0109",
+   "KinshukAgarwal",
+   "chuahy"
+  ],
+  "proposals": [
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-10T12:45",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618894442"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-10T12:47",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618912949"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-10T12:47",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618919153"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-10T12:49",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618945683"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-10T12:50",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618951686"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-10T12:50",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5618955424"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-10T12:55",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5619015217"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-10T13:01",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5619089239"
+   },
+   {
+    "author": "princessdev01",
+    "at": "2026-09-10T13:33",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5619521922"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-11T06:37",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5630500441"
+   },
+   {
+    "author": "KinshukAgarwal",
+    "at": "2026-09-12T13:43",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5646256457"
+   },
+   {
+    "author": "chuahy",
+    "at": "2026-09-16T01:37",
+    "url": "https://github.com/Expensify/App/issues/99090#issuecomment-5690712928"
+   }
+  ],
+  "comments": 30
+ },
+ "96975": {
+  "url": "https://github.com/Expensify/App/issues/96975",
+  "title": "[Due for payment 2026-09-28] [$250] Expense approval settings are out of sync between Classic and New Expensify (Auto approve settings)",
+  "days_open": 61,
+  "created": "2026-07-24",
+  "help_wanted_since": "2026-07-24",
+  "bounty_usd": 250,
+  "competing_proposal_authors": 9,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "abbasifaizan70",
+   "mukhrr",
+   "dilshodmackbook-sketch",
+   "askavyblr",
+   "trasnake87",
+   "wildan-m",
+   "ahmdshrif",
+   "yusufdeveloper2903",
+   "MelvinBot"
+  ],
+  "proposals": [
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-07-24T14:37",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071046658"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-07-24T14:37",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071046683"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-07-24T14:37",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071046696"
+   },
+   {
+    "author": "askavyblr",
+    "at": "2026-07-24T14:40",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071077354"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-07-24T14:47",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071147455"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-07-24T14:52",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071193477"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-07-24T15:02",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5071286794"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-07-24T16:36",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5072099959"
+   },
+   {
+    "author": "MelvinBot",
+    "at": "2026-07-26T09:13",
+    "url": "https://github.com/Expensify/App/issues/96975#issuecomment-5082857456"
+   }
+  ],
+  "comments": 39
+ },
+ "99823": {
+  "url": "https://github.com/Expensify/App/issues/99823",
+  "title": "[Exploratory] Profile - Invite the secondary contact appear as grey member in Workspace",
+  "days_open": 25,
+  "created": "2026-08-29",
+  "help_wanted_since": "2026-09-07",
+  "bounty_usd": null,
+  "competing_proposal_authors": 13,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "mukhrr",
+   "ahmdshrif",
+   "wildan-m",
+   "trasnake87",
+   "yusufdeveloper2903",
+   "dilshodmackbook-sketch",
+   "Abdulloh0109",
+   "nabi-ebrahimi",
+   "nkdengineer",
+   "Mister124x",
+   "ceosss",
+   "abbasifaizan70"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-05T22:31",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5555229590"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-07T14:07",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571830878"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-07T14:07",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571831033"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-07T14:07",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571831043"
+   },
+   {
+    "author": "trasnake87",
+    "at": "2026-09-07T14:13",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571898053"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-07T14:16",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571937697"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-07T14:17",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5571957996"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-07T15:55",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5573092356"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-08T04:40",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5579335789"
+   },
+   {
+    "author": "nkdengineer",
+    "at": "2026-09-08T05:17",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5579668120"
+   },
+   {
+    "author": "Mister124x",
+    "at": "2026-09-08T07:40",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5581201590"
+   },
+   {
+    "author": "ceosss",
+    "at": "2026-09-08T12:49",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5585399479"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-08T19:57",
+    "url": "https://github.com/Expensify/App/issues/99823#issuecomment-5591023109"
+   }
+  ],
+  "comments": 52
+ },
+ "98674": {
+  "url": "https://github.com/Expensify/App/issues/98674",
+  "title": "Android - Compose box - Draft message input reappears after clearing and navigating",
+  "days_open": 40,
+  "created": "2026-08-14",
+  "help_wanted_since": "2026-08-30",
+  "bounty_usd": null,
+  "competing_proposal_authors": 13,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "oqildev",
+   "Abdulloh0109",
+   "abbasifaizan70",
+   "dilshodmackbook-sketch",
+   "wildan-m",
+   "KJ21-ENG",
+   "samranahm",
+   "rajanpanth",
+   "yuvrajangadsingh",
+   "M00rish",
+   "yusufdeveloper2903",
+   "nabi-ebrahimi"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-14T19:53",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5297544423"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912427"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912435"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912456"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912466"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912519"
+   },
+   {
+    "author": "KJ21-ENG",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466912715"
+   },
+   {
+    "author": "samranahm",
+    "at": "2026-08-30T05:26",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5466914927"
+   },
+   {
+    "author": "rajanpanth",
+    "at": "2026-08-31T10:06",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5476816308"
+   },
+   {
+    "author": "yuvrajangadsingh",
+    "at": "2026-09-02T06:54",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5505703912"
+   },
+   {
+    "author": "M00rish",
+    "at": "2026-09-07T12:34",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5570707820"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-11T12:50",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5634682058"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-18T11:03",
+    "url": "https://github.com/Expensify/App/issues/98674#issuecomment-5729079582"
+   }
+  ],
+  "comments": 55
+ },
+ "99927": {
+  "url": "https://github.com/Expensify/App/issues/99927",
+  "title": "If we skip step: \"Open the Concierge\" before make changes in Workspace setting, task is not marked as done.",
+  "days_open": 23,
+  "created": "2026-08-31",
+  "help_wanted_since": "2026-09-14",
+  "bounty_usd": null,
+  "competing_proposal_authors": 18,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "j3ffffff",
+   "abbasifaizan70",
+   "oqildev",
+   "Javokhiir",
+   "annaweber830",
+   "wildan-m",
+   "Abdulloh0109",
+   "mukhrr",
+   "ahmdshrif",
+   "dilshodmackbook-sketch",
+   "yusufdeveloper2903",
+   "nabi-ebrahimi",
+   "bdtr065",
+   "princessdev01",
+   "amar-sheikh",
+   "Abdukhamid000",
+   "gcoinstash-cmd"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-08-31T16:36",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5481378731"
+   },
+   {
+    "author": "j3ffffff",
+    "at": "2026-08-31T16:36",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5481380548"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933476"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933492"
+   },
+   {
+    "author": "Javokhiir",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933600"
+   },
+   {
+    "author": "annaweber830",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933632"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933689"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933719"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933747"
+   },
+   {
+    "author": "ahmdshrif",
+    "at": "2026-09-14T11:02",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5662933790"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-14T11:11",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5663028445"
+   },
+   {
+    "author": "yusufdeveloper2903",
+    "at": "2026-09-14T11:12",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5663037592"
+   },
+   {
+    "author": "nabi-ebrahimi",
+    "at": "2026-09-14T11:14",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5663062560"
+   },
+   {
+    "author": "bdtr065",
+    "at": "2026-09-14T11:24",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5663172212"
+   },
+   {
+    "author": "princessdev01",
+    "at": "2026-09-14T12:58",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5664328979"
+   },
+   {
+    "author": "oqildev",
+    "at": "2026-09-14T14:03",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5665219175"
+   },
+   {
+    "author": "amar-sheikh",
+    "at": "2026-09-14T19:52",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5669907349"
+   },
+   {
+    "author": "Abdukhamid000",
+    "at": "2026-09-18T12:24",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5729940264"
+   },
+   {
+    "author": "gcoinstash-cmd",
+    "at": "2026-09-20T05:39",
+    "url": "https://github.com/Expensify/App/issues/99927#issuecomment-5747914713"
+   }
+  ],
+  "comments": 47
+ }
+}

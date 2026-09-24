@@ -1,0 +1,77 @@
+# WhiteHERO v3 .gitignore (written before the first git add, 2026-09-24)
+
+# Local state: databases, WAL files, logs
+state/*.db
+state/*.db-*
+state/*.db*
+state/*.log
+*.log
+
+# Run output and scratch evidence (large, regenerable)
+runs/
+plan-evidence/
+
+# Large seed data
+seed/*.json
+seed/*.jsonl
+seed/*.json*
+
+# Raw audit evidence dumps: git cannot filter by size, so any evidence file over 1 MB
+# is added by path to the list at the bottom (find . -type f -size +1000k); raw/dump files are always ignored
+reports/*/evidence/**/*.raw
+reports/*/evidence/**/*.dump
+
+# Outreach queue and sent mail, private proposals
+outreach/queue/
+outreach/sent/
+proposals/private/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+.env*
+*.pem
+*.key
+
+# Stray shell-redirect files (zero-byte, deleted 2026-09-24)
+/150
+/200
+/300
+/400
+/500
+/800
+/1000
+/2000
+
+# Files over 1 MB (generated list)
+# (none outside ignored dirs at baseline; plan-evidence/a1 dumps are covered by plan-evidence/)
+
+# Private outreach logs (contact addresses, send status)
+state/OUTREACH-*.md
+
+# Watcher runtime files
+state/mergewatch.out
+state/mergewatch.err
+state/watch-seen.json
+state/watch-cursor.txt
+state/expensify_feed.out
+*.tmp
+
+# Third-party source mirrors and raw scraped pages (large, not ours, may hold contact data)
+state/expensify/src-mirror/
+state/expensify-tree.json
+state/expensify-src-paths.txt
+state/contacts-raw/
+state/contacts*
+
+# Private payment config (account id, entity name, masked key id)
+state/stripe.json
+state/stripe*
+
+# Raw API dumps containing third-party personal emails from GitHub issue and repo data
+state/expensify/issues/
+state/qualify-raw/
+state/qualify-web/

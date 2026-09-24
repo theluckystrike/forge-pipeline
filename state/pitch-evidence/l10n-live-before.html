@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script id="zovo-ga4-consent-bootstrap">window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};var zovoConsent='denied';try{if(localStorage.getItem('cookie_consent')==='granted')zovoConsent='granted'}catch(e){}gtag('consent','default',{analytics_storage:zovoConsent,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locale Parity as a Service</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --bg2: #12161f;
+    --text: #e6e9ef;
+    --muted: #8b93a7;
+    --accent: #4ade80;
+    --accent2: #60a5fa;
+    --border: #232a38;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  header {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kicker {
+    text-transform: uppercase; letter-spacing: .12em; font-size: .78rem;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 18px; }
+  h1 .hl { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 1.15rem; max-width: 620px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.6rem; margin-bottom: 8px; }
+  .sec-sub { color: var(--muted); margin-bottom: 28px; }
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .stat {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px; text-align: center;
+  }
+  .stat .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+  .pr-list { display: grid; gap: 10px; }
+  .pr {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .pr a {
+    color: var(--accent2); text-decoration: none; font-weight: 600;
+  }
+  .pr a:hover { text-decoration: underline; }
+  .pr .tag { color: var(--accent); font-size: .8rem; }
+  .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .tier {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 26px; display: flex; flex-direction: column;
+  }
+  .tier.featured { border-color: var(--accent); }
+  .tier h3 { margin-bottom: 6px; }
+  .tier .price { font-size: 1.6rem; font-weight: 700; margin: 8px 0 14px; }
+  .tier .price span { font-size: .85rem; color: var(--muted); font-weight: 400; }
+  .tier ul { list-style: none; flex: 1; }
+  .tier li { padding: 5px 0; color: var(--text); }
+  .tier li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+  .cta {
+    display: inline-block; margin-top: 20px; padding: 14px 28px;
+    background: var(--accent); color: #06210f; font-weight: 700;
+    border-radius: 10px; text-decoration: none;
+  }
+  .cta:hover { background: #5bf28f; }
+  .process { display: grid; gap: 20px; }
+  .step { display: flex; gap: 16px; }
+  .step .n {
+    flex: 0 0 36px; height: 36px; border-radius: 50%;
+    background: var(--bg2); border: 1px solid var(--accent);
+    color: var(--accent); font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h4 { margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: .95rem; }
+  footer { padding: 40px 0 60px; text-align: center; color: var(--muted); font-size: .85rem; }
+  .muted { color: var(--muted); }
+</style>
+<script id="zovo-ga4-funnel">(function () {
+  'use strict';
+  if (window.__zovoAnalytics) return;
+  window.__zovoAnalytics = '20260905-campaign4';
+  var ID = 'G-22DBQSSDGQ';
+  var rawGtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  var lastPath = null;
+  var checkoutSeen = new Set();
+  var purchaseSeen = new Set();
+  var debug = new URLSearchParams(location.search).get('ga4_debug') === '1';
+  function cleanUrl(value) {
+    try { var u = new URL(value, location.origin); return u.origin + u.pathname; } catch (_) { return ''; }
+  }
+  function monetaryReceipt(receipt, session) {
+    if (!receipt || receipt.transaction_id !== session || receipt.payment_status !== 'paid' || receipt.amount_unit !== 'stripe_minor') return {};
+    var amounts = [receipt.amount_total, receipt.amount_tax, receipt.amount_shipping];
+    if (!amounts.every(function (n) { return Number.isSafeInteger(n) && n >= 0; })) return {};
+    if (receipt.amount_tax + receipt.amount_shipping > receipt.amount_total) return {};
+    // Explicitly supported Stripe charge exponents, verified against docs.stripe.com/currencies.
+    // Unknown currencies retain a paid count without guessed revenue. ISK/UGX are API special cases.
+    var two = ['USD','EUR','GBP','PLN','AED','ARS','AUD','BRL','CAD','CHF','COP','CZK','DKK','HKD','HUF','IDR','ILS','INR','MXN','MYR','NOK','NZD','PHP','RON','RUB','SEK','SGD','THB','ZAR','TWD','ISK','UGX'];
+    var divisor = two.indexOf(receipt.currency) !== -1 ? 100 : ['JPY','KRW'].indexOf(receipt.currency) !== -1 ? 1 : null;
+    if (!divisor) return {};
+    return { currency: receipt.currency, value: (receipt.amount_total - receipt.amount_tax - receipt.amount_shipping) / divisor,
+      tax: receipt.amount_tax / divisor, shipping: receipt.amount_shipping / divisor, revenue_status: 'verified_stripe_receipt' };
+  }
+  function event(name, params) {
+    rawGtag('event', name, Object.assign({ send_to: ID, site_name: 'zovo',
+      page_location: cleanUrl(location.href), page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
+      debug_mode: debug
+    }, params));
+  }
+  // The old React success component guesses revenue from tier. Only this adapter's
+  // verified backend response may emit purchase; no inferred dollar amount is sent.
+  window.gtag = function () {
+    if (arguments[0] === 'event' && (arguments[1] === 'purchase' || arguments[1] === 'zovo_purchase')) return;
+    var args = Array.from(arguments);
+    if (args[0] === 'event') args[2] = Object.assign({}, args[2], {
+      page_location: cleanUrl(location.href), page_referrer: document.referrer ? cleanUrl(document.referrer) : ''
+    });
+    return rawGtag.apply(window, args);
+  };
+  rawGtag('js', new Date());
+  var campaign = {};
+  var query = new URLSearchParams(location.search);
+  [['utm_source','campaign_source'],['utm_medium','campaign_medium'],['utm_campaign','campaign_name'],['utm_id','campaign_id']].forEach(function (pair) {
+    var value = query.get(pair[0]);
+    if (value && /^[A-Za-z][A-Za-z0-9_.-]{0,79}$/.test(value)) campaign[pair[1]] = value;
+  });
+  rawGtag('config', ID, Object.assign({ send_page_view: false, allow_google_signals: false,
+    allow_ad_personalization_signals: false, page_location: cleanUrl(location.href),
+    page_referrer: document.referrer ? cleanUrl(document.referrer) : '' }, campaign));
+  var script = document.createElement('script'); script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID; document.head.appendChild(script);
+  function pageview() {
+    if (lastPath === location.pathname) return;
+    lastPath = location.pathname;
+    event('page_view', { page_title: document.title });
+    if (/^\/(pricing|join|community|upgrade)\/?$/.test(location.pathname))
+      event('view_item_list', { item_list_id: 'membership_plans', surface: location.pathname.slice(1),
+        items: [{ item_id: 'zovo_pro', item_name: 'Zovo Pro' }, { item_id: 'zovo_lifetime', item_name: 'Zovo Lifetime' }] });
+  }
+  ['pushState', 'replaceState'].forEach(function (method) {
+    var original = history[method];
+    history[method] = function () { var result = original.apply(this, arguments); setTimeout(pageview, 0); return result; };
+  });
+  window.addEventListener('popstate', function () { setTimeout(pageview, 0); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var u; try { u = new URL(a.href, location.origin); } catch (_) { return; }
+    if (u.hostname === 'zovo.one' && /^\/(join|community|upgrade)\/?$/.test(u.pathname))
+      event('select_item', { item_list_id: 'membership_plans', destination_path: u.pathname });
+    // A hosted checkout link is high intent; a content/signup link is select_item.
+    if (u.protocol === 'https:' && (u.hostname === 'buy.stripe.com' || u.hostname === 'checkout.stripe.com'))
+      event('begin_checkout', { checkout_provider: 'stripe', checkout_entry: 'hosted_link' });
+  }, true);
+  var nativeFetch = window.fetch;
+  if (nativeFetch) window.fetch = function (input, options) {
+    var u; try { u = new URL(typeof input === 'string' ? input : input.url, location.href); }
+    catch (_) { return nativeFetch.apply(this, arguments); }
+    var method = String((options && options.method) || (input && input.method) || 'GET').toUpperCase();
+    var endpoint = u.hostname === 'zgubxqomnbmxgbdhvwja.supabase.co' ? u.pathname : '';
+    var checkout = /^\/functions\/v1\/(create-checkout|create-guest-checkout)$/.test(endpoint);
+    var verify = endpoint === '/functions/v1/verify-payment';
+    var requestedSession = Promise.resolve(null);
+    if (verify) {
+      if (options && typeof options.body === 'string') {
+        try { requestedSession = Promise.resolve(JSON.parse(options.body).session_id); } catch (_) {}
+      } else if (input && typeof input.clone === 'function') {
+        requestedSession = input.clone().json().then(function (body) { return body.session_id; }).catch(function () { return null; });
+      }
+    }
+    var promise = nativeFetch.apply(this, arguments);
+    if (method === 'POST' && (checkout || verify)) promise.then(function (response) {
+      if (!response.ok) return;
+      response.clone().json().then(function (body) {
+        if (checkout) {
+          var url; try { url = new URL(body.url); } catch (_) { return; }
+          if (url.protocol !== 'https:' || url.hostname !== 'checkout.stripe.com' || checkoutSeen.has(url.pathname)) return;
+          checkoutSeen.add(url.pathname);
+          event('begin_checkout', { checkout_provider: 'stripe', checkout_entry: 'created_session' });
+        } else if (body.success === true) requestedSession.then(function (session) {
+          // Existing verify-payment checks Stripe payment_status === paid before success.
+          // Read only the checkout identifier, never customer, license or auth fields.
+          if (!/^cs_live_[A-Za-z0-9]+$/.test(session || '') || purchaseSeen.has(session)) return;
+          var key = 'zovo_ga4_purchase_' + session;
+          var canStore = false;
+          try { canStore = localStorage.getItem('cookie_consent') === 'granted'; if (canStore && localStorage.getItem(key)) return; } catch (_) {}
+          purchaseSeen.add(session);
+          var money = monetaryReceipt(body.payment_receipt, session);
+          var params = Object.assign({ transaction_id: session, payment_verified: true, revenue_status: 'not_reported' }, money);
+          if (money.value !== undefined) params.items = [{ item_id: 'zovo_membership', item_name: 'Zovo membership', price: money.value, quantity: 1 }];
+          event('purchase', params);
+          try { if (canStore) localStorage.setItem(key, '1'); } catch (_) {}
+        });
+      }).catch(function () {});
+    }).catch(function () {});
+    return promise;
+  };
+  function ready() {
+    pageview();
+    var consent; try { consent = localStorage.getItem('cookie_consent'); } catch (_) {}
+    var settings = document.createElement('button'); settings.type = 'button';
+    settings.textContent = 'Analytics privacy'; settings.id = 'zovo-analytics-settings';
+    settings.style.cssText = 'position:fixed;bottom:8px;left:8px;z-index:2147482000;padding:5px 9px;border:1px solid #777;border-radius:6px;background:#fff;color:#333;font:12px system-ui';
+    document.body.appendChild(settings);
+    var box = document.createElement('aside'); box.id = 'zovo-analytics-consent';
+    box.setAttribute('aria-label', 'Analytics privacy choice');
+    box.style.cssText = 'position:fixed;bottom:16px;left:16px;right:16px;z-index:2147483000;max-width:650px;padding:16px;border:1px solid #777;border-radius:10px;background:#fff;color:#171717;font:14px/1.5 system-ui;box-shadow:0 5px 30px #0003';
+    box.innerHTML = '<p style="margin:0 0 12px">Allow analytics cookies to help us understand visits and checkout interest? Advertising cookies stay off. <a href="/cookies" style="color:#5936bb">Cookie policy</a></p><button type="button" data-choice="granted" style="padding:8px 12px;margin-right:8px">Allow analytics</button><button type="button" data-choice="denied" style="padding:8px 12px">Decline</button>';
+    box.addEventListener('click', function (e) {
+      var value = e.target.getAttribute('data-choice'); if (!value) return;
+      try { localStorage.setItem('cookie_consent', value); } catch (_) {}
+      rawGtag('consent', 'update', { analytics_storage: value, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      window.dispatchEvent(new CustomEvent('zovo:analytics-consent', { detail: value }));
+      box.remove();
+    });
+    settings.addEventListener('click', function () { if (!box.isConnected) document.body.appendChild(box); });
+    if (consent !== 'granted' && consent !== 'denied') document.body.appendChild(box);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true }); else ready();
+})();
+</script></head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">i18n contract work</div>
+    <h1>Locale parity, <span class="hl">as a service</span>.</h1>
+    <p class="sub">Your i18n gaps closed in hours, kept green forever.
+      Merge-ready PRs, placeholder-exact, CI-validated — no churn, no hype.</p>
+  </header>
+
+  <section>
+    <h2>The problem</h2>
+    <p class="muted" style="max-width:640px">
+      Translation files drift. `en.json` grows, locale files fall behind, and
+      your users see raw keys or placeholder strings in their own language.
+      Most teams notice months later. We close the gap before it ships.
+    </p>
+  </section>
+
+  <section>
+    <h2>Proven track record</h2>
+    <p class="sec-sub">Real contributions to <strong>Medusa</strong>, open and CI-validated.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">8</div><div class="label">PRs open</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">locales</div></div>
+      <div class="stat"><div class="num">4,252+</div><div class="label">keys</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">parity</div></div>
+    </div>
+    <div class="pr-list">
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16934">#16934</a> · locale parity — set 1</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16936">#16936</a> · locale parity — set 2</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16939">#16939</a> · locale parity — set 3</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16940">#16940</a> · locale parity — set 4</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16942">#16942</a> · locale parity — set 5</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16944">#16944</a> · locale parity — set 6</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16946">#16946</a> · locale parity — set 7</span><span class="tag">verified · placeholder-exact</span></div>
+      <div class="pr"><span><a href="https://github.com/medusajs/medusa/pull/16948">#16948</a> · locale parity — set 8</span><span class="tag">verified · placeholder-exact</span></div>
+    </div>
+    <p class="sec-sub" style="margin-top:18px;margin-bottom:0">
+      Placeholder-exact, 100% parity, CI-validated (`i18n:validate`).
+    </p>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="sec-sub">Automated pipeline, human-reviewed quality.</p>
+    <div class="process">
+      <div class="step">
+        <div class="n">1</div>
+        <div><h4>Automated parity scan</h4><p>We diff every locale file against `en.json` — leaf-key by leaf-key — and flag every missing or placeholder-drifted string.</p></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div><h4>Human review</h4><p>No machine-only output. A native speaker reviews each string for context, placeholders, and tone.</p></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div><h4>Merge-ready PRs in &lt;48h</h4><p>Clean, scoped pull requests that pass your CI on the first try. You review, you merge, you're green.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <p class="sec-sub">Simple tiers. You pay for green checks, not for churn.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>One-off rescue</h3>
+        <div class="price">$500<span>+</span></div>
+        <ul>
+          <li>Close the single worst drifting locale</li>
+          <li>Key-by-key audit report included</li>
+          <li>Merge-ready PR in &lt;48h</li>
+        </ul>
+        <a class="cta" href="mailto:mike@zovo.one?subject=One-off%20rescue">Get a quote</a>
+      </div>
+      <div class="tier featured">
+        <h3>Locale completion</h3>
+        <div class="price">$X<span> per locale</span></div>
+        <ul>
+          <li>Full locale(s) brought to 100% parity</li>
+          <li>Placeholder-exact, native-reviewed</li>
+          <li>Best for finite gaps that just need finishing</li>
+        </ul>
+        <a class="cta" href="mailto:mike@zovo.one?subject=Locale%20completion">Get a quote</a>
+      </div>
+      <div class="tier">
+        <h3>Retainer</h3>
+        <div class="price">$1–3k<span>/mo</span></div>
+        <ul>
+          <li>All locales kept green, always</li>
+          <li>Continuous parity monitoring</li>
+          <li>PRs in &lt;48h as new keys land</li>
+        </ul>
+        <a class="cta" href="mailto:mike@zovo.one?subject=Retainer">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Locale parity as a service — automated pipeline, human-reviewed quality,
+    merge-ready PRs in under 48 hours.
+    <br><a class="muted" href="mailto:mike@zovo.one">mike@zovo.one</a>
+  </footer>
+</div>
+</body>
+</html>

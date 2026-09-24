@@ -1,0 +1,9 @@
+{
+ "issue": 99881,
+ "kept": false,
+ "confidence": null,
+ "reason": "C+ (daledah) approved nabi-ebrahimi's proposal on 2026-09-01; QA reported it fixed on 2026-09-21",
+ "one_line": null,
+ "differs": null,
+ "triaged_by": "lead"
+}

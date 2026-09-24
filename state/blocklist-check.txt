@@ -1,0 +1,14 @@
+# blocklist existence check 2026-09-24T09:48:00Z, one gh api call per entry
+tldraw/tldraw -> tldraw/tldraw archived=false owner_type=Organization stars=50542
+ghostty-org/ghostty -> ghostty-org/ghostty archived=false owner_type=Organization stars=61494
+ziglang/zig -> ziglang/zig archived=false owner_type=Organization stars=43303
+NetBSD/src -> NetBSD/src archived=false owner_type=Organization stars=990
+GNOME/gimp -> GNOME/gimp archived=false owner_type=Organization stars=6448
+gentoo/gentoo -> gentoo/gentoo archived=false owner_type=Organization stars=2454
+qemu/qemu -> qemu/qemu archived=false owner_type=Organization stars=13760
+tenstorrent/tt-metal -> tenstorrent/tt-metal archived=false owner_type=Organization stars=1686
+documenso/documenso -> documenso/documenso archived=false owner_type=Organization stars=15171
+activepieces/activepieces -> activepieces/activepieces archived=false owner_type=Organization stars=24707
+nuxt/nuxt -> nuxt/nuxt archived=false owner_type=Organization stars=60903
+curl/curl -> curl/curl archived=false owner_type=Organization stars=42912
+langchain-ai/langchain -> langchain-ai/langchain archived=false owner_type=Organization stars=146971

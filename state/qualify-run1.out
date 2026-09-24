@@ -1,0 +1,8 @@
+blocklist: 13 entries from state/blocklist.txt
+B phase: 1262 rows with B IS NULL; graphql remaining 5000
+  B 15/1262  points used 5  web fetches 24
+  B 30/1262  points used 6  web fetches 37
+  B 45/1262  points used 7  web fetches 47
+  B 60/1262  points used 8  web fetches 57
+  B 75/1262  points used 9  web fetches 67
+  B 90/1262  points used 10  web fetches 76

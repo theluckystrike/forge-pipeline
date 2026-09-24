@@ -1,0 +1,13 @@
+tldraw/tldraw
+ghostty-org/ghostty
+ziglang/zig
+NetBSD/src
+GNOME/gimp
+gentoo/gentoo
+qemu/qemu
+tenstorrent/tt-metal
+documenso/documenso
+activepieces/activepieces
+nuxt/nuxt
+curl/curl
+langchain-ai/langchain
