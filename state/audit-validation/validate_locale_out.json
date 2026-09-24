@@ -3,10 +3,10 @@
   "ref": {
    "repo": "medusajs/medusa",
    "branch": "develop",
-   "commit_tree_sha": "1ba69082ceb941d47cfe390212f400e39a7166dd",
+   "commit_tree_sha": "3718c46fa637e6556461fd50703425ee2cd33bfd",
    "tree_truncated": false,
-   "n_files": 24195,
-   "measured_at": "2026-09-24T19:11:37+0700",
+   "n_files": 24198,
+   "measured_at": "2026-09-24T20:48:26+0700",
    "definition": "gap = missing or empty or byte-identical to English",
    "ref": "develop",
    "candidate_groups": [
@@ -101,14 +101,14 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/el.json"
      ],
-     "locale_keys": 1897,
-     "present": 1876,
-     "missing": 570,
-     "identical": 19,
-     "gap_keys": 589,
-     "gap_pct": 24.1,
-     "missing_pct": 23.3,
-     "count_pct": 22.4
+     "locale_keys": 2464,
+     "present": 2443,
+     "missing": 3,
+     "identical": 26,
+     "gap_keys": 29,
+     "gap_pct": 1.2,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "es": {
      "files": [
@@ -270,14 +270,14 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/mk.json"
      ],
-     "locale_keys": 1881,
-     "present": 1860,
-     "missing": 586,
-     "identical": 7,
-     "gap_keys": 593,
-     "gap_pct": 24.2,
-     "missing_pct": 24.0,
-     "count_pct": 23.1
+     "locale_keys": 2464,
+     "present": 2443,
+     "missing": 3,
+     "identical": 12,
+     "gap_keys": 15,
+     "gap_pct": 0.6,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "mn": {
      "files": [
@@ -413,27 +413,27 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/uk.json"
      ],
-     "locale_keys": 1837,
-     "present": 1815,
-     "missing": 631,
-     "identical": 7,
-     "gap_keys": 638,
-     "gap_pct": 26.1,
-     "missing_pct": 25.8,
-     "count_pct": 24.9
+     "locale_keys": 2465,
+     "present": 2443,
+     "missing": 3,
+     "identical": 10,
+     "gap_keys": 13,
+     "gap_pct": 0.5,
+     "missing_pct": 0.1,
+     "count_pct": -0.8
     },
     "vi": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/vi.json"
      ],
-     "locale_keys": 1962,
-     "present": 1945,
-     "missing": 501,
-     "identical": 13,
-     "gap_keys": 514,
-     "gap_pct": 21.0,
-     "missing_pct": 20.5,
-     "count_pct": 19.8
+     "locale_keys": 2460,
+     "present": 2443,
+     "missing": 3,
+     "identical": 18,
+     "gap_keys": 21,
+     "gap_pct": 0.9,
+     "missing_pct": 0.1,
+     "count_pct": -0.6
     },
     "zh-CN": {
      "files": [
@@ -539,17 +539,17 @@
     "gap_pct": 32.3,
     "gap_keys": 789
    },
-   "total_gap_keys": 13691,
-   "median_gap_pct": 21.8,
+   "total_gap_keys": 11435,
+   "median_gap_pct": 15.5,
    "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
   },
   "default": {
    "repo": "medusajs/medusa",
    "branch": "develop",
-   "commit_tree_sha": "1ba69082ceb941d47cfe390212f400e39a7166dd",
+   "commit_tree_sha": "3718c46fa637e6556461fd50703425ee2cd33bfd",
    "tree_truncated": false,
-   "n_files": 24195,
-   "measured_at": "2026-09-24T19:11:48+0700",
+   "n_files": 24198,
+   "measured_at": "2026-09-24T20:48:43+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
    "ref": "develop",
    "candidate_groups": [
@@ -644,14 +644,14 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/el.json"
      ],
-     "locale_keys": 1897,
-     "present": 1876,
-     "missing": 570,
-     "identical": 16,
-     "gap_keys": 586,
-     "gap_pct": 24.0,
-     "missing_pct": 23.3,
-     "count_pct": 22.4
+     "locale_keys": 2464,
+     "present": 2443,
+     "missing": 3,
+     "identical": 23,
+     "gap_keys": 26,
+     "gap_pct": 1.1,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "es": {
      "files": [
@@ -813,14 +813,14 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/mk.json"
      ],
-     "locale_keys": 1881,
-     "present": 1860,
-     "missing": 586,
-     "identical": 4,
-     "gap_keys": 590,
-     "gap_pct": 24.1,
-     "missing_pct": 24.0,
-     "count_pct": 23.1
+     "locale_keys": 2464,
+     "present": 2443,
+     "missing": 3,
+     "identical": 8,
+     "gap_keys": 11,
+     "gap_pct": 0.4,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "mn": {
      "files": [
@@ -956,27 +956,27 @@
      "files": [
       "packages/admin/dashboard/src/i18n/translations/uk.json"
      ],
-     "locale_keys": 1837,
-     "present": 1815,
-     "missing": 631,
-     "identical": 4,
-     "gap_keys": 635,
-     "gap_pct": 26.0,
-     "missing_pct": 25.8,
-     "count_pct": 24.9
+     "locale_keys": 2465,
+     "present": 2443,
+     "missing": 3,
+     "identical": 6,
+     "gap_keys": 9,
+     "gap_pct": 0.4,
+     "missing_pct": 0.1,
+     "count_pct": -0.8
     },
     "vi": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/vi.json"
      ],
-     "locale_keys": 1962,
-     "present": 1945,
-     "missing": 501,
-     "identical": 9,
-     "gap_keys": 510,
-     "gap_pct": 20.9,
-     "missing_pct": 20.5,
-     "count_pct": 19.8
+     "locale_keys": 2460,
+     "present": 2443,
+     "missing": 3,
+     "identical": 13,
+     "gap_keys": 16,
+     "gap_pct": 0.7,
+     "missing_pct": 0.1,
+     "count_pct": -0.6
     },
     "zh-CN": {
      "files": [
@@ -1082,8 +1082,8 @@
     "gap_pct": 32.1,
     "gap_keys": 786
    },
-   "total_gap_keys": 13555,
-   "median_gap_pct": 21.7,
+   "total_gap_keys": 11296,
+   "median_gap_pct": 15.3,
    "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
   }
  },
@@ -1091,10 +1091,10 @@
   "ref": {
    "repo": "strapi/strapi",
    "branch": "develop",
-   "commit_tree_sha": "8e75efd44fef1c23869f9e894e1209311dfa9355",
+   "commit_tree_sha": "7a69d80b1547c762e1a441097ac3b88a156c5ddf",
    "tree_truncated": false,
-   "n_files": 6772,
-   "measured_at": "2026-09-24T19:11:57+0700",
+   "n_files": 6771,
+   "measured_at": "2026-09-24T20:48:52+0700",
    "definition": "gap = missing or empty or byte-identical to English",
    "ref": "develop",
    "candidate_groups": [
@@ -1645,10 +1645,10 @@
   "default": {
    "repo": "strapi/strapi",
    "branch": "develop",
-   "commit_tree_sha": "8e75efd44fef1c23869f9e894e1209311dfa9355",
+   "commit_tree_sha": "7a69d80b1547c762e1a441097ac3b88a156c5ddf",
    "tree_truncated": false,
-   "n_files": 6772,
-   "measured_at": "2026-09-24T19:12:04+0700",
+   "n_files": 6771,
+   "measured_at": "2026-09-24T20:49:00+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
    "ref": "develop",
    "candidate_groups": [
@@ -2204,7 +2204,7 @@
    "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
    "tree_truncated": false,
    "n_files": 4298,
-   "measured_at": "2026-09-24T19:12:09+0700",
+   "measured_at": "2026-09-24T20:49:06+0700",
    "definition": "gap = missing or empty or byte-identical to English",
    "ref": "main",
    "candidate_groups": [
@@ -2397,7 +2397,7 @@
    "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
    "tree_truncated": false,
    "n_files": 4298,
-   "measured_at": "2026-09-24T19:12:13+0700",
+   "measured_at": "2026-09-24T20:49:13+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
    "ref": "main",
    "candidate_groups": [
@@ -2592,7 +2592,7 @@
    "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
    "tree_truncated": false,
    "n_files": 14562,
-   "measured_at": "2026-09-24T19:12:17+0700",
+   "measured_at": "2026-09-24T20:49:18+0700",
    "definition": "gap = missing or empty or byte-identical to English",
    "ref": "main",
    "candidate_groups": [
@@ -2740,7 +2740,7 @@
    "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
    "tree_truncated": false,
    "n_files": 14562,
-   "measured_at": "2026-09-24T19:12:27+0700",
+   "measured_at": "2026-09-24T20:49:24+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
    "ref": "main",
    "candidate_groups": [
@@ -2890,7 +2890,7 @@
    "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
    "tree_truncated": false,
    "n_files": 2448,
-   "measured_at": "2026-09-24T19:12:30+0700",
+   "measured_at": "2026-09-24T20:49:28+0700",
    "definition": "gap = missing or empty or byte-identical to English",
    "ref": "main",
    "candidate_groups": [
@@ -3413,7 +3413,7 @@
    "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
    "tree_truncated": false,
    "n_files": 2448,
-   "measured_at": "2026-09-24T19:12:55+0700",
+   "measured_at": "2026-09-24T20:49:35+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
    "ref": "main",
    "candidate_groups": [

@@ -28,8 +28,10 @@ from outreach_lib import (PIPE, OUT, QUEUE, TIER1, db, sha256, num_tokens, templ
 sys.path.insert(0, os.path.join(PIPE, "tools"))
 try:
     from humanize_scan import scan_text as _hz_scan
+    from humanize_scan import hard as _hard
 except Exception:  # scanner missing means we cannot pre-screen; the gate still runs it
     _hz_scan = None
+    _hard = lambda c: False
 
 BANNED_WORDS = re.compile(r"\b(calls?|zoom|meet|meeting|hop on|calendly|schedule a|merged)\b", re.I)
 # L1 buyer persona is a 5 to 50 developer company; mega-corp websites and orgs are skipped (lead, 2026-09-24)
@@ -339,6 +341,12 @@ def main():
             body = fill(lane, r, r, shorter, subj, loc)
             if word_count(split_email(body)[1]) > 170:
                 skip("over 170 words with shortest findings", r); continue
+        # full-body humanize gate (HUMANIZE.md rules apply to the assembled email, not just findings)
+        if _hz_scan is not None:
+            hits = _hz_scan(body, False)
+            hard_hits = {c: v for c, v in hits.items() if _hard(c)}
+            if hard_hits:
+                skip("humanize full-body gate: " + ",".join(sorted(hard_hits)), r); continue
         h = sha256(body)
         if h in existing_sha:
             skip("duplicate body sha", r); continue

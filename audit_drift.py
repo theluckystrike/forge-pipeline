@@ -539,9 +539,7 @@ def audit(repo, meta=None, tree=None, locale_n=None, ref=None, release_cache=Non
     manifests, mfiles, engines_node, requires_python = load_manifests(repo, ref, paths, readme)
     need_release = bool(re.search(r'(docker|npm|yarn|pnpm|pip|cargo|go get|go install|uses:|gem |implementation|poetry|bun add)', readme, re.I))
     if release_cache is not None:
-        release = release_cache["value"]
-        if release is None and need_release:
-            release = latest_release(repo)
+        release = release_cache["value"]  # pinned from the earlier run of the same commit, no REST call
     else:
         release = latest_release(repo) if need_release else None
     vclaims, fc = version_claims(readme, repo, manifests, release, None)

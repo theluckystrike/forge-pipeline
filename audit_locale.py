@@ -165,9 +165,18 @@ SKIP_SEG = re.compile(r'(^|/)(node_modules|vendor|vendors|third[_-]?party|bower_
                       r'fixtures?|e2e|dist|build|\.git|\.github|examples?|demo|coverage|storybook-static|public/vendor|'
                       r'site-packages|venv|\.venv|snapshots?|__snapshots__|mocks?|cypress|playwright)(/|$)', re.I)
 
+META_KEYS = {"comment", "comments", "description", "context", "meaning", "placeholders", "_comment", "note", "notes",
+             "developer_comment", "translator_comment", "maxLength", "max_length"}
+
 def flatten(obj, pre="", out=None):
     if out is None:
         out = {}
+    if isinstance(obj, dict) and obj:
+        # {"message": "...", "comment": [...]} (pyright, chrome _locales, formatjs): the message is the leaf
+        for f in ("message", "string", "defaultMessage", "translation"):
+            if isinstance(obj.get(f), str) and all(k == f or k in META_KEYS for k in obj):
+                out[pre] = obj[f]
+                return out
     if isinstance(obj, dict):
         for k, v in obj.items():
             flatten(v, f"{pre}.{k}" if pre else str(k), out)
@@ -249,6 +258,8 @@ def js_object_parse(txt):
                 best = r
     return best
 
+_IDENT = re.compile(r'[\w$.\-]+')
+
 def _js_object_at(txt, start):
     i = start; n = len(txt); out = {}; stack = []; key = None; arr_idx = []
 
@@ -307,7 +318,7 @@ def _js_object_at(txt, start):
             elif c == '[':
                 i += 1; continue
             else:
-                mm = re.match(r'[\w$.\-]+', txt[i:])
+                mm = _IDENT.match(txt, i)
                 if not mm:
                     i += 1; continue
                 k = mm.group(0); i += len(k)
@@ -335,6 +346,7 @@ def _js_object_at(txt, start):
             continue
         # other value: skip to , or closing bracket at this depth (handles functions roughly)
         depth = 0
+        i0 = i
         while i < n:
             ch = txt[i]
             if ch in '"\'`':
@@ -348,6 +360,8 @@ def _js_object_at(txt, start):
             elif ch == ',' and depth == 0:
                 break
             i += 1
+        if i == i0:
+            i += 1  # stray closer such as ')' inside an array: always make progress
         if in_obj:
             key = None
     return out
@@ -488,7 +502,7 @@ def neutral(v):
 def discover_groups(paths):
     """Return candidate locale groups: {gid: {'kind', 'dir', 'langs': {code: [files]}, 'src': code}}."""
     groups = {}
-    blobs = [p for p in paths if not SKIP_SEG.search(p)]
+    blobs = [p for p in paths if not SKIP_SEG.search(p) and not re.search(r'\.(spec|test|stories|d)\.[cm]?[jt]sx?$', p)]
     ext_ok = lambda p: p.rsplit('.', 1)[-1].lower() in EXTS and '.' in p.rsplit('/', 1)[-1]
     # flat: dir/<pre><lang><suf>.<ext>
     for p in blobs:
@@ -574,6 +588,7 @@ def discover_groups(paths):
     return out
 
 paths_set_cache = set()
+LOCALE_CTX = re.compile(r'/(_?locales?|i18n|lang|langs|languages|translations?|messages|l10n|intl|strings|po|res/values[^/]*|nls)/', re.I)
 
 def measure_group(repo, ref, g, ref_mode=False, fetch_cap=1500, seed=1):
     src = g["src"]
@@ -680,6 +695,9 @@ def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_group
         groups = {k: v for k, v in groups.items() if group_hint in k or any(group_hint in f for fs in v["langs"].values() for f in fs)}
     def n_non_en(g):
         return sum(1 for c in g["langs"] if not is_en(c))
+    # a group with fewer than 3 languages only counts inside a locale-style folder (avoids log_to_message.ts style hits)
+    # a locale group must live in a locale-style folder: this drops docs trees, test specs and search mappings
+    groups = {k: v for k, v in groups.items() if LOCALE_CTX.search("/" + v["dir"] + "/")}
     small = {k: v for k, v in groups.items() if n_non_en(v) == 0}
     groups = {k: v for k, v in groups.items() if n_non_en(v) >= 1}
     if not groups:
@@ -708,8 +726,9 @@ def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_group
             for d in ex.map(lambda p: parse_file(p, raw(repo, ref, p), True), src_paths[:40]):
                 n += len(d or {})
         cand.append((n, len(g["langs"]), gid))
+    cand = [c for c in cand if c[0] >= 5] or [(0, 0, None)]
     cand.sort(key=lambda x: (-x[0], -x[1]))
-    o["candidate_groups"] = [{"group": gid, "en_keys": n, "n_locales": nl} for n, nl, gid in cand]
+    o["candidate_groups"] = [{"group": gid, "en_keys": n, "n_locales": nl} for n, nl, gid in cand if gid]
     n, nl, best = cand[0]
     if n == 0:
         o["locale_group"] = None

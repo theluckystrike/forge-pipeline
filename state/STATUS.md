@@ -407,3 +407,8 @@ Verdict: night verified-green except merges (none — CI/human latency). Next-se
 - Twenty D0 pitch SENT via Gmail SMTP.
 - Cal.com: th 0/4769 + zh-CN 235 missing — RO-2 next.
 - Cal.com: PR #30229 OPEN (zh-CN 235 keys, parity). th 0/4769 deferred (LLM throughput ~2h).
+
+
+## 09-24 RO-6
+- outline#13873 closed instantly: shared/i18n/locales is machine-synced from their translation platform — NEVER PR locale files at outline. Target via their i18n platform or skip.
+- Cal.diy repo renamed from calcom/cal.com; PRs 30229/30230 valid there.
