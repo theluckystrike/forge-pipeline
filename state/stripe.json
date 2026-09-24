@@ -1,0 +1,69 @@
+{
+  "account": {
+    "id": "acct_1MmUPwJKCamubEm1",
+    "display_name": "BeLikeNative",
+    "country": "PL",
+    "business_type": "individual",
+    "statement_descriptor": "AUTOM8 LLC",
+    "evidence": "zovo.one live checkout price price_1SsKZZJKCamubEm1g7twVCFq ('Zovo Lifetime - Founding', 9900 usd, active) lives in this account; referenced in src/hooks/use-pricing-tier.ts and supabase/functions/create-checkout/index.ts"
+  },
+  "test": {
+    "locale": {
+      "product": "prod_VJmurfF7CJ9a7J",
+      "name": "Locale completion (one locale to 100% parity)",
+      "price": "price_1UJ9KoJKCamubEm1LyFJKNGs",
+      "unit_amount": 50000,
+      "currency": "usd",
+      "recurring": null,
+      "payment_link": "plink_1UJ9KqJKCamubEm1jQ6qWnsz",
+      "url": "https://buy.stripe.com/test_cNieVe7Iu3Fuccd3wx43S0A",
+      "livemode": false
+    },
+    "retainer": {
+      "product": "prod_VJmuBPjIvpgLlC",
+      "name": "Maintenance retainer",
+      "price": "price_1UJ9KrJKCamubEm1cpGOgDDn",
+      "unit_amount": 150000,
+      "currency": "usd",
+      "recurring": "month",
+      "payment_link": "plink_1UJ9KsJKCamubEm1nakNNVot",
+      "url": "https://buy.stripe.com/test_4gM5kE1k63Fugst0kl43S0B",
+      "livemode": false
+    },
+    "audit": {
+      "product": "prod_VJmuP8RteqLN1M",
+      "name": "Repo audit (drift and locale parity)",
+      "price": "price_1UJ9KwJKCamubEm1fYmwlosj",
+      "unit_amount": 5000,
+      "currency": "usd",
+      "recurring": null,
+      "payment_link": "plink_1UJ9KzJKCamubEm1s9qwh2GM",
+      "url": "https://buy.stripe.com/test_28E5kE2oa6RG9015EF43S0C",
+      "livemode": false
+    },
+    "first20": {
+      "product": "prod_VJmuvLA8LT8lsA",
+      "name": "First 20 fixes",
+      "price": "price_1UJ9L1JKCamubEm1RLitxKjL",
+      "unit_amount": 90000,
+      "currency": "usd",
+      "recurring": null,
+      "payment_link": "plink_1UJ9L2JKCamubEm1zpPunVyF",
+      "url": "https://buy.stripe.com/test_eVq14o7Iu0tigstaYZ43S0D",
+      "livemode": false
+    }
+  },
+  "live": null,
+  "live_attempt": {
+    "at": "2026-09-24",
+    "result": "FAILED before any object was created (2nd attempt)",
+    "error": "more_permissions_required: restricted key rk_live_...kY0Q lacks product_write on acct_1MmUPwJKCamubEm1",
+    "key_edit_url": "https://dashboard.stripe.com/b/acct_1MmUPwJKCamubEm1?destination=%2Fapikeys%2Fmk_1UCtw3JKCamubEm1QoAtsAN6%2Fedit",
+    "permissions_needed": [
+      "Products: Write",
+      "Prices: Write",
+      "Payment Links: Write"
+    ],
+    "rerun": "python3 ~/oss-pipeline/bin/mkstripe.py live"
+  }
+}
