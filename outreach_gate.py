@@ -53,9 +53,17 @@ def check_evidence_mod():
 
 
 def humanize_ok(path):
+    """Desktop HUMANIZE rules, re-synced on every call, zero tolerance for email (see tools/email_humanize.py)."""
     r = subprocess.run([sys.executable, HUMANIZE, "--strict", path], capture_output=True, text=True, timeout=60)
     tail = [l.strip() for l in r.stdout.splitlines() if "[HARD]" in l or "[soft]" in l]
-    return r.returncode == 0, "; ".join(tail)[:200]
+    ok = r.returncode == 0
+    sys.path.insert(0, os.path.join(PIPE, "tools"))
+    import email_humanize
+    found, _status = email_humanize.check_text(open(path, encoding="utf-8").read(), do_sync=True)
+    if found:
+        ok = False
+        tail += [f"[{c}] {d}" for c, d in found]
+    return ok, "; ".join(tail)[:300]
 
 
 def check(path, conn=None, target_override=None):
@@ -220,7 +228,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check")
     ap.add_argument("--control", action="store_true")
+    ap.add_argument("--rehash", help="re-gate a draft the owner edited by hand; on PASS record its new body_sha256")
     args = ap.parse_args()
+    if args.rehash:
+        path = args.rehash if os.path.isabs(args.rehash) else os.path.join(QUEUE, os.path.basename(args.rehash))
+        fails = check(path)
+        for r, d in fails:
+            print(f"FAIL {r}: {d}")
+        if fails:
+            print(f"FAIL ({len(fails)} rules): fix the text and run --rehash again; nothing recorded")
+            sys.exit(1)
+        tid, _lane = lane_from_filename(path)
+        c = db()
+        n = c.execute("update outreach set body_sha256=? where target_id=? and sent_at is null",
+                      (sha256(open(path, encoding="utf-8").read()), tid)).rowcount
+        c.commit()
+        print(f"PASS: re-gated and recorded new sha for {os.path.basename(path)} ({n} row). Re-approve before sending.")
+        sys.exit(0)
     if args.control:
         sys.exit(controls())
     if args.check:

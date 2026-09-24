@@ -34,3 +34,12 @@ Until those steps are done, Route A is the only route.
 ## L4 and L5
 
 L4 founder notes and L5 devrel pitches are manual. The owner writes each one from outreach/templates/L4.md, L4-linkedin.md or L5.md, with a fact he checked himself. LinkedIn automation stays off, so every LinkedIn message is typed and sent by hand. Before any L4 send, check that https://github.com/theluckystrike/codebase-licensing-checklist loads. It returned 404 on 2026-09-24.
+
+## Humanize rules apply to every email, every time
+
+The source of truth is ~/Desktop/humanize (HUMANIZE.md and scan.py). Nothing goes out unless it passes.
+
+- The gate re-syncs both files from the Desktop on every run and logs the sha to state/humanize-sync.log.
+- Email is zero tolerance. Every scan.py finding blocks, hard or soft. The gate also checks the HUMANIZE.md rules the scanner misses: colon before a list, three similar-length sentences in a row, no contractions, paragraphs over 4 sentences, a question as the opener, exclamation marks, and markdown bold or headings.
+- The builder, the gate, and the sender (dry run, --arm, --mark-sent) all run it. A draft edited after gating is blocked until you re-gate it with `python3 outreach_gate.py --rehash FILE`.
+- Any email written outside the pipeline (replies, follow-ups) gets the same check first with `python3 tools/email_humanize.py FILE`.
