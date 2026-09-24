@@ -11,7 +11,10 @@ snap() {
   j9054=$(gh api repos/janhq/jan/pulls/9054 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
   s523=$(gh api repos/toss/react-simplikit/pulls/523 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
   s501=$(gh api repos/toss/react-simplikit/issues/501 --jq '"\(.state):\(.comments)"' 2>/dev/null)
-  echo "j9054=$j9054|6669=$h6669|6671=$h6671|6672=$h6672|6676=$h6676|s523=$s523|s501=$s501"
+  c30229=$(gh api repos/calcom/cal.diy/pulls/30229 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
+  c30230=$(gh api repos/calcom/cal.diy/pulls/30230 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
+  f9394=$(gh api repos/formbricks/formbricks/issues/9394 --jq '"\(.state):\(.comments)"' 2>/dev/null)
+  echo "j9054=$j9054|6669=$h6669|6671=$h6671|6672=$h6672|6676=$h6676|s523=$s523|s501=$s501|c30229=$c30229|c30230=$c30230|f9394=$f9394"
 }
 prev=$(snap)
 while true; do
