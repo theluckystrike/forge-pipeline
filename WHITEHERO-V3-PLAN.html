@@ -58,6 +58,7 @@ a{color:var(--blue)}
 </p>
 
 <div class="kpis">
+<div class="kpi"><b>13%</b><span>chance of a first paying client in 90 days at today's supply (mid case); 51% at plan volume</span></div>
 <div class="kpi"><b>$0</b><span>revenue from 169 PRs since 2026-08-20 and 803 career merges</span></div>
 <div class="kpi"><b>$0.03</b><span>EV per PR under v1/v2 design even if an ask existed</span></div>
 <div class="kpi"><b>3.1%</b><span>merge rate in repos over 10k stars (1 of 32 in Sept); 36.8% under 100 stars</span></div>
@@ -68,20 +69,82 @@ a{color:var(--blue)}
 
 <div class="box ok">
 <h3 style="margin-top:0">Executive summary (60 seconds)</h3>
-<p><b>Verdict.</b> v1 and v2 built a working contribution engine and pointed it at people with no budget. The revenue is zero by construction: the funnel has a hard zero at the "ask" stage, and only 2 of 26 merges (0.077) landed in a repo whose owner has any budget. Every dollar in the comparable set goes to (a) the owner of something people depend on, (b) a verified bug, or (c) a company paying for maintenance of its own code. Nobody gets paid for drive-by PRs to strangers.</p>
-<p><b>Thesis of v3: the PR is a doorway, not a donation.</b> Keep the engine (cheap, verified, 56 to 66% merge where a maintainer decided, E33). Change three things. 1) Target orgs that pass a buyer-budget qualifier, not repos that merge fast. 2) Sell the same work to the repo owner or deployer as a fixed-fee retainer, where AI-agent PRs merge at 68 to 80% instead of 26%. 3) Move the ask off GitHub, one message per org, after a merge or a measured audit, never in a PR body.</p>
-<p><b>Five active lanes, ranked by measured-comparable $ per operator hour (section 3):</b> L1 owner-side maintenance retainer ($1,500 to 2,000 per month, $160/h at the base funnel); L5 contribution-as-marketing packs sold to devrel teams ($40/h, $4k per 20 attempts, price untested); L3 Expensify Help Wanted proposals as human-gated floor income ($37/h, $6k/mo market cap); L4 codebase-licensing referral via a published eligibility checklist ($30/h, $187 to $750 per seller at published prices); L2 locale-parity and "add i18n" engineering sale to English-only products and enterprise deployers ($27/h at MTPE price, $107/h at the $500 SKU, buyer unproven). By day-90 base-case dollars the order is L1, L5, L3, L2, L4.</p>
-<p><b>Kill:</b> awesome-list PRs (14 sent, 1 merged, $0 possible), gift PRs with no follow-up, GitHub Sponsors as a lane (median sponsored dev has 2 sponsors), Algora bounties (1 closure in 90 days across 12 name-brand orgs), security spray (IBB paused, curl ended, GitHub cut tiers 50 to 75%; 35 GHSAs earned $0 in 40 h, E41), Medusa concentration past the 2026-10-07 fuse.</p>
-<p><b>First three actions (Phase 0, day 0 to 1):</b> correct the three false claims on zovo.one/l10n, publish the Sponsors listing with deliverable-named tiers, and re-point the dead launchd merge watcher at the durable code home.</p>
+<h4>Verdict</h4>
+<p>v1 and v2 built a working contribution engine and pointed it at people with no budget. The revenue is zero by construction: the funnel has a hard zero at the "ask" stage, and only 2 of 26 merges (0.077) landed in a repo whose owner has any budget. Every dollar in the comparable set goes to (a) the owner of something people depend on, (b) a verified bug, or (c) a company paying for maintenance of its own code. Nobody gets paid for drive-by PRs to strangers.</p>
+<h4>Thesis of v3, the PR is a doorway, not a donation</h4>
+<p>Keep the engine (cheap, verified, 56 to 66% merge where a maintainer decided, E33). Change three things. 1) Target orgs that pass a buyer-budget qualifier, not repos that merge fast. 2) Sell the same work to the repo owner or deployer as a fixed-fee retainer, where AI-agent PRs merge at 68 to 80% instead of 26%. 3) Move the ask off GitHub, one message per org, after a merge or a measured audit, never in a PR body.</p>
+<h4>Five active lanes, ranked by measured-comparable $ per operator hour, section 3</h4>
+<p>L1 owner-side maintenance retainer ($1,500 to 2,000 per month, $160/h at the base funnel); L5 contribution-as-marketing packs sold to devrel teams ($40/h, $4k per 20 attempts, price untested); L3 Expensify Help Wanted proposals as human-gated floor income ($37/h, $6k/mo market cap); L4 codebase-licensing referral via a published eligibility checklist ($30/h, $187 to $750 per seller at published prices); L2 locale-parity and "add i18n" engineering sale to English-only products and enterprise deployers ($27/h at MTPE price, $107/h at the $500 SKU, buyer unproven). By day-90 base-case dollars the order is L1, L5, L3, L2, L4.</p>
+<h4>Kill</h4>
+<p>awesome-list PRs (14 sent, 1 merged, $0 possible), gift PRs with no follow-up, GitHub Sponsors as a lane (median sponsored dev has 2 sponsors), Algora bounties (1 closure in 90 days across 12 name-brand orgs), security spray (IBB paused, curl ended, GitHub cut tiers 50 to 75%; 35 GHSAs earned $0 in 40 h, E41), Medusa concentration past the 2026-10-07 fuse.</p>
+<h4>First three actions, Phase 0, day 0 to 1</h4>
+<p>correct the three false claims on zovo.one/l10n, publish the Sponsors listing with deliverable-named tiers, and re-point the dead launchd merge watcher at the durable code home.</p>
 </div>
+
+
+<h2 id="s0">0. Probability of landing a paying client</h2>
+<p class="small">Added 2026-09-24 after the day-0 build and the first full cycle. Nothing has been sent yet, so the reply and close rates below are assumptions until the first 40 to 80 sends measure them.</p>
+<div class="box ok">
+<p>The honest answer is about a 1 in 7 chance of at least one paying client in the next 90 days with the pipeline as it runs today. Push volume to the plan's 160 sends and it's about 1 in 2 in the mid case. The formula is sends times reply rate times close rate, and the chance of at least one client is 1 minus (1 minus paid-per-send) to the power of sends.</p>
+</div>
+
+<h3>Scenarios</h3>
+<p>The only reply rate ever measured on this operator is 5.6%, from 36 LinkedIn cold asks. Cold email to a generic inbox usually does worse, so the low and mid rows assume 1% and 3%. That range is an assumption with no published source behind it. The close rates are priors too.</p>
+<div class="tw"><table>
+<tr><th>Scenario</th><th>Reply</th><th>Close from reply</th><th>Paid per send</th><th>9 drafts now</th><th>30 sends, today's pool, 90 days</th><th>80 sends</th><th>160 sends, plan volume</th><th>320 sends</th></tr>
+<tr><td>Low</td><td class="n">1%</td><td class="n">10%</td><td class="n">0.10%</td><td class="n">0.9%</td><td class="n">3.0%</td><td class="n">7.7%</td><td class="n">14.8%</td><td class="n">27.4%</td></tr>
+<tr><td>Mid</td><td class="n">3%</td><td class="n">15%</td><td class="n">0.45%</td><td class="n">4.0%</td><td class="n">12.7%</td><td class="n">30.3%</td><td class="n">51.4%</td><td class="n">76.4%</td></tr>
+<tr><td>High</td><td class="n">5.6%</td><td class="n">25%</td><td class="n">1.4%</td><td class="n">11.9%</td><td class="n">34.5%</td><td class="n">67.6%</td><td class="n">89.5%</td><td class="n">98.9%</td></tr>
+</table></div>
+<div class="bars">
+<div class="bar"><span>Low, 30 sends</span><i style="width:3%"></i><em>3.0%</em></div>
+<div class="bar"><span>Mid, 30 sends</span><i style="width:12.7%"></i><em>12.7%</em></div>
+<div class="bar"><span>High, 30 sends</span><i style="width:34.5%"></i><em>34.5%</em></div>
+<div class="bar k"><span>Low, 160 sends</span><i style="width:14.8%"></i><em>14.8%</em></div>
+<div class="bar k"><span>Mid, 160 sends</span><i style="width:51.4%"></i><em>51.4%</em></div>
+<div class="bar k"><span>High, 160 sends</span><i style="width:89.5%"></i><em>89.5%</em></div>
+</div>
+<p class="small">Bars show the chance of at least one paying client. Blue is today's supply of about 30 sends, grey is the plan's 160.</p>
+
+<h3>Measured funnel after the first full cycle</h3>
+<div class="tw"><table>
+<tr><th>Stage</th><th>Count</th><th>Note</th></tr>
+<tr><td>Targets discovered</td><td class="n">1,277</td><td>6 languages, 200 to 20,000 stars, pushed in the last 90 days, plus seeds</td></tr>
+<tr><td>Pass the budget gate (B at or above 0.4)</td><td class="n">746</td><td>organization, website, pricing or enterprise signal, repo maturity</td></tr>
+<tr><td>Audited, every number traced to saved evidence</td><td class="n">213</td><td>all pass check_evidence and the humanize gate</td></tr>
+<tr><td>Audits with 3 or more measured problems</td><td class="n">21</td><td>about 1 in 10, the real bottleneck</td></tr>
+<tr><td>Targets with a website contact</td><td class="n">141</td><td>97 domain-matched with MX in the first pass; 77% are generic inboxes</td></tr>
+<tr><td>Drafts passing the gate, unsent</td><td class="n">9</td><td>4.2% of audits become a sendable draft</td></tr>
+<tr><td>Sent</td><td class="n">0</td><td>sends start on plan day 7 after owner review</td></tr>
+</table></div>
+
+<h3>Why the realistic number sits between low and mid</h3>
+<ul>
+<li>Volume is the binding limit. 213 audits gave 9 drafts, and the 533 qualified targets not yet audited would add about 22 more. Reaching 160 sends means about 3,800 audits, so discovery has to widen. That's compute time, not a wall.</li>
+<li>5 of the 9 drafts go to maintainers (Strapi, Rocket.Chat, Dify, Infisical, Xberg). The evidence showed 0 of 11 such companies pay for translation because they get it free, and section 5 killed that segment on day 0. The builder still drafts it, so those 5 sit near the low row.</li>
+<li>The retainer hooks are thin. Three broken doc links is a weak opener for $1,500 a month, and the $900 entry offer is more credible.</li>
+<li>Only 22 targets have both a named decision-maker and an email address.</li>
+</ul>
+
+<h3>What raises the probability most</h3>
+<ol>
+<li>Warm relationships first. Maintainers who already merged your work (Toss react-simplikit, deja-vu, mcp-gitlab) know your name, and a warm reply rate is several times a cold one.</li>
+<li>Volume. Going from 30 to 160 sends moves the mid case from 12.7% to 51.4%.</li>
+<li>A smaller first yes. A $50 audit or a $500 fix closes far more often than a monthly retainer, and it can grow into one.</li>
+<li>Retarget the 5 maintainer translation pitches to English-only product companies and to deployers who run the product.</li>
+</ol>
+
+<h3>How fast the truth shows up</h3>
+<p>With zero replies after 40 sends, the true reply rate is below 7.5% with 95% confidence (the rule of three, 3 divided by n). With zero after 80, it's below 3.75%, which is the section 5 rewrite trigger. At 8 sends per weekday that's about two weeks.</p>
 
 <h3>Contents</h3>
 <div class="toc">
-<ol>
+<ol start="0">
+<li><a href="#s0">Probability of landing a paying client</a></li>
 <li><a href="#s1">Evidence base and measured numbers</a></li>
-<li><a href="#s2">Autopsy: why 169 PRs made $0</a></li>
+<li><a href="#s2">Autopsy of why 169 PRs made $0</a></li>
 <li><a href="#s3">Channel ranking by $ per operator hour</a></li>
-<li><a href="#s4">Strategy: doorway, not donation</a></li>
+<li><a href="#s4">Strategy, the PR as a doorway</a></li>
 <li><a href="#s5">Lanes: buyer, offer, price, unit economics, first dollar, kill gate</a></li>
 <li><a href="#s6">Targeting model v3 (Budget x Reach x Latency)</a></li>
 <li><a href="#s7">Architecture, data model, scheduling</a></li>
@@ -145,7 +208,7 @@ a{color:var(--blue)}
 <tr><td>E40</td><td>Comparable cold B2B email reply rate for an unknown vendor (assumption, not measured on this operator)</td><td class="n">1% to 3%; measured LinkedIn cold ask 5.6% (n=36)</td><td>analyst assumption; memory linkedin-ask-reply-rate</td></tr>
 </table></div>
 
-<h2 id="s2">2. Autopsy: why 169 PRs made $0</h2>
+<h2 id="s2">2. Autopsy of why 169 PRs made $0</h2>
 <p>Stage model per PR. "Buyer" means someone who can approve a $500 invoice. Every conversion is measured or the basis is stated.</p>
 <div class="tw"><table>
 <tr><th>Stage</th><th>Conversion</th><th>Basis</th></tr>
@@ -174,7 +237,8 @@ Upper bound using only the two measured stages: 0.26 x 0.077 x $500 = $10.01 per
 <tr><td>7</td><td>Referral sourced from the contribution graph</td><td>0 of 8 merged repos qualify; all public</td><td>Source sellers off-platform (founders of dead or pivoted startups) and publish the eligibility checklist</td><td>E8, E9, E12</td></tr>
 <tr><td>8</td><td>Medusa concentration in the worst cell</td><td>10 PRs over 500 lines into a 36k-star repo, 0 reviews, one queue (E35)</td><td>Keep the 2026-10-07 fuse; no new Medusa work; use as logo proof only once merged</td><td>E7</td></tr>
 </table></div>
-<div class="box kill"><b>Kill list (stop on day 0):</b> awesome-list PRs; unsolicited gift PRs to repos that fail the qualifier; Algora and generic bounty hunting; security bounty spray (35 GHSAs earned $0 in 40 h in May; IBB paused, curl ended, GitHub cut tiers 50 to 75%); GitHub Sponsors as a revenue line; any new Medusa work before 2026-10-07; the pitch page claims "merged" and "native human review".</div>
+<div class="box kill"><h4 style="margin-top:0">Kill list, stop on day 0</h4>
+awesome-list PRs; unsolicited gift PRs to repos that fail the qualifier; Algora and generic bounty hunting; security bounty spray (35 GHSAs earned $0 in 40 h in May; IBB paused, curl ended, GitHub cut tiers 50 to 75%); GitHub Sponsors as a revenue line; any new Medusa work before 2026-10-07; the pitch page claims "merged" and "native human review".</div>
 
 <h2 id="s3">3. Channel ranking by $ per operator hour</h2>
 <p>Operator hour means human time the lane cannot avoid (posting, sending, reviewing, invoicing). Model cost is cents per PR and is ignored except where stated. Arithmetic is shown; measured inputs come from section 1. Seven inputs are analyst priors with no measured source (L1 close 25%, L1 delivery 7 h per client, L1 5 min per send, L4 seller conversion 0.3, L5 win 0.20, D1 install 0.5, D2 valid 0.25); each is replaced by the measured value after its lane's first gate. Sensitivity: at a 15% L1 close the base run rate falls from $9,085 to 160 x 0.056 x 0.15 = 1.34 clients per cohort, 2.02 at day 90, x $1,750 = $3,528 for L1 and $6,733 in total.</p>
@@ -208,7 +272,7 @@ Upper bound using only the two measured stages: 0.26 x 0.077 x $500 = $10.01 per
 <tr><td>Killed: contract after PRs</td><td>If 1 in 50 merges yields a 10 h contract at $80/h: $800 / (50 merges / 26.5% x 0.67 h = 126 h) = $6.3/h (A2); conversion never measured</td><td>Unmeasured</td></tr>
 </table></div>
 
-<h2 id="s4">4. Strategy: doorway, not donation</h2>
+<h2 id="s4">4. Strategy, the PR as a doorway and not a donation</h2>
 <div class="grid2">
 <div class="box"><h4>What stays</h4><ul><li>The ship lane: extract gap, parallel children, en-order merge, issue-first pre-approval, contents-API PUT with byte readback (zero defects on all 10 Medusa PRs, 4,252 keys).</li><li>The 100/100 gate and HUMANIZE prose rules.</li><li>Verify artifacts, not prose; incremental-write and resume contracts.</li><li>ANVIL's maintainer-latency weighting, as one of three factors.</li></ul></div>
 <div class="box"><h4>What changes</h4><ul><li>Target selection is gated by a buyer-budget score before a maintainer-latency score.</li><li>Every PR to a qualified org is followed by exactly one off-platform message to the owner persona (CTO, founder, head of devrel), never to the maintainer inside GitHub.</li><li>The offer is the owner running our engine on their own repos, with our audit numbers as the hook.</li><li>The engine also runs on the buyer's private repos after signature, where merge rates are 68 to 80%.</li></ul></div>
@@ -455,7 +519,7 @@ CREATE TABLE proposals(id INTEGER PRIMARY KEY, issue_url TEXT UNIQUE, bounty_usd
 <tr><td>Skip AI-ban repos; disclose AI assistance where CONTRIBUTING asks</td><td>37 bans, 72 disclosure requirements found; tt-metal permanent ban</td><td>blocklist is a hard exclusion in Qualify (section 6), not a weight; disclosure line template</td></tr>
 <tr><td>No paid APIs; no treg spend</td><td>Prior sessions drained a DataForSEO balance to $0 and a parallel session burned 95.5% of a shared treg balance</td><td>Budget line in every subagent prompt: "$0 paid API budget"</td></tr>
 <tr><td>No calls offered, ever</td><td>Operator rule; everything async and written</td><td>grep outreach bodies for "call", "Zoom", "meet"; fail = block</td></tr>
-<tr><td>No emojis, no em-dashes, HUMANIZE rules in all shipped prose</td><td>Operator rule and HUMANIZE.md gate</td><td>scan.py --strict on every outbound body and page</td></tr>
+<tr><td>No emojis, no em-dashes, HUMANIZE rules in all shipped prose</td><td>Operator rule and HUMANIZE.md gate</td><td><code>scan.py --strict</code> on every outbound body and page</td></tr>
 <tr><td>LinkedIn automation stays off</td><td>Owner stopped it 2026-09-24; four switches hold it</td><td>Agent drafts, owner sends by hand; no script touches li-chrome-cdp</td></tr>
 <tr><td>Rotate the Resend key before any programmatic email</td><td>Key was used for 12,935 phishing sends in August</td><td>Phase 0 checklist item; until rotated, webmail path only</td></tr>
 <tr><td>Never claim merged, reviewed, or native-reviewed unless true</td><td>Three false claims are live on the pitch page today</td><td>Proof block generated from kpi.db state, not hand-written</td></tr>
@@ -509,8 +573,10 @@ L2 cash: first deployer fill paid at day 30 (aggressive, bottom of the 30 to 45 
 <tr><td><b>Total</b></td><td class="n"><b>34.3 h</b></td><td class="n"><b>78.2 h</b></td><td class="n"><b>140.0 h</b></td><td>operator budget is 80 h per month; 13.3 + 5.0 + 0 + 14.0 + 2.0; 13.3 + 23.5 + 4.7 + 28.4 + 8.3; 13.3 + 49.0 + 18.7 + 42.0 + 17.0</td></tr>
 <tr><td><b>$ per operator hour</b></td><td class="n"><b>$47</b></td><td class="n"><b>$116</b></td><td class="n"><b>$160</b></td><td>run rate / hours: 1,610 / 34.3; 9,085 / 78.2; 22,340 / 140.0</td></tr>
 </table></div>
-<p><b>Capacity rule.</b> The base case fits the 80 h budget (78.2 h). The aggressive case exceeds it by 60 h and is reachable only by dropping L3 (saves 42.0 h, costs $1,590), trimming L5 to one pack per quarter (saves 8.7 h, costs $2,667) and L2 to two locales (saves 9.3 h, costs $1,000): 22,340 - 1,590 - 2,667 - 1,000 = $17,083 per month at 140.0 - 42.0 - 8.7 - 9.3 = 80.0 h, or $214 per hour. The section 5 L3 rule (stop L3 in any month over 80 logged hours) enforces the first cut automatically, so the aggressive case in practice is $17,083, not $22,340.</p>
-<p><b>Sanity anchors.</b> The May 2026 human-in-loop bounty experiment produced $1,067 per month at 10 h per month. Retainer comparables trade at $1,750 to $10,000 per client per month (3 vendors, price pages fetched 2026-09-24, A6). The base case asks for 3.36 clients at the bottom of that band after 320 specific, measured audits at a 5.6% reply rate and 25% close. The 65% of base revenue that sits in L1 (5,880 / 9,085) rests on that untested close rate; the conservative case, at 2% reply and 15% close, is the floor the first 80 sends will confirm or break.</p>
+<h4>Capacity rule</h4>
+<p>The base case fits the 80 h budget (78.2 h). The aggressive case exceeds it by 60 h and is reachable only by dropping L3 (saves 42.0 h, costs $1,590), trimming L5 to one pack per quarter (saves 8.7 h, costs $2,667) and L2 to two locales (saves 9.3 h, costs $1,000): 22,340 - 1,590 - 2,667 - 1,000 = $17,083 per month at 140.0 - 42.0 - 8.7 - 9.3 = 80.0 h, or $214 per hour. The section 5 L3 rule (stop L3 in any month over 80 logged hours) enforces the first cut automatically, so the aggressive case in practice is $17,083, not $22,340.</p>
+<h4>Sanity anchors</h4>
+<p>The May 2026 human-in-loop bounty experiment produced $1,067 per month at 10 h per month. Retainer comparables trade at $1,750 to $10,000 per client per month (3 vendors, price pages fetched 2026-09-24, A6). The base case asks for 3.36 clients at the bottom of that band after 320 specific, measured audits at a 5.6% reply rate and 25% close. The 65% of base revenue that sits in L1 (5,880 / 9,085) rests on that untested close rate; the conservative case, at 2% reply and 15% close, is the floor the first 80 sends will confirm or break.</p>
 <h2 id="s12">12. Measurement loop and red flags</h2>
 <div class="tw"><table>
 <tr><th>Metric (weekly)</th><th>Target from week 3</th><th>Red flag</th><th>Command</th></tr>
@@ -577,18 +643,19 @@ L2 cash: first deployer fill paid at day 30 (aggressive, bottom of the 30 to 45 
 <tr><td>E3 60-second executive summary</td><td class="n">3</td><td class="n">3</td><td></td></tr>
 <tr><td><b>Total</b></td><td class="n"><b>100</b></td><td class="n"><b><span id="totalscore">95 (round 5, 2026-09-24; 0 arithmetic errors in 71 recomputed cells)</span></b></td><td id="graderef">round-5 verdict; the 2 editable deductions (B1, C1) were applied afterwards; A2 and C3 need measurement</td></tr>
 </table></div>
-<div class="box" id="gradernotes"><b>Grader notes, round 5 (95/100):</b> 0 arithmetic errors across 71 recomputed cells, so the 92 cap never engaged. Twice-appearing numbers agree everywhere. Every gate command references only columns present in the DDL. Two unsourced operator-time inputs (7 h per client, 5 min per send) sat under the $160/h headline and are now labelled priors mapped to the columns that replace them. The single L1 kill gate now reads one column (deals.status = paid) in both section 5 and section 12. The remaining 5 points are 3 unmeasurable priors and 2 items edited after the grade; a strict reader should count the document at 95 until a sixth pass confirms 97.</div>
+<div class="box" id="gradernotes"><h4 style="margin-top:0">Grader notes, round 5, 95/100</h4>
+0 arithmetic errors across 71 recomputed cells, so the 92 cap never engaged. Twice-appearing numbers agree everywhere. Every gate command references only columns present in the DDL. Two unsourced operator-time inputs (7 h per client, 5 min per send) sat under the $160/h headline and are now labelled priors mapped to the columns that replace them. The single L1 kill gate now reads one column (deals.status = paid) in both section 5 and section 12. The remaining 5 points are 3 unmeasurable priors and 2 items edited after the grade; a strict reader should count the document at 95 until a sixth pass confirms 97.</div>
 
 <h2 id="s16">16. Sources</h2>
 <ul class="small">
-<li><b>Bounty market:</b> github.com/AsherKasper/bounty-census; incubagent.com/research/agent-bounty-market; gigs.sh/p/algora; algora.io org pages (tscircuit, BasedHardware, triggerdotdev, highlight, zio, activepieces, keephq, documenso, golemcloud, formbricks, coder, twentyhq); Expensify/App contributingGuides/CONTRIBUTING.md; docs.tenstorrent.com/bounty_terms.html; app.opire.dev; dev.to/zeroknowledge0x (240-PR run; money map $7.82/h); hackernoon.com 3-day agent run ($0).</li>
-<li><b>Sponsors and comparables:</b> arxiv.org/pdf/2202.05751; arxiv.org/html/2604.03846; github.blog $100M milestone; endler.dev/2021/oss-money; dev.to/azu Sponsors reviews; calebporzio.com sponsorware and $100k posts; connortumbleson.com 2025 sponsor funding; joshuakgoldberg.com 2025 finances; words.filippo.io/geomys; indiehackers.com Postiz $14.2k MRR; fastruby.io monthly maintenance; railsfever.com maintenance cost; arxiv.org/html/2602.08915v2 (7,156 agent PRs); blog.codeminer42.com Tailwind revenue; codenote.net AI slop policy shift; seuros.com bounty math.</li>
-<li><b>Funds and programs:</b> sovereign.tech programs and fellowship FAQ; nlnet.nl commons fund; floss.fund/faq; github.com/open-source/github-secure-open-source-fund; linuxfoundation.org Alpha-Omega $12.5M; github.com/microsoft/foss-fund; claude.com/contact-sales/claude-for-oss.</li>
-<li><b>Security:</b> securitylab.github.com/bounties; theregister.com GitHub bounty cut 2026-07-23 and HackerOne IBB cut 2026-05-21; huntr.com; blog.google VRP 2025 review; bex.co on curl.</li>
-<li><b>Localization pricing:</b> alconost.com/en/blog/localization-cost; lokalise.com pricing and human-order docs; crowdin.com/blog/ai-translation-cost; usagepricing.com/blueprint/crowdin; phrase.com/pricing; transifex.com/pricing; tolgee.io/pricing; weblate.org/en/hosting; bureauworks.com translation rates; chatscontrol.com MTPE rates; getmonetizely.com i18n build cost.</li>
-<li><b>Code licensing:</b> dev.to HUD GTM post; hud.ai resources; vendor.hud.ai; Pangea referral partner guide, repo-value and info-hub pages (netlify); lazarus.turing.com; theinformation.com Turing; troveo.ai; codebase.markets.</li>
-<li><b>Policy:</b> docs.github.com acceptable-use-policies sections 4 and 10.</li>
-<li><b>Local evidence:</b> ~/bounty-revenue-model.md; ~/oss-pipeline; ~/oss-pipeline-state; Desktop/oss-contrib-pipeline (partly evicted); FORGE-DASHBOARD.html (2026-09-21) and ANVIL-REPORT.html (2026-09-23); agent scratch a1 to a7 in this session's scratchpad.</li>
+<li>Bounty market. github.com/AsherKasper/bounty-census; incubagent.com/research/agent-bounty-market; gigs.sh/p/algora; algora.io org pages (tscircuit, BasedHardware, triggerdotdev, highlight, zio, activepieces, keephq, documenso, golemcloud, formbricks, coder, twentyhq); Expensify/App contributingGuides/CONTRIBUTING.md; docs.tenstorrent.com/bounty_terms.html; app.opire.dev; dev.to/zeroknowledge0x (240-PR run; money map $7.82/h); hackernoon.com 3-day agent run ($0).</li>
+<li>Sponsors and comparables. arxiv.org/pdf/2202.05751; arxiv.org/html/2604.03846; github.blog $100M milestone; endler.dev/2021/oss-money; dev.to/azu Sponsors reviews; calebporzio.com sponsorware and $100k posts; connortumbleson.com 2025 sponsor funding; joshuakgoldberg.com 2025 finances; words.filippo.io/geomys; indiehackers.com Postiz $14.2k MRR; fastruby.io monthly maintenance; railsfever.com maintenance cost; arxiv.org/html/2602.08915v2 (7,156 agent PRs); blog.codeminer42.com Tailwind revenue; codenote.net AI slop policy shift; seuros.com bounty math.</li>
+<li>Funds and programs. sovereign.tech programs and fellowship FAQ; nlnet.nl commons fund; floss.fund/faq; github.com/open-source/github-secure-open-source-fund; linuxfoundation.org Alpha-Omega $12.5M; github.com/microsoft/foss-fund; claude.com/contact-sales/claude-for-oss.</li>
+<li>Security. securitylab.github.com/bounties; theregister.com GitHub bounty cut 2026-07-23 and HackerOne IBB cut 2026-05-21; huntr.com; blog.google VRP 2025 review; bex.co on curl.</li>
+<li>Localization pricing. alconost.com/en/blog/localization-cost; lokalise.com pricing and human-order docs; crowdin.com/blog/ai-translation-cost; usagepricing.com/blueprint/crowdin; phrase.com/pricing; transifex.com/pricing; tolgee.io/pricing; weblate.org/en/hosting; bureauworks.com translation rates; chatscontrol.com MTPE rates; getmonetizely.com i18n build cost.</li>
+<li>Code licensing. dev.to HUD GTM post; hud.ai resources; vendor.hud.ai; Pangea referral partner guide, repo-value and info-hub pages (netlify); lazarus.turing.com; theinformation.com Turing; troveo.ai; codebase.markets.</li>
+<li>Policy. docs.github.com acceptable-use-policies sections 4 and 10.</li>
+<li>Local evidence. ~/bounty-revenue-model.md; ~/oss-pipeline; ~/oss-pipeline-state; Desktop/oss-contrib-pipeline (partly evicted); FORGE-DASHBOARD.html (2026-09-21) and ANVIL-REPORT.html (2026-09-23); agent scratch a1 to a7 in this session's scratchpad.</li>
 </ul>
 <p class="small">Generated 2026-09-24 by Claude Fable 5.1 for execution by Claude Opus 5.5. Durable copy: ~/oss-pipeline/WHITEHERO-V3-PLAN.html. Desktop copy is a mirror and may be evicted by iCloud.</p>
 </body>
