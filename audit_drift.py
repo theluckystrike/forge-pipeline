@@ -81,7 +81,8 @@ def extract_links(text):
 
 # ---------------------------------------------------------------- (a) dead links
 def curl(url, method):
-    args = ["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "8", "-A", UA]
+    args = ["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "8", "-A", UA,
+            "-H", "Accept: text/html,application/xhtml+xml,*/*;q=0.8"]
     if method == "HEAD":
         args.append("-I")
     args.append(url)
@@ -114,7 +115,8 @@ def dead_links(docs):
                 continue
             # GitHub pages that answer 404 to anonymous clients while working for signed-in readers
             if re.match(r'https?://github\.com/[^/]+/[^/]+/(stargazers|watchers|network|forks|graphs|pulse|assets)(/|$|\?)', u) \
-                    or 'user-attachments' in u or 'private-user-images' in u:
+                    or 'user-attachments' in u or 'private-user-images' in u \
+                    or re.match(r'https?://(www\.)?(x|twitter)\.com/[^/]+/status/', u):
                 continue
             base = u.split('#')[0]
             if base in seen:
@@ -142,7 +144,7 @@ def dead_links(docs):
         if r["dead"]:
             findings.append({"check": "a_dead_link", "file": r["file"], "line_no": r["line_no"], "line": r["line"],
                              "claimed": r["url"], "measured": r["reason"],
-                             "measured_by": f"curl -sS -o /dev/null -w '%{{http_code}}' -L --max-time 8 '{r['url']}' (HEAD, GET, GET re-check)"})
+                             "measured_by": f"curl -sS -o /dev/null -w '%{{http_code}}' -L --max-time 8 -H 'Accept: text/html' '{r['url']}' (HEAD, GET, GET re-check)"})
     return recs, findings
 
 # ---------------------------------------------------------------- (b) relative links
@@ -150,7 +152,7 @@ REPO_PAGES = {"issues", "pulls", "pull", "wiki", "discussions", "releases", "act
               "graphs", "network", "compare", "commits", "tags", "blob", "tree", "raw", "stargazers", "fork", "milestones", "labels"}
 
 SITE_GEN = re.compile(r'(^|/)(mkdocs\.ya?ml|docusaurus\.config\.[jt]s|book\.toml|hugo\.(toml|ya?ml)|astro\.config\.[mc]?[jt]s|'
-                      r'\.vitepress/config\.[mc]?[jt]s|_config\.yml|conf\.py|docs\.json|mint\.json|antora\.yml)$')
+                      r'\.vitepress/config\.[mc]?[jt]s|_config\.yml|conf\.py|docs\.json|mint\.json|antora\.yml|_sidebar\.md|docs/index\.html)$')
 
 def relative_links(docs, repo, branch, paths, dirs, truncated):
     findings = []; checked = []

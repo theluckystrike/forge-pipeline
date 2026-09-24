@@ -3,16 +3,17 @@
   "ref": {
    "repo": "medusajs/medusa",
    "branch": "develop",
-   "commit_tree_sha": "e5ee47e03ad4f233956e4a1df783e8afdd52ca59",
+   "commit_tree_sha": "1ba69082ceb941d47cfe390212f400e39a7166dd",
    "tree_truncated": false,
-   "n_files": 24190,
-   "measured_at": "2026-09-24T16:53:33+0700",
+   "n_files": 24195,
+   "measured_at": "2026-09-24T19:11:37+0700",
    "definition": "gap = missing or empty or byte-identical to English",
+   "ref": "develop",
    "candidate_groups": [
     {
      "group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
-     "en_keys": 2443,
-     "n_locales": 30
+     "en_keys": 2446,
+     "n_locales": 35
     }
    ],
    "locale_group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
@@ -20,14 +21,16 @@
    "src_files": [
     "packages/admin/dashboard/src/i18n/translations/en.json"
    ],
-   "en_keys": 2443,
+   "en_keys": 2446,
    "en_neutral_keys": 16,
    "format": "json",
-   "n_locales_total": 30,
-   "n_locales_measured": 29,
+   "n_locales_total": 35,
+   "n_locales_measured": 33,
    "sampled": false,
-   "en_variants_skipped": [],
-   "raw_fetches": 30,
+   "en_variants_skipped": [
+    "en-GB"
+   ],
+   "raw_fetches": 34,
    "locales": {
     "ar": {
      "files": [
@@ -35,12 +38,12 @@
      ],
      "locale_keys": 1897,
      "present": 1876,
-     "missing": 567,
+     "missing": 570,
      "identical": 25,
-     "gap_keys": 592,
-     "gap_pct": 24.2,
-     "missing_pct": 23.2,
-     "count_pct": 22.3
+     "gap_keys": 595,
+     "gap_pct": 24.3,
+     "missing_pct": 23.3,
+     "count_pct": 22.4
     },
     "bg": {
      "files": [
@@ -48,12 +51,12 @@
      ],
      "locale_keys": 1913,
      "present": 1892,
-     "missing": 551,
+     "missing": 554,
      "identical": 9,
-     "gap_keys": 560,
-     "gap_pct": 22.9,
+     "gap_keys": 563,
+     "gap_pct": 23.0,
      "missing_pct": 22.6,
-     "count_pct": 21.7
+     "count_pct": 21.8
     },
     "bs": {
      "files": [
@@ -61,12 +64,12 @@
      ],
      "locale_keys": 1934,
      "present": 1915,
-     "missing": 528,
+     "missing": 531,
      "identical": 27,
-     "gap_keys": 555,
-     "gap_pct": 22.7,
-     "missing_pct": 21.6,
-     "count_pct": 20.8
+     "gap_keys": 558,
+     "gap_pct": 22.8,
+     "missing_pct": 21.7,
+     "count_pct": 20.9
     },
     "cs": {
      "files": [
@@ -74,12 +77,12 @@
      ],
      "locale_keys": 2147,
      "present": 2132,
-     "missing": 311,
+     "missing": 314,
      "identical": 22,
-     "gap_keys": 333,
-     "gap_pct": 13.6,
-     "missing_pct": 12.7,
-     "count_pct": 12.1
+     "gap_keys": 336,
+     "gap_pct": 13.7,
+     "missing_pct": 12.8,
+     "count_pct": 12.2
     },
     "de": {
      "files": [
@@ -87,12 +90,12 @@
      ],
      "locale_keys": 1800,
      "present": 1778,
-     "missing": 665,
+     "missing": 668,
      "identical": 44,
-     "gap_keys": 709,
-     "gap_pct": 29.0,
-     "missing_pct": 27.2,
-     "count_pct": 26.3
+     "gap_keys": 712,
+     "gap_pct": 29.1,
+     "missing_pct": 27.3,
+     "count_pct": 26.4
     },
     "el": {
      "files": [
@@ -100,12 +103,12 @@
      ],
      "locale_keys": 1897,
      "present": 1876,
-     "missing": 567,
+     "missing": 570,
      "identical": 19,
-     "gap_keys": 586,
-     "gap_pct": 24.0,
-     "missing_pct": 23.2,
-     "count_pct": 22.3
+     "gap_keys": 589,
+     "gap_pct": 24.1,
+     "missing_pct": 23.3,
+     "count_pct": 22.4
     },
     "es": {
      "files": [
@@ -113,12 +116,12 @@
      ],
      "locale_keys": 2171,
      "present": 2154,
-     "missing": 289,
+     "missing": 292,
      "identical": 25,
-     "gap_keys": 314,
-     "gap_pct": 12.9,
-     "missing_pct": 11.8,
-     "count_pct": 11.1
+     "gap_keys": 317,
+     "gap_pct": 13.0,
+     "missing_pct": 11.9,
+     "count_pct": 11.2
     },
     "fa": {
      "files": [
@@ -126,25 +129,25 @@
      ],
      "locale_keys": 2376,
      "present": 2358,
-     "missing": 85,
+     "missing": 88,
      "identical": 9,
-     "gap_keys": 94,
-     "gap_pct": 3.8,
-     "missing_pct": 3.5,
-     "count_pct": 2.7
+     "gap_keys": 97,
+     "gap_pct": 4.0,
+     "missing_pct": 3.6,
+     "count_pct": 2.9
     },
     "fi": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/fi.json"
      ],
-     "locale_keys": 2438,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2443,
+     "present": 2443,
+     "missing": 3,
      "identical": 11,
-     "gap_keys": 16,
-     "gap_pct": 0.7,
-     "missing_pct": 0.2,
-     "count_pct": 0.2
+     "gap_keys": 14,
+     "gap_pct": 0.6,
+     "missing_pct": 0.1,
+     "count_pct": 0.1
     },
     "fr": {
      "files": [
@@ -152,12 +155,12 @@
      ],
      "locale_keys": 1802,
      "present": 1780,
-     "missing": 663,
+     "missing": 666,
      "identical": 123,
-     "gap_keys": 786,
-     "gap_pct": 32.2,
-     "missing_pct": 27.1,
-     "count_pct": 26.2
+     "gap_keys": 789,
+     "gap_pct": 32.3,
+     "missing_pct": 27.2,
+     "count_pct": 26.3
     },
     "he": {
      "files": [
@@ -165,25 +168,25 @@
      ],
      "locale_keys": 1936,
      "present": 1919,
-     "missing": 524,
+     "missing": 527,
      "identical": 6,
-     "gap_keys": 530,
-     "gap_pct": 21.7,
-     "missing_pct": 21.4,
-     "count_pct": 20.8
+     "gap_keys": 533,
+     "gap_pct": 21.8,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
     },
     "hr": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/hr.json"
      ],
-     "locale_keys": 2489,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2497,
+     "present": 2446,
+     "missing": 0,
      "identical": 25,
-     "gap_keys": 30,
-     "gap_pct": 1.2,
-     "missing_pct": 0.2,
-     "count_pct": -1.9
+     "gap_keys": 25,
+     "gap_pct": 1.0,
+     "missing_pct": 0.0,
+     "count_pct": -2.1
     },
     "hu": {
      "files": [
@@ -191,12 +194,12 @@
      ],
      "locale_keys": 1928,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 25,
-     "gap_keys": 560,
-     "gap_pct": 22.9,
-     "missing_pct": 21.9,
-     "count_pct": 21.1
+     "gap_keys": 563,
+     "gap_pct": 23.0,
+     "missing_pct": 22.0,
+     "count_pct": 21.2
     },
     "id": {
      "files": [
@@ -204,12 +207,12 @@
      ],
      "locale_keys": 1936,
      "present": 1919,
-     "missing": 524,
+     "missing": 527,
      "identical": 47,
-     "gap_keys": 571,
-     "gap_pct": 23.4,
-     "missing_pct": 21.4,
-     "count_pct": 20.8
+     "gap_keys": 574,
+     "gap_pct": 23.5,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
     },
     "it": {
      "files": [
@@ -217,12 +220,12 @@
      ],
      "locale_keys": 1821,
      "present": 1799,
-     "missing": 644,
+     "missing": 647,
      "identical": 29,
-     "gap_keys": 673,
-     "gap_pct": 27.5,
-     "missing_pct": 26.4,
-     "count_pct": 25.5
+     "gap_keys": 676,
+     "gap_pct": 27.6,
+     "missing_pct": 26.5,
+     "count_pct": 25.6
     },
     "ja": {
      "files": [
@@ -230,12 +233,12 @@
      ],
      "locale_keys": 2327,
      "present": 2305,
-     "missing": 138,
+     "missing": 141,
      "identical": 13,
-     "gap_keys": 151,
-     "gap_pct": 6.2,
-     "missing_pct": 5.6,
-     "count_pct": 4.7
+     "gap_keys": 154,
+     "gap_pct": 6.3,
+     "missing_pct": 5.8,
+     "count_pct": 4.9
     },
     "ko": {
      "files": [
@@ -243,12 +246,12 @@
      ],
      "locale_keys": 1940,
      "present": 1923,
-     "missing": 520,
+     "missing": 523,
      "identical": 8,
-     "gap_keys": 528,
-     "gap_pct": 21.6,
-     "missing_pct": 21.3,
-     "count_pct": 20.6
+     "gap_keys": 531,
+     "gap_pct": 21.7,
+     "missing_pct": 21.4,
+     "count_pct": 20.7
     },
     "lt": {
      "files": [
@@ -256,12 +259,12 @@
      ],
      "locale_keys": 1930,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 10,
-     "gap_keys": 545,
-     "gap_pct": 22.3,
-     "missing_pct": 21.9,
-     "count_pct": 21.0
+     "gap_keys": 548,
+     "gap_pct": 22.4,
+     "missing_pct": 22.0,
+     "count_pct": 21.1
     },
     "mk": {
      "files": [
@@ -269,12 +272,12 @@
      ],
      "locale_keys": 1881,
      "present": 1860,
-     "missing": 583,
+     "missing": 586,
      "identical": 7,
-     "gap_keys": 590,
+     "gap_keys": 593,
      "gap_pct": 24.2,
-     "missing_pct": 23.9,
-     "count_pct": 23.0
+     "missing_pct": 24.0,
+     "count_pct": 23.1
     },
     "mn": {
      "files": [
@@ -282,12 +285,12 @@
      ],
      "locale_keys": 1881,
      "present": 1860,
-     "missing": 583,
+     "missing": 586,
      "identical": 9,
-     "gap_keys": 592,
-     "gap_pct": 24.2,
-     "missing_pct": 23.9,
-     "count_pct": 23.0
+     "gap_keys": 595,
+     "gap_pct": 24.3,
+     "missing_pct": 24.0,
+     "count_pct": 23.1
     },
     "nl": {
      "files": [
@@ -295,25 +298,51 @@
      ],
      "locale_keys": 1928,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 77,
-     "gap_keys": 612,
+     "gap_keys": 615,
      "gap_pct": 25.1,
-     "missing_pct": 21.9,
-     "count_pct": 21.1
+     "missing_pct": 22.0,
+     "count_pct": 21.2
     },
     "pl": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/pl.json"
      ],
-     "locale_keys": 2540,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2545,
+     "present": 2443,
+     "missing": 3,
      "identical": 26,
-     "gap_keys": 31,
-     "gap_pct": 1.3,
-     "missing_pct": 0.2,
+     "gap_keys": 29,
+     "gap_pct": 1.2,
+     "missing_pct": 0.1,
      "count_pct": -4.0
+    },
+    "pt-BR": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ptBR.json"
+     ],
+     "locale_keys": 2358,
+     "present": 2343,
+     "missing": 103,
+     "identical": 28,
+     "gap_keys": 131,
+     "gap_pct": 5.4,
+     "missing_pct": 4.2,
+     "count_pct": 3.6
+    },
+    "pt-PT": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ptPT.json"
+     ],
+     "locale_keys": 2073,
+     "present": 2058,
+     "missing": 388,
+     "identical": 28,
+     "gap_keys": 416,
+     "gap_pct": 17.0,
+     "missing_pct": 15.9,
+     "count_pct": 15.2
     },
     "ro": {
      "files": [
@@ -321,12 +350,12 @@
      ],
      "locale_keys": 1885,
      "present": 1864,
-     "missing": 579,
+     "missing": 582,
      "identical": 33,
-     "gap_keys": 612,
+     "gap_keys": 615,
      "gap_pct": 25.1,
-     "missing_pct": 23.7,
-     "count_pct": 22.8
+     "missing_pct": 23.8,
+     "count_pct": 22.9
     },
     "ru": {
      "files": [
@@ -334,25 +363,25 @@
      ],
      "locale_keys": 2514,
      "present": 2397,
-     "missing": 46,
+     "missing": 49,
      "identical": 15,
-     "gap_keys": 61,
-     "gap_pct": 2.5,
-     "missing_pct": 1.9,
-     "count_pct": -2.9
+     "gap_keys": 64,
+     "gap_pct": 2.6,
+     "missing_pct": 2.0,
+     "count_pct": -2.8
     },
     "sv": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/sv.json"
      ],
-     "locale_keys": 2438,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2443,
+     "present": 2443,
+     "missing": 3,
      "identical": 40,
-     "gap_keys": 45,
+     "gap_keys": 43,
      "gap_pct": 1.8,
-     "missing_pct": 0.2,
-     "count_pct": 0.2
+     "missing_pct": 0.1,
+     "count_pct": 0.1
     },
     "th": {
      "files": [
@@ -360,25 +389,25 @@
      ],
      "locale_keys": 2147,
      "present": 2132,
-     "missing": 311,
+     "missing": 314,
      "identical": 11,
-     "gap_keys": 322,
-     "gap_pct": 13.2,
-     "missing_pct": 12.7,
-     "count_pct": 12.1
+     "gap_keys": 325,
+     "gap_pct": 13.3,
+     "missing_pct": 12.8,
+     "count_pct": 12.2
     },
     "tr": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/tr.json"
      ],
-     "locale_keys": 2458,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2463,
+     "present": 2443,
+     "missing": 3,
      "identical": 15,
-     "gap_keys": 20,
-     "gap_pct": 0.8,
-     "missing_pct": 0.2,
-     "count_pct": -0.6
+     "gap_keys": 18,
+     "gap_pct": 0.7,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "uk": {
      "files": [
@@ -386,12 +415,12 @@
      ],
      "locale_keys": 1837,
      "present": 1815,
-     "missing": 628,
+     "missing": 631,
      "identical": 7,
-     "gap_keys": 635,
-     "gap_pct": 26.0,
-     "missing_pct": 25.7,
-     "count_pct": 24.8
+     "gap_keys": 638,
+     "gap_pct": 26.1,
+     "missing_pct": 25.8,
+     "count_pct": 24.9
     },
     "vi": {
      "files": [
@@ -399,97 +428,135 @@
      ],
      "locale_keys": 1962,
      "present": 1945,
-     "missing": 498,
+     "missing": 501,
      "identical": 13,
-     "gap_keys": 511,
-     "gap_pct": 20.9,
-     "missing_pct": 20.4,
-     "count_pct": 19.7
+     "gap_keys": 514,
+     "gap_pct": 21.0,
+     "missing_pct": 20.5,
+     "count_pct": 19.8
+    },
+    "zh-CN": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/zhCN.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 527,
+     "identical": 15,
+     "gap_keys": 542,
+     "gap_pct": 22.2,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
+    },
+    "zh-TW": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/zhTW.json"
+     ],
+     "locale_keys": 2094,
+     "present": 2079,
+     "missing": 367,
+     "identical": 12,
+     "gap_keys": 379,
+     "gap_pct": 15.5,
+     "missing_pct": 15.0,
+     "count_pct": 14.4
     }
    },
    "tier1": {
     "de": {
      "locale": "de",
-     "gap_pct": 29.0,
-     "gap_keys": 709,
-     "missing": 665,
+     "gap_pct": 29.1,
+     "gap_keys": 712,
+     "missing": 668,
      "identical": 44
     },
     "fr": {
      "locale": "fr",
-     "gap_pct": 32.2,
-     "gap_keys": 786,
-     "missing": 663,
+     "gap_pct": 32.3,
+     "gap_keys": 789,
+     "missing": 666,
      "identical": 123
     },
     "ja": {
      "locale": "ja",
-     "gap_pct": 6.2,
-     "gap_keys": 151,
-     "missing": 138,
+     "gap_pct": 6.3,
+     "gap_keys": 154,
+     "missing": 141,
      "identical": 13
     },
     "es": {
      "locale": "es",
-     "gap_pct": 12.9,
-     "gap_keys": 314,
-     "missing": 289,
+     "gap_pct": 13.0,
+     "gap_keys": 317,
+     "missing": 292,
      "identical": 25
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 5.4,
+     "gap_keys": 131,
+     "missing": 103,
+     "identical": 28
+    },
+    "zh-CN": {
+     "locale": "zh-CN",
+     "gap_pct": 22.2,
+     "gap_keys": 542,
+     "missing": 527,
+     "identical": 15
     },
     "ko": {
      "locale": "ko",
-     "gap_pct": 21.6,
-     "gap_keys": 528,
-     "missing": 520,
+     "gap_pct": 21.7,
+     "gap_keys": 531,
+     "missing": 523,
      "identical": 8
     },
     "it": {
      "locale": "it",
-     "gap_pct": 27.5,
-     "gap_keys": 673,
-     "missing": 644,
+     "gap_pct": 27.6,
+     "gap_keys": 676,
+     "missing": 647,
      "identical": 29
     },
     "nl": {
      "locale": "nl",
      "gap_pct": 25.1,
-     "gap_keys": 612,
-     "missing": 535,
+     "gap_keys": 615,
+     "missing": 538,
      "identical": 77
     }
    },
-   "tier1_absent": [
-    "pt-BR",
-    "zh-CN"
-   ],
+   "tier1_absent": [],
    "worst": {
     "locale": "fr",
-    "gap_pct": 32.2,
-    "gap_keys": 786
+    "gap_pct": 32.3,
+    "gap_keys": 789
    },
    "worst_tier1": {
     "target": "fr",
     "locale": "fr",
-    "gap_pct": 32.2,
-    "gap_keys": 786
+    "gap_pct": 32.3,
+    "gap_keys": 789
    },
-   "total_gap_keys": 12164,
-   "median_gap_pct": 22.3,
+   "total_gap_keys": 13691,
+   "median_gap_pct": 21.8,
    "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
   },
   "default": {
    "repo": "medusajs/medusa",
    "branch": "develop",
-   "commit_tree_sha": "e5ee47e03ad4f233956e4a1df783e8afdd52ca59",
+   "commit_tree_sha": "1ba69082ceb941d47cfe390212f400e39a7166dd",
    "tree_truncated": false,
-   "n_files": 24190,
-   "measured_at": "2026-09-24T16:53:42+0700",
+   "n_files": 24195,
+   "measured_at": "2026-09-24T19:11:48+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "ref": "develop",
    "candidate_groups": [
     {
      "group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
-     "en_keys": 2443,
-     "n_locales": 30
+     "en_keys": 2446,
+     "n_locales": 35
     }
    ],
    "locale_group": "flat::packages/admin/dashboard/src/i18n/translations::*.json",
@@ -497,14 +564,16 @@
    "src_files": [
     "packages/admin/dashboard/src/i18n/translations/en.json"
    ],
-   "en_keys": 2443,
+   "en_keys": 2446,
    "en_neutral_keys": 16,
    "format": "json",
-   "n_locales_total": 30,
-   "n_locales_measured": 29,
+   "n_locales_total": 35,
+   "n_locales_measured": 33,
    "sampled": false,
-   "en_variants_skipped": [],
-   "raw_fetches": 30,
+   "en_variants_skipped": [
+    "en-GB"
+   ],
+   "raw_fetches": 34,
    "locales": {
     "ar": {
      "files": [
@@ -512,12 +581,12 @@
      ],
      "locale_keys": 1897,
      "present": 1876,
-     "missing": 567,
+     "missing": 570,
      "identical": 22,
-     "gap_keys": 589,
-     "gap_pct": 24.1,
-     "missing_pct": 23.2,
-     "count_pct": 22.3
+     "gap_keys": 592,
+     "gap_pct": 24.2,
+     "missing_pct": 23.3,
+     "count_pct": 22.4
     },
     "bg": {
      "files": [
@@ -525,12 +594,12 @@
      ],
      "locale_keys": 1913,
      "present": 1892,
-     "missing": 551,
+     "missing": 554,
      "identical": 5,
-     "gap_keys": 556,
-     "gap_pct": 22.8,
+     "gap_keys": 559,
+     "gap_pct": 22.9,
      "missing_pct": 22.6,
-     "count_pct": 21.7
+     "count_pct": 21.8
     },
     "bs": {
      "files": [
@@ -538,12 +607,12 @@
      ],
      "locale_keys": 1934,
      "present": 1915,
-     "missing": 528,
+     "missing": 531,
      "identical": 23,
-     "gap_keys": 551,
+     "gap_keys": 554,
      "gap_pct": 22.6,
-     "missing_pct": 21.6,
-     "count_pct": 20.8
+     "missing_pct": 21.7,
+     "count_pct": 20.9
     },
     "cs": {
      "files": [
@@ -551,12 +620,12 @@
      ],
      "locale_keys": 2147,
      "present": 2132,
-     "missing": 311,
+     "missing": 314,
      "identical": 18,
-     "gap_keys": 329,
-     "gap_pct": 13.5,
-     "missing_pct": 12.7,
-     "count_pct": 12.1
+     "gap_keys": 332,
+     "gap_pct": 13.6,
+     "missing_pct": 12.8,
+     "count_pct": 12.2
     },
     "de": {
      "files": [
@@ -564,12 +633,12 @@
      ],
      "locale_keys": 1800,
      "present": 1778,
-     "missing": 665,
+     "missing": 668,
      "identical": 39,
-     "gap_keys": 704,
-     "gap_pct": 28.8,
-     "missing_pct": 27.2,
-     "count_pct": 26.3
+     "gap_keys": 707,
+     "gap_pct": 28.9,
+     "missing_pct": 27.3,
+     "count_pct": 26.4
     },
     "el": {
      "files": [
@@ -577,12 +646,12 @@
      ],
      "locale_keys": 1897,
      "present": 1876,
-     "missing": 567,
+     "missing": 570,
      "identical": 16,
-     "gap_keys": 583,
-     "gap_pct": 23.9,
-     "missing_pct": 23.2,
-     "count_pct": 22.3
+     "gap_keys": 586,
+     "gap_pct": 24.0,
+     "missing_pct": 23.3,
+     "count_pct": 22.4
     },
     "es": {
      "files": [
@@ -590,12 +659,12 @@
      ],
      "locale_keys": 2171,
      "present": 2154,
-     "missing": 289,
+     "missing": 292,
      "identical": 20,
-     "gap_keys": 309,
-     "gap_pct": 12.6,
-     "missing_pct": 11.8,
-     "count_pct": 11.1
+     "gap_keys": 312,
+     "gap_pct": 12.8,
+     "missing_pct": 11.9,
+     "count_pct": 11.2
     },
     "fa": {
      "files": [
@@ -603,25 +672,25 @@
      ],
      "locale_keys": 2376,
      "present": 2358,
-     "missing": 85,
+     "missing": 88,
      "identical": 6,
-     "gap_keys": 91,
-     "gap_pct": 3.7,
-     "missing_pct": 3.5,
-     "count_pct": 2.7
+     "gap_keys": 94,
+     "gap_pct": 3.8,
+     "missing_pct": 3.6,
+     "count_pct": 2.9
     },
     "fi": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/fi.json"
      ],
-     "locale_keys": 2438,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2443,
+     "present": 2443,
+     "missing": 3,
      "identical": 7,
-     "gap_keys": 12,
-     "gap_pct": 0.5,
-     "missing_pct": 0.2,
-     "count_pct": 0.2
+     "gap_keys": 10,
+     "gap_pct": 0.4,
+     "missing_pct": 0.1,
+     "count_pct": 0.1
     },
     "fr": {
      "files": [
@@ -629,12 +698,12 @@
      ],
      "locale_keys": 1802,
      "present": 1780,
-     "missing": 663,
+     "missing": 666,
      "identical": 120,
-     "gap_keys": 783,
+     "gap_keys": 786,
      "gap_pct": 32.1,
-     "missing_pct": 27.1,
-     "count_pct": 26.2
+     "missing_pct": 27.2,
+     "count_pct": 26.3
     },
     "he": {
      "files": [
@@ -642,25 +711,25 @@
      ],
      "locale_keys": 1936,
      "present": 1919,
-     "missing": 524,
+     "missing": 527,
      "identical": 4,
-     "gap_keys": 528,
-     "gap_pct": 21.6,
-     "missing_pct": 21.4,
-     "count_pct": 20.8
+     "gap_keys": 531,
+     "gap_pct": 21.7,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
     },
     "hr": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/hr.json"
      ],
-     "locale_keys": 2489,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2497,
+     "present": 2446,
+     "missing": 0,
      "identical": 20,
-     "gap_keys": 25,
-     "gap_pct": 1.0,
-     "missing_pct": 0.2,
-     "count_pct": -1.9
+     "gap_keys": 20,
+     "gap_pct": 0.8,
+     "missing_pct": 0.0,
+     "count_pct": -2.1
     },
     "hu": {
      "files": [
@@ -668,12 +737,12 @@
      ],
      "locale_keys": 1928,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 17,
-     "gap_keys": 552,
-     "gap_pct": 22.6,
-     "missing_pct": 21.9,
-     "count_pct": 21.1
+     "gap_keys": 555,
+     "gap_pct": 22.7,
+     "missing_pct": 22.0,
+     "count_pct": 21.2
     },
     "id": {
      "files": [
@@ -681,12 +750,12 @@
      ],
      "locale_keys": 1936,
      "present": 1919,
-     "missing": 524,
+     "missing": 527,
      "identical": 43,
-     "gap_keys": 567,
-     "gap_pct": 23.2,
-     "missing_pct": 21.4,
-     "count_pct": 20.8
+     "gap_keys": 570,
+     "gap_pct": 23.3,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
     },
     "it": {
      "files": [
@@ -694,12 +763,12 @@
      ],
      "locale_keys": 1821,
      "present": 1799,
-     "missing": 644,
+     "missing": 647,
      "identical": 22,
-     "gap_keys": 666,
-     "gap_pct": 27.3,
-     "missing_pct": 26.4,
-     "count_pct": 25.5
+     "gap_keys": 669,
+     "gap_pct": 27.4,
+     "missing_pct": 26.5,
+     "count_pct": 25.6
     },
     "ja": {
      "files": [
@@ -707,12 +776,12 @@
      ],
      "locale_keys": 2327,
      "present": 2305,
-     "missing": 138,
+     "missing": 141,
      "identical": 9,
-     "gap_keys": 147,
-     "gap_pct": 6.0,
-     "missing_pct": 5.6,
-     "count_pct": 4.7
+     "gap_keys": 150,
+     "gap_pct": 6.1,
+     "missing_pct": 5.8,
+     "count_pct": 4.9
     },
     "ko": {
      "files": [
@@ -720,12 +789,12 @@
      ],
      "locale_keys": 1940,
      "present": 1923,
-     "missing": 520,
+     "missing": 523,
      "identical": 5,
-     "gap_keys": 525,
-     "gap_pct": 21.5,
-     "missing_pct": 21.3,
-     "count_pct": 20.6
+     "gap_keys": 528,
+     "gap_pct": 21.6,
+     "missing_pct": 21.4,
+     "count_pct": 20.7
     },
     "lt": {
      "files": [
@@ -733,12 +802,12 @@
      ],
      "locale_keys": 1930,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 6,
-     "gap_keys": 541,
-     "gap_pct": 22.1,
-     "missing_pct": 21.9,
-     "count_pct": 21.0
+     "gap_keys": 544,
+     "gap_pct": 22.2,
+     "missing_pct": 22.0,
+     "count_pct": 21.1
     },
     "mk": {
      "files": [
@@ -746,12 +815,12 @@
      ],
      "locale_keys": 1881,
      "present": 1860,
-     "missing": 583,
+     "missing": 586,
      "identical": 4,
-     "gap_keys": 587,
-     "gap_pct": 24.0,
-     "missing_pct": 23.9,
-     "count_pct": 23.0
+     "gap_keys": 590,
+     "gap_pct": 24.1,
+     "missing_pct": 24.0,
+     "count_pct": 23.1
     },
     "mn": {
      "files": [
@@ -759,12 +828,12 @@
      ],
      "locale_keys": 1881,
      "present": 1860,
-     "missing": 583,
+     "missing": 586,
      "identical": 5,
-     "gap_keys": 588,
-     "gap_pct": 24.1,
-     "missing_pct": 23.9,
-     "count_pct": 23.0
+     "gap_keys": 591,
+     "gap_pct": 24.2,
+     "missing_pct": 24.0,
+     "count_pct": 23.1
     },
     "nl": {
      "files": [
@@ -772,25 +841,51 @@
      ],
      "locale_keys": 1928,
      "present": 1908,
-     "missing": 535,
+     "missing": 538,
      "identical": 70,
-     "gap_keys": 605,
-     "gap_pct": 24.8,
-     "missing_pct": 21.9,
-     "count_pct": 21.1
+     "gap_keys": 608,
+     "gap_pct": 24.9,
+     "missing_pct": 22.0,
+     "count_pct": 21.2
     },
     "pl": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/pl.json"
      ],
-     "locale_keys": 2540,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2545,
+     "present": 2443,
+     "missing": 3,
      "identical": 22,
-     "gap_keys": 27,
-     "gap_pct": 1.1,
-     "missing_pct": 0.2,
+     "gap_keys": 25,
+     "gap_pct": 1.0,
+     "missing_pct": 0.1,
      "count_pct": -4.0
+    },
+    "pt-BR": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ptBR.json"
+     ],
+     "locale_keys": 2358,
+     "present": 2343,
+     "missing": 103,
+     "identical": 25,
+     "gap_keys": 128,
+     "gap_pct": 5.2,
+     "missing_pct": 4.2,
+     "count_pct": 3.6
+    },
+    "pt-PT": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/ptPT.json"
+     ],
+     "locale_keys": 2073,
+     "present": 2058,
+     "missing": 388,
+     "identical": 24,
+     "gap_keys": 412,
+     "gap_pct": 16.8,
+     "missing_pct": 15.9,
+     "count_pct": 15.2
     },
     "ro": {
      "files": [
@@ -798,12 +893,12 @@
      ],
      "locale_keys": 1885,
      "present": 1864,
-     "missing": 579,
+     "missing": 582,
      "identical": 29,
-     "gap_keys": 608,
-     "gap_pct": 24.9,
-     "missing_pct": 23.7,
-     "count_pct": 22.8
+     "gap_keys": 611,
+     "gap_pct": 25.0,
+     "missing_pct": 23.8,
+     "count_pct": 22.9
     },
     "ru": {
      "files": [
@@ -811,25 +906,25 @@
      ],
      "locale_keys": 2514,
      "present": 2397,
-     "missing": 46,
+     "missing": 49,
      "identical": 11,
-     "gap_keys": 57,
-     "gap_pct": 2.3,
-     "missing_pct": 1.9,
-     "count_pct": -2.9
+     "gap_keys": 60,
+     "gap_pct": 2.5,
+     "missing_pct": 2.0,
+     "count_pct": -2.8
     },
     "sv": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/sv.json"
      ],
-     "locale_keys": 2438,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2443,
+     "present": 2443,
+     "missing": 3,
      "identical": 35,
-     "gap_keys": 40,
+     "gap_keys": 38,
      "gap_pct": 1.6,
-     "missing_pct": 0.2,
-     "count_pct": 0.2
+     "missing_pct": 0.1,
+     "count_pct": 0.1
     },
     "th": {
      "files": [
@@ -837,25 +932,25 @@
      ],
      "locale_keys": 2147,
      "present": 2132,
-     "missing": 311,
+     "missing": 314,
      "identical": 8,
-     "gap_keys": 319,
-     "gap_pct": 13.1,
-     "missing_pct": 12.7,
-     "count_pct": 12.1
+     "gap_keys": 322,
+     "gap_pct": 13.2,
+     "missing_pct": 12.8,
+     "count_pct": 12.2
     },
     "tr": {
      "files": [
       "packages/admin/dashboard/src/i18n/translations/tr.json"
      ],
-     "locale_keys": 2458,
-     "present": 2438,
-     "missing": 5,
+     "locale_keys": 2463,
+     "present": 2443,
+     "missing": 3,
      "identical": 11,
-     "gap_keys": 16,
-     "gap_pct": 0.7,
-     "missing_pct": 0.2,
-     "count_pct": -0.6
+     "gap_keys": 14,
+     "gap_pct": 0.6,
+     "missing_pct": 0.1,
+     "count_pct": -0.7
     },
     "uk": {
      "files": [
@@ -863,12 +958,12 @@
      ],
      "locale_keys": 1837,
      "present": 1815,
-     "missing": 628,
+     "missing": 631,
      "identical": 4,
-     "gap_keys": 632,
-     "gap_pct": 25.9,
-     "missing_pct": 25.7,
-     "count_pct": 24.8
+     "gap_keys": 635,
+     "gap_pct": 26.0,
+     "missing_pct": 25.8,
+     "count_pct": 24.9
     },
     "vi": {
      "files": [
@@ -876,82 +971,119 @@
      ],
      "locale_keys": 1962,
      "present": 1945,
-     "missing": 498,
+     "missing": 501,
      "identical": 9,
-     "gap_keys": 507,
-     "gap_pct": 20.8,
-     "missing_pct": 20.4,
-     "count_pct": 19.7
+     "gap_keys": 510,
+     "gap_pct": 20.9,
+     "missing_pct": 20.5,
+     "count_pct": 19.8
+    },
+    "zh-CN": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/zhCN.json"
+     ],
+     "locale_keys": 1936,
+     "present": 1919,
+     "missing": 527,
+     "identical": 10,
+     "gap_keys": 537,
+     "gap_pct": 22.0,
+     "missing_pct": 21.5,
+     "count_pct": 20.9
+    },
+    "zh-TW": {
+     "files": [
+      "packages/admin/dashboard/src/i18n/translations/zhTW.json"
+     ],
+     "locale_keys": 2094,
+     "present": 2079,
+     "missing": 367,
+     "identical": 8,
+     "gap_keys": 375,
+     "gap_pct": 15.3,
+     "missing_pct": 15.0,
+     "count_pct": 14.4
     }
    },
    "tier1": {
     "de": {
      "locale": "de",
-     "gap_pct": 28.8,
-     "gap_keys": 704,
-     "missing": 665,
+     "gap_pct": 28.9,
+     "gap_keys": 707,
+     "missing": 668,
      "identical": 39
     },
     "fr": {
      "locale": "fr",
      "gap_pct": 32.1,
-     "gap_keys": 783,
-     "missing": 663,
+     "gap_keys": 786,
+     "missing": 666,
      "identical": 120
     },
     "ja": {
      "locale": "ja",
-     "gap_pct": 6.0,
-     "gap_keys": 147,
-     "missing": 138,
+     "gap_pct": 6.1,
+     "gap_keys": 150,
+     "missing": 141,
      "identical": 9
     },
     "es": {
      "locale": "es",
-     "gap_pct": 12.6,
-     "gap_keys": 309,
-     "missing": 289,
+     "gap_pct": 12.8,
+     "gap_keys": 312,
+     "missing": 292,
      "identical": 20
+    },
+    "pt-BR": {
+     "locale": "pt-BR",
+     "gap_pct": 5.2,
+     "gap_keys": 128,
+     "missing": 103,
+     "identical": 25
+    },
+    "zh-CN": {
+     "locale": "zh-CN",
+     "gap_pct": 22.0,
+     "gap_keys": 537,
+     "missing": 527,
+     "identical": 10
     },
     "ko": {
      "locale": "ko",
-     "gap_pct": 21.5,
-     "gap_keys": 525,
-     "missing": 520,
+     "gap_pct": 21.6,
+     "gap_keys": 528,
+     "missing": 523,
      "identical": 5
     },
     "it": {
      "locale": "it",
-     "gap_pct": 27.3,
-     "gap_keys": 666,
-     "missing": 644,
+     "gap_pct": 27.4,
+     "gap_keys": 669,
+     "missing": 647,
      "identical": 22
     },
     "nl": {
      "locale": "nl",
-     "gap_pct": 24.8,
-     "gap_keys": 605,
-     "missing": 535,
+     "gap_pct": 24.9,
+     "gap_keys": 608,
+     "missing": 538,
      "identical": 70
     }
    },
-   "tier1_absent": [
-    "pt-BR",
-    "zh-CN"
-   ],
+   "tier1_absent": [],
    "worst": {
     "locale": "fr",
     "gap_pct": 32.1,
-    "gap_keys": 783
+    "gap_keys": 786
    },
    "worst_tier1": {
     "target": "fr",
     "locale": "fr",
     "gap_pct": 32.1,
-    "gap_keys": 783
+    "gap_keys": 786
    },
-   "total_gap_keys": 12044,
-   "median_gap_pct": 22.1,
+   "total_gap_keys": 13555,
+   "median_gap_pct": 21.7,
    "raw_url_example": "https://raw.githubusercontent.com/medusajs/medusa/develop/packages/admin/dashboard/src/i18n/translations/en.json"
   }
  },
@@ -959,11 +1091,12 @@
   "ref": {
    "repo": "strapi/strapi",
    "branch": "develop",
-   "commit_tree_sha": "e3a9201cd8231f89dd6afb329cc6fdc2e1cd6045",
+   "commit_tree_sha": "8e75efd44fef1c23869f9e894e1209311dfa9355",
    "tree_truncated": false,
-   "n_files": 6771,
-   "measured_at": "2026-09-24T16:53:52+0700",
+   "n_files": 6772,
+   "measured_at": "2026-09-24T19:11:57+0700",
    "definition": "gap = missing or empty or byte-identical to English",
+   "ref": "develop",
    "candidate_groups": [
     {
      "group": "flat::packages/core/admin/admin/src/translations::*.json",
@@ -1512,11 +1645,12 @@
   "default": {
    "repo": "strapi/strapi",
    "branch": "develop",
-   "commit_tree_sha": "e3a9201cd8231f89dd6afb329cc6fdc2e1cd6045",
+   "commit_tree_sha": "8e75efd44fef1c23869f9e894e1209311dfa9355",
    "tree_truncated": false,
-   "n_files": 6771,
-   "measured_at": "2026-09-24T16:53:58+0700",
+   "n_files": 6772,
+   "measured_at": "2026-09-24T19:12:04+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "ref": "develop",
    "candidate_groups": [
     {
      "group": "flat::packages/core/admin/admin/src/translations::*.json",
@@ -2070,8 +2204,9 @@
    "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
    "tree_truncated": false,
    "n_files": 4298,
-   "measured_at": "2026-09-24T16:54:03+0700",
+   "measured_at": "2026-09-24T19:12:09+0700",
    "definition": "gap = missing or empty or byte-identical to English",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "flat::apps/builder/src/i18n::*.json",
@@ -2262,8 +2397,9 @@
    "commit_tree_sha": "57934f1706795fec74c22788baf8a9c7e26a9ccb",
    "tree_truncated": false,
    "n_files": 4298,
-   "measured_at": "2026-09-24T16:54:07+0700",
+   "measured_at": "2026-09-24T19:12:13+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "flat::apps/builder/src/i18n::*.json",
@@ -2456,8 +2592,9 @@
    "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
    "tree_truncated": false,
    "n_files": 14562,
-   "measured_at": "2026-09-24T16:54:10+0700",
+   "measured_at": "2026-09-24T19:12:17+0700",
    "definition": "gap = missing or empty or byte-identical to English",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "nested::frontend/public/locales",
@@ -2603,8 +2740,9 @@
    "commit_tree_sha": "cf8f461e6f0a41dece7cee08fb021a76a71645b2",
    "tree_truncated": false,
    "n_files": 14562,
-   "measured_at": "2026-09-24T16:54:14+0700",
+   "measured_at": "2026-09-24T19:12:27+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "nested::frontend/public/locales",
@@ -2752,8 +2890,9 @@
    "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
    "tree_truncated": false,
    "n_files": 2448,
-   "measured_at": "2026-09-24T16:54:18+0700",
+   "measured_at": "2026-09-24T19:12:30+0700",
    "definition": "gap = missing or empty or byte-identical to English",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "flat::packages/hoppscotch-common/locales::*.json",
@@ -3274,8 +3413,9 @@
    "commit_tree_sha": "a9ffa29ce5036ef5be0768db35a8b6bae32e1160",
    "tree_truncated": false,
    "n_files": 2448,
-   "measured_at": "2026-09-24T16:54:25+0700",
+   "measured_at": "2026-09-24T19:12:55+0700",
    "definition": "gap = missing or empty or byte-identical to English (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)",
+   "ref": "main",
    "candidate_groups": [
     {
      "group": "flat::packages/hoppscotch-common/locales::*.json",
