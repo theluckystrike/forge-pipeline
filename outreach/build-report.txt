@@ -1,37 +1,61 @@
-build_outreach 2026-09-24T12:26:49Z
-candidate rows (targets with audit and contact_email): 28
-distinct targets considered: 28
-drafted: L1=2, L2a=0, L2b=0
+build_outreach 2026-09-24T12:52:39Z
+candidate rows (targets with audit and contact_email): 56
+distinct targets considered: 56
+drafted: L1=2, L2a=0, L2b=3
 skipped by reason:
-    20  no lane
-     3  org already has an outreach row
-     2  mega-corp
-     1  fewer than 3 measured findings
+    41  no lane
+     5  org already has an outreach row
+     5  mega-corp
 
 skip detail
-fewer than 3 measured findings	n8n-io/n8n fewer than 3 measured findings (2 usable of 2)
-mega-corp	NVIDIA/TensorRT-LLM mega-corp: website nvidia.com
 mega-corp	NVIDIA/Megatron-LM mega-corp: website nvidia.com
+mega-corp	NVIDIA/TensorRT-LLM mega-corp: website nvidia.com
+mega-corp	NVIDIA/OpenShell mega-corp: website nvidia.com
+mega-corp	IBM/sarama mega-corp: website www.ibm.com
+mega-corp	NVIDIA-NeMo/Speech mega-corp: website nvidia.com
 no lane	grafana/grafana no lane (owner=Organization B=0.9 drift=0 worst=nl-NL 7.7 tms=crowdin)
-no lane	TykTechnologies/tyk no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
-no lane	grafana/pyroscope no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
+no lane	appsmithorg/appsmith no lane (owner=Organization B=0.75 drift=1 worst=ce 100.0 tms=-)
+no lane	vespa-engine/vespa no lane (owner=Organization B=0.75 drift=0 worst=id 100.0 tms=-)
+no lane	lightbend/config no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
 no lane	zitadel/zitadel no lane (owner=Organization B=0.75 drift=2 worst=de 14.9 tms=-)
-no lane	coder/coder no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	weaviate/weaviate no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	grafana/pyroscope no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
 no lane	e2b-dev/E2B no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
-no lane	aeron-io/aeron no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	loft-sh/vcluster no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	encoredev/encore no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	elastic/beats no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	logto-io/logto no lane (owner=Organization B=0.75 drift=0 worst=fr 4.4 tms=-)
-no lane	dagger/dagger no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	coder/coder no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	TykTechnologies/tyk no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	mindsdb/mindshub no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	flyway/flyway no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	n8n-io/n8n no lane (owner=Organization B=0.85 drift=1 worst=id 79.2 tms=-)
+no lane	infinitered/reactotron no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	cvat-ai/cvat no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	resend/react-email no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
+no lane	makeplane/plane no lane (owner=Organization B=0.75 drift=2 worst=fr 3.7 tms=-)
+no lane	invoiceninja/invoiceninja no lane (owner=Organization B=0.75 drift=1 worst=es 14.0 tms=-)
 no lane	treeverse/dvc no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	logto-io/logto no lane (owner=Organization B=0.75 drift=0 worst=fr 4.4 tms=-)
+no lane	payloadcms/payload no lane (owner=Organization B=0.75 drift=0 worst=fr 2.4 tms=-)
+no lane	loft-sh/vcluster no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	langbot-app/LangBot no lane (owner=Organization B=0.75 drift=0 worst=es-ES 7.1 tms=-)
+no lane	elastic/beats no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	encoredev/encore no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	dagger/dagger no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	browseros-ai/BrowserOS no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	botpress/botpress no lane (owner=Organization B=0.75 drift=1 worst=ts-Node 70.0 tms=-)
+no lane	aeron-io/aeron no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	Foundry376/Mailspring no lane (owner=Organization B=0.75 drift=2 worst=nl 12.0 tms=-)
-no lane	botpress/botpress no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	stalwartlabs/stalwart no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	formbricks/formbricks no lane (owner=Organization B=0.5 drift=0 worst=de-DE 4.9 tms=-)
-no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=None None tms=tx)
+no lane	Graylog2/graylog2-server no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=ja 96.9 tms=tx)
+no lane	cocoindex-io/cocoindex no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	Automattic/harper no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	elastic/logstash no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	kubeshark/kubeshark no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
+no lane	tinymce/tinymce no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
+org already has an outreach row	BoundaryML/baml org already has an outreach row
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
 org already has an outreach row	ToolJet/ToolJet org already has an outreach row

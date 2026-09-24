@@ -185,6 +185,20 @@ def strip_lang_root(obj):
             return obj[k]
     return obj
 
+MSG_FIELDS = ("message", "string", "defaultMessage", "translation")
+
+def reduce_message_objects(j):
+    """Chrome _locales messages.json, formatjs/react-intl and saleor store {"id": {"message"|"string": ..., "description": ...}}.
+    Keep only the translatable field so English-only descriptions do not count as untranslated keys."""
+    if not isinstance(j, dict) or not j:
+        return j
+    vals = list(j.values())
+    for f in MSG_FIELDS:
+        n = sum(1 for v in vals if isinstance(v, dict) and f in v and isinstance(v[f], str))
+        if n >= 0.8 * len(vals):
+            return {k: v[f] for k, v in j.items() if isinstance(v, dict) and isinstance(v.get(f), str)}
+    return j
+
 def parse_po(txt, is_source):
     d = {}
     entries = re.split(r'\n\s*\n', txt.replace('\r\n', '\n'))
@@ -220,12 +234,22 @@ def parse_po(txt, is_source):
     return d
 
 def js_object_parse(txt):
-    """Tiny JS/TS object-literal reader: returns flattened {key: string} for the first top-level object
-    after 'export default', 'module.exports =', or '= {'. Non-string values are ignored."""
+    """Tiny JS/TS object-literal reader: returns flattened {key: string} for the top-level object
+    after 'export default', 'module.exports =', or '= {'; if that yields nothing (e.g. registerPack("en", {...})),
+    the first 20 '{' positions are tried and the largest result wins. Non-string values are ignored."""
     m = re.search(r'(export\s+default|module\.exports\s*=|exports\.\w+\s*=|=\s*(?=\{)|export\s+const\s+\w+[^=]*=)\s*', txt)
     start = txt.find('{', m.end() if m else 0)
     if start < 0:
         return {}
+    best = _js_object_at(txt, start)
+    if len(best) < 3:
+        for mm in list(re.finditer(r'\{', txt))[:20]:
+            r = _js_object_at(txt, mm.start())
+            if len(r) > len(best):
+                best = r
+    return best
+
+def _js_object_at(txt, start):
     i = start; n = len(txt); out = {}; stack = []; key = None; arr_idx = []
 
     def skip_ws(i):
@@ -374,6 +398,7 @@ def parse_file(path, txt, is_source):
         if ext in ("json", "arb"):
             j = json.loads(txt)
             j = strip_lang_root(j)
+            j = reduce_message_objects(j)
             if ext == "arb" or (isinstance(j, dict) and any(str(k).startswith('@') for k in j)):
                 j = {k: v for k, v in j.items() if not str(k).startswith('@')} if isinstance(j, dict) else j
             if isinstance(j, dict):
@@ -497,7 +522,10 @@ def discover_groups(paths):
         if any(is_en(c) for c in g["langs"]):
             continue
         cands = [f"{d}/{pre.rstrip('._-')}{rest}", f"{d}/{pre.rstrip('._-')}.{ext}"]
-        cands += [f"{d}/{x}" for x in ("main.pot", "messages.pot", "django.pot", "default.pot")]
+        cands += [f"{d}/{x}" for x in ("main.pot", "messages.pot", "django.pot", "default.pot", "template.pot",
+                                        f"defaultMessages.{ext}", f"default.{ext}", f"source.{ext}", f"base.{ext}",
+                                        f"messages.{ext}", f"strings.{ext}", f"translations.{ext}")]
+        cands += sorted(p for p in paths_set_cache if p.startswith(d + "/") and p.count('/') == d.count('/') + 1 and p.endswith('.pot'))
         for c in cands:
             c = c.lstrip('/')
             if c in paths_set_cache:
@@ -530,7 +558,7 @@ def discover_groups(paths):
                 nested[D][code].append((rest, p))
                 break
     for D, langs in nested.items():
-        if len(langs) < 3:
+        if len(langs) < 1:
             continue
         gid = f"nested::{D}"
         groups[gid] = {"kind": "nested", "dir": D, "pattern": "<lang>/<file>", "langs": {c: [p for _, p in v] for c, v in langs.items()},
@@ -650,8 +678,10 @@ def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_group
     groups = discover_groups(paths)
     if group_hint:
         groups = {k: v for k, v in groups.items() if group_hint in k or any(group_hint in f for fs in v["langs"].values() for f in fs)}
-    small = {k: v for k, v in groups.items() if len(v["langs"]) < 3}
-    groups = {k: v for k, v in groups.items() if len(v["langs"]) >= 3}
+    def n_non_en(g):
+        return sum(1 for c in g["langs"] if not is_en(c))
+    small = {k: v for k, v in groups.items() if n_non_en(v) == 0}
+    groups = {k: v for k, v in groups.items() if n_non_en(v) >= 1}
     if not groups:
         o["locale_group"] = None
         # English-only product: an English source file in an i18n/locale dir with fewer than 3 languages beside it

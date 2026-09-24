@@ -512,7 +512,7 @@ def engine_claims(readme, engines_node, requires_python, pkgname="\x00"):
     return claims, uniq
 
 # ---------------------------------------------------------------- driver
-def audit(repo, meta=None, tree=None, locale_n=None, ref=None):
+def audit(repo, meta=None, tree=None, locale_n=None, ref=None, release_cache=None):
     if meta is None or tree is None:
         meta, tree = repo_meta_and_tree(repo)
     if not meta or not tree:
@@ -538,7 +538,12 @@ def audit(repo, meta=None, tree=None, locale_n=None, ref=None):
     rel_checked, fb = relative_links(docs, repo, branch, paths, dirs, tree.get("truncated", False))
     manifests, mfiles, engines_node, requires_python = load_manifests(repo, ref, paths, readme)
     need_release = bool(re.search(r'(docker|npm|yarn|pnpm|pip|cargo|go get|go install|uses:|gem |implementation|poetry|bun add)', readme, re.I))
-    release = latest_release(repo) if need_release else None
+    if release_cache is not None:
+        release = release_cache["value"]
+        if release is None and need_release:
+            release = latest_release(repo)
+    else:
+        release = latest_release(repo) if need_release else None
     vclaims, fc = version_claims(readme, repo, manifests, release, None)
     cclaims, fd, counts = count_claims(readme, paths, dirs, locale_n)
     eclaims, fe = engine_claims(readme, engines_node, requires_python, repo.split('/')[1])

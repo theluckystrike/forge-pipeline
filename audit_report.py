@@ -24,6 +24,7 @@ DB = os.path.join(PIPE, "state", "kpi.db")
 REPORTS = os.path.join(PIPE, "reports")
 HUMANIZE = os.path.join(PIPE, "tools", "humanize_scan.py")
 RUNLOG = os.path.join(PIPE, "state", "audit_run.log")
+REUSE = "--reuse" in sys.argv
 
 def log(msg):
     line = f"{time.strftime('%Y-%m-%dT%H:%M:%S')} {msg}"
@@ -161,11 +162,9 @@ def write_report(repo, meta, sha, loc, dr, summary, path):
     elif loc.get("english_only"):
         eo = loc["english_only"]
         langs = ", ".join(code(x) for x in eo["languages"])
-        lead = "The UI strings are English-only. " if len(eo["languages"]) == 1 else ""
-        L.append(f"{lead}{code(eo['src_files'][0])} holds {eo['en_keys']} English keys"
+        L.append(f"The UI strings are English-only. {code(eo['src_files'][0])} holds {eo['en_keys']} English keys"
                  + (f" across {len(eo['src_files'])} files" if len(eo['src_files']) > 1 else "")
-                 + f", and the locale folder holds these language codes only: {langs}. "
-                 "With fewer than three languages the tree was not measured for parity.")
+                 + f", and the locale folder holds no language code other than {langs}. No translation exists to measure.")
     else:
         L.append("No locale tree with at least three languages and an English source was found in the git tree, "
                  "so the product ships in one language or keeps its strings outside this repository.")
@@ -191,19 +190,36 @@ def run_one(repo, extra=None):
     rpath = os.path.join(REPORTS, slug + ".md")
     evdir = os.path.join(REPORTS, slug, "evidence")
     os.makedirs(os.path.join(evdir, "manifests"), exist_ok=True)
-    meta = AL.gh(f"repos/{repo}")
-    if not meta:
-        return {"repo": repo, "err": "repo meta not found"}
+    release_cache = None
+    mp, tp, dp = (os.path.join(evdir, x) for x in ("meta.json", "tree_paths.raw", "drift.json"))
+    if REUSE and all(os.path.exists(p) for p in (mp, tp, dp)):
+        # rebuild from the pinned commit of the previous run: same tree, no REST calls
+        m0 = json.load(open(mp)); d0 = json.load(open(dp))
+        meta = {"default_branch": m0["branch"], "full_name": m0.get("full_name") or repo, "stargazers_count": m0.get("stars")}
+        branch = m0["branch"]; sha = m0["commit"]
+        allp = [p for p in open(tp).read().split("\n") if p]
+        dirs = set()
+        for p in allp:
+            parts = p.split("/")
+            for i in range(1, len(parts)):
+                dirs.add("/".join(parts[:i]))
+        tree = {"sha": None, "truncated": m0.get("tree_truncated", False),
+                "tree": [{"path": p, "type": "tree" if p in dirs else "blob"} for p in allp]}
+        release_cache = {"value": d0.get("latest_release")}
+    else:
+        meta = AL.gh(f"repos/{repo}")
+        if not meta:
+            return {"repo": repo, "err": "repo meta not found"}
+        branch = meta["default_branch"]
+        sha = commit_sha(meta.get("full_name", repo), branch)
+        tree = AL.gh(f"repos/{repo}/git/trees/{sha or urllib.parse.quote(branch)}?recursive=1")
+        if not tree:
+            return {"repo": repo, "err": "tree not available"}
     if meta.get("full_name") and meta["full_name"].lower() != repo.lower():
         log(f"{repo} redirects to {meta['full_name']}")
-    branch = meta["default_branch"]
-    sha = commit_sha(meta.get("full_name", repo), branch)
-    tree = AL.gh(f"repos/{repo}/git/trees/{sha or urllib.parse.quote(branch)}?recursive=1")
-    if not tree:
-        return {"repo": repo, "err": "tree not available"}
     ref = sha or branch
     loc = AL.audit(repo, meta=meta, tree=tree, ref=ref)
-    dr = AD.audit(repo, meta=meta, tree=tree, locale_n=loc.get("n_locales_total"), ref=ref)
+    dr = AD.audit(repo, meta=meta, tree=tree, locale_n=loc.get("n_locales_total"), ref=ref, release_cache=release_cache)
     F = dr["findings"]
     stale = sum(1 for f in F if f["check"] in ("c_version_drift", "d_count_claim", "e_engine_claim"))
     failing = sum(1 for f in F if f["check"] in ("a_dead_link", "b_missing_relative_target"))
