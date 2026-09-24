@@ -1,0 +1,72 @@
+== typebot https://docs.typebot.io/contribute/overview -> 200 https://docs.typebot.com/contribute/overview
+ Contribute - Typebot Docs 
+ Documentation Index
+ Fetch the complete documentation index at: /llms.txt 
+ Use this file to discover all available pages before exploring further.
+ Skip to main content 
+ Typebot Docs home page 
+ Search...
+ ⌘ K 
+ Github 
+ Dashboard 
+ Dashboard 
+ Search... 
+ Navigation 
+ Get started 
+ Contribute
+ Learn 
+ Self-Hosting 
+ Contribute 
+ API Reference 
+Community 
+ Get started 
+ Contribute 
+ Guidelines 
+ Guides 
+ Local installation 
+ Create a new block 
+ Documentation 
+ Blog 
+ Translate 
+ The Forge 
+ Overview 
+ CLI 
+ Block 
+ Auth 
+ Action 
+ Run 
+ Options 
+ Fetcher 
+ Get started
+ Contribute
+ You are considering contributing to Typebot. I and the Fair Source community thank you for this 🙏. 
+ Any contributions you make are greatly appreciated . There are many ways to contribute, from improving the documentation, submitting bug reports and feature requests or writing code which can be incorporated into Typebot itself. 
+ If you are considering implementing a new feature or a bug fix, please open an
+issue first. This will allow us to discuss the specficiation and the best way
+to implement it. 
+ Implement a new block
+ Use the Forge. Our in-house framework to easily add new blocks on Typebot.
+Help us have a gigantic library of third-party native integrations on Typebot. 
+ Translate Typebot
+ Use our framework “The Forge” to easily implement a new block. Help us have a
+gigantic library of third-party native integrations on Typebot. 
+ Improve the documentation
+ Improve the documentation by fixing typos, adding missing information or
+proposing new sections. 
+ Write official blog posts
+ Write original content for Typebot’s blog. Share your knowledge and ideas to a
+wider audience. The author will be credited. 
+ Report issues
+ Report issues you encounter while using Typebot. This will help us improve the
+product and make it even better. 
+ Engage and help others on Discord
+ Engaging with the community and helping others is a great way to contribute to
+the project. We’d love to see you on our Discord server. ❤️ 
+ Sponsor the project
+ If you don’t have time to contribute to the project. You can still show your
+appreciation for the project and sponsor my work on Github. 
+ Suggest edits 
+ Guidelines
+ website discord github 
+ Powered by This documentation is built and hosted on Mintlify, a developer documentation platform 
+ 

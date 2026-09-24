@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WhiteHERO v4 Anchor Plan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f3f4f1; --panel:#ffffff; --ink:#171a1f; --muted:#5c636b; --rule:#d7dad3; --soft:#e9ebe6;
+  --accent:#0e6b70; --accent-soft:#dbeeed; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#008300; --warn:#c98500; --crit:#e34948;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ color-scheme:dark;
+  --bg:#141618; --panel:#1c1f22; --ink:#e9eae6; --muted:#a5aaae; --rule:#33383d; --soft:#24282c;
+  --accent:#45b8bc; --accent-soft:#1d3536; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good:#3fb950; --warn:#eda100; --crit:#e66767; } }
+:root[data-theme="dark"]{ color-scheme:dark;
+  --bg:#141618; --panel:#1c1f22; --ink:#e9eae6; --muted:#a5aaae; --rule:#33383d; --soft:#24282c;
+  --accent:#45b8bc; --accent-soft:#1d3536; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good:#3fb950; --warn:#eda100; --crit:#e66767; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding-block:0 64px;padding-inline:16px}
+.wrap{max-width:920px;margin:0 auto}
+header.top{padding-block:40px 24px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.02;margin:10px 0 12px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:26px;margin:44px 0 10px;line-height:1.1;text-wrap:balance}
+h2 .n{color:var(--accent);font-family:var(--mono);font-size:15px;margin-right:10px;vertical-align:middle}
+h3{font-family:var(--display);font-weight:600;font-size:19px;margin:26px 0 8px}
+p{max-width:70ch;margin:8px 0}
+.lede{font-size:17px;max-width:72ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:14px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:22px 0 6px}
+.tile{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px 14px 12px}
+.tile .v{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.tile .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+.tile.acc{border-color:var(--accent);background:var(--accent-soft)}
+.box{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px;padding:14px 18px;margin:16px 0}
+.box.kill{border-left-color:var(--crit)}
+.box.warn{border-left-color:var(--warn)}
+.box p{margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:12px 0}
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--panel)}
+th,td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;text-align:left}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--soft);position:sticky;top:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.k{font-family:var(--mono);font-weight:500;color:var(--accent);white-space:nowrap}
+td.src{color:var(--muted);font-size:12.5px}
+tr.total td{font-weight:600;background:var(--accent-soft)}
+q,blockquote{quotes:"\201C" "\201D"}
+.quote{border-left:2px solid var(--rule);padding-left:12px;color:var(--muted);font-style:italic;margin:8px 0;max-width:70ch}
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px;margin:14px 0}
+.chart svg{width:100%;height:auto;display:block}
+.chart .cap{font-size:12.5px;color:var(--muted);margin-top:8px}
+.grid{stroke:var(--rule);stroke-width:1}
+.tick{font:11px var(--mono);fill:var(--muted)}
+.lbl{font:12px var(--body);fill:var(--ink)}
+.val{font:11.5px var(--mono);fill:var(--ink)}
+.bar{stroke-width:2;opacity:.55}
+.bar.s1{stroke:var(--s1)} .bar.s2{stroke:var(--s2)} .bar.s3{stroke:var(--s3)}
+.dot.s1{fill:var(--s1)} .dot.s2{fill:var(--s2)} .dot.s3{fill:var(--s3)}
+.fill.s1{fill:var(--s1)} .fill.s2{fill:var(--s2)} .fill.s3{fill:var(--s3)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.legend .s1{background:var(--s1)} .legend .s2{background:var(--s2)} .legend .s3{background:var(--s3)}
+ol,ul{max-width:74ch;padding-left:22px}
+li{margin:5px 0}
+code,pre{font-family:var(--mono);font-size:12.5px}
+pre{background:var(--soft);border:1px solid var(--rule);border-radius:6px;padding:10px 12px;overflow-x:auto}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:10px;border:1px solid var(--rule);color:var(--muted);margin-left:6px;vertical-align:middle}
+.tag.m{border-color:var(--good);color:var(--good)} .tag.v{border-color:var(--warn);color:var(--warn)} .tag.a{border-color:var(--muted)}
+nav.toc{font-size:13.5px;columns:2;column-gap:28px;margin:16px 0 0;max-width:74ch}
+nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:2px 0;border-bottom:1px dotted var(--rule)}
+nav.toc a:hover,a:focus-visible{color:var(--accent);outline:none}
+a{color:var(--accent)}
+.small{font-size:12.5px;color:var(--muted)}
+.lane{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px 18px;margin:14px 0}
+.lane h3{margin:0 0 8px}
+.lane dl{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;margin:0;font-size:14px}
+.lane dt{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:2px}
+.lane dd{margin:0;max-width:72ch}
+@media (max-width:560px){ nav.toc{columns:1} .lane dl{grid-template-columns:1fr} .lane dt{padding-top:6px} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">WhiteHERO v4 · plan for execution by Claude Opus 5.5 · analysis by Claude Fable 5.1</div>
+  <h1>Anchor, don't spray: the highest-probability path from open-source work to a paying client</h1>
+  <p class="lede">v3 pointed a working contribution engine at strangers and priced the cold email funnel with inputs above every measured 2025 to 2026 platform average. v4 keeps the engine and re-points it at the one relationship that already exists, at the two vendor programs that convert GitHub contributions into routed leads, and at the named agencies whose stated demand is exactly the credential the operator already holds.</p>
+  <div class="meta"><span>2026-09-24</span><span>account theluckystrike</span><span>8 research streams, 14 sub-agents, every number sourced and dated</span><span>supersedes WhiteHERO v3 (2026-09-24, self-score 95)</span></div>
+</header>
+
+<div class="tiles">
+  <div class="tile acc"><div class="v">90%</div><div class="l">mid-case chance of at least one paying client by day 90 under v4 (low 46%, high 100%); v3 mid case was 13% at today's 30 sends</div></div>
+  <div class="tile"><div class="v">5 of 10</div><div class="l">Medusa PRs merged on 2026-09-24, each approved by the same named Medusa DX lead; v3 had them at 0 merged with a kill fuse on 2026-10-07</div></div>
+  <div class="tile"><div class="v">50.4</div><div class="l">of the 119 open external PRs target "awesome" list repos (60 PRs) with no path to a buyer</div></div>
+  <div class="tile"><div class="v">8 to 400x</div><div class="l">per-touch conversion multiplier of a warm ask over a cold email, from measured reply rates</div></div>
+  <div class="tile"><div class="v">207</div><div class="l">named product-specialist agencies listed in 7 vendor directories, each screening for the exact contribution record the operator has</div></div>
+  <div class="tile"><div class="v">2</div><div class="l">vendor partner programs that are free, accept solo freelancers and state they route leads (Vendure, Twenty); Vendure scores GitHub PRs automatically</div></div>
+  <div class="tile"><div class="v">4</div><div class="l">v3 inputs that failed an independent fact-check today (Pangea 15%, arXiv owner-run 68 to 80%, Crowdin per-locale cost, Algora settlements)</div></div>
+  <div class="tile"><div class="v">72 h</div><div class="l">operator hours the v4 lanes need over 90 days before delivery, inside the 80 h per month budget</div></div>
+</div>
+
+<nav class="toc">
+  <a href="#s1">1. Sixty-second summary</a><a href="#s2">2. What changed since v3, measured today</a><a href="#s3">3. The arithmetic: per-touch probability beats volume</a><a href="#s4">4. How contributors actually get paid: 14 cases</a><a href="#s5">5. Vendor directories that turn PRs into leads</a><a href="#s6">6. Projects that pay outsiders by rule</a><a href="#s7">7. Dead ends, measured</a><a href="#s8">8. The v4 lanes</a><a href="#s9">9. Probability model</a><a href="#s10">10. 90-day schedule and gates</a><a href="#s11">11. Guardrails</a><a href="#s12">12. Counter-hypotheses</a><a href="#s13">13. Fact-check of v3</a><a href="#s14">14. Sources</a>
+</nav>
+
+<h2 id="s1"><span class="n">01</span>Sixty-second summary</h2>
+<div class="box">
+<p><strong>Verdict.</strong> v3 would spend its operator hours on the lowest-yield touch that exists. Measured 2025 to 2026 cold email reply rates are 0.45% (Belkins, 7.5M emails) to 3.43% (Instantly and Woodpecker platform averages), and those counts include declines and out-of-office replies. At those rates 160 audit emails give a 7% to 42% chance of one client, not the 51% v3 computed from a LinkedIn reply rate measured on 36 messages and a 25% close rate with no source.</p>
+<p><strong>Thesis.</strong> The per-touch probability of a paying client is the whole game, because operator hours cap volume at about 80 per month. A warm ask to someone who has merged your work converts 8 to 400 times better per touch than a cold email. The operator has exactly one such relationship at a funded company today: Medusa, where a named DX lead approved 6 of 10 PRs and 5 merged this afternoon. Every 14 documented cases of a contributor being hired or contracted through GitHub share one feature: sustained volume in one repo watched by a founder or lead, 20 to 40 PRs over about 3 months at the fast end.</p>
+<p><strong>Three moves.</strong> (A) Deepen Medusa: finish the 5 open locale PRs, ship 12 docs and i18n PRs into the DX lead's own domain over 30 days, then make one written ask. (B) Redirect the i18n engine to Vendure, whose CONTRIBUTING invites dashboard translations and whose free partner program counts GitHub PRs automatically, backfills 12 months, and routes leads by that score. (C) Pitch subcontract capacity to the 207 agencies already listed as Medusa, Vendure, Twenty, Directus, Payload, Saleor and Strapi specialists, with the merge record as the credential. Cold CTO audits survive only as a capped background lane.</p>
+<p><strong>Kill on day 0.</strong> All 60 open awesome-list PRs, the licensing-referral lane (its 15% referral cut is not on either Pangea page), Algora and every other bounty board (all dead or pivoted on 2026-09-24), maintainer succession as a 90-day revenue idea, and the v3 sends to maintainers who get translation for free.</p>
+</div>
+
+<h2 id="s2"><span class="n">02</span>What changed since v3, measured today</h2>
+<p>Three facts were pulled from the authenticated gh CLI and the live web on 2026-09-24, after v3 was written.</p>
+<h3>Medusa merged, and a named human did it</h3>
+<div class="tw"><table>
+<tr><th>PR</th><th>Locale</th><th>State</th><th>Reviewer</th><th>Merged (UTC)</th></tr>
+<tr><td>#16933</td><td>fi, hr, pl, sv (5 keys)</td><td>MERGED</td><td>shahednasser APPROVED</td><td class="num">2026-09-24 11:27</td></tr>
+<tr><td>#16948</td><td>el</td><td>MERGED</td><td>shahednasser APPROVED</td><td class="num">2026-09-24 12:34</td></tr>
+<tr><td>#16939</td><td>uk</td><td>MERGED</td><td>shahednasser APPROVED</td><td class="num">2026-09-24 12:50</td></tr>
+<tr><td>#16936</td><td>vi</td><td>MERGED</td><td>shahednasser APPROVED</td><td class="num">2026-09-24 12:52</td></tr>
+<tr><td>#16940</td><td>mk</td><td>MERGED</td><td>shahednasser APPROVED</td><td class="num">2026-09-24 13:38</td></tr>
+<tr><td>#16946</td><td>hu</td><td>OPEN, approved</td><td>shahednasser APPROVED</td><td class="num">awaiting merge bot</td></tr>
+<tr><td>#16944, #16942, #16934, #16932</td><td>bg, ro, th, ja</td><td>OPEN</td><td>none yet</td><td class="num"></td></tr>
+</table></div>
+<p>The reviewer's GitHub profile reads company <code>@medusajs</code>, bio "Everything DX", 2,867 followers. Merges were executed by the kodiakhq bot after his approval, and the medusa-os-bot posted "Thanks for the contribution! Initial automated review looks good." on each. Medusa raised "$8 million in seed funding in a round co-led by LocalGlobe and Dawn Capital" and "close to $9 million in total funding" (TechCrunch, 2022-07-15); LinkedIn lists "11-50 employees", 45 people, Copenhagen. This is the only funded company where a named person has repeatedly reviewed the operator's work.</p>
+<h3>Half the open queue cannot pay anyone</h3>
+<div class="chart"><svg viewBox="0 0 860 120" role="img" aria-label="Composition of the 119 open external pull requests">
+<rect x="20.0" y="30" width="411.4" height="34" rx="3" class="fill s2"><title>awesome-list PRs: 60 of 119</title></rect>
+<text x="226.7" y="86" class="lbl" text-anchor="middle">awesome-list PRs 60 (50%)</text>
+<rect x="433.4" y="30" width="32.5" height="34" rx="3" class="fill s3"><title>Medusa: 5 of 119</title></rect>
+<text x="450.7" y="86" class="lbl" text-anchor="middle">Medusa 5 (4%)</text>
+<rect x="467.9" y="30" width="370.1" height="34" rx="3" class="fill s1"><title>everything else: 54 of 119</title></rect>
+<text x="653.9" y="86" class="lbl" text-anchor="middle">everything else 54 (45%)</text>
+<text x="20" y="18" class="tick">119 open external PRs by the operator on 2026-09-24 (gh search, is:open, not own repos)</text>
+</svg><div class="cap">Measured with gh search on 2026-09-24. Top repos in the open queue: punkpeye/awesome-mcp-servers 12, medusajs/medusa 5, sdras/awesome-actions 4, thedaviddias/llms-txt-hub 3. External merged PRs all time: 128.</div></div>
+<h3>v3's own funnel never fired</h3>
+<p>kpi.db on 2026-09-24: 1,277 targets, 746 passing the budget gate, 213 audits, 10 outreach rows, 0 sent. The plan's probability section was arithmetic on assumptions; nothing has been measured on this operator by email.</p>
+
+<h2 id="s3"><span class="n">03</span>The arithmetic: per-touch probability beats volume</h2>
+<p>P(at least one client) = 1 minus (1 minus p) to the power of touches. For small p the number of touches for a 50% chance is 0.693 divided by p, and for 90% it is 2.303 divided by p. Below, every p is a reply rate times a close rate; the provenance column says which factor is measured and which is an analyst prior.</p>
+<div class="chart"><svg viewBox="0 0 860 340" role="img" aria-label="Touches needed for a 50 percent chance of one paying client, by route, log scale">
+<line x1="329.4" y1="20" x2="329.4" y2="310" class="grid"/><text x="329.4" y="328" class="tick" text-anchor="middle">3</text>
+<line x1="416.6" y1="20" x2="416.6" y2="310" class="grid"/><text x="416.6" y="328" class="tick" text-anchor="middle">10</text>
+<line x1="496.3" y1="20" x2="496.3" y2="310" class="grid"/><text x="496.3" y="328" class="tick" text-anchor="middle">30</text>
+<line x1="583.5" y1="20" x2="583.5" y2="310" class="grid"/><text x="583.5" y="328" class="tick" text-anchor="middle">100</text>
+<line x1="663.1" y1="20" x2="663.1" y2="310" class="grid"/><text x="663.1" y="328" class="tick" text-anchor="middle">300</text>
+<line x1="750.4" y1="20" x2="750.4" y2="310" class="grid"/><text x="750.4" y="328" class="tick" text-anchor="middle">1000</text>
+<line x1="300" y1="35.0" x2="340.4" y2="35.0" class="bar s3"/>
+<circle cx="340.4" cy="35.0" r="5" class="dot s3"><title>Warm ask, high: p = 18.00% per touch, 3 touches for 50%, 12 for 90%</title></circle>
+<text x="292" y="39.0" class="lbl" text-anchor="end">Warm ask, high</text>
+<text x="349.4" y="39.0" class="val">3</text>
+<line x1="300" y1="65.0" x2="424.7" y2="65.0" class="bar s3"/>
+<circle cx="424.7" cy="65.0" r="5" class="dot s3"><title>Warm ask to a maintainer who merged you (mid): p = 6.01% per touch, 11 touches for 50%, 37 for 90%</title></circle>
+<text x="292" y="69.0" class="lbl" text-anchor="end">Warm ask to a maintainer who merged you (mid)</text>
+<text x="433.7" y="69.0" class="val">11</text>
+<line x1="300" y1="95.0" x2="424.9" y2="95.0" class="bar s2"/>
+<circle cx="424.9" cy="95.0" r="5" class="dot s2"><title>Upwork proposal, established profile 6%: p = 6.00% per touch, 11 touches for 50%, 37 for 90%</title></circle>
+<text x="292" y="99.0" class="lbl" text-anchor="end">Upwork proposal, established profile 6%</text>
+<text x="433.9" y="99.0" class="val">11</text>
+<line x1="300" y1="125.0" x2="524.2" y2="125.0" class="bar s1"/>
+<circle cx="524.2" cy="125.0" r="5" class="dot s1"><title>LinkedIn message to accepted connection 10.4% x 15%: p = 1.56% per touch, 44 touches for 50%, 146 for 90%</title></circle>
+<text x="292" y="129.0" class="lbl" text-anchor="end">LinkedIn message to accepted connection 10.4% x 15%</text>
+<text x="533.2" y="129.0" class="val">44</text>
+<line x1="300" y1="155.0" x2="532.1" y2="155.0" class="bar s1"/>
+<circle cx="532.1" cy="155.0" r="5" class="dot s1"><title>Cold email, v3 plan inputs 5.6% x 25%: p = 1.40% per touch, 49 touches for 50%, 163 for 90%</title></circle>
+<text x="292" y="159.0" class="lbl" text-anchor="end">Cold email, v3 plan inputs 5.6% x 25%</text>
+<text x="541.1" y="159.0" class="val">49</text>
+<line x1="300" y1="185.0" x2="548.3" y2="185.0" class="bar s2"/>
+<circle cx="548.3" cy="185.0" r="5" class="dot s2"><title>Credentialed pitch to product-specialist agency (mid): p = 1.12% per touch, 62 touches for 50%, 204 for 90%</title></circle>
+<text x="292" y="189.0" class="lbl" text-anchor="end">Credentialed pitch to product-specialist agency (mid)</text>
+<text x="557.3" y="189.0" class="val">62</text>
+<line x1="300" y1="215.0" x2="634.4" y2="215.0" class="bar s1"/>
+<circle cx="634.4" cy="215.0" r="5" class="dot s1"><title>Cold email, platform reply 3.43% x 10%: p = 0.34% per touch, 202 touches for 50%, 670 for 90%</title></circle>
+<text x="292" y="219.0" class="lbl" text-anchor="end">Cold email, platform reply 3.43% x 10%</text>
+<text x="643.4" y="219.0" class="val">202</text>
+<line x1="300" y1="245.0" x2="644.1" y2="245.0" class="bar s1"/>
+<circle cx="644.1" cy="245.0" r="5" class="dot s1"><title>LinkedIn connection note 3.0% x 10%: p = 0.30% per touch, 231 touches for 50%, 766 for 90%</title></circle>
+<text x="292" y="249.0" class="lbl" text-anchor="end">LinkedIn connection note 3.0% x 10%</text>
+<text x="653.1" y="249.0" class="val">231</text>
+<line x1="300" y1="275.0" x2="781.7" y2="275.0" class="bar s2"/>
+<circle cx="781.7" cy="275.0" r="5" class="dot s2"><title>Cold email, agency-measured reply 0.45% x 10% close: p = 0.04% per touch, 1540 touches for 50%, 5116 for 90%</title></circle>
+<text x="292" y="279.0" class="lbl" text-anchor="end">Cold email, agency-measured reply 0.45% x 10% close</text>
+<text x="790.7" y="279.0" class="val">1540</text>
+<text x="300" y="328" class="tick">touches for a 50% chance of one client (log scale)</text>
+</svg><div class="legend"><span><i class="s1"></i>cold, unknown sender</span><span><i class="s2"></i>credentialed or marketplace</span><span><i class="s3"></i>warm, already merged you</span></div><div class="cap">Hover a dot for p per touch and the 90% figure. Log axis.</div></div>
+<div class="tw"><table>
+<tr><th>Route</th><th class="num">p per touch</th><th class="num">touches for 50%</th><th class="num">touches for 90%</th><th>Provenance</th></tr>
+<tr><td>Warm ask, high</td><td class="num">18.00%</td><td class="num">3</td><td class="num">12</td><td class="src">analyst</td></tr>
+<tr><td>Warm ask to a maintainer who merged you (mid)</td><td class="num">6.01%</td><td class="num">11</td><td class="num">37</td><td class="src">Hinge 48.1% survive (n=523); reply, close analyst</td></tr>
+<tr><td>Upwork proposal, established profile 6%</td><td class="num">6.00%</td><td class="num">11</td><td class="num">37</td><td class="src">GigRadar 2026, vendor claim</td></tr>
+<tr><td>LinkedIn message to accepted connection 10.4% x 15%</td><td class="num">1.56%</td><td class="num">44</td><td class="num">146</td><td class="src">Expandi 2026, n=6.73M messages</td></tr>
+<tr><td>Cold email, v3 plan inputs 5.6% x 25%</td><td class="num">1.40%</td><td class="num">49</td><td class="num">163</td><td class="src">operator LinkedIn n=36; close analyst prior</td></tr>
+<tr><td>Credentialed pitch to product-specialist agency (mid)</td><td class="num">1.12%</td><td class="num">62</td><td class="num">204</td><td class="src">operator LinkedIn 5.6% x 20% close, analyst</td></tr>
+<tr><td>Cold email, platform reply 3.43% x 10%</td><td class="num">0.34%</td><td class="num">202</td><td class="num">670</td><td class="src">Instantly/Woodpecker 2026; any-reply incl. declines</td></tr>
+<tr><td>LinkedIn connection note 3.0% x 10%</td><td class="num">0.30%</td><td class="num">231</td><td class="num">766</td><td class="src">Expandi 2026, n=13.2M requests</td></tr>
+<tr><td>Cold email, agency-measured reply 0.45% x 10% close</td><td class="num">0.04%</td><td class="num">1540</td><td class="num">5116</td><td class="src">Belkins 2025, n=7,530,489; close analyst</td></tr>
+</table></div>
+<div class="box warn">
+<p><strong>What zero replies would tell you.</strong> Hanley and Lippman-Hand (JAMA 1983): if none of n trials shows the event, the 95% upper bound on the rate is about 3/n. After 80 cold sends with no client, p is at most 3.75%, which is consistent with both the v3 assumption (1.4%) and the Belkins rate (0.045%). A solo sender cannot learn cold email base rates from their own data inside a quarter. Warm and credentialed touches are learnable in weeks because p is 10 to 100 times larger.</p>
+<div class="tw"><table><tr><th class="num">n touches, 0 conversions</th><th class="num">95% upper bound on p</th></tr><tr><td class="num">8</td><td class="num">37.5%</td></tr><tr><td class="num">20</td><td class="num">15.0%</td></tr><tr><td class="num">40</td><td class="num">7.5%</td></tr><tr><td class="num">80</td><td class="num">3.8%</td></tr><tr><td class="num">120</td><td class="num">2.5%</td></tr><tr><td class="num">160</td><td class="num">1.9%</td></tr></table></div>
+</div>
+
+<h2 id="s4"><span class="n">04</span>How contributors actually get paid: 14 first-person cases</h2>
+<p>Every case below was fetched from its primary page on 2026-09-24. The set is not a random sample; it is every documented case found, including nulls.</p>
+<div class="tw"><table>
+<tr><th>Person, company</th><th>Volume before the offer</th><th>Time to offer</th><th>Outcome</th></tr>
+<tr><td>Bennet Fenner, Zed</td><td>"a bunch of small PRs ... around ~20 or so"</td><td class="num">~3 months</td><td>internship, then full-time</td></tr>
+<tr><td>Smit Barmase, Zed</td><td>"In under three months, Smit shipped 40+ pull requests."</td><td class="num">&lt;3 months</td><td>sponsorship, then full-time community role</td></tr>
+<tr><td>Junkui Zhang, Zed</td><td>"a 10-month contribution campaign ... our top external contributor"</td><td class="num">~10 months</td><td>internship, then full-time</td></tr>
+<tr><td>Anthony Eid, Zed</td><td>debugger backend, "977 commits", ~26,000 lines</td><td class="num">~11 months</td><td>full-time</td></tr>
+<tr><td>Shubham Palriwala, Formbricks</td><td>one substantive PR (CI test suite, #399)</td><td class="num">days to weeks</td><td>"offered to work in Formbricks ... without sharing my resume!"</td></tr>
+<tr><td>Ogbonna Sunday, OpenSauced</td><td>3 PRs in 2 days during a 30-day challenge</td><td class="num">weeks</td><td>"earned me a Software Engineering role"; the CEO messaged him</td></tr>
+<tr><td>Harkirat Singh, Backpack</td><td>not stated</td><td class="num">&lt;1 week</td><td>"offer from Backpack within 24hrs" of an informal call</td></tr>
+<tr><td>Rajendra Kadam, GitLab</td><td>contributions from Jan 2020, 3 hackathon wins</td><td class="num">~13 months</td><td>Back-end Engineer</td></tr>
+<tr><td>Greg Myers, GitLab</td><td>forum support and docs fixes since 2018</td><td class="num">years</td><td>Senior Support Engineer, after a failed first interview</td></tr>
+<tr><td>Josh Wulf, Camunda</td><td>client library, patches</td><td class="num">&gt;1 year</td><td>Developer Advocate</td></tr>
+<tr><td>Jesse White, OpenNMS</td><td>GSoC project</td><td class="num">~12 months</td><td>full-stack developer, later CTO</td></tr>
+<tr><td>jsqu99, Spree (HN)</td><td>authored a Spree extension</td><td class="num">n/a</td><td>contract to extend his own extension for a company</td></tr>
+<tr><td>dvirsky, Redis Labs (HN)</td><td>years of ecosystem work</td><td class="num">years</td><td>full-time; founders "found me through this activity"</td></tr>
+<tr><td>msfjarvis, Substratum (Lobsters)</td><td>theme engine contributions</td><td class="num">n/a</td><td>"hired me to work full time on it"</td></tr>
+</table></div>
+<p><strong>Pattern.</strong> Every fast case (under 3 months) happened at a small, VC-backed company whose founders personally watch the repo, and involved either one substantive PR the founders needed or 20 to 40 PRs into one codebase. Company-side confirmations: GitLab, "almost a third of the first 40 engineers that GitLab hired were contributors to its codebase first" (2018) and "I think all of the top 20 now work at GitLab" (2016); Directus, "Many of our hires started as contributors."; Supabase, "Room to grow from volunteer to paid contributor to paid employee." and "Top contributors get paid for their efforts. We pay a stipend"; Novu, "recruited many of our contributors to work full-time"; n8n careers page, "many of our best hires started in the community."</p>
+<p><strong>Nulls.</strong> Khalid Warsame (Riverpod contributor #83): "Most employers care about what you can do for them, not what you have done for an online community, unless it's their own community or target market." bitbasher (HN 2025): "I have never received a job offer because of a specific open source contribution." Three Supabase provider integrations merged by Kiran Krishnan led to no reported work. The null cases are spread across many repos; the wins are concentrated in one.</p>
+<p><strong>What Medusa says.</strong> No hire-from-community statement exists on any Medusa page; the careers page renders no roles; the Experts page says "You are an agency that has done multiple Medusa projects already" (2025-06-02). Medusa's CONTRIBUTING says "Our core maintainers prioritize pull requests (PRs) from within our organization. External contributions are regularly triaged, but not at any fixed cadence." The ask to Medusa therefore has to be a contract or an introduction, not a job.</p>
+
+<h2 id="s5"><span class="n">05</span>Vendor directories that turn PRs into leads</h2>
+<p>Thirty-one vendor partner or expert programs were fetched on 2026-09-24. Four criteria: accepts a solo freelancer in writing, no or low fee, the vendor says it routes inbound leads, and contribution history counts toward standing. No vendor publishes lead volume, so inbound arrival remains an estimate everywhere.</p>
+<div class="tw"><table>
+<tr><th>Vendor</th><th>Solo accepted</th><th>Fee</th><th>Routes leads</th><th>PRs count</th><th class="num">Listed</th><th>Gate</th></tr>
+<tr><td><strong>Vendure</strong> (8,469 stars)</td><td>Yes: "freelancers can apply and showcase their expertise through the program"</td><td>"Joining the Vendure Partner Programme is free."</td><td>Yes: "We connect companies looking for implementation help directly with you." Ranked by VXP first.</td><td>Yes, automatic: "Open-source contributions are detected automatically via GitHub"; "backfill up to 12 months of prior contributions"</td><td class="num">21</td><td>intro call; CONTRIBUTING invites "translations into another language" of the Dashboard</td></tr>
+<tr><td><strong>Twenty</strong> (57,427 stars)</td><td>Yes: "Solo freelancers and agencies both qualify."</td><td>"Applying and being listed are free."</td><td>Yes: "hand-pick the certified partners who fit and make the introduction within 48 hours"</td><td>No; needs "At least one shipped Twenty implementation — customer or internal — with a link"</td><td class="num">26</td><td>one self-built implementation, publicly linked</td></tr>
+<tr><td><strong>Medusa Experts</strong></td><td>Agency identity assumed ("Name of your agency")</td><td>needs a Medusa Cloud plan, "Develop From $29 /mo"</td><td>Yes: "client referrals" listed as a benefit; "Get Intro" routes through Medusa's contact form with "Orders per month" qualifier</td><td>No; "launched one or more projects on Medusa Cloud"</td><td class="num">29 to 30</td><td>one live Medusa Cloud store; listed experts declare budgets from "$1k - $5k" up</td></tr>
+<tr><td>Ghost Experts</td><td>Yes, "Freelancers" filter, individuals listed</td><td>none stated</td><td>No, browse-only</td><td>Signal only: "Many of our Experts have contributed directly to Ghost's codebase"</td><td class="num">24</td><td>"demonstrable Ghost experience"</td></tr>
+<tr><td>Appwrite</td><td>Yes: "agencies, consultancies, freelancers, and integrators"</td><td>none; rev-share "if you handle the bill"</td><td>No, catalog badge only; catalog page is 404 today</td><td>No</td><td class="num">16 (April archive)</td><td>review</td></tr>
+<tr><td>Strapi</td><td>Not stated; revenue-based tiers</td><td>none</td><td>"preferred lead routing" for Business and Enterprise tiers only</td><td>No</td><td class="num">29</td><td>registered revenue</td></tr>
+<tr><td>Odoo</td><td>Yes at Learning or Ready (1 certified person)</td><td>"Learning US$ 690.00", "Ready, Silver &amp; Gold US$ 1,950.00" per year</td><td>"Potential leads" from Ready tier</td><td>No</td><td class="num">4,448 (Poland 19)</td><td>sell 10 net-new Enterprise users per year</td></tr>
+<tr><td>n8n</td><td>No: "closed pilot ... agencies and system integrators who ... Have at least three customers actively using n8n"; UK/IE, Northern Europe, North America</td><td>none</td><td>Yes, matchmaking form</td><td>No</td><td class="num">48</td><td>closed; Poland outside region</td></tr>
+<tr><td>Payload</td><td>No: "limited to the 30 most qualified agencies"</td><td>none</td><td>"Referrals, not just logos"</td><td>No</td><td class="num">36</td><td>agency cap already exceeded</td></tr>
+<tr><td>Directus</td><td>Company form, "1-25 employees" smallest</td><td>none</td><td>no text</td><td>No</td><td class="num">53</td><td>certification</td></tr>
+<tr><td>Rocket.Chat, Mattermost</td><td>No: companies; Mattermost "at least two years of operating history"</td><td>none</td><td>directory exposure only</td><td>No</td><td class="num">43, 47</td><td>reseller agreements, NDA</td></tr>
+<tr><td>Infisical, Cal.com, Hoppscotch, Documenso, Typebot, Formbricks, Supabase, Dify</td><td colspan="6">No implementation-partner program with a client-facing listing (Infisical Heroes is swag for 5 or 10 merged PRs; Cal.com has a 20% affiliate; Supabase and Dify list integrations, not service providers; Formbricks lists CX consultants)</td></tr>
+</table></div>
+<p><strong>Reading.</strong> Vendure is the only program in the set where the operator's existing output (locale JSON, docs) is both invited by CONTRIBUTING and scored into lead priority by the vendor. Twenty is the cheapest gate: build one CRM instance for zovo.one, link it, apply, and compete with 26 partners for briefs the vendor hand-matches. Medusa Experts needs an agency name and a live Cloud store ($29 a month), which is a 1-day build with the operator's engine and turns the 10 merged PRs into a listed credential with "client referrals".</p>
+
+<h2 id="s6"><span class="n">06</span>Projects that pay outsiders by rule</h2>
+<p>Twenty-eight funded projects were checked for a published policy of paying non-core contributors. Open Collective balances come from Wayback snapshots because opencollective.com blocked every direct route on 2026-09-24.</p>
+<div class="tw"><table>
+<tr><th>Project</th><th class="num">Money on hand</th><th>Pays non-core?</th><th>Amount</th><th>Time to first payment</th></tr>
+<tr><td><strong>ESLint</strong></td><td class="num">$111,952 (2026-09-23)</td><td>Yes, by rule, no application: "We set aside 10% of our monthly income to pay outside contributors"; "if you make a significant contribution, you'll get an email from the TSC"</td><td>"at least $100 to every outside contributor who has made a non-trivial contribution"; June 2025 pool 9 payees, $100 to $1,200; Aug 2026 pool 2 x $100</td><td>paid the 10th to 14th of the following month</td></tr>
+<tr><td>Biome</td><td class="num">$38,307</td><td>Project-funded bounties: "100% of the pledged amount will go to the contributor"</td><td>1 open funded issue (#1274); community bounties "currently halted"</td><td>on merge</td></tr>
+<tr><td>webpack</td><td class="num">$92,721</td><td>Goal text only: "$50/hour ... payouts when crossing the threshold of $300"</td><td>unverified in the ledger</td><td>unverified</td></tr>
+<tr><td>Zig</td><td class="num">2024 spend $520,749</td><td>Contractors by invitation: "unpaid volunteers to become contractors"</td><td>"$60/hour"</td><td>months</td></tr>
+<tr><td>Astro, Vite, Homebrew</td><td class="num">$231,036 / $77,356 / $160,813</td><td>Core or maintainers only ("$50 per hour ... maximum of $1000 each month"; "$3000 USD each month"; "US$300/month")</td><td>n/a</td><td>n/a</td></tr>
+<tr><td>Babel, Vue, Svelte, Servo, Prettier, Rollup, Mocha</td><td class="num">$42k to $197k each</td><td>No; 1 to 3 named payees each</td><td>n/a</td><td>n/a</td></tr>
+</table></div>
+<p>Every bounty board other than Algora was dead or pivoted on 2026-09-24: Polar sunset its issue funding in April 2025, IssueHunt is now a Japanese security bug bounty platform, Tolgee has 0 open bounties, Gitcoin's bounty site is gone, ossbounties.com is parked, and Algora's own /bounties page returns 404 while its homepage sells recruiting. ESLint's pool is not a client, but it is the fastest verifiable "paid for open source" line an outsider can earn, and it is the credential the Vendure and agency pitches should cite.</p>
+
+<h2 id="s7"><span class="n">07</span>Dead ends, measured</h2>
+<ul>
+<li><strong>Maintainer succession.</strong> npm: "We do not transfer package, organization, or username ownership simply because another user wants the name." PyPI PEP 541 needs six weeks of documented contact attempts before a transfer. Tidelift pays "the actual maintainers, not people who say they'll help out" and matches packages by registry publish rights. HeroDevs grants ($2,500 to $15,000) require being the maintainer of an EOL project with "strong community adoption and traction". Of 261 open "looking for maintainers" issues from the last 180 days, 4 are libraries with meaningful downloads and a reachable owner (tomlkit 443.9M downloads a month, angular-split 434k). A 6 to 12 month credential, not 90-day revenue.</li>
+<li><strong>Funds and fellowships.</strong> Sovereign Tech Fellowship closed 2026-04-06 with no next date; Season of Docs "has concluded after six great years"; GSoC excludes "Regular contributors to an open source project"; Outreachy needs "must not have a full-time job"; Prototype Fund requires German residence; GitHub Accelerator shows no cohort after 2024. Open and eligible: NLnet Restack and CodeSupply (individuals, "between 5.000 and 50.000 €", deadline "November 3rd 2026 12:00 CET", EU priority, but "We are not interested in AI-generated projects or proposals"), and Claude for Open Source (operator qualifies on "100 or more pull requests merged into repos you don't own in the last 12 months"; benefit is "6 months of free Claude Max 20x", cost avoidance not revenue).</li>
+<li><strong>Freelance boards.</strong> Upwork, Indeed and WeWorkRemotely block unauthenticated fetches; RemoteOK has no tag page for any of 14 products; the one measurable product board (n8n community Jobs) runs about one demand post every two days, and one post drew 83 freelancer replies in 48 hours with $250 to $500 fixed-price asks. No direct marketplace demand exists for Medusa, Strapi, Directus or Payload specialists that is reachable without login.</li>
+<li><strong>Company-affiliated issue reporters.</strong> Measured across 20 repos and 1,834 open issues: 21% of issues have a company-affiliated author, but only 4% carry a first-person production complaint, and only 20 issues have both. Maintainers label 1% as help wanted. It is a thin lane of about 20 warm-ish touches a quarter, kept as lane E with that supply.</li>
+<li><strong>Cold audit emails.</strong> Retained only as lane F, capped, because at measured reply rates the per-send probability is 0.34% or lower and GitHub's policy forbids "using information from the Service ... for the purposes of sending unsolicited emails to users".</li>
+</ul>
+
+<h2 id="s8"><span class="n">08</span>The v4 lanes</h2>
+
+<div class="lane"><h3>A. Medusa anchor <span class="tag m">relationship measured</span></h3><dl>
+<dt>Buyer</dt><dd>Medusa (Copenhagen, 45 staff, ~$9M raised), through the DX lead who approved six PRs today. Secondary buyers: the 29 listed Medusa Experts agencies he can introduce.</dd>
+<dt>Work, days 0 to 30</dt><dd>Fix and land the 4 unreviewed locale PRs (bg, ro, th, ja); then 12 PRs under 50 lines into docs and i18n, the DX lead's own domain, at the rate that merged today. No PR over 500 lines. No commercial text anywhere on GitHub.</dd>
+<dt>The ask, day 30 to 35</dt><dd>One email, off-platform, after the 12th merge: "Ten locales and twelve docs fixes merged since September. I can keep the dashboard locales at 100% parity and the docs examples green on a fixed monthly fee, PRs against your repo, your review. If that is not a budget line for you, would you introduce me to two Experts agencies that take Medusa subcontractors?" Price anchor $1,500 a month (comparables: gurzu "Starting at $1,750/month", fastruby "$1,950 /mo").</dd>
+<dt>Probability</dt><dd>two warm touches at p = 2.9% / 6.0% / 18% each: P(at least one paid outcome) 6% / 12% / 33%. The reply factor (40 to 60%) and close factor (15 to 30%) are analyst priors; the 48.1% pre-screen survival is Hinge (n=523).</dd>
+<dt>First dollar</dt><dd>day 45 to 70.</dd>
+<dt>Kill gate</dt><dd>if the 4 open PRs get no review by day 14, send the ask anyway on the 5 merges; if no reply by day 50, move the relationship to lane C as a reference only.</dd>
+<dt>Hours</dt><dd>11 h.</dd></dl></div>
+
+<div class="lane"><h3>B. Vendure partner track <span class="tag v">program rules measured, lead volume unpublished</span></h3><dl>
+<dt>Why Vendure</dt><dd>CONTRIBUTING: "If you wish to contribute translations into another language (or improve an existing set of translations)" for the React Dashboard and the legacy Admin UI. Partner FAQ: "Open-source contributions are detected automatically via GitHub"; "Personal VXP goes to a specific individual, for example for a pull request to Vendure's" repos; "Partners ranked highest by VXP are prioritised first" for lead routing; "freelancers can apply"; free. 21 listed partners, 10 Official and 11 Friends. Vendure is Elevantiq GmbH, Germany; Poland is inside "open to partners globally".</dd>
+<dt>Work, days 0 to 21</dt><dd>Run the locale-parity measure on the Vendure dashboard; ship one PR per language under 500 lines, issue-first for the large ones; target 15 merged PRs. Register as a partner on day 7 (form: company, website, team size 1, Vendure experience, average project size) and connect GitHub so the backfill counts the merges.</dd>
+<dt>Probability</dt><dd>P(at least one paid lead by day 90) is an analyst prior of 2% / 8% / 20%, because no vendor publishes lead counts. The partner portal's lead count replaces the prior at day 60.</dd>
+<dt>First dollar</dt><dd>day 60 to 90; commission on referrals is separate and unquantified ("We confirm the details during onboarding").</dd>
+<dt>Kill gate</dt><dd>not listed as Friend of Vendure by day 45, or 0 routed leads by day 90, drop to maintenance (1 PR a month).</dd>
+<dt>Hours</dt><dd>15 h.</dd></dl></div>
+
+<div class="lane"><h3>C. Credentialed subcontract pitch to product-specialist agencies <span class="tag a">supply measured, conversion assumed</span></h3><dl>
+<dt>Buyer</dt><dd>207 named agencies listed on 2026-09-24 as specialists in a product the operator has merged or open PRs in, or that the engine can produce PRs for within a week:</dd>
+<dt>Supply</dt><dd><div class="tw"><table><tr><th>Directory</th><th class="num">Listed</th></tr><tr><td>Medusa Experts</td><td class="num">29</td></tr><tr><td>Vendure partners</td><td class="num">21</td></tr><tr><td>Twenty partners</td><td class="num">26</td></tr><tr><td>Directus agencies</td><td class="num">53</td></tr><tr><td>Payload partners</td><td class="num">36</td></tr><tr><td>Saleor partners</td><td class="num">13</td></tr><tr><td>Strapi partners</td><td class="num">29</td></tr></table></div>Rigby (Poland) is a listed Medusa Expert; Riotters (Szczecin) and FocusReactive (Warsaw office) are Payload partners; Mirumee (Wrocław) originated Saleor. Same-country agencies go first.</dd>
+<dt>Offer</dt><dd>"I have 10 merged PRs in medusajs/medusa this month (links), approved by Medusa's DX lead. I take Medusa and Vendure implementation and maintenance work as a subcontractor at a fixed weekly rate, async only, PRs against your client repos with your review." No audit attached; the credential is the message.</dd>
+<dt>Probability</dt><dd>120 messages, one per agency, over 60 days. p = reply x close: 3.43% x 10% / 5.6% x 20% / 10.4% x 25% gives P(at least one) 34% / 74% / 96%. Reply rates are measured (platform average; operator's LinkedIn n=36; Expandi message-to-accepted-connection n=6.73M); close rates are priors. The first 40 sends replace them.</dd>
+<dt>First dollar</dt><dd>day 30 to 60.</dd>
+<dt>Kill gate</dt><dd>rule of three: 0 replies after 80 sends means reply rate under 3.75%; rewrite the credential line and A/B the next 40. 0 paid by day 75 at 3 or more replies means the price, not the lane.</dd>
+<dt>Hours</dt><dd>16 h (5 min to find the contact, 3 min to send).</dd></dl></div>
+
+<div class="lane"><h3>D. Twenty certified-partner listing <span class="tag v">rules measured</span></h3><dl>
+<dt>Gate</dt><dd>"At least one shipped Twenty implementation — customer or internal — with a link that shows the work. Solo freelancers and agencies both qualify." Build Twenty as the CRM for the v4 outreach itself, self-hosted, public write-up on zovo.one. Apply on day 20.</dd>
+<dt>Why it is cheap</dt><dd>free; "hand-pick the certified partners who fit and make the introduction within 48 hours"; 26 competitors; profiles carry "published rates". Twenty has 57,427 stars and no AI-PR restriction.</dd>
+<dt>Probability</dt><dd>analyst prior 2% / 6% / 15% of at least one paid brief by day 90; brief volume is unpublished. Replaced by the count of briefs received.</dd>
+<dt>Hours</dt><dd>9 h.</dd></dl></div>
+
+<div class="lane"><h3>E. Fix-then-contact the 20 measured production reporters <span class="tag m">supply measured</span></h3><dl>
+<dt>Supply</dt><dd>20 open issues where a company-affiliated external reporter wrote "in production", "we use", "our team" or "our instance", ranked in r/04-issue-reporters.csv: directus #28281 (BCC, "massive outages"), strapi #27567 (@t3n), calcom #30044 (Newton's Tree), Infisical #7204 (Clera), vendure #5166 and #5165 (PR3SET), medusa #16807 (SmartByteLabs), and 13 more. None carries a help-wanted label; 8 have zero comments.</dd>
+<dt>Work</dt><dd>Reproduce, fix as a PR under 500 lines with a disclosure line where the repo asks (n8n, Appwrite, Dify, Documenso have ownership or disclosure rules; none of the 20 repos bans AI PRs), then one email to the reporter at their company domain: the fix link and a one-line offer to keep their deployment patched on a fixed fee.</dd>
+<dt>Probability</dt><dd>20 touches at p 0.34% / 2.1% / 4.25%: 34% mid. Nothing here is measured on conversion; it is a supply-limited lane with a warm-ish touch.</dd>
+<dt>Hours</dt><dd>14 h.</dd></dl></div>
+
+<div class="lane"><h3>F. v3 cold audit email, capped <span class="tag a">retained at measured rates</span></h3><dl>
+<dt>Change</dt><dd>80 sends, not 160, starting day 30 after lanes A to E are running, to the 22 targets that already have a named decision-maker and a verified email plus the next 58 by score. Same v3 gate: rewrite under 3% reply after 80.</dd>
+<dt>Probability</dt><dd>4% / 24% / 68% at the three measured reply rates and v3's own close priors.</dd>
+<dt>Hours</dt><dd>7 h.</dd></dl></div>
+
+<div class="box kill">
+<p><strong>Killed.</strong> Awesome-list and self-listing PRs (60 open today; close them or let them sit, send no more). Licensing referral (Pangea's pages carry no referral percentage; "Only code you fully own ... can be offered"). Algora, Opire, Tolgee, Polar, IssueHunt, Gitcoin bounties (all dead, empty or pivoted). Maintainer succession as revenue. Any pitch to a maintainer to pay for translation. Medusa i18n PRs over 500 lines as unsolicited proof (the merged ones were 823 to 1,017 additions, and they merged, but the four unreviewed ones are the same size; do not add more until those clear).</p>
+<p><strong>Floor income, tracked separately.</strong> Expensify Help Wanted: 30 open, 16 closed since 2026-08-25, paid via Upwork "no less than 7 days after the pull request is deployed", amounts "entirely at Expensify's discretion", and "MelvinBot (Melvin), our AI agent that posts the first proposal on an issue". 40 owner-posted proposals at 2% / 5.3% / 8% assignment odds give 55% / 89% / 96% of at least one paid issue, but it is not a relationship and it competes with the vendor's own agent. Run it only in weeks under 60 logged hours.</p>
+</div>
+
+<h2 id="s9"><span class="n">09</span>Probability model</h2>
+<div class="chart"><svg viewBox="0 0 860 300" role="img" aria-label="Probability of at least one paying client in 90 days per lane and combined, low, mid and high cases">
+<line x1="60" y1="240.0" x2="840" y2="240.0" class="grid"/><text x="52" y="244.0" class="tick" text-anchor="end">0%</text>
+<line x1="60" y1="185.0" x2="840" y2="185.0" class="grid"/><text x="52" y="189.0" class="tick" text-anchor="end">25%</text>
+<line x1="60" y1="130.0" x2="840" y2="130.0" class="grid"/><text x="52" y="134.0" class="tick" text-anchor="end">50%</text>
+<line x1="60" y1="75.0" x2="840" y2="75.0" class="grid"/><text x="52" y="79.0" class="tick" text-anchor="end">75%</text>
+<line x1="60" y1="20.0" x2="840" y2="20.0" class="grid"/><text x="52" y="24.0" class="tick" text-anchor="end">100%</text>
+<rect x="73.4" y="227.5" width="26.5" height="12.5" rx="3" class="fill s1"><title>A low: 5.7%</title></rect>
+<text x="86.6" y="223.5" class="val" text-anchor="middle">6</text>
+<rect x="101.9" y="214.3" width="26.5" height="25.7" rx="3" class="fill s2"><title>A mid: 11.7%</title></rect>
+<text x="115.2" y="210.3" class="val" text-anchor="middle">12</text>
+<rect x="130.4" y="167.9" width="26.5" height="72.1" rx="3" class="fill s3"><title>A high: 32.8%</title></rect>
+<text x="143.7" y="163.9" class="val" text-anchor="middle">33</text>
+<text x="115.2" y="268" class="lbl" text-anchor="middle">A</text>
+<rect x="184.8" y="235.6" width="26.5" height="4.4" rx="3" class="fill s1"><title>B low: 2.0%</title></rect>
+<text x="198.1" y="231.6" class="val" text-anchor="middle">2</text>
+<rect x="213.3" y="222.4" width="26.5" height="17.6" rx="3" class="fill s2"><title>B mid: 8.0%</title></rect>
+<text x="226.6" y="218.4" class="val" text-anchor="middle">8</text>
+<rect x="241.9" y="196.0" width="26.5" height="44.0" rx="3" class="fill s3"><title>B high: 20.0%</title></rect>
+<text x="255.1" y="192.0" class="val" text-anchor="middle">20</text>
+<text x="226.6" y="268" class="lbl" text-anchor="middle">B</text>
+<rect x="296.2" y="165.7" width="26.5" height="74.3" rx="3" class="fill s1"><title>C low: 33.8%</title></rect>
+<text x="309.5" y="161.7" class="val" text-anchor="middle">34</text>
+<rect x="324.8" y="76.9" width="26.5" height="163.1" rx="3" class="fill s2"><title>C mid: 74.1%</title></rect>
+<text x="338.0" y="72.9" class="val" text-anchor="middle">74</text>
+<rect x="353.3" y="29.3" width="26.5" height="210.7" rx="3" class="fill s3"><title>C high: 95.8%</title></rect>
+<text x="366.6" y="25.3" class="val" text-anchor="middle">96</text>
+<text x="338.0" y="268" class="lbl" text-anchor="middle">C</text>
+<rect x="407.7" y="235.6" width="26.5" height="4.4" rx="3" class="fill s1"><title>D low: 2.0%</title></rect>
+<text x="420.9" y="231.6" class="val" text-anchor="middle">2</text>
+<rect x="436.2" y="226.8" width="26.5" height="13.2" rx="3" class="fill s2"><title>D mid: 6.0%</title></rect>
+<text x="449.5" y="222.8" class="val" text-anchor="middle">6</text>
+<rect x="464.7" y="207.0" width="26.5" height="33.0" rx="3" class="fill s3"><title>D high: 15.0%</title></rect>
+<text x="478.0" y="203.0" class="val" text-anchor="middle">15</text>
+<text x="449.5" y="268" class="lbl" text-anchor="middle">D</text>
+<rect x="519.1" y="225.4" width="26.5" height="14.6" rx="3" class="fill s1"><title>E low: 6.6%</title></rect>
+<text x="532.4" y="221.4" class="val" text-anchor="middle">7</text>
+<rect x="547.6" y="164.5" width="26.5" height="75.5" rx="3" class="fill s2"><title>E mid: 34.3%</title></rect>
+<text x="560.9" y="160.5" class="val" text-anchor="middle">34</text>
+<rect x="576.1" y="112.3" width="26.5" height="127.7" rx="3" class="fill s3"><title>E high: 58.0%</title></rect>
+<text x="589.4" y="108.3" class="val" text-anchor="middle">58</text>
+<text x="560.9" y="268" class="lbl" text-anchor="middle">E</text>
+<rect x="630.5" y="232.2" width="26.5" height="7.8" rx="3" class="fill s1"><title>F low: 3.5%</title></rect>
+<text x="643.8" y="228.2" class="val" text-anchor="middle">4</text>
+<rect x="659.0" y="187.1" width="26.5" height="52.9" rx="3" class="fill s2"><title>F mid: 24.0%</title></rect>
+<text x="672.3" y="183.1" class="val" text-anchor="middle">24</text>
+<rect x="687.6" y="91.2" width="26.5" height="148.8" rx="3" class="fill s3"><title>F high: 67.6%</title></rect>
+<text x="700.8" y="87.2" class="val" text-anchor="middle">68</text>
+<text x="672.3" y="268" class="lbl" text-anchor="middle">F</text>
+<rect x="741.9" y="138.8" width="26.5" height="101.2" rx="3" class="fill s1"><title>All v4 low: 46.0%</title></rect>
+<text x="755.2" y="134.8" class="val" text-anchor="middle">46</text>
+<rect x="770.5" y="41.7" width="26.5" height="198.3" rx="3" class="fill s2"><title>All v4 mid: 90.1%</title></rect>
+<text x="783.7" y="37.7" class="val" text-anchor="middle">90</text>
+<rect x="799.0" y="20.6" width="26.5" height="219.4" rx="3" class="fill s3"><title>All v4 high: 99.7%</title></rect>
+<text x="812.3" y="16.6" class="val" text-anchor="middle">100</text>
+<text x="783.7" y="268" class="lbl" text-anchor="middle">All v4</text>
+<text x="60" y="290" class="tick">lanes A to F and all v4 lanes combined; bars are low, mid, high case; percent chance of at least one paying client by day 90</text>
+</svg><div class="legend"><span><i class="s1"></i>low</span><span><i class="s2"></i>mid</span><span><i class="s3"></i>high</span></div><div class="cap">Lanes are treated as independent, which overstates the combined figure if replies cluster; the mid case is driven by lane C's supply of 207 agencies with explicit product demand. Expensify is excluded.</div></div>
+<div class="tw"><table>
+<tr><th>Lane</th><th>What</th><th class="num">Touches</th><th class="num">Hours</th><th class="num">P low</th><th class="num">P mid</th><th class="num">P high</th><th>Provenance</th></tr>
+<tr><td class="k">A</td><td>Medusa anchor: finish 5 open PRs, 12 docs/i18n PRs to the DX lead&#x27;s domain, then one written ask</td><td class="num">2</td><td class="num">11 h</td><td class="num">5.7%</td><td class="num">11.7%</td><td class="num">32.8%</td><td class="src">warm-touch p: Hinge 48.1% x reply 40/50/60% x close 15/25/30% (reply and close are analyst priors)</td></tr>
+<tr><td class="k">B</td><td>Vendure partner track: dashboard translations, free partner registration, lead routing by contribution points</td><td class="num">1</td><td class="num">15 h</td><td class="num">2.0%</td><td class="num">8.0%</td><td class="num">20.0%</td><td class="src">inbound lead arrival is unpublished; P(&gt;=1 paid lead in 90 d) is an analyst prior, replaced by the partner portal&#x27;s lead count</td></tr>
+<tr><td class="k">C</td><td>Credentialed subcontract pitch to product-specialist agencies listed in vendor directories</td><td class="num">120</td><td class="num">16 h</td><td class="num">33.8%</td><td class="num">74.1%</td><td class="num">95.8%</td><td class="src">reply: platform 3.43% / operator 5.6% / LinkedIn-message 10.4%; close 10/20/25% analyst priors</td></tr>
+<tr><td class="k">D</td><td>Twenty certified-partner listing after one shipped self-implementation</td><td class="num">1</td><td class="num">9 h</td><td class="num">2.0%</td><td class="num">6.0%</td><td class="num">15.0%</td><td class="src">vendor hand-matches briefs within 48 h to 26 partners; brief volume unpublished; analyst prior</td></tr>
+<tr><td class="k">E</td><td>Fix-then-contact: company-affiliated issue reporters with a first-person production complaint</td><td class="num">20</td><td class="num">14 h</td><td class="num">6.6%</td><td class="num">34.3%</td><td class="num">58.0%</td><td class="src">measured supply: 20 strong leads in 1,834 sampled open issues across 20 repos; reply 3.43/10.4/17%, close 10/20/25% analyst</td></tr>
+<tr><td class="k">F</td><td>v3 cold audit email, capped at 80 sends after warm lanes</td><td class="num">80</td><td class="num">7 h</td><td class="num">3.5%</td><td class="num">24.0%</td><td class="num">67.6%</td><td class="src">as v3 L1, at measured 2025-2026 reply rates</td></tr>
+<tr class="total"><td></td><td>All lanes combined, 1 minus the product of (1 minus P) across lanes; lanes treated as independent</td><td class="num"></td><td class="num">72 h</td><td class="num">46.0%</td><td class="num">90.1%</td><td class="num">99.7%</td><td class="src">arithmetic, model.py</td></tr>
+</table></div>
+<p><strong>Against v3.</strong> v3's own inputs (5.6% reply, 25% close, 30 sends) gave 13%; at its planned 160 sends they give 51%. At the measured platform reply rate the same 160 sends give 42%, and at the agency-measured rate 7%. v4 reaches 90% mid case with 72 hours by moving the same operator time from the 0.3%-per-touch lane to touches between 1% and 6%.</p>
+<p><strong>Honesty line.</strong> Seven inputs are analyst priors with no measured source: the warm reply and close rates in lane A, the agency close rates in lane C, the inbound priors in lanes B and D, and the close rates in E and F. Each is named in the table and each is replaced by a column in kpi.db after its lane's first gate. The measured inputs are: the Medusa merges, the open-queue composition, the 4 platform reply rates, Hinge's 48.1%, the directory counts, the issue-reporter supply, and the program rules quoted in sections 5 and 6.</p>
+
+<h2 id="s10"><span class="n">10</span>90-day schedule and gates</h2>
+<div class="tw"><table>
+<tr><th>Day</th><th>Action</th><th>Acceptance test</th></tr>
+<tr><td class="num">0</td><td>Stop awesome-list generation in anvil_night.py; add the 20 repos' AI policies to the disclosure map; re-point the engine's discover step at vendurehq/vendure dashboard locales and medusajs docs.</td><td><code>grep -c awesome $PIPE/anvil_night.py</code> = 0; <code>sqlite3 kpi.db "select count(*) from targets where repo in ('vendurehq/vendure','medusajs/medusa')"</code> ≥ 2</td></tr>
+<tr><td class="num">0 to 3</td><td>Fix the 4 unreviewed Medusa PRs to the pattern that merged (single file, template complete, changeset note). Start Vendure locale PRs, issue-first.</td><td>4 Medusa PRs show a review or merge; ≥ 3 Vendure PRs open, each under 500 lines</td></tr>
+<tr><td class="num">3 to 7</td><td>Build the zovo.one Medusa Cloud demo store (Develop plan, $29) and the self-hosted Twenty CRM; write both up publicly.</td><td>two live URLs; Twenty holds the lane C contact list</td></tr>
+<tr><td class="num">7</td><td>Register for the Vendure partner programme and connect GitHub; apply to Medusa Experts with the demo store; collect lane C contacts (company site, LinkedIn 1st degree, org-domain commit emails).</td><td>Vendure confirmation email; Medusa application submitted; <code>select count(*) from targets where contact_email!='' and lane='C'</code> ≥ 120</td></tr>
+<tr><td class="num">7 to 30</td><td>12 Medusa docs/i18n PRs, 12 Vendure PRs; lane C sends at 8 per weekday from mike@zovo.one, one per agency, unique bodies; lane E fixes for the top 10 reporters.</td><td><code>select count(*), sum(replied) from outreach where lane='C'</code> ≥ 120 by day 30; contributions where repo like 'medusajs%' and status='MERGED' ≥ 12</td></tr>
+<tr><td class="num">20</td><td>Apply to Twenty partners with the CRM link.</td><td>application acknowledged</td></tr>
+<tr><td class="num">30 to 35</td><td>Lane A ask to the Medusa DX lead, off-platform, after the 12th merge.</td><td>outreach row lane='A', body hash logged</td></tr>
+<tr><td class="num">30</td><td>Lane F starts, 8 per weekday, cap 80.</td><td>as v3 2.1</td></tr>
+<tr><td class="num">40</td><td>Rule-of-three checkpoint on lane C: 0 replies after 80 sends means rewrite and A/B.</td><td>STATUS.md block with reply rate and verdict</td></tr>
+<tr><td class="num">45</td><td>Vendure listing check; NLnet CodeSupply or Restack proposal for drift-CI submitted as a human-led tool (deadline 2026-11-03 12:00 CET).</td><td>listed as Friend of Vendure or kill gate B fires; NLnet submission id</td></tr>
+<tr><td class="num">60</td><td>Replace every prior in the model with the measured column; recompute; scale whichever lane has the highest measured p per hour.</td><td><code>python3 model.py</code> reads outreach and deals tables; weights file dated</td></tr>
+<tr><td class="num">90</td><td>Report: clients, cash, hours, p per lane, next-quarter allocation.</td><td>WHITEHERO-DASHBOARD.html regenerated from kpi.db</td></tr>
+</table></div>
+<p>Measurement reuses the v3 schema without change: <code>outreach.lane</code> takes values A to F, <code>deals.status='paid'</code> is the single client definition, <code>hours.lane</code> logs operator time. Weekly red flags: any lane above its hour budget by 50%, any public "automated" or "spam" callout on a PR, reply rate under 3% after 80 sends on C or F.</p>
+
+<h2 id="s11"><span class="n">11</span>Guardrails</h2>
+<ul>
+<li><strong>GitHub Acceptable Use, live text.</strong> Section 10: "You may not advertise in other Users' Accounts, such as by posting monetized or excessive bulk content in issues." Section 7: "You may not use information from the Service ... for spamming purposes, including for the purposes of sending unsolicited emails to users". Lane C contacts come from the vendor directories and company sites, not from GitHub data. Lane E contacts the reporter at the company address found on the company site, one message, with the fix link, never inside the issue.</li>
+<li><strong>AI disclosure by repo.</strong> Of the 20 repos measured, 0 ban AI PRs; n8n "encourage[s] you to note in the PR if AI tools did a meaningful part of the work"; Appwrite, Dify and Documenso require ownership ("you own the pull request"; Documenso: contributors "throwing AI-generated code over the wall without proper review ... will be blocked"). Formbricks has paused community code PRs. Medusa deprioritizes external PRs by policy; that is why the DX lead's attention is the asset.</li>
+<li><strong>PR size.</strong> Cal.com: "Keep PRs under 500 lines of code changed and under 10 code files modified"; the operator's all-time merge rate over 500 lines is 3.5%. Locale fills over 500 lines only where a maintainer has already merged the same shape (Medusa) or inside a signed engagement.</li>
+<li><strong>Vendure CLA.</strong> CONTRIBUTING references a Contributor License Agreement; sign it before the first PR.</li>
+<li><strong>No calls offered, no emojis, no em-dashes, HUMANIZE rules, $0 paid APIs, LinkedIn automation stays off, Resend key rotated before any programmatic email.</strong> Carried over from v3 unchanged.</li>
+<li><strong>One ask per relationship.</strong> The Medusa ask is sent once. A second message is only a reply.</li>
+</ul>
+
+<h2 id="s12"><span class="n">12</span>Counter-hypotheses</h2>
+<div class="tw"><table>
+<tr><th>Claim</th><th>Evidence</th><th>Response</th></tr>
+<tr><td>"Locale JSON PRs are low value; nobody hires on them."</td><td>True for hiring: the Zed and Formbricks cases were product code. But the Medusa DX lead approved six of them today, Vendure invites them in CONTRIBUTING and scores them into partner rank, and agencies screen for "has landed PRs in the product".</td><td>Locale PRs open the door at Medusa and Vendure; the lane A PR mix after day 7 is docs and examples, the DX lead's domain, not more locales.</td></tr>
+<tr><td>"Agencies will not subcontract to a solo unknown."</td><td>Unmeasured. n8n's one open demand post drew 83 applicants; supply is deep. Against that, the credential is verifiable in one click and same-country agencies (Rigby, Riotters, FocusReactive, Mirumee) are listed.</td><td>Lane C is priced as capacity, not consulting; kill gate at 80 sends.</td></tr>
+<tr><td>"Vendure is 8k stars; too small to matter."</td><td>Small is the point: 21 partners, automatic PR scoring, 12-month backfill, explicit lead routing. Medusa has 36k stars and no solo path.</td><td>Ranking by VXP is attainable inside a quarter; the lead volume is the unknown and is gated at day 90.</td></tr>
+<tr><td>"v4's 85% is as unmeasured as v3's 51%."</td><td>Partly. Both use analyst close rates. v4's reply factors are platform-measured; v3's were one LinkedIn sample. v4's lanes have supply counts fetched today; v3's had 9 drafts.</td><td>The combined number is a planning figure. The decision it supports is allocation of hours, and that holds even at the low case (46% vs v3's 13%).</td></tr>
+<tr><td>"Medusa will read the ask as a solicitation and drop the relationship."</td><td>Risk is real; GitLab's CEO warns against hiring from the community, Medusa prioritizes internal PRs.</td><td>The ask is off-platform, once, after 12 more merges, and offers an introduction as the fallback outcome.</td></tr>
+<tr><td>"HUD or Lazarus licensing pays more per hour than any of this."</td><td>HUD "$5,000 baseline" and "up to $10k" are vendor claims; Pangea rates are "indicative"; both require private never-public code, which the contribution graph cannot supply; the referral percentage is not published.</td><td>Killed as a lane; kept as a one-line offer to any paying client with retired private repos.</td></tr>
+</table></div>
+
+<h2 id="s13"><span class="n">13</span>Fact-check of v3's external claims</h2>
+<div class="tw"><table>
+<tr><th>Claim in v3</th><th>Verdict</th><th>What the live page says (2026-09-24)</th></tr>
+<tr><td>HUD "up to $10k", "$5,000 baseline", 80/20 split, paid in 7 to 14 days</td><td>Confirmed, vendor claims</td><td>"Starts at a $5,000 baseline per codebase and increases with grading." "The seller receives 80% of the final payout" (hud.ai, June 24, 2026); "paid within 7–14 days" (dev.to)</td></tr>
+<tr><td>Pangea $100/M source, $40/M history, private-only, thresholds</td><td>Confirmed, "indicative"</td><td>"Rates shown are the code owner's share and are indicative, deliberately conservative estimates, not guaranteed payouts"; "Rough thresholds, not hard gates."</td></tr>
+<tr><td>Pangea 15% referral</td><td><strong>Not found</strong></td><td>No percentage on either page; "Net 15 Paid within 15 days of buyer funds landing"</td></tr>
+<tr><td>Lazarus "up to $1M", intake in one business day</td><td>Confirmed, vendor claim</td><td>"a single payout of up to $1M"; "Scheduled within one business day, under NDA."</td></tr>
+<tr><td>Expensify typical $250, 26 closures in 30 days</td><td>Partly</td><td>30 open, 16 closed since 2026-08-25; CONTRIBUTING has no dollar figure: "Payment amounts are variable"; MelvinBot posts the first proposal</td></tr>
+<tr><td>arXiv 2602.08915: 68.0 to 79.9% merge when the owner runs the agent, 7,156 PRs</td><td><strong>Partly, range not found</strong></td><td>n = 7,156 confirmed; abstract gives "documentation tasks achieve 82.1% acceptance compared to 66.1% for new features"; no owner-run definition</td></tr>
+<tr><td>Sponsors: median 2, 36% exactly one</td><td>Confirmed</td><td>"1,355 (36%) had just one sponsor ... The median was 2." (n=3,697)</td></tr>
+<tr><td>"over 60% of activated profiles never paid" (arXiv 2604.03846)</td><td><strong>Not found</strong></td><td>Paper says 7,343 of 49,148 sponsorable users receive sponsorship (14.9%, computed)</td></tr>
+<tr><td>Retainer comps $1,750 to $10,000</td><td>Confirmed</td><td>gurzu "Starting at $1,750/month"; fastruby "$1,950 /mo"; railsfever "Foundation $5,500 /month", "Growth $11,500 /month"</td></tr>
+<tr><td>GitHub bounty cut, IBB paused, curl ended</td><td>Confirmed</td><td>"maximum reward for a critical vulnerability falls from $30,000 to $10,000" (Register 2026-07-23); IBB "paused for new submissions" (HackerOne JSON); "It officially stops on January 31, 2026." (Stenberg)</td></tr>
+<tr><td>Crowdin AI $1.13 to $1.75 per 500-key locale</td><td><strong>Not found</strong></td><td>Crowdin prices per 1,000 words: "$0.26 to $0.57 per 1,000 words"</td></tr>
+<tr><td>Algora 1,470 settled in 2025 vs 2 in 30 days</td><td><strong>Not found</strong></td><td>bounty-census counts open labelled issues ("561 open issues ... $1,142,625" on 2026-08-10; "5 open bounties ... $60" on 2026-09-24) and is itself AI-written</td></tr>
+<tr><td>GitHub AUP sections 4 and 10</td><td>Confirmed</td><td>quoted in section 11</td></tr>
+<tr><td>Claude for OSS threshold</td><td>Confirmed</td><td>"100 or more pull requests merged into repos you don't own in the last 12 months"; "6 months of free Claude Max 20x"</td></tr>
+</table></div>
+
+<h2 id="s14"><span class="n">14</span>Sources</h2>
+<p class="small">All fetched 2026-09-24 unless a page date is shown. Quoted text in this document is verbatim from the fetched page. Research files with the full per-agent source tables: scratchpad/r/01 to 08 (partner programs, hiring statements, first-person cases, paid programs, funded projects, issue-reporter measurement, base rates, fact-check, maintainer succession, freelance demand) and scratchpad/model.py.</p>
+<div class="tw"><table>
+<tr><th>Source</th><th>Supports</th></tr>
+<tr><td>gh api, search/issues and pull requests for theluckystrike; gh pr view medusajs/medusa #16933, #16936, #16939, #16940, #16946, #16948; gh api users/shahednasser</td><td>Medusa merges, reviewer, open queue composition, 128 merged / 119 open external PRs</td></tr>
+<tr><td>~/oss-pipeline/state/kpi.db (read-only)</td><td>v3 funnel counts: 1,277 targets, 746 budget-pass, 213 audits, 0 sent</td></tr>
+<tr><td>https://medusajs.com/experts ; https://medusajs.com/experts/apply ; https://medusajs.com/pricing ; https://medusajs.com/blog/medusa-expert-expansion/ ; https://techcrunch.com/2022/07/15/medusa-shopify-open-source-e-commerce-javascript-developers/ ; https://www.linkedin.com/company/medusajs</td><td>Medusa Experts rules, 29 to 30 listed, Cloud "Develop From $29 /mo", funding, headcount</td></tr>
+<tr><td>https://vendure.io/become-a-partner ; https://vendure.io/partners ; https://raw.githubusercontent.com/vendure-ecommerce/vendure/master/CONTRIBUTING.md ; gh api repos/vendurehq/vendure</td><td>Vendure programme quotes, 21 partners, translation invitation, 8,469 stars</td></tr>
+<tr><td>https://twenty.com/partners/become ; https://twenty.com/partners ; gh api repos/twentyhq/twenty</td><td>Twenty rules, 26 partners, 57,427 stars</td></tr>
+<tr><td>https://strapi.io/partner-program ; https://community.strapi.io/partners ; https://n8n.io/expert-partners/ ; https://experts.n8n.io/ ; https://directus.com/agencies ; https://payloadcms.com/partners ; https://payloadcms.com/become-a-partner ; https://saleor.io/partners ; https://www.odoo.com/become-a-partner ; https://ghost.org/experts/ ; https://webflow.com/certified-partners/apply ; https://www.rocket.chat/partners/find-a-partner ; https://handbook.mattermost.com/operations/sales/partner-programs ; https://appwrite.io/partners ; https://dify.ai/partners ; https://infisical.com/infisical-heroes ; https://cal.com/affiliate-terms ; https://tooljet.com/partners ; https://automattic.com/for-agencies/ ; https://www.shopify.com/partners/terms</td><td>Section 5 directory audit</td></tr>
+<tr><td>https://zed.dev/blog/hired-through-github-part-1 (2025-09-16) ; https://zed.dev/blog/hired-through-github-part-2 (2025-10-30) ; https://dev.to/opensauced/how-i-got-hired-contributing-to-open-source-projects-546i ; https://indiaremotejobs.substack.com/p/how-open-source-helped-me-to-get ; https://medium.com/@shubhampalriwala/from-contributing-to-working-in-open-source-528b262b0bf2 ; https://opensource.com/article/19/5/how-get-job-doing-open-source ; https://opensource.com/article/22/8/my-open-source-career-story ; https://about.gitlab.com/blog/you-are-hired-two-gitlab-contributors-turn-their-success-into-full-time-engineering-roles/ ; https://news.ycombinator.com/item?id=20432238 ; https://news.ycombinator.com/item?id=43414821 ; https://lobste.rs/s/4lplbe/how_contributing_open_source_helped_you ; https://khalidwar.substack.com/p/contributing-to-open-source-projects</td><td>Section 4 cases and nulls</td></tr>
+<tr><td>https://about.gitlab.com/blog/contribute-to-open-source-land-jobs/ ; https://about.gitlab.com/blog/2016/11/23/how-to-build-a-strong-dev-community/ ; https://www.sec.gov/Archives/edgar/data/1653482/000162828021018818/gitlab-sx1.htm ; https://directus.com/about ; https://supabase.com/contribute/about ; https://dev.to/novu/our-open-source-project-got-funded-1bon ; https://n8n.io/careers/ ; https://raw.githubusercontent.com/medusajs/medusa/develop/CONTRIBUTING.md ; https://medusajs.com/careers/</td><td>Company-side statements</td></tr>
+<tr><td>https://belkins.io/blog/cold-email-response-rates (updated 2026-06-26) ; https://instantly.ai/cold-email-benchmark-report-2026 ; https://woodpecker.co/blog/cold-email-statistics/ (updated 2026-06-23) ; https://hunter.io/outreach-calculator ; https://expandi.io/blog/linkedin-outreach-benchmarks-2026/ (2026-05-19) ; https://hingemarketing.com/uploads/hinge-research-referral-marketing.pdf ; https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Schmitt-Skiera-vandenBulte-2011-Referral-Programs-Customer-Value.pdf ; https://www.consultingsuccess.com/marketing-for-consultants-study ; http://www.medicine.mcgill.ca/epidemiology/hanley/reprints/If_Nothing_Goes_1983.pdf ; https://pmc.ncbi.nlm.nih.gov/articles/PMC2550668/</td><td>Section 3 base rates and the rule of three</td></tr>
+<tr><td>https://eslint.org/donate/ ; https://eslint.org/blog/2022/02/paying-contributors-sponsoring-projects/ ; Wayback snapshots of opencollective.com/eslint, /webpack, /babel, /vuejs, /vite, /astrodotbuild, /svelte, /biome, /homebrew, /curl and others (dates in r/03) ; https://github.com/withastro/.github/blob/main/FUNDING.md ; https://github.com/biomejs/biome/blob/main/GOVERNANCE.md ; https://ziglang.org/news/2025-financials/ ; https://github.com/polarsource/polar/issues/5219 ; https://issuehunt.io/ ; https://algora.io/</td><td>Section 6 funded projects and bounty boards</td></tr>
+<tr><td>https://docs.npmjs.com/policies/disputes ; https://peps.python.org/pep-0541/ ; https://www.sonarsource.com/blog/paying-maintainers-the-howto/ ; https://www.herodevs.com/sustainability-fund ; https://arxiv.org/abs/2112.10165 ; https://words.filippo.io/full-time-maintainer/ ; gh api search/issues "looking for maintainers" created:&gt;=2026-03-28 ; pypistats.org tomlkit ; api.npmjs.org angular-split</td><td>Section 7 maintainer succession</td></tr>
+<tr><td>https://www.sovereign.tech/programs/fellowship ; https://developers.google.com/season-of-docs ; https://developers.google.com/open-source/gsoc/faq ; https://www.outreachy.org/docs/applicant/ ; https://nlnet.nl/propose/ ; https://nlnet.nl/restack/eligibility/ ; https://accelerator.github.com/ ; https://claude.com/contact-sales/claude-for-oss ; https://docs.github.com/en/sponsors/getting-started-with-github-sponsors/about-github-sponsors#supported-regions</td><td>Section 7 funds and programs</td></tr>
+<tr><td>https://community.n8n.io/c/jobs.json ; https://community.n8n.io/t/315672.json ; https://remoteok.com/api ; https://fossjobs.net ; Upwork, Indeed, WeWorkRemotely blocked responses (r/08raw)</td><td>Section 7 freelance boards</td></tr>
+<tr><td>gh api search/issues for 20 repos (1,834 issues) and gh api users for 1,058 authors; r/04-issue-reporters.csv; CONTRIBUTING.md of the 20 repos via the contents API</td><td>Lane E supply and section 11 AI policies</td></tr>
+<tr><td>https://dev.to/hansel_hud_gtm_guy/would-you-license-an-olddead-startups-codebase-as-ai-training-data-for-up-to-10k-12jc ; https://www.hud.ai/resources/best-platforms-selling-codebase ; https://pangea-code-licensing-repo-value.netlify.app/ ; https://info-hub-pangea-agencies.netlify.app/ ; https://lazarus.turing.com/ ; https://raw.githubusercontent.com/Expensify/App/main/contributingGuides/CONTRIBUTING.md ; https://arxiv.org/abs/2602.08915 ; https://arxiv.org/pdf/2202.05751 ; https://arxiv.org/html/2604.03846 ; https://www.fastruby.io/monthly-rails-maintenance ; https://railsfever.com/pricing/ ; https://gurzu.com/solutions/ruby-on-rails-maintenance-service/ ; https://www.theregister.com/devops/2026/07/23/github-slashes-public-bug-bounty-payouts-as-ai-report-flood-buries-its-security-team/5277046 ; https://hackerone.com/ibb?format=json ; https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/ ; https://crowdin.com/blog/ai-translation-cost ; https://raw.githubusercontent.com/AsherKasper/bounty-census/main/README.md ; https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies</td><td>Section 13 fact-check</td></tr>
+</table></div>
+<p class="small">Generated 2026-09-24 by Claude Fable 5.1 for execution by Claude Opus 5.5. Durable copy: ~/oss-pipeline/WHITEHERO-V4-PLAN.html. The Desktop copy is a mirror and may be evicted by iCloud. Research working files: scratchpad/r/ in this session.</p>
+</div>
+</body>
+</html>

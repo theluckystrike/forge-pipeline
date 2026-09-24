@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="matrix.org" />
+    
+    <meta property="og:url" content="https://matrix.org/blog/" />
+    
+    
+    
+    
+    <meta property="og:title" content="Blog" />
+    
+    
+    
+    <meta property="og:description" content="The Matrix.org Foundation blog is where the Matrix.org Foundation and Community
+post updates on their activity. Every Friday evening they publish This Week In
+Matrix, a digest of the past week activity.
+" />
+    <meta name="description" content="The Matrix.org Foundation blog is where the Matrix.org Foundation and Community
+post updates on their activity. Every Friday evening they publish This Week In
+Matrix, a digest of the past week activity.
+" />
+    
+    <meta property="og:image" content="https://matrix.org/blog/img/matrix-logo.png" />
+    
+    <title>Matrix.org - Blog</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="https://matrix.org/style.css?h=7b81a805087bc731337d" />
+    <script async src="https://matrix.org/js/components.js?h=e7083f9769ddafff0176"></script>
+    <script defer data-domain="matrix.org" src="https://plausible.io/js/script.tagged-events.js"></script>
+
+
+    
+
+</head>
+
+<body>
+    
+    <header class="site-header">
+    <a href="/" class="brand">
+        <img src="/images/matrix-logo-white.svg" alt="Matrix logo">
+    </a>
+    <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
+    <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
+    <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
+    <nav>
+        
+        
+            
+                <a href="https:&#x2F;&#x2F;spec.matrix.org" class="
+                    ">
+                    Spec
+                </a>
+            
+        
+        
+        
+        
+        
+        <div class="section-wrap">
+            <input id="foundation-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
+                >
+            <label for="foundation-submenu-checkbox" class="submenu-title">
+            <a href="/foundation">
+                Foundation</a> <div class="arrow">
+                </div></label>
+
+            <div class="section-submenu-wrap">
+                <div class="section-submenu">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;foundation&#x2F;about&#x2F;">About Matrix</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;foundation&#x2F;members&#x2F;">Members</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;foundation&#x2F;governing-board&#x2F;">Governing Board</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;foundation&#x2F;working-groups&#x2F;">Working Groups</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;foundation&#x2F;reports&#x2F;">Reports</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+            
+                <div class="section-wrap">
+                    <input
+                        id="blog-submenu-checkbox"
+                        type="checkbox"
+                        class="submenu-checkbox"
+                        aria-hidden="true"
+                        checked
+                    >
+                    <label for="blog-submenu-checkbox" class="submenu-title">
+                        <a href="&#x2F;blog&#x2F;">
+                            Blog
+                        </a>
+                        <div class="arrow"></div>
+                    </label>
+                    <div class="section-submenu-wrap">
+                        <div class="section-submenu">
+                            
+                                <a href="&#x2F;blog&#x2F;archive&#x2F;">Archive</a>
+                            
+                                <a href="&#x2F;category&#x2F;this-week-in-matrix&#x2F;">TWIM</a>
+                            
+                                <a href="&#x2F;author&#x2F;">Authors</a>
+                            
+                                <a href="&#x2F;category&#x2F;">Categories</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+        
+        
+        
+            
+                <a href="&#x2F;docs&#x2F;" class="
+                    ">
+                    Docs
+                </a>
+            
+        
+        
+        
+        
+        
+        <div class="section-wrap">
+            <input id="ecosystem-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
+                >
+            <label for="ecosystem-submenu-checkbox" class="submenu-title">
+            <a href="/ecosystem">
+                Ecosystem</a> <div class="arrow">
+                </div></label>
+
+            <div class="section-submenu-wrap">
+                <div class="section-submenu">
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;clients&#x2F;">Clients</a>
+                    
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;bridges&#x2F;">Bridges</a>
+                    
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;servers&#x2F;">Servers</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;integrations&#x2F;">Integrations</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;sdks&#x2F;">SDKs</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;distributions&#x2F;">Distributions</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;ecosystem&#x2F;hosting&#x2F;">Hosting</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="section-wrap">
+            <input id="homeserver-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
+                >
+            <label for="homeserver-submenu-checkbox" class="submenu-title">
+            <a href="/homeserver">
+                Homeserver</a> <div class="arrow">
+                </div></label>
+
+            <div class="section-submenu-wrap">
+                <div class="section-submenu">
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;homeserver&#x2F;about&#x2F;">The Matrix.org Homeserver</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;homeserver&#x2F;official&#x2F;">Matrix.org (Official Account)</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;homeserver&#x2F;pricing&#x2F;">Matrix.org Homeserver Pricing</a>
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;homeserver&#x2F;room-directory&#x2F;">Matrix.org Room Directory</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+            
+                <a href="&#x2F;support" class="
+                    ">
+                    Support us
+                </a>
+            
+        
+        
+        
+            
+                <a href="&#x2F;try-matrix&#x2F;" class="primary
+                    ">
+                    Try Matrix
+                </a>
+            
+        
+        
+    </nav>
+</header>
+
+    
+
+<div id="information-banner">
+    <p>📢 We are happy to launch <a href="https://conference.matrix.org">The Matrix Conference</a> on 20th-23rd October in Malmö, Sweden. Don't forget to <a href="https://conference.matrix.org/register/">get your ticket</a> and <a href="https://conference.matrix.org/schedule/">check the schedule</a>!</p>
+
+</div>
+
+
+    <main>
+        <div class="content">
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;09&#x2F;18&#x2F;this-week-in-matrix-2026-09-18&#x2F;" title="This Week in Matrix 2026-09-18">This Week in Matrix 2026-09-18</a></h1>
+            <span>
+                2026-09-18
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e09-hydra-updates"><a class="zola-anchor" href="#matrix-live-s13e09-hydra-updates" aria-label="Anchor link for: matrix-live-s13e09-hydra-updates">🔗</a>Matrix Live S13E09 - Hydra updates</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=q7Os7WzHoCg">
+    https://youtube.com/watch?v=q7Os7WzHoCg
+  </a>
+</noscript>
+<youtube-player video-id="q7Os7WzHoCg"></youtube-player>
+<h2 id="dept-of-the-matrix-conference-classical-building"><a class="zola-anchor" href="#dept-of-the-matrix-conference-classical-building" aria-label="Anchor link for: dept-of-the-matrix-conference-classical-building">🔗</a>Dept of The Matrix Conference 🏛️</h2>
+<h3 id="the-matrix-conference-website"><a class="zola-anchor" href="#the-matrix-conference-website" aria-label="Anchor link for: the-matrix-conference-website">🔗</a>The Matrix Conference (<a href="https://conference.matrix.org/">website</a>)</h3>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> announces</p>
+<blockquote>
+<p>This week, we are happy to reveal that the pre-event social 🪩 will be held at <a href="https://babelmalmo.se">Babel Malmö</a>, close to the conference venue, on the evening before the main conference content begins.</p>
+<p>Preparations for the event continue. Have a look at the <a href="https://conference.matrix.org/schedule">full schedule</a>. We're excited to have some great talks lined up. Just as a taste of what's in there: <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/AVPWFZ/">Community self hosting</a>; <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/UZT7QE/">Digital Sovereignty</a>; <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/KDNVUL/">Several</a> <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/YWVEDN/">government</a> <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/LNVNTW/">deployments</a>; <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/DMFPLT/">FluffyChat</a>; <a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/V9PXRV/">Matrix Specification improvements</a>; and <em>so many more</em>.</p>
+<p>We don't want you to miss it, so get your <a href="https://conference.matrix.org/register/">ticket</a> now!</p>
+</blockquote>
+            <p><a href="/blog/2026/09/18/this-week-in-matrix-2026-09-18/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;09&#x2F;11&#x2F;this-week-in-matrix-2026-09-11&#x2F;" title="This Week in Matrix 2026-09-11">This Week in Matrix 2026-09-11</a></h1>
+            <span>
+                2026-09-11
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-matrix-conference-2026-preview"><a class="zola-anchor" href="#matrix-live-matrix-conference-2026-preview" aria-label="Anchor link for: matrix-live-matrix-conference-2026-preview">🔗</a>Matrix Live - Matrix Conference 2026 Preview</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=iE7ncBlI4_c">
+    https://youtube.com/watch?v=iE7ncBlI4_c
+  </a>
+</noscript>
+<youtube-player video-id="iE7ncBlI4_c"></youtube-player>
+<h2 id="dept-of-editorial-pen-fountain"><a class="zola-anchor" href="#dept-of-editorial-pen-fountain" aria-label="Anchor link for: dept-of-editorial-pen-fountain">🔗</a>Dept of Editorial 🖋️</h2>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> writes</p>
+<p>Hello! This Week in Matrix aka TWIM is our weekly update on what is going on in the Matrix ecosystem (the clue is in the title…!)</p>
+<p>You can learn more about how we manage submissions to TWIM in <a href="https://matrix.org/twim-guide">the guide</a>. The basic system is that news updates are posted to the Matrix room <a href="https://matrix.to/#/#thisweekin:matrix.org">#thisweekin:matrix.org</a>, and our friendly bot helps us to categorise the entries to output something that is - <em>mostly</em> - ready to publish. After that, we do some light editing, primarily to format things correctly. TWIM production is a collaborative effort, between myself (<a href="https://matrix.to/#/@andypiper:matrix.org">Andy</a>, on behalf of The Matrix.org Foundation); the <a href="https://matrix.org/foundation/working-groups/website-content/">Website &amp; Content Working Group</a>; and of course, everyone that shares their news items every week.</p>
+<p>Our goal with This Week in Matrix is for it to showcase the progress of Matrix projects, and the vibrancy of our community. We want it to be interesting and fun to read, as well as being informative to folks that don’t have time to follow everything going on across all the different channels.</p>
+<p>We know that it can be a bit of work to post something that’s interesting, but it really helps when the news is authentic, novel, or otherwise impactful. A pattern we’ve noticed is that some projects are summarising changelogs, instead of highlighting updates that might be most interesting for people (meaning, people that use the software, developers, spec authors, and more). In other cases, we’ve seen submissions with far less substance - for example, without any code, or without a pointer to a place for readers to ask questions and learn more. We’re excited to see different new apps emerging, but we also want to have a mixture of news, rather than having the same things featured every week.</p>
+<p>You can share images with your news submissions, to make them more visually appealing. One of the editors can help with that, so ask us in the TWIM room. If you're posting something about a client app, it helps us if you can describe what the image is demonstrating and what readers might want to be looking for in it.</p>
+<p>All of this is to note that we’re adding some <em>editorial curation</em> to TWIM, in order to keep things on track - and yes, that involves some more proactive choices. If projects show up every week, we might choose to reduce the coverage to keep the content fresh. If there is not enough information in a submission, we may hold it back, or ask for it to be rewritten. That said, we're also keen to keep hearing from everyone. Help us keep This Week in Matrix an exciting and interesting read every week 🫶🏻</p>
+<p>See you in the <a href="https://matrix.to/#/#thisweekin:matrix.org">This Week in Matrix room</a>!</p>
+<h2 id="dept-of-the-matrix-conference-classical-building"><a class="zola-anchor" href="#dept-of-the-matrix-conference-classical-building" aria-label="Anchor link for: dept-of-the-matrix-conference-classical-building">🔗</a>Dept of The Matrix Conference 🏛️</h2>
+<h3 id="the-matrix-conference-website"><a class="zola-anchor" href="#the-matrix-conference-website" aria-label="Anchor link for: the-matrix-conference-website">🔗</a>The Matrix Conference (<a href="https://conference.matrix.org/">website</a>)</h3>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> announces</p>
+<blockquote>
+<p>The countdown to <a href="https://conference.matrix.org/">The Matrix Conference 2026</a> continues. Watch Matrix Live for a sneak peek, and take a look at the <a href="https://conference.matrix.org/schedule">full schedule</a> (and <em>then</em>, get your ticket!)</p>
+</blockquote>
+            <p><a href="/blog/2026/09/11/this-week-in-matrix-2026-09-11/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;09&#x2F;04&#x2F;this-week-in-matrix-2026-09-04&#x2F;" title="This Week in Matrix 2026-09-04">This Week in Matrix 2026-09-04</a></h1>
+            <span>
+                2026-09-04
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e07-fitko-neo-community-workation"><a class="zola-anchor" href="#matrix-live-s13e07-fitko-neo-community-workation" aria-label="Anchor link for: matrix-live-s13e07-fitko-neo-community-workation">🔗</a>Matrix Live S13E07 FITKO Neo / Community Workation</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=vi-kCO3ZwiM">
+    https://youtube.com/watch?v=vi-kCO3ZwiM
+  </a>
+</noscript>
+<youtube-player video-id="vi-kCO3ZwiM"></youtube-player>
+<h2 id="dept-of-the-matrix-conference-classical-building"><a class="zola-anchor" href="#dept-of-the-matrix-conference-classical-building" aria-label="Anchor link for: dept-of-the-matrix-conference-classical-building">🔗</a>Dept of The Matrix Conference 🏛️</h2>
+<h3 id="the-matrix-conference-website"><a class="zola-anchor" href="#the-matrix-conference-website" aria-label="Anchor link for: the-matrix-conference-website">🔗</a>The Matrix Conference (<a href="https://conference.matrix.org/">website</a>)</h3>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> announces</p>
+<blockquote>
+<p>The countdown to <a href="https://conference.matrix.org/">The Matrix Conference 2026</a> is on! We're excited to continue to announce the <a href="https://cfp.2026.matrix.org/matrix-conference-2026/featured/">sessions</a> you can expect to see at the conference, which takes place in Malmö, Sweden 🇸🇪 on 20-22 October, and concludes with a <a href="https://conference.matrix.org/hackathon/">hackathon</a> in Copenhagen, Denmark 🇩🇰 on 23 October.</p>
+<p>This week, we thought we'd mention some more talks that have been confirmed for the conference, including:</p>
+<ul>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/KDNVUL/">Bridging private federations across borders</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/TZ8ZYX/">Towards a Post-Quantum Matrix Protocol: A Hybrid Wrapper Adapted to the Brazilian Scenario</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/8ZCYUQ/">When to Change the Locks in Your Matrix</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/HCZ83N/">Europe’s tech sovereignty: what’s in it for Matrix?</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/XQU8GA/">Hello from the other side: a design workshop to bridge asymmetries between messaging clients</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/PUQNED/">Robrix: a pure Rust multi-platform Matrix client, and a peek at its future</a></li>
+</ul>
+<p>Get your <a href="https://conference.matrix.org/register/">ticket</a> for the conference today!</p>
+</blockquote>
+<h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<h3 id="stammtische-website"><a class="zola-anchor" href="#stammtische-website" aria-label="Anchor link for: stammtische-website">🔗</a>Stammtische (<a href="https://matrix-community.events/more.html">website</a>)</h3>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> reports</p>
+<blockquote>
+<p>A Stammtisch ("regular's table") is a German meetup format where those with a shared interest meet regularly for discussion, exchange, and socialising.</p>
+<p>Find more community organised events at <a href="https://matrix-community.events/">matrix-community.events</a>!</p>
+<ul>
+<li>8 September (Tuesday every 4 weeks) 19:00 CEST: <a href="https://matrix.to/#/#matrix-dortmund:matrix.org">#matrix-dortmund:matrix.org</a> at <a href="https://www.chaostreff-dortmund.de/events/matrix-stammtisch-2026-09-08/">CTDO</a></li>
+</ul>
+<ul>
+<li>9 September (2nd Wednesday of every month) 19:00 CEST: <a href="https://matrix.to/#/#matrix-stammtisch:koeln.ccc.de">#matrix-stammtisch:koeln.ccc.de</a> at <a href="https://koeln.ccc.de/">C4</a></li>
+</ul>
+<p>Are you running a Matrix meetup? <a href="https://codeberg.org/matrix-community/matrix-community.events/src/branch/main/src/more.md">Add it to the list</a>!</p>
+</blockquote>
+            <p><a href="/blog/2026/09/04/this-week-in-matrix-2026-09-04/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;08&#x2F;28&#x2F;this-week-in-matrix-2026-08-28&#x2F;" title="This Week in Matrix 2026-08-28">This Week in Matrix 2026-08-28</a></h1>
+            <span>
+                2026-08-28
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e06-the-need-for-privacy-preserving-decentralised-reputation"><a class="zola-anchor" href="#matrix-live-s13e06-the-need-for-privacy-preserving-decentralised-reputation" aria-label="Anchor link for: matrix-live-s13e06-the-need-for-privacy-preserving-decentralised-reputation">🔗</a>Matrix Live S13E06 - The need for privacy-preserving decentralised reputation</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=jnQ0f3Dv5D0">
+    https://youtube.com/watch?v=jnQ0f3Dv5D0
+  </a>
+</noscript>
+<youtube-player video-id="jnQ0f3Dv5D0"></youtube-player>
+<h2 id="dept-of-the-matrix-conference-classical-building"><a class="zola-anchor" href="#dept-of-the-matrix-conference-classical-building" aria-label="Anchor link for: dept-of-the-matrix-conference-classical-building">🔗</a>Dept of The Matrix Conference 🏛️</h2>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> announces</p>
+<h3 id="the-matrix-conference-website"><a class="zola-anchor" href="#the-matrix-conference-website" aria-label="Anchor link for: the-matrix-conference-website">🔗</a>The Matrix Conference (<a href="https://conference.matrix.org/">website</a>)</h3>
+<blockquote>
+<p>We've been bowled over by the volume of submissions for this year's <a href="https://conference.matrix.org/">conference</a> in Malmö 🇸🇪! We're not quite ready to reveal the complete schedule, but the team has been busy sending out confirmations to speakers. If you submitted to our call for papers, check your email and (most importantly) if your session was accepted <em>please click the required link to confirm your attendance</em>.</p>
+<p>You can have a look at an initial set of confirmed talks <a href="https://cfp.2026.matrix.org/matrix-conference-2026/featured/">here</a>. Note that this is not yet the full set of talks, as we're still working with speakers on their proposals. You can expect to hear more over the next couple of weeks.</p>
+<p>Look out for talks such as</p>
+<ul>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/BVPGVY/">The Matrix State of the Union</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/WRGTRX/">A Vision for a Next-Generation Timeline</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/QD377V/">Making Custom Profiles in Matrix More Useful</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/KDTBJ3/">Customize your Matrix Messenger</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/DDYYQW/">How Encryption Works in Matrix</a></li>
+<li><a href="https://cfp.2026.matrix.org/matrix-conference-2026/talk/RAJEHG/">Matrix Wrench - a admin tool for operators and community managers</a></li>
+<li>... and many more!</li>
+</ul>
+<p>In case you missed it, last week we also <a href="https://matrix.org/blog/2026/08/21/this-week-in-matrix-2026-08-21/#the-matrix-conference-community-hackathon-website">announced that the hackathon will be taking place at the neighbouring Aalborg University</a> across the water in Copenhagen 🇩🇰</p>
+<p>We're excited about The Matrix Conference 2026, and we think you will be, too! 😎</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> says</p>
+<h3 id="the-matrix-conference-sticker-swap-website"><a class="zola-anchor" href="#the-matrix-conference-sticker-swap-website" aria-label="Anchor link for: the-matrix-conference-sticker-swap-website">🔗</a>The Matrix Conference Sticker Swap (<a href="https://conference.matrix.org">website</a>)</h3>
+<blockquote>
+<p>Advance notice that we'll have a sticker swap table at The Matrix Conference this year. We want to celebrate, share and spread knowledge of the different community projects that build on Matrix, and what better way to do that than via the medium of stickers 💫 Bring your stickers to share with others, and find out about other projects at the same time.</p>
+<p>If you have a project logo to share with the rest of the ecosystem, we'd love to see it on the sticker swap table 🙇🏻 there's also a "booth kit" for The Matrix.org Foundation that pops up at other events throughout the year, and we'll be happy to spread awareness of ecosystem projects via the booth (if there are any stickers left over, that is...). Need help with how to create stickers for your project, or want to send us some to share in case you can't make it to the event? Talk to the Events Working Group <a href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</a>.</p>
+<p>This is also a good time for a reminder to <a href="https://conference.matrix.org/register/">get your ticket for The Matrix Conference</a> 🎟️ (if you haven't done so already). It is shaping up to be an excellent few days of talks, hacking, networking, and celebration.</p>
+</blockquote>
+            <p><a href="/blog/2026/08/28/this-week-in-matrix-2026-08-28/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;08&#x2F;21&#x2F;this-week-in-matrix-2026-08-21&#x2F;" title="This Week in Matrix 2026-08-21">This Week in Matrix 2026-08-21</a></h1>
+            <span>
+                2026-08-21
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e05-matrix-froscon-2026"><a class="zola-anchor" href="#matrix-live-s13e05-matrix-froscon-2026" aria-label="Anchor link for: matrix-live-s13e05-matrix-froscon-2026">🔗</a>Matrix Live S13E05 - Matrix @ FrOSCon 2026</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=n4u5GhdmOME">
+    https://youtube.com/watch?v=n4u5GhdmOME
+  </a>
+</noscript>
+<youtube-player video-id="n4u5GhdmOME"></youtube-player>
+<h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> announces</p>
+<h3 id="froscon-website"><a class="zola-anchor" href="#froscon-website" aria-label="Anchor link for: froscon-website">🔗</a>FrOSCon (<a href="https://froscon.org">website</a>)</h3>
+<blockquote>
+<p><a href="https://matrix-community.events">We</a> had an awesome time representing Matrix at the Free and Open Source Software Conference! The new (as of FOSDEM) Matrix Foundation Events WG™️ Booth Kit was a great help in making our booth look much nicer and more engaging than ever, with 2 Linux laptops, a MacBook, one Android and a postmarketOS phone, various stickers, a standup about the Foundation, etc etc. For more detail, keep an eye out for <a href="https://youtube.com/watch?v=n4u5GhdmOME">Matrix Live</a>! Here is a teaser:
+<img src="/blog/img/froscon-2026.avif" alt="photo of the Matrix booth at FrOSCon" /></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> reports</p>
+<h3 id="matrix-community-workation-krems-website"><a class="zola-anchor" href="#matrix-community-workation-krems-website" aria-label="Anchor link for: matrix-community-workation-krems-website">🔗</a>Matrix Community Workation Krems (<a href="https://matrix-community.events/conferences/2026-workation-krems.html">website</a>)</h3>
+<blockquote>
+<p>The workation starts tomorrow! Join the Matrix Community in Krems on the Danube in Austria for up to 3 weeks of hacking and networking in the Matrix community, go on an excursion to the Hack-ma's hacker camp in the next village over, or help the German government in digitising its infrastructure with proper Matrix, proper open source, and proper security and privacy.</p>
+<p>Come chat with us <a href="https://matrix.to/#/%23community-events:matrix.org">#community-events:matrix.org</a> or follow our fedi <a href="https://mastodon.matrix.org/@community_events">https://mastodon.matrix.org/@community_events</a>.</p>
+<p>PS: anyone going to <a href="https://2026.mrmcd.net/">MRMCD</a>?</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@andypiper:matrix.org">andypiper</a> reports</p>
+<h3 id="the-matrix-conference-community-hackathon-website"><a class="zola-anchor" href="#the-matrix-conference-community-hackathon-website" aria-label="Anchor link for: the-matrix-conference-community-hackathon-website">🔗</a>The Matrix Conference Community Hackathon (<a href="https://conference.matrix.org/">website</a>)</h3>
+<blockquote>
+<p>We're excited to announce that this year's Community Hackathon at The Matrix Conference is in collaboration with Dr. Carla Griggio and the mInt Research Lab on User-centered Messaging Interoperability at the Department of Computer Science, <a href="https://www.en.aau.dk/copenhagen">Aalborg University</a>.</p>
+<p>On Friday 23rd October, we'll cross the Øresund Bridge to København and spend the afternoon hacking together on  a range of Matrix-related projects. We're very grateful to Carla and Aalborg University for their support of this year's Matrix Conference.</p>
+<p>We'll be adding more information about the hackathon and logistics (including the straightforward 🇸🇪 🛤️ 🇩🇰 transport options) on the website very soon. Don't worry: we already confirmed that Club Mate is readily available in supermarkets in Copenhagen! 😉</p>
+</blockquote>
+<h3 id="the-matrix-conference-schedule-website"><a class="zola-anchor" href="#the-matrix-conference-schedule-website" aria-label="Anchor link for: the-matrix-conference-schedule-website">🔗</a>The Matrix Conference schedule (<a href="https://conference.matrix.org/">website</a>)</h3>
+<blockquote>
+<p>We're starting to send out the first email acceptances to speakers for the Conference! This should happen over the next few days, so prospective speakers, please check the email associated with your talk submission - we need you to click a link to confirm your acceptance. We have a process to get these sent out, so please stand by! We plan to confirm the initial set of content next week, as speakers are able to accept.</p>
+</blockquote>
+            <p><a href="/blog/2026/08/21/this-week-in-matrix-2026-08-21/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;08&#x2F;14&#x2F;this-week-in-matrix-2026-08-14&#x2F;" title="This Week in Matrix 2026-08-14">This Week in Matrix 2026-08-14</a></h1>
+            <span>
+                2026-08-14
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="local-first-matrix"><a class="zola-anchor" href="#local-first-matrix" aria-label="Anchor link for: local-first-matrix">🔗</a>Local-first Matrix</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=n6SBxQIVsp4">
+    https://youtube.com/watch?v=n6SBxQIVsp4
+  </a>
+</noscript>
+<youtube-player video-id="n6SBxQIVsp4"></youtube-player>
+<h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> says</p>
+<h3 id="matrix-froscon-website"><a class="zola-anchor" href="#matrix-froscon-website" aria-label="Anchor link for: matrix-froscon-website">🔗</a>Matrix @ FrOSCon (<a href="https://froscon.org/en/">website</a>)</h3>
+<blockquote>
+<p><a href="https://froscon.org/en/">FrOSCon</a> is the two-day Free and Open Source Software Conference, taking place every year in August at the University of Applied Sciences Bonn-Rhein-Sieg by Bonn, Germany. The Matrix community has long been a part of it, showing off and advertising Matrix as one of the many FLOSS projects. Drop by to say hi at <a href="https://matrix-community.events/">our</a> and the many other <a href="https://froscon.org/en/program/exhibitors/">exhibitor booths</a>, watch talks across 7 or more rooms in parallel, join one of the many workshops, chat with us, and much more. See you there <strong>this weekend</strong>!</p>
+<p>For more Matrix Community Events, join our chat room <a href="https://matrix.to/#/#community-events:matrix.org">#community-events:matrix.org</a>, follow us on the Fediverse <a href="https://mastodon.matrix.org/@community_events">@<span class="__cf_email__" data-cfemail="23404c4e4e564d4a575a7c4655464d5750634e4250574c474c4d0d4e4257514a5b0d4c5144">[email&#160;protected]</span></a>, and check our <a href="https://matrix-community.events/">website</a> (we sometimes even update it).</p>
+</blockquote>
+            <p><a href="/blog/2026/08/14/this-week-in-matrix-2026-08-14/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;08&#x2F;07&#x2F;this-week-in-matrix-2026-08-07&#x2F;" title="This Week in Matrix 2026-08-07">This Week in Matrix 2026-08-07</a></h1>
+            <span>
+                2026-08-07
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e04-continuwuity"><a class="zola-anchor" href="#matrix-live-s13e04-continuwuity" aria-label="Anchor link for: matrix-live-s13e04-continuwuity">🔗</a>Matrix Live S13E04 - Continuwuity</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=L94iervpyi0">
+    https://youtube.com/watch?v=L94iervpyi0
+  </a>
+</noscript>
+<youtube-player video-id="L94iervpyi0"></youtube-player>
+<h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<p><a href="https://matrix.to/#/@kegan:matrix.org">Kegan</a> reports</p>
+<h3 id="local-first-conference"><a class="zola-anchor" href="#local-first-conference" aria-label="Anchor link for: local-first-conference">🔗</a>Local-first Conference</h3>
+<blockquote>
+<p>A few weeks ago I was at <a href="https://www.localfirstconf.com/">Local-first Conference</a> in Berlin giving a talk about Local-first Matrix. The video for this is <a href="https://www.youtube.com/watch?v=n6SBxQIVsp4&amp;list=PLXxEKA_dxoH0&amp;index=10">now available</a>. I talk about some of the <a href="https://arewep2pyet.com/">P2P work</a> we've done recently as well as some Hydra work in the form of the <a href="https://dl.acm.org/doi/10.1145/3806077.3806691">ERA</a> paper. It also bridges the two worlds together, since local-first problems are frequently also Matrix problems, there's a lot we can learn from each other.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> reports</p>
+<h3 id="stammtische-website"><a class="zola-anchor" href="#stammtische-website" aria-label="Anchor link for: stammtische-website">🔗</a>Stammtische (<a href="https://matrix-community.events/more.html">website</a>)</h3>
+<blockquote>
+<p>A Stammtisch ("regular's table") is a German meetup format where those with a shared interest meet regularly for discussion, exchange, and socialising.</p>
+<p>Find more community organised events at <a href="https://matrix-community.events/">matrix-community.events</a>!</p>
+<ul>
+<li>10 August (2nd Monday of every month) 20:00 CEST: <a href="https://matrix.to/#/#matrix-stammtisch:ccc.ac">#matrix-stammtisch:ccc.ac</a> at <a href="https://ccc.ac/">CCCAC</a></li>
+<li>11 August (every 4 weeks) 19:00 CEST: <a href="https://matrix.to/#/#matrix-dortmund:matrix.org">#matrix-dortmund:matrix.org</a> at <a href="https://www.chaostreff-dortmund.de/">CTDO</a></li>
+<li>12 August (2nd Wednesday of every month) 19:00 CEST: <a href="https://matrix.to/#/#matrix-stammtisch:koeln.ccc.de">#matrix-stammtisch:koeln.ccc.de</a> at <a href="https://koeln.ccc.de/">C4</a></li>
+</ul>
+<p>Are you running a Matrix meetup? <a href="https://codeberg.org/matrix-community/matrix-community.events/src/branch/main/src/more.md">Add it to the list</a>!</p>
+</blockquote>
+            <p><a href="/blog/2026/08/07/this-week-in-matrix-2026-08-07/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;07&#x2F;31&#x2F;this-week-in-matrix-2026-07-31&#x2F;" title="This Week in Matrix 2026-07-31">This Week in Matrix 2026-07-31</a></h1>
+            <span>
+                2026-07-31
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<h3 id="matrix-community-workation-krems-2026"><a class="zola-anchor" href="#matrix-community-workation-krems-2026" aria-label="Anchor link for: matrix-community-workation-krems-2026">🔗</a>Matrix Community Workation Krems 2026</h3>
+<p><a href="https://matrix.to/#/@yan.minagawa:element.io">Yan</a> says</p>
+<blockquote>
+<p>In case you haven't spent the last few years asleep under a rock, you've probably come across the Matrix Workations: get-togethers where people who work with, on and for Matrix meet up to work together and side by side (here's <a href="https://matrix-community.events/conferences">what the past ones looked like</a>). The next one is coming up, back at the <a href="https://roessl.net">Schwarzes Rössl</a> in Krems, Austria, from <strong>22 August to 13 September 2026</strong>.</p>
+<p>It's a <em>workation</em>, not a vacation. You can happily keep doing your day job. There are desks, meeting rooms, workshops and the usual infrastructure. But of course there are also topics and project groups we dig into together, so we've split Krems into three blocks:</p>
+<ul>
+<li><strong>Week 1 · Håck ma's (22–30 Aug)</strong> ("let's hack" in Austrian slang). Prepping for the Austrian hacker gathering, connecting to the local scene, and exploring hacks from, with and through Matrix. Bring your own Matrix open source project and run a hackathon or bug hunt while you're there.</li>
+<li><strong>Week 2 · Public Sector (31 Aug–6 Sep).</strong> Matrix in the public sector, including a project retreat for FITKO (in the NEO project a new Matrix-based fabric for citizen-to-authority communication is being laid). Plus the medical sector, education and universities, and public stuff in general. It's getting tight, but ask us anyway, we try to make things possible.</li>
+<li><strong>Week 3 · Matrix and beyond (7–13 Sep).</strong> Matrix in use cases a bit further from the chat case: Home Assistant and IoT, widgets, or whatever your project happens to be.</li>
+</ul>
+<p>Grab a ticket (community prices, early-bird until 31 July) at <a href="https://tickets.matrix-community.events/workation/krems-2026/">tickets.matrix-community.events</a>. Coming as a project or a group of four? There's a group discount, just ask us for the voucher. And we're still looking for <strong>sponsors</strong>: sponsoring keeps the community prices low and makes the whole thing possible, so if you or your org would like to support the Workation, please reach out.</p>
+<p>Brought to you by <a href="https://matrix-community.events">Matrix Community Events</a>. Come say hi in <a href="https://matrix.to/#/#workation-nation-general:datanauten.de">#workation-nation-general:datanauten.de</a>.</p>
+</blockquote>
+            <p><a href="/blog/2026/07/31/this-week-in-matrix-2026-07-31/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;07&#x2F;24&#x2F;this-week-in-matrix-2026-07-24&#x2F;" title="This Week in Matrix 2026-07-24">This Week in Matrix 2026-07-24</a></h1>
+            <span>
+                2026-07-24
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/andy-piper">Andy Piper</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e03-homeserver-decentralisation-working-group"><a class="zola-anchor" href="#matrix-live-s13e03-homeserver-decentralisation-working-group" aria-label="Anchor link for: matrix-live-s13e03-homeserver-decentralisation-working-group">🔗</a>Matrix Live S13E03 – Homeserver Decentralisation Working Group</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=l_WFYKz83-A">
+    https://youtube.com/watch?v=l_WFYKz83-A
+  </a>
+</noscript>
+<youtube-player video-id="l_WFYKz83-A"></youtube-player>
+<h2 id="dept-of-events-and-talks-speaking-head"><a class="zola-anchor" href="#dept-of-events-and-talks-speaking-head" aria-label="Anchor link for: dept-of-events-and-talks-speaking-head">🔗</a>Dept of Events and Talks 🗣️</h2>
+<h3 id="the-matrix-conference"><a class="zola-anchor" href="#the-matrix-conference" aria-label="Anchor link for: the-matrix-conference">🔗</a>The Matrix Conference</h3>
+<p><a href="https://matrix.to/#/@kim:sosnowkadub.de">HarHarLinks</a> announces</p>
+<blockquote>
+<h4 id="last-call-for-the-matrix-conference-merch-preorders"><a class="zola-anchor" href="#last-call-for-the-matrix-conference-merch-preorders" aria-label="Anchor link for: last-call-for-the-matrix-conference-merch-preorders">🔗</a>Last Call for The Matrix Conference Merch Preorders!</h4>
+<p>Matrix events such as the Conference are always great opportunities to do something special with merch, with exclusive designs never to return! At least for me that's one of the many parts I love about it, right next to the souvenir value of course! For 2026, we decided that <a href="https://2025.matrix.org/register/#tickets">last year's</a> white on black edition conference T-shirt and zipper hoodie were plenty stylish, but we wanted more than a re-run. So we decided to expand up everyone's wardrobe opportunities and are going to have black on white (well, reasonably bright grey) this time around! The embroidering will return for the <strong>zipper hoodie</strong> because we love the quality, feel, and effect, while the <strong>T-shirt</strong> will be printed. You also might remember the baseball caps we had at FOSDEM earlier this year. Since Conf is going to be in autumn on the verge of the cold season, we are making <strong>embroidered beanies</strong> in the classic Matrix white on black to keep your ears warm when you go outside to explore Malmö in the evening. Finally we noticed there are still parts of your bodies without Matrix clothing available for them, so I'm really excited to introduce the Matrix <strong>socks</strong> in Sweden's national colours.</p>
+<p><img src="/blog/img/2026-07-24-merch-twim.jpg" alt="Matrix Conf Merchandise preview showing a grey hoodie, a black beanie, and blue and yellow coloured socks and hoodie" /></p>
+<p>All of this can be preordered <strong>before the end of July</strong> since we have to make sure we keep to production deadlines. We will do our best to make some of each available for spontaneous decisions on site, but cannot guarantee availability there.</p>
+<p><strong>Reserve yours at <a href="https://conference.matrix.org/register/">https://conference.matrix.org/register/</a>!</strong></p>
+<p>PS: You will need to make sure your preorder is picked up during the Conference in Malmö, but you can totally order just your merch today if you're not yet sure which ticket you are going to get!</p>
+<h4 id="more-volunteering-slots-available"><a class="zola-anchor" href="#more-volunteering-slots-available" aria-label="Anchor link for: more-volunteering-slots-available">🔗</a>More Volunteering Slots Available</h4>
+<p>The Matrix Conference is made possible thanks to our awesome sponsors financing it just as well as our awesome volunteer team staffing the welcome desk, operating video equipment, and generally jumping in whenever an extra hand is needed. We have onboarded a lot of volunteers already and our shift booking system was totally booked out while we worked through all these applications from you amazing people, and some have already asked when more will be available. This is (as of writing) the case! If you were waiting for one to free up again, head to our <a href="https://conference.matrix.org/volunteer/">volunteering system</a> and sign up for two shifts to receive a free ticket to the Conference, the limited edition team-only zipper hoodie in special colours, and of course a lot of experience, satisfaction and fun from helping making The Matrix Conference happen!</p>
+<p>If you've already signed up a while ago and have received neither an email nor invite on Matrix from us yet, please reach out to us over at <a href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</a>.</p>
+<p>See you soon, your <a href="https://matrix.org/foundation/working-groups/events/">Events WG</a>.</p>
+</blockquote>
+            <p><a href="/blog/2026/07/24/this-week-in-matrix-2026-07-24/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    
+    <article class="post">
+        <header>
+            <h1><a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;2026&#x2F;07&#x2F;17&#x2F;this-week-in-matrix-2026-07-17&#x2F;" title="This Week in Matrix 2026-07-17">This Week in Matrix 2026-07-17</a></h1>
+            <span>
+                2026-07-17
+                —
+                
+                <a href="/category/this-week-in-matrix">This Week in Matrix</a>
+                
+                —
+                
+                <a href="/author/harharlinks">HarHarLinks</a>
+                
+            </span>
+            
+        </header>
+        <div>
+            <h2 id="matrix-live-s13e02-amandine-talks-foundation-mission-funding-and-matthew-talks-about-p2p"><a class="zola-anchor" href="#matrix-live-s13e02-amandine-talks-foundation-mission-funding-and-matthew-talks-about-p2p" aria-label="Anchor link for: matrix-live-s13e02-amandine-talks-foundation-mission-funding-and-matthew-talks-about-p2p">🔗</a>Matrix Live S13E02 - Amandine talks Foundation Mission &amp; Funding and Matthew talks about P2P</h2>
+<noscript>
+  Today's Matrix Live:
+  <a href="https://youtube.com/watch?v=27C5RjRVXzI">
+    https://youtube.com/watch?v=27C5RjRVXzI
+  </a>
+</noscript>
+<youtube-player video-id="27C5RjRVXzI"></youtube-player>
+<h2 id="dept-of-spec-scroll"><a class="zola-anchor" href="#dept-of-spec-scroll" aria-label="Anchor link for: dept-of-spec-scroll">🔗</a>Dept of Spec 📜</h2>
+<p><a href="https://matrix.to/#/@hubert:uhoreg.ca">uhoreg</a> says</p>
+<blockquote>
+<p>Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <a href="https://spec.matrix.org/proposals">https://spec.matrix.org/proposals</a>.</p>
+<h2 id="msc-status"><a class="zola-anchor" href="#msc-status" aria-label="Anchor link for: msc-status">🔗</a>MSC Status</h2>
+<p><strong>New MSCs:</strong></p>
+<ul>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4509">MSC4509: Auto join on accepted knock</a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4508">MSC4508: Sliding Sync Extension: Typing Notifications</a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4507">MSC4507: Return additional room state from <code>/_matrix/federation/v1/hierarchy/{roomId}</code></a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4506">MSC4506: Push Rules for Knocking</a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4505">MSC4505: Push Rules for Live Location Sharing</a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4504">MSC4504: Using a global version number for the entire specification (v2)</a></li>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/4503">MSC4503: External Protocol Handles</a></li>
+</ul>
+<p><strong>MSCs in Final Comment Period:</strong></p>
+<ul>
+<li><em>No MSCs are in FCP.</em></li>
+</ul>
+<p><strong>Accepted MSCs:</strong></p>
+<ul>
+<li><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/3784">MSC3784: Using room type of <code>m.policy</code> for policy rooms</a></li>
+</ul>
+<p><strong>Closed MSCs:</strong></p>
+<ul>
+<li><em>No MSCs were closed/rejected this week.</em></li>
+</ul>
+</blockquote>
+            <p><a href="/blog/2026/07/17/this-week-in-matrix-2026-07-17/#continue-reading">Continue reading…</a></p>
+            
+        </div>
+    </article>
+    
+    <nav class="pagination">
+    <div class="prev">
+        
+    </div>
+    <span class="page-number">1 / 97</span>
+    <div class="prev">
+        
+        <a href="https:&#x2F;&#x2F;matrix.org&#x2F;blog&#x2F;page&#x2F;2&#x2F;">Next ›</a>
+        
+    </div>
+</nav>
+
+</div>
+    </main>
+
+    <footer class="site-footer">
+    <div class="internal-links">
+        
+        <a href="&#x2F;support" >Donate</a>
+        
+        <a href="https:&#x2F;&#x2F;shop.matrix.org" >Shop</a>
+        
+        <a href="&#x2F;branding" >Branding</a>
+        
+        <a href="&#x2F;security-disclosure-policy" >Security Disclosure Policy</a>
+        
+        <a href="&#x2F;security-hall-of-fame" >Security Hall of Fame</a>
+        
+        <a href="&#x2F;legal&#x2F;code-of-conduct" >Code of Conduct</a>
+        
+        <a href="&#x2F;legal" >Legal</a>
+        
+        <a href="&#x2F;legal&#x2F;law-enforcement-guidelines" >Law Enforcement Guidelines</a>
+        
+        <a href="&#x2F;contact" >Contact</a>
+        
+        <a href="https:&#x2F;&#x2F;status.matrix.org" >Matrix.org Status</a>
+        
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;matrix-org&#x2F;matrix.org&#x2F;" >Site Source</a>
+        
+        <a href="&#x2F;jobs" >Jobs</a>
+        
+    </div>
+    <div class="external-links">
+        
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;matrix-org" target="_blank"  aria-label="Matrix on GitHub"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span></a>
+        
+        <a href="https:&#x2F;&#x2F;gitlab.matrix.org&#x2F;" target="_blank"  aria-label="Matrix on GitLab"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"><path d="m23.955 13.587-1.342-4.135-2.664-8.189a.456.456 0 0 0-.867 0L16.418 9.45H7.582L4.919 1.263C4.783.84 4.185.84 4.05 1.26L1.386 9.449.044 13.587a.925.925 0 0 0 .331 1.023L12 23.054l11.625-8.443a.923.923 0 0 0 .33-1.024"/></svg></span></a>
+        
+        <a href="https:&#x2F;&#x2F;mastodon.matrix.org&#x2F;@matrix" target="_blank" rel="me" aria-label="Matrix on Mastodon"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"><path d="M23.349 5.314C22.997 2.735 20.713.703 18.007.309 17.55.242 15.82 0 11.811 0h-.03C7.772 0 6.912.242 6.455.309 3.824.691 1.421 2.518.837 5.127.557 6.412.527 7.836.579 9.143c.074 1.874.089 3.745.262 5.611.119 1.241.328 2.471.624 3.681.554 2.236 2.797 4.097 4.996 4.856 2.356.792 4.884.923 7.309.38.267-.061.531-.132.792-.213.588-.184 1.279-.391 1.787-.753a.06.06 0 0 0 .023-.043v-1.809a.054.054 0 0 0-.067-.051 20.576 20.576 0 0 1-4.743.545c-2.749 0-3.488-1.283-3.7-1.818a5.544 5.544 0 0 1-.322-1.433.054.054 0 0 1 .02-.044.056.056 0 0 1 .047-.01c1.529.363 3.094.546 4.665.546.379 0 .755 0 1.133-.01 1.581-.044 3.247-.123 4.802-.422.039-.008.078-.014.111-.024 2.453-.464 4.788-1.919 5.025-5.604.009-.145.031-1.519.031-1.67.001-.511.167-3.629-.025-5.545v.001Zm-3.775 9.194h-2.58V8.29c0-1.309-.554-1.976-1.681-1.976-1.24 0-1.86.79-1.86 2.349v3.404h-2.564V8.663c0-1.559-.622-2.349-1.861-2.349-1.121 0-1.681.667-1.682 1.976v6.218H4.769V8.101c0-1.309.34-2.349 1.019-3.119.7-.769 1.619-1.164 2.76-1.164 1.32 0 2.318.5 2.983 1.498l.642 1.06.642-1.06c.665-.998 1.663-1.498 2.981-1.498 1.139 0 2.059.395 2.761 1.164.68.77 1.019 1.81 1.019 3.119l-.002 6.407Z"/></svg></span></a>
+        
+        <a href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;matrix.org" target="_blank"  aria-label="Matrix on BlueSky"><span aria-hidden="true"><!-- This icon originated from https://commons.wikimedia.org/wiki/File:Bluesky_Logo.svg -->
+<svg viewBox="0 0 27 24" width="27px" height="24px" xmlns="http://www.w3.org/2000/svg"><path d="m5.8526 1.6155c3.0955 2.3461 6.425 7.103 7.6475 9.6558 1.2225-2.5526 4.5519-7.3098 7.6475-9.6558 2.2335-1.6928 5.8524-3.0027 5.8524 1.1653 0 0.8324-0.47273 6.9926-0.74999 7.9926-0.96376 3.477-4.4756 4.3638-7.5995 3.827 5.4605 0.93823 6.8496 4.046 3.8497 7.1537-5.6974 5.9022-8.1889-1.4809-8.8276-3.3727-0.11703-0.34682-0.17179-0.50906-0.1726-0.3711-8.1e-4 -0.13797-0.05557 0.02428-0.1726 0.3711-0.63841 1.8918-3.1298 9.2752-8.8276 3.3727-3-3.1078-1.6109-6.2157 3.8497-7.1537-3.124 0.53674-6.6359-0.35008-7.5995-3.827-0.27727-1.0002-0.74999-7.1603-0.74999-7.9926 0-4.1679 3.619-2.8581 5.8524-1.1653z" fill="currentColor"/></svg>
+</span></a>
+        
+        <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;company&#x2F;matrix-org&#x2F;" target="_blank"  aria-label="Matrix on LinkedIn"><span aria-hidden="true"><!-- This icon originated from https://fontawesome.com/icons/linkedin -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 640 640">
+<path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z" fill="currentColor" /></svg>
+</span></a>
+        
+        <a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCVFkW-chclhuyYRbmmfwt6w" target="_blank"  aria-label="Matrix on YouTube"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.206a3.009 3.009 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.005 3.005 0 0 0 .527 6.206a31.127 31.127 0 0 0-.522 5.805c-.006 1.94.169 3.876.522 5.783a3.009 3.009 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.013 3.013 0 0 0 2.088-2.088c.346-1.908.513-3.844.5-5.783a31.292 31.292 0 0 0-.5-5.805ZM9.609 15.602V8.409l6.264 3.602-6.264 3.591Z"/></svg></span></a>
+        
+        <a href="&#x2F;atom.xml" target="_blank"  aria-label="Matrix Atom Feed"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"><path d="M0 1.5C0 .677.677 0 1.5 0 13.926 0 24 10.074 24 22.5c0 .823-.677 1.5-1.5 1.5s-1.5-.677-1.5-1.5C21 11.73 12.27 3 1.5 3 .677 3 0 2.323 0 1.5ZM0 9c0-.823.677-1.5 1.5-1.5 8.285 0 15 6.716 15 15 0 .823-.677 1.5-1.5 1.5s-1.5-.677-1.5-1.5c0-6.583-5.417-12-12-12C.677 10.5 0 9.823 0 9Zm3.75 15a3.768 3.768 0 0 0 3.75-3.75 3.768 3.768 0 0 0-3.75-3.75A3.768 3.768 0 0 0 0 20.25 3.768 3.768 0 0 0 3.75 24Z" /></svg></span></a>
+        
+    </div>
+    <div class="subfooter-links">
+        
+        <a href="&#x2F;legal&#x2F;copyright-notice" >Copyright Notice</a>
+        
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a40330b53f25e2ec',t:'MTc5MDI2NzYwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

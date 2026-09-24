@@ -1,0 +1,88 @@
+Title: How Partners earn on Shopify
+
+URL Source: https://help.shopify.com/en/partners/getting-started/how-to-earn
+
+Markdown Content:
+As a Shopify Partner, you earn by referring merchants, building and transferring/launching stores, or developing apps and themes.
+
+For answers to common questions about payout timing, revenue share calculations, lead statuses, and attribution rules, refer to the [_Shopify Partner earning model FAQ_](https://help.shopify.com/partners/help-support/faq/earnings).
+
+Overview of the ways a Shopify Partner can earn, the amount earned for each activity, and how long each type of earning lasts
+| Activity | Earnings | Duration |
+| --- | --- | --- |
+| [Build and transfer/launch a merchant](https://help.shopify.com/en/partners/partner-program/how-to-earn#building-stores) | 20% of monthly base platform fee or subscription fee 1 + 0.1% of monthly eligible Gross Merchandise Volume 2 (GMV) | 4 years |
+| [Build and transfer/launch a POS merchant](https://help.shopify.com/en/partners/partner-program/how-to-earn#shopify-pos) | 20% of monthly POS Payments Profit-Share | 4 years |
+| [Build and transfer/launch a B2B merchant](https://help.shopify.com/en/partners/partner-program/how-to-earn#b2b) | 20% of monthly B2B Payments Profit-Share | 4 years |
+| [Build and transfer/launch Shop Pay off Shopify](https://help.shopify.com/en/partners/partner-program/how-to-earn#shop-pay-off-shopify) | 0.1% of Gross Payment Volume (GPV) through Shop Pay off Shopify | 1 year |
+| [Refer a new merchant](https://help.shopify.com/en/partners/partner-program/how-to-earn#referrals-and-upgrades) | Plus, Enterprise: $2,500 USD POS Pro: $500 USD | One-time |
+| [Refer an existing merchant](https://help.shopify.com/en/partners/partner-program/how-to-earn#referrals-and-upgrades) | Upgrades to Plus: $2,500 USD | One-time |
+| [Sell an app](https://help.shopify.com/en/partners/partner-program/how-to-earn#apps) | 100% of revenue (up to $1M USD revenue) 85% of revenue (over $1M USD revenue) | Per sale |
+| [Sell a theme](https://help.shopify.com/en/partners/partner-program/how-to-earn#themes) | 85% of revenue | Per sale |
+
+You can earn in two ways when helping a merchant get started on Shopify: by building and transferring/launching their store, or by referring them to Shopify.
+
+What you earn, how to qualify, and when you get paid for building and transferring or launching a merchant store
+|  | Build & Transfer/Launch |
+| --- | --- |
+| **What you earn** | **20%** of monthly base platform fee or subscription fee 1 + **0.1%** of monthly eligible GMV 2 |
+| **How to qualify** | **Client transfer stores:** Create a client transfer store in the Partner Dashboard and transfer it to the merchant. The merchant must activate their plan through your transfer. **Plus deals sold alongside Shopify sales team:** Share an executed Statement of Work for a net new merchant. |
+| **When you get paid** | Payouts are processed on a monthly basis. The two incentives are tracked and paid independently based on their specific triggers: * **20% of monthly subscription fee**: Begins the month of the first subscription payment (net of any account credits). * **0.1% of monthly eligible GMV share**: Begins as soon as the first dollar of eligible online GMV is processed. Please note that the 4-year earning term for each component begins independently once the first payment for that specific incentive is made to the partner. Additionally, once all eligibility terms are met, a standard 30-day hold is applied to the first payout. The funds are released shortly after this 30-day period concludes. |
+
+Earn a one-time payout and profit share for every Shopify POS referral.
+
+What you earn, how to qualify, and when you get paid for building and transferring or launching Shopify POS for a merchant
+|  | POS Payments Profit-Share |
+| --- | --- |
+| **What you earn** | **20%** of Shopify POS Payments profit |
+| **How to qualify** | Partner must: * Submit a Shopify POS [lead form](https://partners.shopify.com/current/partner_leads) from your Partner Dashboard Merchant must: * Be new to Shopify Payments on POS * Process more than $1,000 USD Gross Payments Volume through Shopify Payments on POS |
+| **When you get paid** | Paid monthly, starting on the month of the first subscription payment. 4 year term begins once the first payment is made to a partner. _First payment is within **30 days** of all terms being met_ |
+
+Earn a profit share for building and transferring/launching B2B for a merchant.
+
+What you earn, how to qualify, and when you get paid for building and transferring or launching Shopify B2B for a merchant
+|  | Build & Transfer/Launch |
+| --- | --- |
+| **What you earn** | **20%** of monthly B2B Payments profit |
+| **How to qualify** | Partner must: * Submit a Shopify B2B [lead form](https://partners.shopify.com/current/partner_leads) from your Partner Dashboard Merchant must: * Be new to B2B |
+| **When you get paid** | Paid monthly, starting on the month of the first B2B transaction through Shopify Payments. 4 year term begins once the first payment is made to a partner. _First payment is within **30 days** of all terms being met_ |
+
+Earn a percentage of Gross Payments Volume (GPV) for building and transferring/launching Shop Pay off Shopify for a merchant.
+
+What you earn, how to qualify, and when you get paid for building and transferring or launching Shop Pay off Shopify for a merchant
+|  | Build & Transfer/Launch |
+| --- | --- |
+| **What you earn** | **0.1%** of Gross Payment Volume (GPV) through Shop Pay off Shopify |
+| **How to qualify** | Merchant must: * Be new to Shop Pay off Shopify * Submit Statement of Work |
+| **When you get paid** | Paid monthly, starting on the month of the first transaction through Shopify Payments. 1 year term begins once the first payment is made to a partner. _First payment is within **30 days** of all terms being met_ |
+
+Earn a one-time payout for qualifying Plus referrals and upgrades.
+
+What you earn, how to qualify, and when you get paid for a qualifying Shopify Plus or Enterprise referral or upgrade to Plus
+|  | Referrals and Upgrades |
+| --- | --- |
+| **What you earn** | **$2,500 USD** one-time payout per qualifying Plus or Enterprise referral or upgrade to Plus |
+| **How to qualify** | Partner must: * Submit a Shopify Plus [lead form](https://partners.shopify.com/current/partner_leads) in your Partner Dashboard Merchant must: * Not have contacted Shopify Sales before your submission. * Generate more than $5,000 USD Gross Merchandise Volume (GMV) on Shopify and have paid their first Plus subscription invoice * Referral must be qualified and result in a fully executed Plus or Enterprise agreement |
+| **When you get paid** | _First payment is within **30 days** of all terms being met_ |
+
+Earn a one-time payout for qualifying referrals to Shopify POS Pro.
+
+What you earn, how to qualify, and when you get paid for a qualifying merchant referral to Shopify POS Pro
+|  | Referrals and Upgrades |
+| --- | --- |
+| **What you earn** | **$500 USD** one-time payout |
+| **How to qualify** | Partner must: * Submit a Shopify POS [lead form](https://partners.shopify.com/current/partner_leads) from your Partner Dashboard Merchant must (within 6 months of referral): * Be new to POS Pro and activate POS Pro * Transact 10+ days per month for 2 months * Generate more than $1,000 USD GMV per month |
+| **When you get paid** | _First payment is within **30 days** of all terms being met_ |
+
+### Apps
+
+Your revenue share is based on your prior year's App Store earnings and company revenue.
+
+Shopify App Store revenue share rates based on your prior year's App Store earnings and your total company revenue
+| Your earnings profile | Revenue share |
+| --- | --- |
+| Earned **less than $20M USD** in the App Store AND company revenue **under $100M USD** | 100% on your first $1M USD earned 85% above $1M USD |
+| Earned **$20M USD or more** in the App Store OR company revenue **$100M USD or more** | 85% on all revenue |
+
+### Themes
+
+Payout terms are subject to change. The final decision to grant revenue share, profit share, or one-time payouts is at Shopify's sole discretion.

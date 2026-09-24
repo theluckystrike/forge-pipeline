@@ -1,0 +1,253 @@
+{
+ "op": {
+  "external_merged": 128,
+  "external_open": 119,
+  "open_awesome": 60,
+  "open_awesome_pct": 50.4,
+  "medusa_prs": 10,
+  "medusa_merged": 5,
+  "medusa_open": 5,
+  "medusa_open_approved": 1,
+  "v3_targets": 1277,
+  "v3_budget_pass": 746,
+  "v3_audits": 213,
+  "v3_drafts": 9,
+  "v3_sent": 0,
+  "agencies": {
+   "Medusa Experts": 29,
+   "Vendure partners": 21,
+   "Twenty partners": 26,
+   "Directus agencies": 53,
+   "Payload partners": 36,
+   "Saleor partners": 13,
+   "Strapi partners": 29
+  },
+  "agencies_total": 207
+ },
+ "B": {
+  "belkins": 0.0045,
+  "platform": 0.0343,
+  "hunter": 0.045,
+  "woodpecker_adv": 0.17,
+  "li_note": 0.03,
+  "li_accept": 0.285,
+  "li_msg": 0.104,
+  "op_li": 0.056,
+  "hinge_survive": 0.481,
+  "upwork_lo": 0.06,
+  "upwork_hi": 0.2
+ },
+ "routes": [
+  {
+   "name": "Cold email, agency-measured reply 0.45% x 10% close",
+   "p": 0.00045,
+   "N50": 1539.9804683220098,
+   "N90": 5115.704383296683,
+   "src": "Belkins 2025, n=7,530,489; close analyst"
+  },
+  {
+   "name": "Cold email, platform reply 3.43% x 10%",
+   "p": 0.00343,
+   "N50": 201.73695405539598,
+   "N90": 670.155655453621,
+   "src": "Instantly/Woodpecker 2026; any-reply incl. declines"
+  },
+  {
+   "name": "Cold email, v3 plan inputs 5.6% x 25%",
+   "p": 0.014,
+   "N50": 49.1631249237501,
+   "N90": 163.31636591666256,
+   "src": "operator LinkedIn n=36; close analyst prior"
+  },
+  {
+   "name": "LinkedIn connection note 3.0% x 10%",
+   "p": 0.003,
+   "N50": 230.70231304914802,
+   "N90": 766.3764952734642,
+   "src": "Expandi 2026, n=13.2M requests"
+  },
+  {
+   "name": "LinkedIn message to accepted connection 10.4% x 15%",
+   "p": 0.0156,
+   "N50": 44.08502979400785,
+   "N90": 146.44729903666112,
+   "src": "Expandi 2026, n=6.73M messages"
+  },
+  {
+   "name": "Credentialed pitch to product-specialist agency (mid)",
+   "p": 0.011200000000000002,
+   "N50": 61.54091694502166,
+   "N90": 204.4345009847972,
+   "src": "operator LinkedIn 5.6% x 20% close, analyst"
+  },
+  {
+   "name": "Upwork proposal, established profile 6%",
+   "p": 0.06,
+   "N50": 11.202305583621158,
+   "N90": 37.2132536457447,
+   "src": "GigRadar 2026, vendor claim"
+  },
+  {
+   "name": "Warm ask to a maintainer who merged you (mid)",
+   "p": 0.060125,
+   "N50": 11.178280329607594,
+   "N90": 37.133443479450236,
+   "src": "Hinge 48.1% survive (n=523); reply, close analyst"
+  },
+  {
+   "name": "Warm ask, high",
+   "p": 0.18,
+   "N50": 3.4927886207911576,
+   "N90": 11.60279264890903,
+   "src": "analyst"
+  }
+ ],
+ "lanes": [
+  {
+   "key": "A",
+   "name": "Medusa anchor: finish 5 open PRs, 12 docs/i18n PRs to the DX lead's domain, then one written ask",
+   "touches": 2,
+   "hours": 11,
+   "src": "warm-touch p: Hinge 48.1% x reply 40/50/60% x close 15/25/30% (reply and close are analyst priors)",
+   "low": {
+    "p": 0.02886,
+    "P": 0.0568871004
+   },
+   "mid": {
+    "p": 0.060125,
+    "P": 0.11663498437499997
+   },
+   "high": {
+    "p": 0.18,
+    "P": 0.3275999999999999
+   }
+  },
+  {
+   "key": "B",
+   "name": "Vendure partner track: dashboard translations, free partner registration, lead routing by contribution points",
+   "touches": 1,
+   "hours": 15,
+   "src": "inbound lead arrival is unpublished; P(>=1 paid lead in 90 d) is an analyst prior, replaced by the partner portal's lead count",
+   "low": {
+    "p": null,
+    "P": 0.02
+   },
+   "mid": {
+    "p": null,
+    "P": 0.08
+   },
+   "high": {
+    "p": null,
+    "P": 0.2
+   }
+  },
+  {
+   "key": "C",
+   "name": "Credentialed subcontract pitch to product-specialist agencies listed in vendor directories",
+   "touches": 120,
+   "hours": 16,
+   "src": "reply: platform 3.43% / operator 5.6% / LinkedIn-message 10.4%; close 10/20/25% analyst priors",
+   "low": {
+    "p": 0.00343,
+    "P": 0.3378793655019692
+   },
+   "mid": {
+    "p": 0.011200000000000002,
+    "P": 0.7411698110542355
+   },
+   "high": {
+    "p": 0.026,
+    "P": 0.9576284037398628
+   }
+  },
+  {
+   "key": "D",
+   "name": "Twenty certified-partner listing after one shipped self-implementation",
+   "touches": 1,
+   "hours": 9,
+   "src": "vendor hand-matches briefs within 48 h to 26 partners; brief volume unpublished; analyst prior",
+   "low": {
+    "p": null,
+    "P": 0.02
+   },
+   "mid": {
+    "p": null,
+    "P": 0.06
+   },
+   "high": {
+    "p": null,
+    "P": 0.15
+   }
+  },
+  {
+   "key": "E",
+   "name": "Fix-then-contact: company-affiliated issue reporters with a first-person production complaint",
+   "touches": 20,
+   "hours": 14,
+   "src": "measured supply: 20 strong leads in 1,834 sampled open issues across 20 repos; reply 3.43/10.4/17%, close 10/20/25% analyst",
+   "low": {
+    "p": 0.00343,
+    "P": 0.06641000879954861
+   },
+   "mid": {
+    "p": 0.0208,
+    "P": 0.34320763436079993
+   },
+   "high": {
+    "p": 0.0425,
+    "P": 0.5804577984728525
+   }
+  },
+  {
+   "key": "F",
+   "name": "v3 cold audit email, capped at 80 sends after warm lanes",
+   "touches": 80,
+   "hours": 7,
+   "src": "as v3 L1, at measured 2025-2026 reply rates",
+   "low": {
+    "p": 0.00045,
+    "P": 0.0353675224164538
+   },
+   "mid": {
+    "p": 0.00343,
+    "P": 0.24033039833081005
+   },
+   "high": {
+    "p": 0.014,
+    "P": 0.676292176824276
+   }
+  }
+ ],
+ "combined": {
+  "low": 0.4599039191477967,
+  "mid": 0.9013439665305018,
+  "high": 0.9973688822101106
+ },
+ "expensify": {
+  "open": 30,
+  "closed30d": 16,
+  "proposals": 40,
+  "low": 0.5542995960490493,
+  "mid": 0.8867601826677401,
+  "high": 0.9643948275294605,
+  "src": "gh search 2026-09-24: 30 open, 16 closed since 2026-08-25; assignment odds 5.3% from v3 E16 (1 of 19 proposal authors), now competing with Expensify's own MelvinBot"
+ },
+ "v3": {
+  "p_mid": 0.0045,
+  "sends_now": 30,
+  "sends_plan": 160,
+  "P_now": 0.12655023784536568,
+  "P_plan": 0.5140380141039609,
+  "P_plan_belkins": 0.06948418319102911,
+  "P_plan_platform": 0.42290209629977427
+ },
+ "rule3": {
+  "8": 0.375,
+  "20": 0.15,
+  "40": 0.075,
+  "80": 0.0375,
+  "120": 0.025,
+  "160": 0.01875
+ },
+ "hours_total": 72
+}

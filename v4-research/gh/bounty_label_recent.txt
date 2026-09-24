@@ -1,0 +1,100 @@
+2026-09-24T13:44:42Z OphirPay/OphirPay | Add proper PNG maskable icons and populate the manifest screenshots | https://github.com/OphirPay/OphirPay/issues/788
+2026-09-24T13:42:52Z OphirPay/OphirPay | Add scoped pause controls so one feature can be halted without freezing all payments | https://github.com/OphirPay/OphirPay/issues/826
+2026-09-24T13:39:09Z OphirPay/OphirPay | Add a Lighthouse CI budget for the dashboard and payment detail pages | https://github.com/OphirPay/OphirPay/issues/748
+2026-09-24T13:37:02Z OphirPay/OphirPay | Document the refund reason-code catalog and the analytics endpoint | https://github.com/OphirPay/OphirPay/issues/772
+2026-09-24T13:31:27Z OphirPay/OphirPay | Eliminate the remaining explicit any types and stale ESLint suppressions | https://github.com/OphirPay/OphirPay/issues/764
+2026-09-24T13:30:24Z OphirPay/OphirPay | Validate the Prometheus alert rules in CI with promtool | https://github.com/OphirPay/OphirPay/issues/754
+2026-09-24T13:29:19Z OphirPay/OphirPay | Use the existing cache modules to serve read-heavy endpoints from Redis | https://github.com/OphirPay/OphirPay/issues/741
+2026-09-24T13:10:00Z OphirPay/OphirPay | Add an automation-platform integration guide with generated payload examples | https://github.com/OphirPay/OphirPay/issues/817
+2026-09-24T12:43:10Z OphirPay/OphirPay | Add a JavaScript bundle-size budget with an analyzer report in CI | https://github.com/OphirPay/OphirPay/issues/739
+2026-09-24T12:01:07Z OphirPay/OphirPay | Add an offline fallback page and precache the critical shell | https://github.com/OphirPay/OphirPay/issues/787
+2026-09-24T11:56:35Z OphirPay/OphirPay | Expose RPC failover state as a health and metrics signal | https://github.com/OphirPay/OphirPay/issues/820
+2026-09-24T11:46:52Z OphirPay/OphirPay | Add a Go reference verifier for webhook signatures | https://github.com/OphirPay/OphirPay/issues/818
+2026-09-24T11:43:13Z OphirPay/OphirPay | Deduplicate the npm ci and prisma generate preamble with a composite action | https://github.com/OphirPay/OphirPay/issues/734
+2026-09-24T11:22:44Z OphirPay/OphirPay | Apply the same static-asset cache headers in next.config.ts that vercel.json sets | https://github.com/OphirPay/OphirPay/issues/740
+2026-09-24T11:20:55Z OphirPay/OphirPay | Persist payment list sort and filter state in the URL | https://github.com/OphirPay/OphirPay/issues/792
+2026-09-24T11:11:38Z OphirPay/OphirPay | Add a print stylesheet so receipts and payment details print cleanly | https://github.com/OphirPay/OphirPay/issues/793
+2026-09-24T11:10:55Z OphirPay/OphirPay | Add Postgres full-text search for payments and audit entries | https://github.com/OphirPay/OphirPay/issues/823
+2026-09-24T11:10:03Z OphirPay/OphirPay | Audit outbound Stellar and Horizon calls for the existing timeout helper | https://github.com/OphirPay/OphirPay/issues/747
+2026-09-24T10:58:02Z OphirPay/OphirPay | Document the Kubernetes and Helm deployment path | https://github.com/OphirPay/OphirPay/issues/785
+2026-09-24T10:55:09Z OphirPay/OphirPay | Extract the middleware security policy constants out of proxy.ts | https://github.com/OphirPay/OphirPay/issues/765
+2026-09-24T10:31:42Z OphirPay/OphirPay | Document the security header policy and where each header is set | https://github.com/OphirPay/OphirPay/issues/781
+2026-09-24T10:25:07Z OphirPay/OphirPay | Alert when the nightly database backup fails or stops running | https://github.com/OphirPay/OphirPay/issues/752
+2026-09-24T10:22:34Z OphirPay/OphirPay | Document the real status of the Ledger wallet connector and its fallback | https://github.com/OphirPay/OphirPay/issues/774
+2026-09-24T10:18:40Z OphirPay/OphirPay | Add route-level loading skeletons for pages that render without one | https://github.com/OphirPay/OphirPay/issues/786
+2026-09-24T09:55:45Z OphirPay/OphirPay | Virtualize the payments table so large accounts stay responsive | https://github.com/OphirPay/OphirPay/issues/745
+2026-09-24T09:43:16Z OphirPay/OphirPay | Validate the Grafana dashboard JSON and keep its metric queries in sync | https://github.com/OphirPay/OphirPay/issues/755
+2026-09-24T09:40:33Z OphirPay/OphirPay | Document demo mode and the seeded demo environment | https://github.com/OphirPay/OphirPay/issues/777
+2026-09-24T09:37:39Z OphirPay/OphirPay | Add SBOM generation and build provenance attestation to the release artifacts | https://github.com/OphirPay/OphirPay/issues/750
+2026-09-24T09:30:43Z OphirPay/OphirPay | Document how to run the E2E suite locally, including the server requirement | https://github.com/OphirPay/OphirPay/issues/780
+2026-09-24T09:21:20Z OphirPay/OphirPay | Look up asset metadata so custom assets display their ticker and issuer name | https://github.com/OphirPay/OphirPay/issues/824
+2026-09-24T09:17:44Z OphirPay/OphirPay | Extend the currency display toggle beyond the payments table | https://github.com/OphirPay/OphirPay/issues/795
+2026-09-24T09:16:36Z OphirPay/OphirPay | Slim the Docker runner stage, which copies the full node_modules beside the standalone build | https://github.com/OphirPay/OphirPay/issues/737
+2026-09-24T09:04:11Z OphirPay/OphirPay | Consolidate the four webhook modules behind one entry point | https://github.com/OphirPay/OphirPay/issues/758
+2026-09-24T08:59:25Z OphirPay/OphirPay | Document the WebSocket live-event server, which exists but is described as future work | https://github.com/OphirPay/OphirPay/issues/768
+2026-09-24T08:50:25Z OphirPay/OphirPay | Add a keyboard shortcut cheat sheet using the existing Kbd primitives | https://github.com/OphirPay/OphirPay/issues/790
+2026-09-24T08:46:45Z OphirPay/OphirPay | Add per-route error boundaries so one failing page does not blank the app | https://github.com/OphirPay/OphirPay/issues/791
+2026-09-24T08:37:33Z OphirPay/OphirPay | Merge the four rate-limiting modules into one component | https://github.com/OphirPay/OphirPay/issues/759
+2026-09-24T07:47:10Z OphirPay/OphirPay | Add .github/dependabot.yml for npm, Cargo and GitHub Actions | https://github.com/OphirPay/OphirPay/issues/732
+2026-09-24T07:44:22Z OphirPay/OphirPay | Recommend transaction fees from Horizon fee statistics instead of a static value | https://github.com/OphirPay/OphirPay/issues/825
+2026-09-24T07:02:04Z OphirPay/OphirPay | Publish a SEP-1 stellar.toml so wallets can discover the deployment | https://github.com/OphirPay/OphirPay/issues/813
+2026-09-24T06:23:03Z OphirPay/OphirPay | Give the webhook test sender a delivery preview and a result toast | https://github.com/OphirPay/OphirPay/issues/796
+2026-09-24T06:00:07Z SPLURT-Station/S.P.L.U.R.T-tg | [BOUNTY] Suggestion #1231 | https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/1231
+2026-09-24T05:44:12Z OphirPay/OphirPay | Align the two contract test harnesses onto one convention | https://github.com/OphirPay/OphirPay/issues/767
+2026-09-24T05:40:14Z OphirPay/OphirPay | Build an escrow management UI, since the feature is currently API-only | https://github.com/OphirPay/OphirPay/issues/798
+2026-09-24T05:21:07Z OphirPay/OphirPay | Cap and truncate the remaining unbounded contract readers | https://github.com/OphirPay/OphirPay/issues/742
+2026-09-24T05:08:06Z OphirPay/OphirPay | Add a check that the translated READMEs stay in sync with the English one | https://github.com/OphirPay/OphirPay/issues/770
+2026-09-24T04:49:46Z OphirPay/OphirPay | Add concurrency cancellation to the remaining workflows | https://github.com/OphirPay/OphirPay/issues/753
+2026-09-24T04:17:42Z OphirPay/OphirPay | Exempt bounty and Stellar Wave issues from the stale auto-close workflow | https://github.com/OphirPay/OphirPay/issues/736
+2026-09-24T03:23:42Z OphirPay/OphirPay | Ship Slack and Discord notification templates for payment events | https://github.com/OphirPay/OphirPay/issues/816
+2026-09-24T01:09:04Z OphirPay/OphirPay | Add a documentation link checker so the 37 docs cannot rot | https://github.com/OphirPay/OphirPay/issues/769
+2026-09-24T01:05:35Z OphirPay/OphirPay | Add cursor pagination to the event history endpoint | https://github.com/OphirPay/OphirPay/issues/746
+2026-09-24T00:52:31Z OphirPay/OphirPay | Add OpenTelemetry tracing so a payment can be followed across contract, API and database | https://github.com/OphirPay/OphirPay/issues/815
+2026-09-23T22:51:59Z OphirPay/OphirPay | Report WASM size and fee deltas on contract pull requests | https://github.com/OphirPay/OphirPay/issues/743
+2026-09-23T22:51:58Z OphirPay/OphirPay | Bound the SSE event stream per client and assert connection cleanup under load | https://github.com/OphirPay/OphirPay/issues/744
+2026-09-23T22:51:31Z OphirPay/OphirPay | Automate the database restore drill instead of relying on an untested backup | https://github.com/OphirPay/OphirPay/issues/751
+2026-09-23T22:50:14Z OphirPay/OphirPay | Document which checks actually gate a merge | https://github.com/OphirPay/OphirPay/issues/779
+2026-09-23T22:35:16Z OphirPay/OphirPay | Wire error tracking end to end so ErrorBoundary reports reach a backend | https://github.com/OphirPay/OphirPay/issues/801
+2026-09-23T22:35:15Z OphirPay/OphirPay | Replace the modeled Kani proof set with a harness that exercises the real contract | https://github.com/OphirPay/OphirPay/issues/802
+2026-09-23T22:30:28Z OphirPay/OphirPay | Add CSV import and export for the address book | https://github.com/OphirPay/OphirPay/issues/811
+2026-09-23T22:17:44Z OphirPay/OphirPay | Add a Docker build smoke job so the image cannot silently break | https://github.com/OphirPay/OphirPay/issues/731
+2026-09-23T22:17:41Z OphirPay/OphirPay | Pin GitHub Actions to commit SHAs instead of mutable version tags | https://github.com/OphirPay/OphirPay/issues/733
+2026-09-23T22:17:37Z OphirPay/OphirPay | Schedule the existing load tests so performance regressions are caught | https://github.com/OphirPay/OphirPay/issues/735
+2026-09-23T22:17:32Z OphirPay/OphirPay | Add a HEALTHCHECK to the Docker image and distinguish liveness from readiness | https://github.com/OphirPay/OphirPay/issues/738
+2026-09-23T22:17:11Z OphirPay/OphirPay | Publish the Docker image to GHCR from a release workflow | https://github.com/OphirPay/OphirPay/issues/749
+2026-09-23T22:16:58Z OphirPay/OphirPay | Add container image vulnerability scanning for the published image | https://github.com/OphirPay/OphirPay/issues/756
+2026-09-23T22:16:57Z OphirPay/OphirPay | Split the 6,500-line OphirPay contract into focused modules | https://github.com/OphirPay/OphirPay/issues/757
+2026-09-23T22:16:51Z OphirPay/OphirPay | Consolidate the five overlapping error-handling modules | https://github.com/OphirPay/OphirPay/issues/760
+2026-09-23T22:16:50Z OphirPay/OphirPay | Unify the four CSV modules behind one parse/serialize core | https://github.com/OphirPay/OphirPay/issues/761
+2026-09-23T22:16:48Z OphirPay/OphirPay | Give API routes a shared wrapper instead of repeating the same preamble | https://github.com/OphirPay/OphirPay/issues/762
+2026-09-23T22:16:46Z OphirPay/OphirPay | Move test-only helpers out of the shipped src/lib tree | https://github.com/OphirPay/OphirPay/issues/763
+2026-09-23T22:16:40Z OphirPay/OphirPay | Trim the 300-entry PaymentError catalog to what the contract actually implements | https://github.com/OphirPay/OphirPay/issues/766
+2026-09-23T22:16:32Z OphirPay/OphirPay | Document the feature flag matrix and the localStorage override behaviour | https://github.com/OphirPay/OphirPay/issues/771
+2026-09-23T22:16:28Z OphirPay/OphirPay | Document the escrow and stream APIs, the only way to use them today | https://github.com/OphirPay/OphirPay/issues/773
+2026-09-23T22:16:25Z OphirPay/OphirPay | Write a disaster-recovery runbook that ties the backup job and restore drill together | https://github.com/OphirPay/OphirPay/issues/775
+2026-09-23T22:16:23Z OphirPay/OphirPay | Add request and response examples to every OpenAPI path | https://github.com/OphirPay/OphirPay/issues/776
+2026-09-23T22:16:20Z OphirPay/OphirPay | Document the error code to HTTP status mapping in one table | https://github.com/OphirPay/OphirPay/issues/778
+2026-09-23T22:16:13Z OphirPay/OphirPay | Publish the contract deployment checklist, including the emitter allow-list step | https://github.com/OphirPay/OphirPay/issues/782
+2026-09-23T22:16:11Z OphirPay/OphirPay | Document how to import the Grafana dashboard and route the Prometheus alerts | https://github.com/OphirPay/OphirPay/issues/783
+2026-09-23T22:16:10Z OphirPay/OphirPay | Document switching between PostgreSQL and SQLite and the limits of each | https://github.com/OphirPay/OphirPay/issues/784
+2026-09-23T22:16:01Z OphirPay/OphirPay | Add a skip-to-content link and verify landmark regions across pages | https://github.com/OphirPay/OphirPay/issues/789
+2026-09-23T22:15:53Z OphirPay/OphirPay | Make the multisig and governance tables usable on mobile | https://github.com/OphirPay/OphirPay/issues/794
+2026-09-23T22:15:48Z OphirPay/OphirPay | Implement the Ledger hardware wallet connector for real | https://github.com/OphirPay/OphirPay/issues/797
+2026-09-23T22:15:45Z OphirPay/OphirPay | Build a payment stream UI with vesting progress | https://github.com/OphirPay/OphirPay/issues/799
+2026-09-23T22:15:43Z OphirPay/OphirPay | Implement transactional email instead of a placeholder that silently returns false | https://github.com/OphirPay/OphirPay/issues/800
+2026-09-23T22:15:38Z OphirPay/OphirPay | Make timelocked actions actually dispatch to the functions they claim to protect | https://github.com/OphirPay/OphirPay/issues/803
+2026-09-23T22:15:36Z OphirPay/OphirPay | Add an on-chain idempotency key to record_payment | https://github.com/OphirPay/OphirPay/issues/804
+2026-09-23T22:15:35Z OphirPay/OphirPay | Add API key rotation alongside revocation | https://github.com/OphirPay/OphirPay/issues/805
+2026-09-23T22:15:33Z OphirPay/OphirPay | Add a dead-letter queue and delivery timeout for webhooks that exhaust retries | https://github.com/OphirPay/OphirPay/issues/806
+2026-09-23T22:15:31Z OphirPay/OphirPay | Surface refund reason-code analytics in the UI | https://github.com/OphirPay/OphirPay/issues/807
+2026-09-23T22:15:30Z OphirPay/OphirPay | Add a governance proposal detail view with vote history and execution state | https://github.com/OphirPay/OphirPay/issues/808
+2026-09-23T22:15:28Z OphirPay/OphirPay | Add a trustline setup flow for non-native assets | https://github.com/OphirPay/OphirPay/issues/809
+2026-09-23T22:15:26Z OphirPay/OphirPay | Handle payment request expiration and reminders | https://github.com/OphirPay/OphirPay/issues/810
+2026-09-23T22:15:22Z OphirPay/OphirPay | Add SEP-7 URI handoff so mobile wallets can complete a payment | https://github.com/OphirPay/OphirPay/issues/812
+2026-09-23T22:15:18Z OphirPay/OphirPay | Harden the price feed with caching, rate-limit handling and a staleness policy | https://github.com/OphirPay/OphirPay/issues/814
+2026-09-23T22:15:09Z OphirPay/OphirPay | Use Horizon streaming for payment status instead of polling reconciliation | https://github.com/OphirPay/OphirPay/issues/819
+2026-09-23T22:15:06Z OphirPay/OphirPay | Add a SEP-24 style anchor deposit and withdrawal flow for fiat on-ramp | https://github.com/OphirPay/OphirPay/issues/821
+2026-09-23T22:15:04Z OphirPay/OphirPay | Publish a CLI or GitHub Action so CI pipelines can create payments | https://github.com/OphirPay/OphirPay/issues/822
+2026-09-23T20:46:44Z zhangjiayang6835-cyber/bounty-plaza | [Bounty] [Bounty] Fix one deterministic RPC failover regression | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1635
+2026-09-23T17:06:27Z zhangjiayang6835-cyber/bounty-plaza | [Bounty] [Bounty] Fix one deterministic agent-card discovery regression | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1634
+2026-09-23T17:06:26Z zhangjiayang6835-cyber/bounty-plaza | [Bounty] [Bounty] Flower-shaped rainwater collector for a tinaco | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1633

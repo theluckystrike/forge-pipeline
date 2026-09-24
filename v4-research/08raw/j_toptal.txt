@@ -1,0 +1,28 @@
+Title: Exclusive Access to Top Talent
+
+URL Source: https://www.toptal.com/freelance/freelance-developer-rates
+
+Warning: Target URL returned error 404: Not Found
+
+Markdown Content:
+[](https://www.toptal.com/?_recall%5Baction%5D=show&_recall%5Bcontroller%5D=errors&_recall%5Berror_code%5D=404&host=www.toptal.com&port&protocol=https%3A%2F%2F&script_name=)Hire the top 3% of freelance talent[Login to Toptal](https://www.toptal.com/users/login)[Login](https://www.toptal.com/users/login)
+
+# Unfortunately, the page you’re looking for doesn’t exist.
+
+404
+
+Toptal - Hire the [top 3%](https://www.toptal.com/top-3-percent) of freelance talent.
+
+[Go to Home Page](https://www.toptal.com/?_recall%5Baction%5D=show&_recall%5Bcontroller%5D=errors&_recall%5Berror_code%5D=404&host=www.toptal.com&port&protocol=https%3A%2F%2F&script_name=)
+
+[Hire a Toptaler Work with top freelancers on a no-risk trial period.](https://www.toptal.com/hire)[Become a Toptaler Apply to join the elite ranks of Toptal freelancers.](https://www.toptal.com/talent/apply)[The Toptal Blog Read world-class research and insights in business, design, and technology.](https://www.toptal.com/blog)[FAQ See answers to common freelancing questions.](https://www.toptal.com/faq)[Contact Get in touch with our team.](https://www.toptal.com/contact)
+
+The World’s Top Talent, On Demand®
+
+*   Copyright 2010 - 2026 Toptal, LLC
+*   [Privacy Policy](https://www.toptal.com/privacy)
+*   [Website Terms](https://www.toptal.com/tos)
+
+By continuing to use this site you agree to our [Cookie Policy](https://www.toptal.com/cookie-policy).
+
+[Got it](https://www.toptal.com/freelance/freelance-developer-rates)

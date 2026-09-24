@@ -1,0 +1,96 @@
+== infisical https://infisical.com/docs/contributing/getting-started/overview -> 200 https://infisical.com/docs/contributing/getting-started/overview
+ Contributing - Infisical 
+ Documentation Index
+ Fetch the complete documentation index at: /docs/llms.txt 
+ Use this file to discover all available pages before exploring further.
+ Skip to main content 
+ Infisical home page 
+ Search...
+ ⌘ K Ask Assistant ⌘ I 
+ Log In 
+ Start for Free 
+ Start for Free 
+ Search... 
+ Navigation 
+ Contributing
+ Get started 
+ Products
+ Platform
+ Reference
+ Contributing 
+ Getting started 
+ Code of Conduct 
+ Pull requests 
+ Platform 
+ Local development 
+ PAM local development 
+ Backend development guide 
+ Backend folder structure 
+ On this page 
+ Code-bases 
+ Community 
+ Bugs and issues 
+ Deciding what to work on 
+ Writing and submitting code 
+ Licensing 
+ Contributing
+ Ask Assistant 
+ How to propose, build, and submit changes to Infisical.
+ Ask Assistant 
+ Infisical is open source, and contributions are welcome. This section covers how we work together and how to get the platform running locally. 
+ Getting started
+ The code of conduct we hold each other to, and how to open a pull request. 
+ Platform
+ Run Infisical locally, and the guides for working on the backend. 
+ ​ 
+ Code-bases 
+ Infisical has two major code-bases. One for the platform code, and one for SDKs. The contribution process has some key differences between the two, so we’ve split the documentation into two sections: 
+ The Infisical Platform , the Infisical platform itself.
+ The Infisical SDKs , please refer to each individual SDK repositories for more information. 
+ Node.js SDK 
+ Python SDK 
+ Java SDK 
+ .NET SDK 
+ Go SDK 
+ C++ SDK 
+ PHP SDK 
+ Rust SDK 
+ ​ 
+ Community 
+ We’re building an inclusive community, and this means adhering to the Code of Conduct . 
+ ​ 
+ Bugs and issues 
+ Bug reports help make Infisical a better experience for everyone. When you report a bug, a template will be created automatically containing information we’d like to know. 
+ Before raising a new issue, please search existing ones to make sure you’re not creating a duplicate. 
+ If the issue is related to security, please report it privately through
+ https://infisical.com/vulnerability-disclosure rather than opening an issue. 
+ ​ 
+ Deciding what to work on 
+ You can start by browsing through our list of issues or adding your own that improves on the platform experience. Once you’ve decided on an issue, leave a comment and wait to get approved; this helps avoid multiple people working on the same issue. 
+ If you’re ever in doubt about whether or not a proposed feature aligns with Infisical as a whole, feel free to raise an issue about it and we’ll get back to you promptly. 
+ ​ 
+ Writing and submitting code 
+ Anyone can contribute code to Infisical. To get started, check out the local development guide for the platform: 
+ Local development guide for Platform is here .
+ ​ 
+ Licensing 
+ Most of Infisical’s code is under the MIT license, though some paid feature restrictions are covered by a proprietary license. 
+ Any third party components incorporated into our code are licensed under the original license provided by the applicable component owner. 
+ Was this page helpful?
+ Yes No 
+ Suggest edits Raise issue 
+ Code of Conduct
+ Next 
+ Infisical home page x linkedin github slack 
+ PRODUCT
+ Secret Management Secret Scanning Share Secrets Pricing Security Blog Infisical vs Vault Community 
+ USE CASES
+ Infisical Agent Infisical Proxy Kubernetes Dynamic Secrets Terraform Ansible Jenkins Docker AWS ECS GitLab GitHub SDK 
+ DEVELOPERS
+ Changelog Status Feedback & Requests Trust of Center Open Source Friends How to contribute 
+ OTHERS
+ Customers Company Handbook Careers Terms of Service Privacy Policy Subprocessors SLA Support Email Sales Support 
+ Powered by This documentation is built and hosted on Mintlify, a developer documentation platform 
+ Assistant 
+ Responses are generated using AI and may contain mistakes.
+ 

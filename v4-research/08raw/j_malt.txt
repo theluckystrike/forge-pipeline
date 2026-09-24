@@ -1,0 +1,11 @@
+Title: Malt
+
+URL Source: https://www.malt.com/resources/freelance-tech-rates-barometer
+
+Warning: Target URL returned error 404: Not Found
+Warning: This page contains shadow DOM that are currently hidden, consider enabling shadow DOM processing.
+
+Markdown Content:
+Oops...
+
+The page you are looking for does not exist!

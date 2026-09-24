@@ -1,0 +1,25 @@
+Title: Malt - Newsroom
+
+URL Source: https://newsroom.malt.com/
+
+Markdown Content:
+![Image 2](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/647865ea1f140c6821a7f2c6_Background%20Shape.svg)![Image 3](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/6489b2b58e9226568dabd8b2_Group.svg)
+
+![Image 4](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/60af7172baabf47a26857f1e_logo.svg)
+# Newsroom
+
+The latest news and announcements from Malt, Europe’s leading freelance marketplace.
+
+![Image 5](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae53f3cad7c4f08f655_Flag_ic_flag_fr.svg)[What’s up in France?](https://newsroom.malt.com/fr)
+
+![Image 6](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae5ca6e0d51fa932721_Flag_ic_flag_be.svg)[Newsroom BE](https://newsroom.malt.com/#)
+
+![Image 7](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae535f159fa24d6b9d3_Flag_ic_flag_de.svg)[What’s up in Germany?](https://newsroom.malt.com/de)
+
+![Image 8](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae67f21e99693d5253b_Flag_ic_flag_es.svg)[What’s up in Spain?](https://newsroom.malt.com/es)
+
+![Image 9](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae6c1245576403c8db7_Flag_ic_flag_nl.svg)[What’s up in Netherlands?](https://newsroom.malt.com/nl)
+
+![Image 10](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773afedbe6933ceb405e6c_Flag_ic_flag_uk.svg)[What’s up in United Kingdom?](https://newsroom.malt.com/newsroom-uk)
+
+![Image 11](https://cdn.prod.website-files.com/60af7172baabf494d7857f0d/64773ae5ca6e0d51fa932721_Flag_ic_flag_be.svg)[What’s up in Belgium?](https://newsroom.malt.com/be)

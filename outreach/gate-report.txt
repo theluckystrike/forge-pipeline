@@ -1,13 +1,22 @@
-outreach_gate 2026-09-24T16:55:53Z
-drafts checked: 9
+outreach_gate 2026-09-24T17:40:51Z
+drafts checked: 10
 passed: 9
-failed: 0
+failed: 1
 
 by lane (pass / fail):
   L1: 4 / 0
   L2b: 5 / 0
+  None: 0 / 1
 
 fail count by rule (a draft can fail several rules):
+     1  humanize_strict
+     1  reply_to
+     1  no_signoff
+     1  no_unsubscribe
+     1  over_170_words
+     1  no_target_row
+     1  merged_unverified
+     1  no_audit_row
 
 passed files:
   1061-L1.txt
@@ -21,3 +30,4 @@ passed files:
   716-L1.txt
 
 failed files:
+  sd-phone-L2b-postmerge.txt  humanize_strict: [sentence_rhythm] 3 similar-length sentences in a row (19,16,18 words): Every new feature key lands in en first,; reply_to: missing; no_signoff; no_unsubscribe; over_170_words: 177; no_target_row: None; merged_unverified: no target row to verify against; no_audit_row: None

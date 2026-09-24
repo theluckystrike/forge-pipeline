@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruby Central</title>
+    <link rel="icon" href="https://rubycentral.org/assets/images/favicon.svg?v=dDa9F_AGiD49bG0I" type="image/svg+xml">
+    <link rel="icon" href="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w256h256/format/png/2022/11/Ruby-Central-logo.svg" sizes="32x32">
+    <link rel="icon" href="https://rubycentral.org/assets/images/favicon-16x16.png?v=O-C_bk-YUJPo7jaM" type="image/png" sizes="16x16">
+    <link rel="icon" href="https://rubycentral.org/assets/images/favicon-32x32.png?v=trkYA6l6MICyvTg1" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://rubycentral.org/assets/images/apple-touch-icon.png?v=GuOsWkV9cTXVzuox">
+    <link rel="stylesheet" href="https://rubycentral.org/assets/dist/app.css?v=-dMMePYbjVzoHgu7" />
+    <script src="//code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <script src="https://rubycentral.org/assets/dist/app.js?v=iPqKN7-UOc9aAt-X" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+    
+
+    <meta name="description" content="Supporting the Ruby Community Since 2001">
+    <link rel="icon" href="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w256h256/format/png/2022/11/Ruby-Central-logo.svg" type="image/png">
+    <link rel="canonical" href="https://rubycentral.org/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Ruby Central">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ruby Central">
+    <meta property="og:description" content="Supporting the Ruby Community Since 2001">
+    <meta property="og:url" content="https://rubycentral.org/">
+    <meta property="og:image" content="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2024/04/Ruby-Central-OpenGraph-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ruby Central">
+    <meta name="twitter:description" content="Supporting the Ruby Community Since 2001">
+    <meta name="twitter:url" content="https://rubycentral.org/">
+    <meta name="twitter:image" content="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2024/04/Ruby-Central-OpenGraph.png">
+    <meta name="twitter:site" content="@rubycentralorg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Ruby Central",
+        "url": "https://rubycentral.org/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w256h256/format/png/2022/11/Ruby-Central-logo.svg"
+        }
+    },
+    "url": "https://rubycentral.org/",
+    "name": "Ruby Central",
+    "mainEntityOfPage": "https://rubycentral.org/",
+    "description": "Supporting the Ruby Community Since 2001"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 6.65">
+    <link rel="alternate" type="application/rss+xml" title="Ruby Central" href="https://rubycentral.org/news/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.71/umd/portal.min.js" data-i18n="true" data-ghost="https://rubycentral.org/" data-key="b3718b63b799cc71fecbd76bdc" data-api="https://rubycentral.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style><script async src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="b3718b63b799cc71fecbd76bdc" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://rubycentral.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://rubycentral.org/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=ShRHxgy4po8zN-Wf"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=IpkOrL5eXyDWCytS">
+    <script defer src="/public/member-attribution.min.js?v=AKG4hWena9j3yX3I"></script>
+    <script defer src="/public/ghost-stats.min.js?v=vFcCUf6ZQ0Hyhc8h" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://rubycentral.org/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="170a5cb5-5524-4ba0-93b6-f17fc9bacca6" tb_post_uuid="undefined" tb_post_type="null" tb_member_uuid="undefined" tb_member_status="undefined" tb_gift_link=""></script><style>:root {--ghost-accent-color: #E14943;}</style>
+    <script defer data-domain="rubycentral.org" src="https://plausible.io/js/script.js"></script>
+<script
+  async
+  src="https://widgets.givebutter.com/latest.umd.cjs?acct=2BO4XIlPdJEPkCUm&p=other"
+></script>
+  </head>
+
+  <body class="home-template">
+    <header class="global-nav is-closed" data-global-nav>
+  <div class="global-nav__inner u-container">
+    <a href="/" class="global-nav__logo"><svg xmlns="http://www.w3.org/2000/svg" width="291" height="75" viewBox="0 0 291 75" role="img" aria-labelledby="logo-title" fill="currentColor">
+  <title id="logo-title">Ruby Central</title>
+  <path d="M43.84 27.554c1.39 0 2.675.808 3.276 2.064l2.626 5.48a3.62 3.62 0 0 1-.58 4.008l-8.993 9.938a3.6 3.6 0 0 1-2.695 1.197 3.6 3.6 0 0 1-2.694-1.197l-8.993-9.938a3.62 3.62 0 0 1-.581-4.009l2.626-5.48a3.65 3.65 0 0 1 3.276-2.061h12.73M31.11 23.645a7.54 7.54 0 0 0-6.8 4.282l-2.627 5.48a7.54 7.54 0 0 0 1.21 8.32l8.992 9.938a7.52 7.52 0 0 0 5.591 2.482 7.51 7.51 0 0 0 5.592-2.482l8.993-9.938a7.55 7.55 0 0 0 1.209-8.32l-2.626-5.48a7.55 7.55 0 0 0-6.801-4.282zM62.243 23.037l-.56 4.531-.786-.613-.26-.203a29 29 0 0 1-.524-.417 71 71 0 0 1-11.428-11.428 30 30 0 0 1-.418-.526l-.203-.259-6.77-8.677a5.7 5.7 0 0 0-3.906-1.536 5.7 5.7 0 0 0-3.908 1.536L31.377 8.14q-.532-.046-1.063-.103-.492-.053-.987-.115l-2.497-.307 3.736-4.789A9.62 9.62 0 0 1 37.388 0c2.47 0 4.938.943 6.822 2.826l3.735 4.789.613.784 2.792 3.579a68 68 0 0 0 1.273 1.58 66.928 66.928 0 0 0 8.057 8.176c.258.225.517.443.779.662q.388.32.784.64"/>
+  <path d="m62.243 23.037-.56 4.531-.786-.613-.26-.203a29 29 0 0 1-.524-.417 71 71 0 0 1-11.428-11.428 30 30 0 0 1-.418-.526l-.203-.259-6.77-8.677a5.7 5.7 0 0 0-3.906-1.536 5.7 5.7 0 0 0-3.908 1.536L31.377 8.14q-.532-.046-1.063-.103-.492-.053-.987-.115l-2.497-.307 3.736-4.789A9.62 9.62 0 0 1 37.388 0c2.47 0 4.938.943 6.822 2.826l3.735 4.789.613.784 2.792 3.579a68 68 0 0 0 1.273 1.58 66.928 66.928 0 0 0 8.057 8.176c.258.225.517.443.779.662q.388.32.784.64M23.036 12.774l4.532.56-.613.786-.203.259q-.205.265-.418.525a71 71 0 0 1-11.427 11.428q-.261.213-.526.418l-.259.202-5.181 4.04-3.496 2.73a5.7 5.7 0 0 0-1.536 3.906c0 1.463.544 2.844 1.536 3.909L8.14 43.64q-.046.53-.103 1.063-.054.492-.115.986l-.307 2.497-4.789-3.735A9.62 9.62 0 0 1 0 37.628c0-2.47.943-4.937 2.826-6.82l4.789-3.736.784-.613 3.579-2.792a70 70 0 0 0 1.58-1.273q.39-.324.78-.66a67 67 0 0 0 7.396-7.397c.225-.258.443-.518.663-.779q.32-.388.64-.784"/>
+  <path d="m23.036 12.774 4.532.56-.613.786-.203.259q-.205.265-.418.525a71 71 0 0 1-11.427 11.428q-.261.213-.526.418l-.259.202-5.181 4.04-3.496 2.73a5.7 5.7 0 0 0-1.536 3.906c0 1.463.544 2.844 1.536 3.909L8.14 43.64q-.046.53-.103 1.063-.054.492-.115.986l-.307 2.497-4.789-3.735A9.62 9.62 0 0 1 0 37.628c0-2.47.943-4.937 2.826-6.82l4.789-3.736.784-.613 3.579-2.792a70 70 0 0 0 1.58-1.273q.39-.324.78-.66a67 67 0 0 0 7.396-7.397c.225-.258.443-.518.663-.779q.32-.388.64-.784M51.982 62.492l-4.531-.56.613-.786.203-.26q.205-.263.418-.524a71 71 0 0 1 11.428-11.428q.26-.213.525-.418l.259-.203 8.677-6.77a5.7 5.7 0 0 0 1.536-3.905 5.7 5.7 0 0 0-1.536-3.909l-2.694-2.103c.029-.355.066-.709.102-1.063q.054-.491.115-.987l.308-2.497 4.787 3.736a9.62 9.62 0 0 1 2.827 6.823c0 2.47-.943 4.937-2.827 6.82l-4.787 3.736-.784.613-3.58 2.792a68 68 0 0 0-1.58 1.273q-.39.324-.78.66a67 67 0 0 0-7.397 7.397q-.334.386-.661.779-.32.388-.64.784"/>
+  <path d="m51.982 62.492-4.531-.56.613-.786.203-.26q.205-.263.418-.524a71 71 0 0 1 11.428-11.428q.26-.213.525-.418l.259-.203 8.677-6.77a5.7 5.7 0 0 0 1.536-3.905 5.7 5.7 0 0 0-1.536-3.909l-2.694-2.103c.029-.355.066-.709.102-1.063q.054-.491.115-.987l.308-2.497 4.787 3.736a9.62 9.62 0 0 1 2.827 6.823c0 2.47-.943 4.937-2.827 6.82l-4.787 3.736-.784.613-3.58 2.792a68 68 0 0 0-1.58 1.273q-.39.324-.78.66a67 67 0 0 0-7.397 7.397q-.334.386-.661.779-.32.388-.64.784M12.537 51.983l.56-4.532.786.613.259.203q.265.205.525.418c4.227 3.359 8.07 7.199 11.428 11.428q.212.261.418.525l.203.259 4.04 5.182 2.73 3.495a5.7 5.7 0 0 0 3.905 1.537 5.7 5.7 0 0 0 3.909-1.537l2.103-2.695q.532.046 1.063.103.491.054.987.115l2.496.308-3.735 4.788a9.62 9.62 0 0 1-6.823 2.826 9.61 9.61 0 0 1-6.82-2.826l-3.735-4.788-.614-.784-2.792-3.58a72 72 0 0 0-.633-.798q-.318-.393-.64-.782a49 49 0 0 0-.66-.78 67 67 0 0 0-7.396-7.396c-.26-.225-.518-.442-.78-.662q-.388-.32-.784-.64"/>
+  <path d="m12.537 51.983.56-4.532.786.613.259.203q.265.205.525.418c4.227 3.359 8.07 7.199 11.428 11.428q.212.261.418.525l.203.259 4.04 5.182 2.73 3.495a5.7 5.7 0 0 0 3.905 1.537 5.7 5.7 0 0 0 3.909-1.537l2.103-2.695q.532.046 1.063.103.491.054.987.115l2.496.308-3.735 4.788a9.62 9.62 0 0 1-6.823 2.826 9.61 9.61 0 0 1-6.82-2.826l-3.735-4.788-.614-.784-2.792-3.58a72 72 0 0 0-.633-.798q-.318-.393-.64-.782a49 49 0 0 0-.66-.78 67 67 0 0 0-7.396-7.396c-.26-.225-.518-.442-.78-.662q-.388-.32-.784-.64M44.73 9.737l2.809 3.601-.99.122-.327.04q-.333.04-.667.075a71 71 0 0 1-16.162 0 31 31 0 0 1-.667-.075l-.327-.04-10.922-1.348a5.69 5.69 0 0 0-3.848 1.676 5.72 5.72 0 0 0-1.678 3.85l.417 3.393c-.27.23-.547.455-.823.68-.256.204-.515.412-.78.615l-1.983 1.549-.745-6.027a9.62 9.62 0 0 1 2.827-6.823 9.61 9.61 0 0 1 6.82-2.824l6.027.745.987.12 4.504.554q.51.062 1.012.117.502.053 1.006.1a66.752 66.752 0 0 0 11.477.085c.342-.023.68-.053 1.019-.082.332-.032.67-.066 1.006-.103z"/>
+  <path d="m44.73 9.737 2.809 3.601-.99.122-.327.04q-.333.04-.667.075a71 71 0 0 1-16.162 0 31 31 0 0 1-.667-.075l-.327-.04-10.922-1.348a5.69 5.69 0 0 0-3.848 1.676 5.72 5.72 0 0 0-1.678 3.85l.417 3.393c-.27.23-.547.455-.823.68-.256.204-.515.412-.78.615l-1.983 1.549-.745-6.027a9.62 9.62 0 0 1 2.827-6.823 9.61 9.61 0 0 1 6.82-2.824l6.027.745.987.12 4.504.554q.51.062 1.012.117.502.053 1.006.1a66.752 66.752 0 0 0 11.477.085c.342-.023.68-.053 1.019-.082.332-.032.67-.066 1.006-.103zM9.576 30.375l3.601-2.809.122.99.04.326q.04.334.075.667a71 71 0 0 1 0 16.163q-.034.333-.076.667l-.039.327-1.348 10.922a5.69 5.69 0 0 0 1.675 3.848 5.72 5.72 0 0 0 3.85 1.678l3.394-.418q.343.41.679.823c.205.257.413.516.615.78l1.55 1.984-6.027.745a9.62 9.62 0 0 1-6.823-2.827 9.61 9.61 0 0 1-2.824-6.82l.745-6.027.12-.987.554-4.505q.061-.51.117-1.01.052-.503.1-1.008a66.742 66.742 0 0 0 .086-11.477q-.039-.51-.083-1.018-.048-.5-.103-1.007z"/>
+  <path d="m9.576 30.375 3.601-2.809.122.99.04.326q.04.334.075.667a71 71 0 0 1 0 16.163q-.034.333-.076.667l-.039.327-1.348 10.922a5.69 5.69 0 0 0 1.675 3.848 5.72 5.72 0 0 0 3.85 1.678l3.394-.418q.343.41.679.823c.205.257.413.516.615.78l1.55 1.984-6.027.745a9.62 9.62 0 0 1-6.823-2.827 9.61 9.61 0 0 1-2.824-6.82l.745-6.027.12-.987.554-4.505q.061-.51.117-1.01.052-.503.1-1.008a66.742 66.742 0 0 0 .086-11.477q-.039-.51-.083-1.018-.048-.5-.103-1.007zM65.128 45.132l-3.601 2.81-.122-.99-.04-.327q-.04-.333-.075-.667a71 71 0 0 1 0-16.162q.035-.333.076-.667l.04-.327 1.348-10.923a5.7 5.7 0 0 0-1.676-3.847 5.72 5.72 0 0 0-3.85-1.678l-3.394.418a52 52 0 0 1-1.295-1.603l-1.548-1.984 6.027-.745a9.62 9.62 0 0 1 6.823 2.827 9.61 9.61 0 0 1 2.824 6.82l-.745 6.027-.12.987-.555 4.504q-.062.51-.117 1.012-.052.502-.1 1.006a66.737 66.737 0 0 0-.086 11.477q.039.512.083 1.019.048.5.103 1.006z"/>
+  <path d="m65.128 45.132-3.601 2.81-.122-.99-.04-.327q-.04-.333-.075-.667a71 71 0 0 1 0-16.162q.035-.333.076-.667l.04-.327 1.348-10.923a5.7 5.7 0 0 0-1.676-3.847 5.72 5.72 0 0 0-3.85-1.678l-3.394.418a52 52 0 0 1-1.295-1.603l-1.548-1.984 6.027-.745a9.62 9.62 0 0 1 6.823 2.827 9.61 9.61 0 0 1 2.824 6.82l-.745 6.027-.12.987-.555 4.504q-.062.51-.117 1.012-.052.502-.1 1.006a66.737 66.737 0 0 0-.086 11.477q.039.512.083 1.019.048.5.103 1.006zM30.221 65.524l-2.81-3.601.99-.123.328-.038q.333-.042.666-.076a71 71 0 0 1 16.163 0q.333.034.666.076l.328.038 10.922 1.349a5.69 5.69 0 0 0 3.848-1.676A5.72 5.72 0 0 0 63 57.623l-.418-3.393q.408-.343.824-.68c.256-.204.515-.412.779-.615l1.984-1.548.745 6.026a9.62 9.62 0 0 1-2.827 6.824 9.61 9.61 0 0 1-6.82 2.823l-6.027-.745-.987-.12-4.505-.554q-.51-.062-1.011-.117-.502-.053-1.007-.1a66.808 66.808 0 0 0-11.477-.085c-.341.023-.678.053-1.018.082-.332.032-.67.066-1.006.103zM287.319 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V26.15q0-.345.241-.585.24-.24.585-.241h2.855q.345 0 .585.24.241.241.241.586v22.775q0 .344-.241.585a.8.8 0 0 1-.585.24zM273.031 50.096q-1.788 0-3.234-.688-1.444-.723-2.305-1.893a4.64 4.64 0 0 1-.825-2.683q0-2.409 1.926-3.819 1.962-1.444 5.161-1.927l4.713-.688v-.722q0-1.445-.722-2.236-.723-.792-2.478-.792-1.238 0-2.029.516a3 3 0 0 0-1.136 1.308.88.88 0 0 1-.791.447h-2.718q-.378 0-.585-.206-.172-.208-.172-.55.034-.551.448-1.343.413-.791 1.307-1.513.894-.758 2.305-1.273 1.41-.516 3.406-.516 2.167 0 3.647.55 1.514.516 2.408 1.41a5.4 5.4 0 0 1 1.307 2.1q.413 1.203.413 2.545v10.803q0 .344-.241.585a.8.8 0 0 1-.585.24h-2.786a.84.84 0 0 1-.62-.24.87.87 0 0 1-.206-.585v-1.342q-.447.654-1.204 1.239-.757.55-1.858.929-1.067.344-2.546.344m1.17-3.269q1.204 0 2.167-.516.999-.516 1.549-1.582.584-1.101.584-2.753v-.722l-3.44.55q-2.03.31-3.027.998-.999.688-.998 1.686 0 .756.447 1.307.482.516 1.204.791.722.241 1.514.241M254.929 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V32.722q0-.379.241-.62.24-.24.585-.24h2.786q.345 0 .585.24.275.241.275.62v1.41a5.2 5.2 0 0 1 2.03-1.685q1.274-.585 2.925-.585h1.41q.378 0 .585.24.241.242.241.585v2.477q0 .345-.241.585-.207.24-.585.241h-2.683q-1.651 0-2.581.929-.894.93-.894 2.546v9.46q0 .345-.241.586a.84.84 0 0 1-.619.24zM247.783 49.752q-2.065 0-3.475-.723a4.6 4.6 0 0 1-2.099-2.133q-.687-1.445-.688-3.578v-7.81h-2.718a.8.8 0 0 1-.584-.24.8.8 0 0 1-.241-.585v-1.996q0-.344.241-.584.24-.241.584-.241h2.718V26.15q0-.345.207-.585.24-.24.619-.241h2.787q.343 0 .585.24.24.241.24.586v5.71h4.301q.344 0 .585.241.24.242.241.585v1.996q0 .344-.241.585a.8.8 0 0 1-.585.24h-4.301v7.466q0 1.41.482 2.202.516.79 1.755.791h2.373q.345 0 .585.241.241.24.241.585v2.133q0 .344-.241.585a.8.8 0 0 1-.585.24zM219.944 49.752a.8.8 0 0 1-.584-.241.8.8 0 0 1-.241-.585V32.687q0-.344.241-.584.24-.241.584-.241h2.822q.344 0 .584.24.241.242.241.585v1.41q.895-1.1 2.271-1.822 1.41-.757 3.475-.757 2.098 0 3.646.963 1.55.93 2.374 2.649.86 1.72.86 4.128v9.668q0 .344-.24.585a.8.8 0 0 1-.585.24h-3.028a.8.8 0 0 1-.585-.24.8.8 0 0 1-.241-.585v-9.461q0-1.996-.997-3.13-.964-1.137-2.821-1.136-1.79 0-2.856 1.135t-1.066 3.13v9.462q0 .344-.241.585a.8.8 0 0 1-.585.24zM208.001 50.096q-3.819 0-6.055-2.202-2.237-2.202-2.408-6.262a9 9 0 0 1-.035-.86q0-.55.035-.86.137-2.58 1.17-4.472 1.066-1.893 2.924-2.89 1.858-1.032 4.369-1.032 2.787 0 4.679 1.17 1.891 1.135 2.856 3.199.963 2.03.963 4.713v.723q0 .344-.241.584a.84.84 0 0 1-.619.241h-11.422v.276q.035 1.204.447 2.236a4.04 4.04 0 0 0 1.273 1.617q.86.62 2.03.62.963 0 1.617-.276a4.3 4.3 0 0 0 1.066-.688q.413-.378.585-.62.31-.412.482-.481.206-.103.585-.103h2.958q.344 0 .551.206.24.207.206.516-.034.55-.585 1.342-.516.79-1.513 1.548-.999.757-2.512 1.273-1.479.482-3.406.482m-3.784-10.838h7.603v-.103q0-1.341-.447-2.34a3.7 3.7 0 0 0-1.308-1.582q-.86-.585-2.064-.585t-2.064.585a3.7 3.7 0 0 0-1.307 1.583q-.414.997-.413 2.34zM187.167 50.096q-3.2 0-5.436-1.101-2.202-1.136-3.372-3.2-1.169-2.098-1.307-5.023-.034-1.41-.034-3.027t.034-3.097q.138-2.89 1.307-4.988 1.205-2.1 3.406-3.2 2.237-1.135 5.402-1.135 2.34 0 4.197.62 1.858.618 3.165 1.72a7.6 7.6 0 0 1 2.03 2.51q.723 1.446.757 3.132a.56.56 0 0 1-.207.516.7.7 0 0 1-.516.206h-3.268q-.379 0-.619-.172-.241-.206-.344-.654-.55-2.27-1.892-3.096-1.342-.825-3.338-.826-2.304 0-3.681 1.308-1.375 1.272-1.479 4.231a81 81 0 0 0 0 5.78q.104 2.96 1.479 4.266 1.377 1.273 3.681 1.273 1.996 0 3.338-.826 1.341-.86 1.892-3.096.103-.48.344-.654.24-.172.619-.172h3.268q.31 0 .516.207.242.207.207.516a7.2 7.2 0 0 1-.757 3.13 8 8 0 0 1-2.03 2.547q-1.307 1.066-3.165 1.685-1.858.62-4.197.62M153.989 56.288a.66.66 0 0 1-.482-.206.66.66 0 0 1-.206-.482v-.275a1.5 1.5 0 0 1 .137-.275l2.684-6.365-6.606-15.585q-.137-.344-.137-.482a.84.84 0 0 1 .24-.516q.207-.24.517-.24h2.786q.413 0 .62.206.206.207.309.447l4.576 11.25 4.713-11.25q.103-.274.31-.447.206-.206.619-.206h2.752a.66.66 0 0 1 .482.206.62.62 0 0 1 .241.482q0 .205-.138.55l-9.736 22.535a1.4 1.4 0 0 1-.344.447q-.207.206-.619.206zM141.302 50.096q-1.996 0-3.337-.688a6.8 6.8 0 0 1-2.168-1.755v1.273q0 .344-.24.585-.207.24-.585.24h-2.718a.8.8 0 0 1-.585-.24.8.8 0 0 1-.241-.585V26.15q0-.345.241-.585.24-.24.585-.241h2.924q.378 0 .585.24.24.241.241.586v7.637a6.6 6.6 0 0 1 2.133-1.617q1.306-.654 3.165-.653 1.824 0 3.165.619a6 6 0 0 1 2.236 1.755 7.6 7.6 0 0 1 1.411 2.58q.482 1.48.516 3.2.034.618.034 1.135 0 .481-.034 1.1-.069 1.79-.551 3.303-.481 1.48-1.376 2.58a6.15 6.15 0 0 1-2.236 1.72q-1.341.585-3.165.586m-1.273-3.682q1.48 0 2.305-.619.825-.654 1.17-1.686a7.8 7.8 0 0 0 .447-2.27q.069-1.032 0-2.064a7.8 7.8 0 0 0-.447-2.271 3.33 3.33 0 0 0-1.17-1.651q-.825-.654-2.305-.654-1.376 0-2.236.62a4 4 0 0 0-1.308 1.582 4.85 4.85 0 0 0-.481 1.96q-.035.62-.035 1.342 0 .69.035 1.308a7.5 7.5 0 0 0 .447 2.098q.413.999 1.273 1.652.894.653 2.305.653M117.698 50.096q-2.099 0-3.647-.93-1.514-.962-2.34-2.683-.825-1.755-.825-4.128v-9.668q0-.344.241-.584.24-.241.584-.241h3.028q.378 0 .585.24.24.242.241.585v9.461q0 4.266 3.75 4.266 1.788 0 2.821-1.135 1.066-1.135 1.066-3.13v-9.462q0-.344.241-.584a.8.8 0 0 1 .585-.241h3.027q.345 0 .585.24.241.242.241.585v16.239q0 .344-.241.585a.8.8 0 0 1-.585.24h-2.786a.84.84 0 0 1-.62-.24.87.87 0 0 1-.206-.585v-1.41a6.6 6.6 0 0 1-2.305 1.892q-1.376.688-3.44.688M90.18 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V26.529q0-.378.24-.62.241-.24.586-.24h8.91q4.163 0 6.571 1.927 2.408 1.926 2.408 5.607 0 2.547-1.273 4.232-1.238 1.686-3.337 2.443l5.023 8.773a.85.85 0 0 1 .103.378q0 .309-.24.516a.66.66 0 0 1-.482.207h-3.131q-.585 0-.894-.31a2.8 2.8 0 0 1-.482-.62l-4.438-8.153h-4.782v8.257q0 .344-.24.585-.208.24-.586.24zm3.956-12.97h4.85q2.1 0 3.132-.93 1.032-.963 1.032-2.683t-1.032-2.683q-.999-.999-3.131-.998h-4.851z"/>
+</svg>
+</a>
+    <nav id="global-nav-menu" class="global-nav__links" aria-label="Primary">
+      <ul class="global-nav__list">
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/about/"
+              
+            >About</a>
+          </li>
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/community/"
+              
+            >Community</a>
+          </li>
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/programs/"
+              
+            >Programs</a>
+          </li>
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/events/"
+              
+            >Events</a>
+          </li>
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/sponsors/"
+              
+            >Sponsors</a>
+          </li>
+          <li class="global-nav__item">
+            <a
+              class="global-nav__link"
+              href="https://rubycentral.org/news/"
+              
+            >News</a>
+          </li>
+        <li class="global-nav__item">
+          <button type="button" class="global-nav__link" data-ghost-search>Search</button>
+        </li>
+        <li class="global-nav__item">
+          <a href="/community" class="button button--primary">Get involved</a>
+        </li>
+      </ul>
+    </nav>
+    <button
+      type="button"
+      class="button button--secondary button--icon global-nav__menu-toggle"
+      data-global-nav-toggle
+      aria-expanded="false"
+      aria-controls="global-nav-menu"
+      aria-label="Toggle navigation"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" width="21" height="20" fill="currentColor" role="img" aria-labelledby="menu-title"><title id="menu-title">Menu</title><path fill-rule="evenodd" d="M.438 17.875c0-.69.556-1.25 1.242-1.25h17.515c.686 0 1.242.56 1.242 1.25s-.556 1.25-1.242 1.25H1.68c-.686 0-1.242-.56-1.242-1.25ZM.438 10c0-.69.556-1.25 1.242-1.25h17.515c.686 0 1.242.56 1.242 1.25s-.556 1.25-1.242 1.25H1.68C.994 11.25.438 10.69.438 10ZM.438 2.125c0-.69.556-1.25 1.242-1.25h17.515c.686 0 1.242.56 1.242 1.25s-.556 1.25-1.242 1.25H1.68c-.686 0-1.242-.56-1.242-1.25Z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+</header>
+
+
+    <main>
+      
+<section class="hero hero--home">
+  <div class="hero__inner u-container">
+    <div class="hero__content">
+      <div class="hero__split u-grid">
+        <div class="hero__text u-grid-span-3">
+              <h1 id="ruby-central">Ruby Central</h1>
+<h2 id="advancing-rubys-ecosystem-community-since-2001">Advancing Ruby's ecosystem &amp; community since 2001</h2>
+<h3 id="ruby-central-is-the-organizing-force-behind-rubyconf-railsconf-and-the-proud-maintainers-of-rubygems-bundler">Ruby Central is the organizing force behind RubyConf, RailsConf and the proud maintainers of RubyGems, Bundler.</h3>
+
+          <div class="cta-buttons">
+    <div class="cta-buttons__button cta-buttons__primary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://rubycentral.org/community" class="kg-btn kg-btn-accent">Get involved</a></div>
+    </div>
+    <div class="cta-buttons__button cta-buttons__secondary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://rubycentral.org/community#membership" class="kg-btn kg-btn-accent">Become a member</a></div>
+    </div>
+</div>
+        </div>
+        <figure class="hero__images u-grid-span-4">
+          <picture class="image ">
+  <img
+    srcset="/content/images/size/w100/2026/06/steering-committees-discussion.jpg 100w,
+          /content/images/size/w300/2026/06/steering-committees-discussion.jpg 300w,
+          /content/images/size/w500/2026/06/steering-committees-discussion.jpg 500w,
+          /content/images/size/w700/2026/06/steering-committees-discussion.jpg 700w,
+          /content/images/size/w1000/2026/06/steering-committees-discussion.jpg 1000w,
+          /content/images/size/w2000/2026/06/steering-committees-discussion.jpg 2000w"
+      sizes="auto"
+      loading="lazy"
+    src="/content/images/size/w700/2026/06/steering-committees-discussion.jpg"
+    alt="A small group of people in conversation around a table"
+  />
+</picture>
+          <picture class="image ">
+  <img
+    srcset="/content/images/size/w100/2026/06/ruby-alliance-connection.jpg 100w,
+          /content/images/size/w300/2026/06/ruby-alliance-connection.jpg 300w,
+          /content/images/size/w500/2026/06/ruby-alliance-connection.jpg 500w,
+          /content/images/size/w700/2026/06/ruby-alliance-connection.jpg 700w,
+          /content/images/size/w1000/2026/06/ruby-alliance-connection.jpg 1000w,
+          /content/images/size/w2000/2026/06/ruby-alliance-connection.jpg 2000w"
+      sizes="auto"
+      loading="lazy"
+    src="/content/images/size/w700/2026/06/ruby-alliance-connection.jpg"
+    alt="Two community members embracing warmly at a conference"
+  />
+</picture>
+          <picture class="image ">
+  <img
+    srcset="/content/images/size/w100/2026/06/speaking-opportunity-portrait.jpg 100w,
+          /content/images/size/w300/2026/06/speaking-opportunity-portrait.jpg 300w,
+          /content/images/size/w500/2026/06/speaking-opportunity-portrait.jpg 500w,
+          /content/images/size/w700/2026/06/speaking-opportunity-portrait.jpg 700w,
+          /content/images/size/w1000/2026/06/speaking-opportunity-portrait.jpg 1000w,
+          /content/images/size/w2000/2026/06/speaking-opportunity-portrait.jpg 2000w"
+      sizes="auto"
+      loading="lazy"
+    src="/content/images/size/w700/2026/06/speaking-opportunity-portrait.jpg"
+    alt="A speaker presenting on stage at a Ruby conference"
+  />
+</picture>
+        </figure>
+      </div>
+    </div>
+    <div class="home-stats__row">
+      <div class="home-stats__marquee">
+        <div class="home-stats__track">
+          <dl class="home-stats__list">
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">1,575</dt>
+                  <dd class="home-stats__description">members</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">100%</dt>
+                  <dd class="home-stats__description">uptime since 2013</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">18,000+</dt>
+                  <dd class="home-stats__description">attendees</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">185K+</dt>
+                  <dd class="home-stats__description">gems</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">2,000+</dt>
+                  <dd class="home-stats__description">speakers who have graced our stages</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">210B+</dt>
+                  <dd class="home-stats__description">gem downloads served</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">230K+</dt>
+                  <dd class="home-stats__description">users</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">26</dt>
+                  <dd class="home-stats__description">local meetup grants spanning 5 continents</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">330+</dt>
+                  <dd class="home-stats__description">scholars</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">42</dt>
+                  <dd class="home-stats__description">conferences hosted since 2001</dd>
+                </div>
+          </dl>
+          <dl class="home-stats__list" aria-hidden="true">
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">1,575</dt>
+                  <dd class="home-stats__description">members</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">100%</dt>
+                  <dd class="home-stats__description">uptime since 2013</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">18,000+</dt>
+                  <dd class="home-stats__description">attendees</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">185K+</dt>
+                  <dd class="home-stats__description">gems</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">2,000+</dt>
+                  <dd class="home-stats__description">speakers who have graced our stages</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">210B+</dt>
+                  <dd class="home-stats__description">gem downloads served</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">230K+</dt>
+                  <dd class="home-stats__description">users</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">26</dt>
+                  <dd class="home-stats__description">local meetup grants spanning 5 continents</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">330+</dt>
+                  <dd class="home-stats__description">scholars</dd>
+                </div>
+                <div class="home-stats__item">
+                  <dt class="home-stats__value">42</dt>
+                  <dd class="home-stats__description">conferences hosted since 2001</dd>
+                </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section u-container">
+  <div class="section__content">
+      <div class="home-involvement">
+    <nav class="link-list link-list--feature" aria-label="">
+  <ul class="link-list__items">
+        <li class="link-list__item">
+          <a class="link-list__link" href="/sponsorship" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/ruby-alliance-stage.jpg">
+            <p class="link-list__title">Become a sponsor</p>
+              <div class="link-list__description"><p>Invest in the infrastructure and community your team depends on.</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+        <li class="link-list__item">
+          <a class="link-list__link" href="/community/#volunteering" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/nearby-events-railsconf.jpg">
+            <p class="link-list__title">Volunteer yourself</p>
+              <div class="link-list__description"><p>Lend your time, from conference ops to speaker mentoring</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+        <li class="link-list__item">
+          <a class="link-list__link" href="/community#membership" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/gallery-denver.jpg">
+            <p class="link-list__title">Become a member</p>
+              <div class="link-list__description"><p>Sustain Ruby's open source tools with a monthly membership.</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+        <li class="link-list__item">
+          <a class="link-list__link" href="/community#steering-committees" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/steering-committees-discussion.jpg">
+            <p class="link-list__title">Join a steering committee</p>
+              <div class="link-list__description"><p>Help shape the direction of Ruby Central's programs and priorities.</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+        <li class="link-list__item">
+          <a class="link-list__link" href="/scholars_guides_program/" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/scholars-guides.jpg">
+            <p class="link-list__title">Mentor as a guide</p>
+              <div class="link-list__description"><p>Open conference doors for new and underrepresented Rubyists in our Scholars and Guides program</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+        <li class="link-list__item">
+          <a class="link-list__link" href="/programs#rubygems" data-image="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/2026/06/infrastructure-and-security.jpg">
+            <p class="link-list__title">Contribute to Open Source</p>
+              <div class="link-list__description"><p>Code, review, and discuss on RubyGems, Bundler, and more.</p></div>
+            <div class="link-list__arrow">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+  <path d="M17.188 5.796 11.768.375c-.5-.5-1.333-.5-1.833 0s-.5 1.332 0 1.831l3.201 3.22H1.295C.573 5.426 0 5.999 0 6.72c0 .721.573 1.295 1.295 1.295h11.841l-3.2 3.2a1.307 1.307 0 0 0 .925 2.221c.333 0 .666-.13.925-.388l5.402-5.403c.24-.24.389-.574.389-.925s-.13-.685-.389-.925"/>
+</svg>
+
+            </div>
+          </a>
+        </li>
+  </ul>
+</nav>
+    <figure class="home-involvement__image" data-involvement-image>
+      <picture class="image ">
+  <img
+    srcset="/content/images/size/w100/2026/06/about-mission-audience.jpg 100w,
+          /content/images/size/w300/2026/06/about-mission-audience.jpg 300w,
+          /content/images/size/w500/2026/06/about-mission-audience.jpg 500w,
+          /content/images/size/w700/2026/06/about-mission-audience.jpg 700w,
+          /content/images/size/w1000/2026/06/about-mission-audience.jpg 1000w,
+          /content/images/size/w2000/2026/06/about-mission-audience.jpg 2000w"
+      sizes="auto"
+      loading="lazy"
+    src="/content/images/size/w700/2026/06/about-mission-audience.jpg"
+    alt="A large audience watching a conference talk"
+  />
+</picture>
+    </figure>
+  </div>
+  </div>
+</section>
+
+<section id="pillars" class="section u-container section--feature">
+        <div class="section__heading">
+          <h2 id="pillars">Pillars</h2>
+        </div>
+  <div class="section__content u-grid u-grid--trio">
+      <section class="info-block">
+      <div class="info-block__content">
+        <h3 id="conferences">Conferences</h3>
+<p>For over two decades, Ruby Central has brought the Ruby community together through world-class events. We organize RubyConf, the world’s largest Ruby conference. These events have shaped the ecosystem by inspiring innovation, nurturing talent, and connecting thousands of developers from around the world.</p>
+<p><small>Attend our upcoming conference, RubyConf 2026, on July 14-16 in Las Vegas, NV.</small></p>
+
+              <div class="info-block-feature">
+        <div class="info-block-feature__image">
+          <picture class="image ">
+  <img
+    srcset="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w100/2026/06/rubyconf-2026-og.png 100w,
+          https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w300/2026/06/rubyconf-2026-og.png 300w,
+          https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w500/2026/06/rubyconf-2026-og.png 500w,
+          https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w700/2026/06/rubyconf-2026-og.png 700w,
+          https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w1000/2026/06/rubyconf-2026-og.png 1000w,
+          https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w2000/2026/06/rubyconf-2026-og.png 2000w"
+      sizes="auto"
+      loading="lazy"
+    src="https://storage.ghost.io/c/17/0a/170a5cb5-5524-4ba0-93b6-f17fc9bacca6/content/images/size/w700/2026/06/rubyconf-2026-og.png"
+    alt="RubyConf 2026"
+  />
+</picture>
+        </div>
+      <div class="info-block-feature__content">
+        <p class="info-block-feature__label">Next up</p>
+        <p class="info-block-feature__title">RubyConf 2026</p>
+        <p class="info-block-feature__meta">July 14–16 in Las Vegas, NV</p>
+          <div class="cta-buttons">
+    <div class="cta-buttons__button cta-buttons__secondary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://ti.to/rubyconf/rubyconf-2026?ref=rubycentral.org" class="kg-btn kg-btn-accent">Register</a></div>
+    </div>
+</div>
+      </div>
+    </div>
+      </div>
+</section>
+  <section class="info-block">
+      <div class="info-block__content">
+        <h3 id="open-source">Open source</h3><h4 id="the-infrastructure-ruby-runs-on">The infrastructure Ruby runs on</h4><p>RubyGems, Bundler, and RubyGems.org power millions of applications and 250 billion gem downloads. We keep them secure, fast, and available because the ecosystem depends on it.</p>
+            <div class="cta-buttons">
+    <div class="cta-buttons__button cta-buttons__secondary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://rubycentral.org/programs" class="kg-btn kg-btn-accent">Learn about our programs</a></div>
+    </div>
+</div>
+                </div>
+</section>
+  <section class="info-block">
+      <div class="info-block__content">
+        <h3 id="community">Community</h3><h4 id="built-by-rubyists-for-rubyists">Built by Rubyists, for Rubyists</h4><p>From local meetup grants spanning 5 continents to the Scholars and Guides program that opens conference doors for new developers, Ruby Central exists to make this community stronger, more inclusive, and more connected.</p>
+          <div class="cta-buttons">
+    <div class="cta-buttons__button cta-buttons__primary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://rubycentral.org/community" class="kg-btn kg-btn-accent">Get involved</a></div>
+    </div>
+</div>
+                </div>
+</section>
+  </div>
+</section>
+
+<section class="u-container">
+  <aside class="cta" aria-label="Transparency and governance">
+    <div class="cta__inner">
+          <p>Ruby Central is committed to open governance, financial transparency, and earning the trust of the community we serve.</p>
+      <div class="cta-buttons">
+    <div class="cta-buttons__button cta-buttons__primary">
+          <div class="kg-card kg-button-card kg-align-left"><a href="https://rubycentral.org/content/files/2026/01/2022-2024-RC-Annual-Report.pdf" class="kg-btn kg-btn-accent">Read our latest annual report</a></div>
+    </div>
+</div>
+    </div>
+  </aside>
+</section>
+
+    </main>
+
+    <footer class="global-footer">
+  <div class="global-footer__inner u-container u-grid">
+
+  <a href="/" class="global-footer__logo"><svg xmlns="http://www.w3.org/2000/svg" width="291" height="75" viewBox="0 0 291 75" role="img" aria-labelledby="logo-title" fill="currentColor">
+  <title id="logo-title">Ruby Central</title>
+  <path d="M43.84 27.554c1.39 0 2.675.808 3.276 2.064l2.626 5.48a3.62 3.62 0 0 1-.58 4.008l-8.993 9.938a3.6 3.6 0 0 1-2.695 1.197 3.6 3.6 0 0 1-2.694-1.197l-8.993-9.938a3.62 3.62 0 0 1-.581-4.009l2.626-5.48a3.65 3.65 0 0 1 3.276-2.061h12.73M31.11 23.645a7.54 7.54 0 0 0-6.8 4.282l-2.627 5.48a7.54 7.54 0 0 0 1.21 8.32l8.992 9.938a7.52 7.52 0 0 0 5.591 2.482 7.51 7.51 0 0 0 5.592-2.482l8.993-9.938a7.55 7.55 0 0 0 1.209-8.32l-2.626-5.48a7.55 7.55 0 0 0-6.801-4.282zM62.243 23.037l-.56 4.531-.786-.613-.26-.203a29 29 0 0 1-.524-.417 71 71 0 0 1-11.428-11.428 30 30 0 0 1-.418-.526l-.203-.259-6.77-8.677a5.7 5.7 0 0 0-3.906-1.536 5.7 5.7 0 0 0-3.908 1.536L31.377 8.14q-.532-.046-1.063-.103-.492-.053-.987-.115l-2.497-.307 3.736-4.789A9.62 9.62 0 0 1 37.388 0c2.47 0 4.938.943 6.822 2.826l3.735 4.789.613.784 2.792 3.579a68 68 0 0 0 1.273 1.58 66.928 66.928 0 0 0 8.057 8.176c.258.225.517.443.779.662q.388.32.784.64"/>
+  <path d="m62.243 23.037-.56 4.531-.786-.613-.26-.203a29 29 0 0 1-.524-.417 71 71 0 0 1-11.428-11.428 30 30 0 0 1-.418-.526l-.203-.259-6.77-8.677a5.7 5.7 0 0 0-3.906-1.536 5.7 5.7 0 0 0-3.908 1.536L31.377 8.14q-.532-.046-1.063-.103-.492-.053-.987-.115l-2.497-.307 3.736-4.789A9.62 9.62 0 0 1 37.388 0c2.47 0 4.938.943 6.822 2.826l3.735 4.789.613.784 2.792 3.579a68 68 0 0 0 1.273 1.58 66.928 66.928 0 0 0 8.057 8.176c.258.225.517.443.779.662q.388.32.784.64M23.036 12.774l4.532.56-.613.786-.203.259q-.205.265-.418.525a71 71 0 0 1-11.427 11.428q-.261.213-.526.418l-.259.202-5.181 4.04-3.496 2.73a5.7 5.7 0 0 0-1.536 3.906c0 1.463.544 2.844 1.536 3.909L8.14 43.64q-.046.53-.103 1.063-.054.492-.115.986l-.307 2.497-4.789-3.735A9.62 9.62 0 0 1 0 37.628c0-2.47.943-4.937 2.826-6.82l4.789-3.736.784-.613 3.579-2.792a70 70 0 0 0 1.58-1.273q.39-.324.78-.66a67 67 0 0 0 7.396-7.397c.225-.258.443-.518.663-.779q.32-.388.64-.784"/>
+  <path d="m23.036 12.774 4.532.56-.613.786-.203.259q-.205.265-.418.525a71 71 0 0 1-11.427 11.428q-.261.213-.526.418l-.259.202-5.181 4.04-3.496 2.73a5.7 5.7 0 0 0-1.536 3.906c0 1.463.544 2.844 1.536 3.909L8.14 43.64q-.046.53-.103 1.063-.054.492-.115.986l-.307 2.497-4.789-3.735A9.62 9.62 0 0 1 0 37.628c0-2.47.943-4.937 2.826-6.82l4.789-3.736.784-.613 3.579-2.792a70 70 0 0 0 1.58-1.273q.39-.324.78-.66a67 67 0 0 0 7.396-7.397c.225-.258.443-.518.663-.779q.32-.388.64-.784M51.982 62.492l-4.531-.56.613-.786.203-.26q.205-.263.418-.524a71 71 0 0 1 11.428-11.428q.26-.213.525-.418l.259-.203 8.677-6.77a5.7 5.7 0 0 0 1.536-3.905 5.7 5.7 0 0 0-1.536-3.909l-2.694-2.103c.029-.355.066-.709.102-1.063q.054-.491.115-.987l.308-2.497 4.787 3.736a9.62 9.62 0 0 1 2.827 6.823c0 2.47-.943 4.937-2.827 6.82l-4.787 3.736-.784.613-3.58 2.792a68 68 0 0 0-1.58 1.273q-.39.324-.78.66a67 67 0 0 0-7.397 7.397q-.334.386-.661.779-.32.388-.64.784"/>
+  <path d="m51.982 62.492-4.531-.56.613-.786.203-.26q.205-.263.418-.524a71 71 0 0 1 11.428-11.428q.26-.213.525-.418l.259-.203 8.677-6.77a5.7 5.7 0 0 0 1.536-3.905 5.7 5.7 0 0 0-1.536-3.909l-2.694-2.103c.029-.355.066-.709.102-1.063q.054-.491.115-.987l.308-2.497 4.787 3.736a9.62 9.62 0 0 1 2.827 6.823c0 2.47-.943 4.937-2.827 6.82l-4.787 3.736-.784.613-3.58 2.792a68 68 0 0 0-1.58 1.273q-.39.324-.78.66a67 67 0 0 0-7.397 7.397q-.334.386-.661.779-.32.388-.64.784M12.537 51.983l.56-4.532.786.613.259.203q.265.205.525.418c4.227 3.359 8.07 7.199 11.428 11.428q.212.261.418.525l.203.259 4.04 5.182 2.73 3.495a5.7 5.7 0 0 0 3.905 1.537 5.7 5.7 0 0 0 3.909-1.537l2.103-2.695q.532.046 1.063.103.491.054.987.115l2.496.308-3.735 4.788a9.62 9.62 0 0 1-6.823 2.826 9.61 9.61 0 0 1-6.82-2.826l-3.735-4.788-.614-.784-2.792-3.58a72 72 0 0 0-.633-.798q-.318-.393-.64-.782a49 49 0 0 0-.66-.78 67 67 0 0 0-7.396-7.396c-.26-.225-.518-.442-.78-.662q-.388-.32-.784-.64"/>
+  <path d="m12.537 51.983.56-4.532.786.613.259.203q.265.205.525.418c4.227 3.359 8.07 7.199 11.428 11.428q.212.261.418.525l.203.259 4.04 5.182 2.73 3.495a5.7 5.7 0 0 0 3.905 1.537 5.7 5.7 0 0 0 3.909-1.537l2.103-2.695q.532.046 1.063.103.491.054.987.115l2.496.308-3.735 4.788a9.62 9.62 0 0 1-6.823 2.826 9.61 9.61 0 0 1-6.82-2.826l-3.735-4.788-.614-.784-2.792-3.58a72 72 0 0 0-.633-.798q-.318-.393-.64-.782a49 49 0 0 0-.66-.78 67 67 0 0 0-7.396-7.396c-.26-.225-.518-.442-.78-.662q-.388-.32-.784-.64M44.73 9.737l2.809 3.601-.99.122-.327.04q-.333.04-.667.075a71 71 0 0 1-16.162 0 31 31 0 0 1-.667-.075l-.327-.04-10.922-1.348a5.69 5.69 0 0 0-3.848 1.676 5.72 5.72 0 0 0-1.678 3.85l.417 3.393c-.27.23-.547.455-.823.68-.256.204-.515.412-.78.615l-1.983 1.549-.745-6.027a9.62 9.62 0 0 1 2.827-6.823 9.61 9.61 0 0 1 6.82-2.824l6.027.745.987.12 4.504.554q.51.062 1.012.117.502.053 1.006.1a66.752 66.752 0 0 0 11.477.085c.342-.023.68-.053 1.019-.082.332-.032.67-.066 1.006-.103z"/>
+  <path d="m44.73 9.737 2.809 3.601-.99.122-.327.04q-.333.04-.667.075a71 71 0 0 1-16.162 0 31 31 0 0 1-.667-.075l-.327-.04-10.922-1.348a5.69 5.69 0 0 0-3.848 1.676 5.72 5.72 0 0 0-1.678 3.85l.417 3.393c-.27.23-.547.455-.823.68-.256.204-.515.412-.78.615l-1.983 1.549-.745-6.027a9.62 9.62 0 0 1 2.827-6.823 9.61 9.61 0 0 1 6.82-2.824l6.027.745.987.12 4.504.554q.51.062 1.012.117.502.053 1.006.1a66.752 66.752 0 0 0 11.477.085c.342-.023.68-.053 1.019-.082.332-.032.67-.066 1.006-.103zM9.576 30.375l3.601-2.809.122.99.04.326q.04.334.075.667a71 71 0 0 1 0 16.163q-.034.333-.076.667l-.039.327-1.348 10.922a5.69 5.69 0 0 0 1.675 3.848 5.72 5.72 0 0 0 3.85 1.678l3.394-.418q.343.41.679.823c.205.257.413.516.615.78l1.55 1.984-6.027.745a9.62 9.62 0 0 1-6.823-2.827 9.61 9.61 0 0 1-2.824-6.82l.745-6.027.12-.987.554-4.505q.061-.51.117-1.01.052-.503.1-1.008a66.742 66.742 0 0 0 .086-11.477q-.039-.51-.083-1.018-.048-.5-.103-1.007z"/>
+  <path d="m9.576 30.375 3.601-2.809.122.99.04.326q.04.334.075.667a71 71 0 0 1 0 16.163q-.034.333-.076.667l-.039.327-1.348 10.922a5.69 5.69 0 0 0 1.675 3.848 5.72 5.72 0 0 0 3.85 1.678l3.394-.418q.343.41.679.823c.205.257.413.516.615.78l1.55 1.984-6.027.745a9.62 9.62 0 0 1-6.823-2.827 9.61 9.61 0 0 1-2.824-6.82l.745-6.027.12-.987.554-4.505q.061-.51.117-1.01.052-.503.1-1.008a66.742 66.742 0 0 0 .086-11.477q-.039-.51-.083-1.018-.048-.5-.103-1.007zM65.128 45.132l-3.601 2.81-.122-.99-.04-.327q-.04-.333-.075-.667a71 71 0 0 1 0-16.162q.035-.333.076-.667l.04-.327 1.348-10.923a5.7 5.7 0 0 0-1.676-3.847 5.72 5.72 0 0 0-3.85-1.678l-3.394.418a52 52 0 0 1-1.295-1.603l-1.548-1.984 6.027-.745a9.62 9.62 0 0 1 6.823 2.827 9.61 9.61 0 0 1 2.824 6.82l-.745 6.027-.12.987-.555 4.504q-.062.51-.117 1.012-.052.502-.1 1.006a66.737 66.737 0 0 0-.086 11.477q.039.512.083 1.019.048.5.103 1.006z"/>
+  <path d="m65.128 45.132-3.601 2.81-.122-.99-.04-.327q-.04-.333-.075-.667a71 71 0 0 1 0-16.162q.035-.333.076-.667l.04-.327 1.348-10.923a5.7 5.7 0 0 0-1.676-3.847 5.72 5.72 0 0 0-3.85-1.678l-3.394.418a52 52 0 0 1-1.295-1.603l-1.548-1.984 6.027-.745a9.62 9.62 0 0 1 6.823 2.827 9.61 9.61 0 0 1 2.824 6.82l-.745 6.027-.12.987-.555 4.504q-.062.51-.117 1.012-.052.502-.1 1.006a66.737 66.737 0 0 0-.086 11.477q.039.512.083 1.019.048.5.103 1.006zM30.221 65.524l-2.81-3.601.99-.123.328-.038q.333-.042.666-.076a71 71 0 0 1 16.163 0q.333.034.666.076l.328.038 10.922 1.349a5.69 5.69 0 0 0 3.848-1.676A5.72 5.72 0 0 0 63 57.623l-.418-3.393q.408-.343.824-.68c.256-.204.515-.412.779-.615l1.984-1.548.745 6.026a9.62 9.62 0 0 1-2.827 6.824 9.61 9.61 0 0 1-6.82 2.823l-6.027-.745-.987-.12-4.505-.554q-.51-.062-1.011-.117-.502-.053-1.007-.1a66.808 66.808 0 0 0-11.477-.085c-.341.023-.678.053-1.018.082-.332.032-.67.066-1.006.103zM287.319 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V26.15q0-.345.241-.585.24-.24.585-.241h2.855q.345 0 .585.24.241.241.241.586v22.775q0 .344-.241.585a.8.8 0 0 1-.585.24zM273.031 50.096q-1.788 0-3.234-.688-1.444-.723-2.305-1.893a4.64 4.64 0 0 1-.825-2.683q0-2.409 1.926-3.819 1.962-1.444 5.161-1.927l4.713-.688v-.722q0-1.445-.722-2.236-.723-.792-2.478-.792-1.238 0-2.029.516a3 3 0 0 0-1.136 1.308.88.88 0 0 1-.791.447h-2.718q-.378 0-.585-.206-.172-.208-.172-.55.034-.551.448-1.343.413-.791 1.307-1.513.894-.758 2.305-1.273 1.41-.516 3.406-.516 2.167 0 3.647.55 1.514.516 2.408 1.41a5.4 5.4 0 0 1 1.307 2.1q.413 1.203.413 2.545v10.803q0 .344-.241.585a.8.8 0 0 1-.585.24h-2.786a.84.84 0 0 1-.62-.24.87.87 0 0 1-.206-.585v-1.342q-.447.654-1.204 1.239-.757.55-1.858.929-1.067.344-2.546.344m1.17-3.269q1.204 0 2.167-.516.999-.516 1.549-1.582.584-1.101.584-2.753v-.722l-3.44.55q-2.03.31-3.027.998-.999.688-.998 1.686 0 .756.447 1.307.482.516 1.204.791.722.241 1.514.241M254.929 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V32.722q0-.379.241-.62.24-.24.585-.24h2.786q.345 0 .585.24.275.241.275.62v1.41a5.2 5.2 0 0 1 2.03-1.685q1.274-.585 2.925-.585h1.41q.378 0 .585.24.241.242.241.585v2.477q0 .345-.241.585-.207.24-.585.241h-2.683q-1.651 0-2.581.929-.894.93-.894 2.546v9.46q0 .345-.241.586a.84.84 0 0 1-.619.24zM247.783 49.752q-2.065 0-3.475-.723a4.6 4.6 0 0 1-2.099-2.133q-.687-1.445-.688-3.578v-7.81h-2.718a.8.8 0 0 1-.584-.24.8.8 0 0 1-.241-.585v-1.996q0-.344.241-.584.24-.241.584-.241h2.718V26.15q0-.345.207-.585.24-.24.619-.241h2.787q.343 0 .585.24.24.241.24.586v5.71h4.301q.344 0 .585.241.24.242.241.585v1.996q0 .344-.241.585a.8.8 0 0 1-.585.24h-4.301v7.466q0 1.41.482 2.202.516.79 1.755.791h2.373q.345 0 .585.241.241.24.241.585v2.133q0 .344-.241.585a.8.8 0 0 1-.585.24zM219.944 49.752a.8.8 0 0 1-.584-.241.8.8 0 0 1-.241-.585V32.687q0-.344.241-.584.24-.241.584-.241h2.822q.344 0 .584.24.241.242.241.585v1.41q.895-1.1 2.271-1.822 1.41-.757 3.475-.757 2.098 0 3.646.963 1.55.93 2.374 2.649.86 1.72.86 4.128v9.668q0 .344-.24.585a.8.8 0 0 1-.585.24h-3.028a.8.8 0 0 1-.585-.24.8.8 0 0 1-.241-.585v-9.461q0-1.996-.997-3.13-.964-1.137-2.821-1.136-1.79 0-2.856 1.135t-1.066 3.13v9.462q0 .344-.241.585a.8.8 0 0 1-.585.24zM208.001 50.096q-3.819 0-6.055-2.202-2.237-2.202-2.408-6.262a9 9 0 0 1-.035-.86q0-.55.035-.86.137-2.58 1.17-4.472 1.066-1.893 2.924-2.89 1.858-1.032 4.369-1.032 2.787 0 4.679 1.17 1.891 1.135 2.856 3.199.963 2.03.963 4.713v.723q0 .344-.241.584a.84.84 0 0 1-.619.241h-11.422v.276q.035 1.204.447 2.236a4.04 4.04 0 0 0 1.273 1.617q.86.62 2.03.62.963 0 1.617-.276a4.3 4.3 0 0 0 1.066-.688q.413-.378.585-.62.31-.412.482-.481.206-.103.585-.103h2.958q.344 0 .551.206.24.207.206.516-.034.55-.585 1.342-.516.79-1.513 1.548-.999.757-2.512 1.273-1.479.482-3.406.482m-3.784-10.838h7.603v-.103q0-1.341-.447-2.34a3.7 3.7 0 0 0-1.308-1.582q-.86-.585-2.064-.585t-2.064.585a3.7 3.7 0 0 0-1.307 1.583q-.414.997-.413 2.34zM187.167 50.096q-3.2 0-5.436-1.101-2.202-1.136-3.372-3.2-1.169-2.098-1.307-5.023-.034-1.41-.034-3.027t.034-3.097q.138-2.89 1.307-4.988 1.205-2.1 3.406-3.2 2.237-1.135 5.402-1.135 2.34 0 4.197.62 1.858.618 3.165 1.72a7.6 7.6 0 0 1 2.03 2.51q.723 1.446.757 3.132a.56.56 0 0 1-.207.516.7.7 0 0 1-.516.206h-3.268q-.379 0-.619-.172-.241-.206-.344-.654-.55-2.27-1.892-3.096-1.342-.825-3.338-.826-2.304 0-3.681 1.308-1.375 1.272-1.479 4.231a81 81 0 0 0 0 5.78q.104 2.96 1.479 4.266 1.377 1.273 3.681 1.273 1.996 0 3.338-.826 1.341-.86 1.892-3.096.103-.48.344-.654.24-.172.619-.172h3.268q.31 0 .516.207.242.207.207.516a7.2 7.2 0 0 1-.757 3.13 8 8 0 0 1-2.03 2.547q-1.307 1.066-3.165 1.685-1.858.62-4.197.62M153.989 56.288a.66.66 0 0 1-.482-.206.66.66 0 0 1-.206-.482v-.275a1.5 1.5 0 0 1 .137-.275l2.684-6.365-6.606-15.585q-.137-.344-.137-.482a.84.84 0 0 1 .24-.516q.207-.24.517-.24h2.786q.413 0 .62.206.206.207.309.447l4.576 11.25 4.713-11.25q.103-.274.31-.447.206-.206.619-.206h2.752a.66.66 0 0 1 .482.206.62.62 0 0 1 .241.482q0 .205-.138.55l-9.736 22.535a1.4 1.4 0 0 1-.344.447q-.207.206-.619.206zM141.302 50.096q-1.996 0-3.337-.688a6.8 6.8 0 0 1-2.168-1.755v1.273q0 .344-.24.585-.207.24-.585.24h-2.718a.8.8 0 0 1-.585-.24.8.8 0 0 1-.241-.585V26.15q0-.345.241-.585.24-.24.585-.241h2.924q.378 0 .585.24.24.241.241.586v7.637a6.6 6.6 0 0 1 2.133-1.617q1.306-.654 3.165-.653 1.824 0 3.165.619a6 6 0 0 1 2.236 1.755 7.6 7.6 0 0 1 1.411 2.58q.482 1.48.516 3.2.034.618.034 1.135 0 .481-.034 1.1-.069 1.79-.551 3.303-.481 1.48-1.376 2.58a6.15 6.15 0 0 1-2.236 1.72q-1.341.585-3.165.586m-1.273-3.682q1.48 0 2.305-.619.825-.654 1.17-1.686a7.8 7.8 0 0 0 .447-2.27q.069-1.032 0-2.064a7.8 7.8 0 0 0-.447-2.271 3.33 3.33 0 0 0-1.17-1.651q-.825-.654-2.305-.654-1.376 0-2.236.62a4 4 0 0 0-1.308 1.582 4.85 4.85 0 0 0-.481 1.96q-.035.62-.035 1.342 0 .69.035 1.308a7.5 7.5 0 0 0 .447 2.098q.413.999 1.273 1.652.894.653 2.305.653M117.698 50.096q-2.099 0-3.647-.93-1.514-.962-2.34-2.683-.825-1.755-.825-4.128v-9.668q0-.344.241-.584.24-.241.584-.241h3.028q.378 0 .585.24.24.242.241.585v9.461q0 4.266 3.75 4.266 1.788 0 2.821-1.135 1.066-1.135 1.066-3.13v-9.462q0-.344.241-.584a.8.8 0 0 1 .585-.241h3.027q.345 0 .585.24.241.242.241.585v16.239q0 .344-.241.585a.8.8 0 0 1-.585.24h-2.786a.84.84 0 0 1-.62-.24.87.87 0 0 1-.206-.585v-1.41a6.6 6.6 0 0 1-2.305 1.892q-1.376.688-3.44.688M90.18 49.752a.8.8 0 0 1-.585-.241.8.8 0 0 1-.241-.585V26.529q0-.378.24-.62.241-.24.586-.24h8.91q4.163 0 6.571 1.927 2.408 1.926 2.408 5.607 0 2.547-1.273 4.232-1.238 1.686-3.337 2.443l5.023 8.773a.85.85 0 0 1 .103.378q0 .309-.24.516a.66.66 0 0 1-.482.207h-3.131q-.585 0-.894-.31a2.8 2.8 0 0 1-.482-.62l-4.438-8.153h-4.782v8.257q0 .344-.24.585-.208.24-.586.24zm3.956-12.97h4.85q2.1 0 3.132-.93 1.032-.963 1.032-2.683t-1.032-2.683q-.999-.999-3.131-.998h-4.851z"/>
+</svg>
+</a>
+
+  <div class="global-footer__links">
+    <section class="global-footer__section">
+      <h2 class="global-footer__heading">Ecosystem</h2>
+      <nav class="global-footer__nav" aria-label="Ecosystem">
+              <ul><li><a href="https://www.ruby-lang.org/?ref=rubycentral.org">Ruby Programming Language</a></li><li><a href="https://railsfoundation.org/?ref=rubycentral.org">Rails Foundation</a></li><li><a href="https://rubygems.org/?ref=rubycentral.org">RubyGems.org</a></li><li><a href="https://bundler.io/?ref=rubycentral.org">Bundler</a></li></ul>
+      </nav>
+    </section>
+
+    <section class="global-footer__section">
+      <h2 class="global-footer__heading">Ruby Central</h2>
+      <nav class="global-footer__nav" aria-label="Ruby Central">
+              <ul><li><a href="https://rubycentral.org/about/">About</a></li><li><a href="https://rubycentral.org/about/#governance-and-finances">Governance</a></li><li><a href="https://rubycentral.org/about/#board-of-directors">Board and Staff</a></li><li><a href="https://rubycentral.org/about/#governance-and-finances">Finances and annual reports</a></li><li><a href="https://rubycentral.org/content/files/2026/06/Ruby-Central-Bylaws--2026.06.05-.pdf">Bylaws</a></li><li><a href="https://rubycentral.org/news/">News</a></li></ul>
+      </nav>
+    </section>
+
+    <section class="global-footer__section">
+      <h2 class="global-footer__heading">Get involved</h2>
+      <nav class="global-footer__nav" aria-label="Get involved">
+            <ul><li><a href="https://rubycentral.org/sponsors/">Sponsorships</a></li><li><a href="https://donate.stripe.com/3cs5ncgyfcAsgjC7sw?ref=rubycentral.org">Donate</a></li><li><a href="https://rubycentral.org/community/">Community</a></li><li><a href="https://rubycentral.org/events/">Events</a></li><li><a href="https://rubycentral.org/programs/">Programs</a></li></ul>
+      </nav>
+    </section>
+
+    <section class="global-footer__section">
+      <h2 class="global-footer__heading">Follow us</h2>
+      <nav class="global-footer__nav" aria-label="Follow us">
+            <ul><li><a href="https://bsky.app/profile/rubycentral.org?ref=rubycentral.org">BlueSky</a></li><li><a href="https://www.linkedin.com/company/ruby-central-inc?ref=rubycentral.org">LinkedIn</a></li><li><a href="https://ruby.social/@rubycentral?ref=rubycentral.org">Mastodon</a></li><li><a href="https://rubycentralcommunity.slack.com/?ref=rubycentral.org">Slack</a></li><li><a href="https://www.youtube.com/@RubyCentral?ref=rubycentral.org">YouTube</a></li><li><a href="https://x.com/rubycentralorg?ref=rubycentral.org">X</a></li></ul>
+      </nav>
+    </section>
+  </div>
+
+  <section class="global-footer__newsletter">
+    <h2 class="heading-subsection u-grid-span-7">Subscribe to our newsletter</h2>
+    <form
+      action="https://rubycentral.us13.list-manage.com/subscribe/post?u=e7e9b891a6914ff2f5acdfd15&amp;id=0a6a1336c5&amp;v_id=5118&amp;f_id=008ef4e7f0"
+      autocomplete="off"
+      class="global-footer__newsletter-form u-grid-span-3"
+      method="post"
+    >
+      <label for="global-footer-newsletter-email" class="u-grid-span-2">
+        <span>Your email address</span>
+        <input
+          autocapitalize="off"
+          autocomplete="email"
+          autocorrect="off"
+          data-lpignore="true"
+          data-1p-ignore
+          id="global-footer-newsletter-email"
+          name="EMAIL"
+          required
+          spellcheck="false"
+          type="email"
+        />
+      </label>
+      <button type="submit" class="button button--inverted">Sign up</button>
+    </form>
+  </section>
+
+  <section class="global-footer__section--bottom">
+    <small class="global-footer__copyright">©<time datetime="2026">2026</time> Ruby Central. All Rights Reserved.</small>
+    <nav class="global-footer__nav" aria-label="Legal">
+          <ul><li><a href="mailto:contact@rubycentral.org">Contact us</a></li><li><a href="https://rubycentral.org/privacy-notice/">Privacy notice</a></li></ul>
+    </nav>
+  </section>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Title: Vercel Security Checkpoint
+
+URL Source: https://www.contentful.com/partners/solutions/
+
+Warning: Target URL returned error 429: Too Many Requests
+
+Markdown Content:
+Vercel Security Checkpoint
+
+|
+
+pdx1::1790267685-X1M0RptdhgpXDoQZpFFYo8rwn88eI3yL
