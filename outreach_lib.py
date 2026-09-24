@@ -12,6 +12,8 @@ TEMPLATES = os.path.join(PIPE, "outreach", "templates")
 QUEUE = os.path.join(OUT, "queue")
 REJECTED = os.path.join(OUT, "rejected")
 BLOCKLIST = os.path.join(PIPE, "state", "blocklist.txt")
+# orgs contacted outside this pipeline (first column = org); they count under one message per org ever
+CONTACTED = os.environ.get("OUTREACH_CONTACTED") or os.path.join(PIPE, "state", "contacted.tsv")
 HUMANIZE = os.path.join(PIPE, "tools", "humanize_scan.py")
 
 UNSUB = "If this is not relevant, reply 'no' and I will not write again."
@@ -83,6 +85,20 @@ def load_blocklist():
             ln = ln.strip()
             if ln and not ln.startswith("#"):
                 s.add(ln.lower())
+    return s
+
+
+def contacted_orgs():
+    """Orgs listed in state/contacted.tsv. A missing file means none; an unreadable one raises
+    so the builder fails closed instead of drafting to an org that was already emailed."""
+    s = set()
+    if os.path.exists(CONTACTED):
+        for ln in open(CONTACTED, encoding="utf-8"):
+            if not ln.strip() or ln.lstrip().startswith("#"):
+                continue
+            org = ln.split("\t")[0].strip().lower()
+            if org:
+                s.add(org)
     return s
 
 

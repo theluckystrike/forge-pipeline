@@ -29,6 +29,8 @@ CPLUS = re.compile(r'🎀\s*👀\s*🎀')
 ACCEPT = re.compile(r'proposal\s+(?:has\s+been\s+|is\s+)?accepted', re.I)
 OFFER = re.compile(r'@([\w-]+)[^\n]{0,40}\n?[^\n]{0,20}offer has been automatically sent to your Upwork account for the Contributor role', re.I)
 PROPOSAL = re.compile(r'^\s*#{1,4}\s*Proposal\b', re.M | re.I)
+HOLD_C = re.compile(r'^\W*(on hold|holding (this|on)|putting (this )?on hold|placing (this )?on hold)', re.I)
+PICK_C = re.compile(r"(let'?s go with|we should (proceed|go) with|proposal (looks good|lgtm)|i (have )?selected|selected .{0,40}proposal)", re.I)
 FIXED = re.compile(r'(appears to be|has been|is already|already) fixed|no longer reproduc', re.I)
 BOUNTY_TITLE = re.compile(r'\[\$\s?(\d[\d,]*)\]')
 BOUNTY_LABEL = re.compile(r'^\$\s?(\d[\d,]*)$')
@@ -97,7 +99,19 @@ def taken_reason(issue, det):
     if 'due for payment' in t.lower():
         return 'due-for-payment'
     comments = det['comments']['nodes'] if det else []
+    assignees = {a['login'] for a in (det['assignees']['nodes'] if det else issue['assignees'])}
     proposers, offered = set(), set()
+    last_hold = last_pick = None
+    for k, c in enumerate(comments):
+        who = (c['author'] or {}).get('login', '')
+        if who in assignees and HOLD_C.search(c['body'] or ''):
+            last_hold = k
+        if who in assignees and PICK_C.search(c['body'] or '') and not PROPOSAL.search(c['body'] or ''):
+            last_pick = k
+    if last_pick is not None:
+        return 'reviewer-selected'
+    if last_hold is not None:
+        return 'hold-comment'
     for c in comments:
         b = c['body'] or ''
         who = (c['author'] or {}).get('login', '')

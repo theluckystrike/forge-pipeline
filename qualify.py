@@ -6,6 +6,7 @@ Modes
   qualify.py --batch 15 --from-db [--limit N]
                                         qualify targets rows with B IS NULL (15 repos per GraphQL
                                         query), then compute L for rows with B >= 0.4 and L IS NULL
+  qualify.py --rescore                  recompute B, R from saved raw evidence (no API calls)
   qualify.py --lane L2 --seed seed/locale_targets.json --limit 20
                                         print target ids: seed-study repos + English-only flagships,
                                         not hard-excluded, ranked by B then L
@@ -216,7 +217,13 @@ def ai_policy(text):
     ban = disc = False
     for h in hits:
         w = text[max(0, h - 300): h + 300]
-        if BAN_RE.search(w): ban = True
+        for b in BAN_RE.finditer(w):
+            pre, post = w[max(0, b.start() - 30): b.start()], w[b.end(): b.end() + 12]
+            negated = not b.group(0).lower().startswith(("not", "won't", "will not", "do not", "don't")) and \
+                re.search(r"\b(not|no|never)\b|n't", pre, re.I)
+            if negated or re.match(r"\W{0,3}\s*No\b", post):
+                continue          # "does not prohibit", "not (yet) banned", "banned? No."
+            ban = True
         if DISC_RE.search(w): disc = True
     if ban: return "ban"
     if disc: return "disclosure"
@@ -300,6 +307,9 @@ def qualify_pairs(pairs, con, block_ents, refetch=False):
     gate(30)
     d = gql(batch_query(frag_b, pairs))
     data = d["data"]
+    errs = [e for e in d.get("errors", []) if e.get("type") != "NOT_FOUND"]
+    if errs:
+        raise SystemExit("STOP: B query returned errors (file-presence nulls would be unreliable): " + json.dumps(errs[:3])[:500])
     xs = [data.get(f"r{i}") for i in range(len(pairs))]
     urls = {}
     for x in xs:
@@ -317,7 +327,7 @@ def qualify_pairs(pairs, con, block_ents, refetch=False):
         R = 0.30 if c.get("our_merged_pr") else 0.0
         res = {"org": org, "repo": repo, "B": B, "R": R, **c}
         rec = {"org": org, "repo": repo, "qualified_at": TODAY.isoformat(timespec="seconds"),
-               "graphql_b": x, "graphql_errors": [e for e in d.get("errors", []) if f"r{pairs.index((org, repo))}" in json.dumps(e.get("path", []))],
+               "graphql_b": x, "graphql_errors": [e for e in d.get("errors", []) if (e.get("path") or [None])[0] == f"r{pairs.index((org, repo))}"],
                "rateLimit": data.get("rateLimit"), "web": site, "computed": res}
         json.dump(rec, open(raw_path(org, repo), "w"), indent=1)
         out.append(res)
@@ -331,10 +341,18 @@ def latency_pairs(pairs_pd, con=None):
     res = {}
     for i, (o, r, pdays) in enumerate(pairs_pd):
         y = d["data"].get(f"r{i}")
+        bad = [e for e in d.get("errors", []) if (e.get("path") or [None])[0] == f"r{i}"]
+        if bad or y is None or any(n is None for k in ("merged", "recent") for n in (y.get(k) or {}).get("nodes", [])):
+            # RESOURCE_LIMITS_EXCEEDED nulls PR nodes in heavy batches: re-ask this repo alone
+            print(f"  L retry alone {o}/{r}: {bad[0].get('type') if bad else 'null nodes'}", flush=True)
+            d1 = gql(batch_query(frag_l, [(o, r)]))
+            y = d1["data"].get("r0")
+            if y is None or d1.get("errors") or any(n is None for k in ("merged", "recent") for n in (y.get(k) or {}).get("nodes", [])):
+                raise SystemExit(f"STOP: L query still incomplete for {o}/{r}: {json.dumps(d1.get('errors'))[:300]}")
         L, info = compute_l(y, pdays)
         p = raw_path(o, r)
         rec = json.load(open(p)) if os.path.exists(p) else {"org": o, "repo": r}
-        rec["graphql_l"] = y; rec["latency"] = info; rec["computed"]["L"] = L
+        rec["graphql_l"] = y; rec["latency"] = info; rec["latency_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"); rec["computed"]["L"] = L
         json.dump(rec, open(p, "w"), indent=1)
         res[(o, r)] = (L, info)
     return res
@@ -362,9 +380,10 @@ def run_batch(size, limit):
     # L phase for rows passing the B gate
     lrows = con.execute("select org, repo from targets where B >= 0.4 and L is null order by id").fetchall()
     print(f"L phase: {len(lrows)} rows with B >= 0.4 and L IS NULL", flush=True)
-    for i in range(0, len(lrows), size):
+    lsize = min(size, 5)
+    for i in range(0, len(lrows), lsize):
         chunk = []
-        for o, r in lrows[i:i + size]:
+        for o, r in lrows[i:i + lsize]:
             rec = json.load(open(raw_path(o, r)))
             chunk.append((o, r, rec["computed"].get("pushed_days", 9999)))
         lres = latency_pairs(chunk)
@@ -372,7 +391,7 @@ def run_batch(size, limit):
             B, R = con.execute("select B, R from targets where org=? and repo=?", (o, r)).fetchone()
             con.execute("update targets set L=?, score=? where org=? and repo=?", (L, round(B * R * L, 4), o, r))
         con.commit()
-        print(f"  L {min(i+size, len(lrows))}/{len(lrows)}  points used {BUD['graphql_points']}", flush=True)
+        print(f"  L {min(i+lsize, len(lrows))}/{len(lrows)}  points used {BUD['graphql_points']}", flush=True)
     # rows below the gate: score = 0 (B*R*L with L not computed)
     con.execute("update targets set score=0 where B is not null and B < 0.4 and score is null")
     con.commit()
@@ -397,6 +416,29 @@ def run_single(full, write=False, refetch=False):
             con.execute("update targets set L=?, score=? where org=? and repo=?", (res["L"], res["score"], org, repo))
         con.commit()
     print(json.dumps(res, indent=1, default=str))
+
+def run_rescore():
+    """Recompute B and R from state/qualify-raw + state/qualify-web (no API calls)."""
+    con = sqlite3.connect(DB, timeout=30)
+    ents, src = blocklist()
+    n = 0
+    for org, repo in con.execute("select org, repo from targets where B is not null").fetchall():
+        p = raw_path(org, repo)
+        if not os.path.exists(p): continue
+        rec = json.load(open(p)); x = rec.get("graphql_b")
+        site = fetch_site(site_url(x)) if x and x["owner"]["__typename"] == "Organization" and site_url(x) else None
+        B, c = compute_b(org, repo, x, site, ents, con)
+        R = 0.30 if c.get("our_merged_pr") else 0.0
+        res = {"org": org, "repo": repo, "B": B, "R": R, **c}
+        if "L" in rec.get("computed", {}): res["L"] = rec["computed"]["L"]
+        rec["computed"] = res
+        json.dump(rec, open(p, "w"), indent=1)
+        write_row(con, res)
+        L = con.execute("select L from targets where org=? and repo=?", (org, repo)).fetchone()[0]
+        con.execute("update targets set score=? where org=? and repo=?", (round(B * R * L, 4) if L is not None else 0, org, repo))
+        n += 1
+    con.commit()
+    print(f"rescored {n} rows from raw evidence (blocklist {src})")
 
 def flagship_set():
     try: return {v["fullName"].lower() for v in json.load(open(FLAGSHIP_FILE)).values()}
@@ -440,6 +482,8 @@ def main():
         return a[a.index(name) + 1] if name in a and a.index(name) + 1 < len(a) else default
     if "--lane" in a:
         return run_lane(opt("--lane"), opt("--seed"), opt("--filter"), int(opt("--limit", "0")))
+    if "--rescore" in a:
+        return run_rescore()
     if "--batch" in a:
         return run_batch(int(opt("--batch", "15")), opt("--limit"))
     pos = [x for x in a if "/" in x and not x.startswith("-")]

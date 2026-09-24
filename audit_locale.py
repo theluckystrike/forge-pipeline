@@ -99,7 +99,7 @@ nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl
 ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu in ua""".split())
 ISO3 = set("fil kab ckb yue ast zgh tzm ber sat szl hsb dsb nds gsw bar fur haw lij vec scn tok chr ceb hil ilo arq ary arz "
            "tlh sco frp kmr mai mni sah nqo gom kok brx doi".split())
-LANG_RE = re.compile(r'^([A-Za-z]{2,3})(?:[-_]([A-Za-z]{4}))?(?:[-_]([A-Za-z]{2}|\d{3}))?(@\w+)?$')
+LANG_RE = re.compile(r'^([A-Za-z]{2,3})(?:[-_]([A-Za-z]{4}))?(?:[-_]([A-Za-z]{2}|\d{3})|(?<=[a-z])([A-Z]{2}))?(@\w+)?$')
 
 def norm_lang(tok):
     """Return a normalised code like 'pt-BR' / 'zh-Hans' / 'de' if tok is a language tag, else None."""
@@ -114,10 +114,10 @@ def norm_lang(tok):
     out = base
     if m.group(2):
         out += "-" + m.group(2).title()
-    if m.group(3):
-        out += "-" + m.group(3).upper()
-    if m.group(4):
-        out += m.group(4)
+    if m.group(3) or m.group(4):
+        out += "-" + (m.group(3) or m.group(4)).upper()
+    if m.group(5):
+        out += m.group(5)
     return out
 
 def split_lang(stem):
@@ -483,11 +483,19 @@ def discover_groups(paths):
         g["langs"].setdefault(code, []).append(p)
     # source without a language tag: messages.properties, messages.xlf, main.pot, messages.pot
     for gid, g in list(groups.items()):
-        if any(is_en(c) for c in g["langs"]):
-            continue
         d = g["dir"]; pat = g["pattern"]
         pre, _, rest = pat.partition("<lang>")
         ext = rest.rsplit('.', 1)[-1]
+        if ext.lower() in ("xlf", "xliff"):
+            # Angular/XLIFF: the untranslated source (messages.xlf) often sits outside the locale dir
+            base = f"{pre.rstrip('._-')}{rest}".lstrip('/')
+            hits = sorted((p for p in paths_set_cache if p.rsplit('/', 1)[-1] == base and not SKIP_SEG.search(p)),
+                          key=lambda p: (0 if p.startswith(d) else 1, abs(p.count('/') - d.count('/'))))
+            if hits:
+                g["langs"]["en"] = [hits[0]]; g["src_untagged"] = True
+                continue
+        if any(is_en(c) for c in g["langs"]):
+            continue
         cands = [f"{d}/{pre.rstrip('._-')}{rest}", f"{d}/{pre.rstrip('._-')}.{ext}"]
         cands += [f"{d}/{x}" for x in ("main.pot", "messages.pot", "django.pot", "default.pot")]
         for c in cands:
@@ -530,8 +538,6 @@ def discover_groups(paths):
     out = {}
     for gid, g in groups.items():
         codes = list(g["langs"])
-        if len(codes) < 3:
-            continue
         src = next((c for c in SRC_PREF if c in g["langs"]), None) or next((c for c in codes if is_en(c)), None)
         if not src:
             continue
@@ -626,12 +632,12 @@ def measure_group(repo, ref, g, ref_mode=False, fetch_cap=1500, seed=1):
             "n_locales_total": len(g["langs"]), "n_locales_measured": len(out), "sampled": sampled,
             "en_variants_skipped": sorted(c for c in locales if is_en(c)), "locales": out, "raw_fetches": len(fetched)}
 
-def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_groups=6):
+def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_groups=6, ref=None):
     if meta is None or tree is None:
         meta, tree = repo_meta_and_tree(repo)
     if not meta or not tree:
         return {"repo": repo, "err": "no meta or tree"}
-    ref = tree.get("sha") or meta["default_branch"]
+    pinned = ref
     paths = [t["path"] for t in tree["tree"] if t["type"] == "blob"]
     global paths_set_cache
     paths_set_cache = set(paths)
@@ -639,12 +645,28 @@ def audit(repo, meta=None, tree=None, ref_mode=False, group_hint=None, max_group
          "n_files": len(paths), "measured_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
          "definition": "gap = missing or empty or byte-identical to English" + ("" if ref_mode else " (identical skipped when English value is under 3 chars, a URL, email, number or placeholder-only)")}
     # the raw ref must be a commit or branch; tree sha does not work on raw.githubusercontent, so use the branch
-    ref = meta["default_branch"]
+    ref = pinned or meta["default_branch"]
+    o["ref"] = ref
     groups = discover_groups(paths)
     if group_hint:
         groups = {k: v for k, v in groups.items() if group_hint in k or any(group_hint in f for fs in v["langs"].values() for f in fs)}
+    small = {k: v for k, v in groups.items() if len(v["langs"]) < 3}
+    groups = {k: v for k, v in groups.items() if len(v["langs"]) >= 3}
     if not groups:
         o["locale_group"] = None
+        # English-only product: an English source file in an i18n/locale dir with fewer than 3 languages beside it
+        best = None
+        for gid, g in small.items():
+            if not re.search(r'(^|/)(locales?|i18n|lang|langs|languages|translations?|messages|l10n|intl|strings|res/values[^/]*)(/|$)', g["dir"] + "/", re.I):
+                continue
+            sp = g["langs"][g["src"]] if g["kind"] == "flat" else list(g["rel"][g["src"]].values())
+            n = 0
+            for p in sp[:20]:
+                n += len(parse_file(p, raw(repo, ref, p), True) or {})
+            if n and (best is None or n > best[0]):
+                best = (n, gid, sp, sorted(g["langs"]))
+        if best:
+            o["english_only"] = {"group": best[1], "src_files": best[2][:20], "en_keys": best[0], "languages": best[3]}
         return o
     # rank candidates: number of locales first, then choose the one with most English keys among the top few
     ranked = sorted(groups.items(), key=lambda kv: -len(kv[1]["langs"]))[:max_groups]

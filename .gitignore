@@ -75,3 +75,14 @@ state/stripe*
 state/expensify/issues/
 state/qualify-raw/
 state/qualify-web/
+
+# v3 day-0 tightening
+state/
+reports/
+outreach/queue/
+outreach/rejected/
+outreach/sent/
+proposals/
+contacts-raw/
+checkout-repo/
+*.jsonl

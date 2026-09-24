@@ -15,8 +15,8 @@ Method
   fonts, archives, media, databases, model weights, logs, CSV dumps). A file
   with a NUL byte in its first 8 KiB is treated as binary.
 - Sums the bytes of every remaining file and groups them by extension.
-- Converts bytes to tokens at 4 bytes per token. This is an approximation.
-  Real tokenizers differ by language and style, often by 20 to 30 percent.
+- Converts bytes to tokens at 4 bytes per token. This is an approximation;
+  real tokenizers differ by language and coding style.
 - With --history-tokens-from-git, streams `git log -p` for the repository
   (same directory exclusions as pathspecs) and converts its byte size to
   tokens at the same ratio.

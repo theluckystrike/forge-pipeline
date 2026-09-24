@@ -401,3 +401,9 @@ Verdict: night verified-green except merges (none — CI/human latency). Next-se
 - Action: driver KILLED (10h window was nearly done anyway); #6677/#6678 CLOSED to protect account standing; kpi updated
 - Rule added: max 1 offer-issue per repo per 24h; PR-create cooldown until next session
 - Park watcher proc_acb26b84dc20 still running (10-min polls); now also reports driver death
+
+## 2026-09-24 RO-LOOP
+- Jan zh-CN fill: PR janhq/jan#9054 OPEN mergeable (670 keys, 12 files, +795/-32). kpi row 80. Watcher extended to j9054.
+- Twenty D0 pitch SENT via Gmail SMTP.
+- Cal.com: th 0/4769 + zh-CN 235 missing — RO-2 next.
+- Cal.com: PR #30229 OPEN (zh-CN 235 keys, parity). th 0/4769 deferred (LLM throughput ~2h).

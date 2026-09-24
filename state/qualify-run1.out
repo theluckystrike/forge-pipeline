@@ -6,3 +6,137 @@ B phase: 1262 rows with B IS NULL; graphql remaining 5000
   B 60/1262  points used 8  web fetches 57
   B 75/1262  points used 9  web fetches 67
   B 90/1262  points used 10  web fetches 76
+  B 105/1262  points used 11  web fetches 88
+  B 120/1262  points used 12  web fetches 101
+  B 135/1262  points used 13  web fetches 106
+  B 150/1262  points used 14  web fetches 114
+  B 165/1262  points used 15  web fetches 127
+  B 180/1262  points used 16  web fetches 138
+  B 195/1262  points used 17  web fetches 146
+  B 210/1262  points used 18  web fetches 156
+  B 225/1262  points used 19  web fetches 163
+  B 240/1262  points used 20  web fetches 170
+  B 255/1262  points used 21  web fetches 181
+  B 270/1262  points used 22  web fetches 187
+  B 285/1262  points used 23  web fetches 196
+  B 300/1262  points used 24  web fetches 204
+  B 315/1262  points used 25  web fetches 210
+  B 330/1262  points used 26  web fetches 216
+  B 345/1262  points used 27  web fetches 224
+  B 360/1262  points used 28  web fetches 232
+  B 375/1262  points used 29  web fetches 241
+  B 390/1262  points used 30  web fetches 249
+  B 405/1262  points used 31  web fetches 260
+  B 420/1262  points used 32  web fetches 271
+  B 435/1262  points used 33  web fetches 282
+  B 450/1262  points used 34  web fetches 291
+  B 465/1262  points used 35  web fetches 297
+  B 480/1262  points used 36  web fetches 306
+  B 495/1262  points used 37  web fetches 318
+  B 510/1262  points used 38  web fetches 328
+  B 525/1262  points used 39  web fetches 339
+  B 540/1262  points used 40  web fetches 349
+  B 555/1262  points used 41  web fetches 359
+  B 570/1262  points used 42  web fetches 367
+  B 585/1262  points used 43  web fetches 376
+  B 600/1262  points used 44  web fetches 387
+  B 615/1262  points used 45  web fetches 396
+  B 630/1262  points used 46  web fetches 404
+  B 645/1262  points used 47  web fetches 413
+  B 660/1262  points used 48  web fetches 419
+  B 675/1262  points used 49  web fetches 426
+  B 690/1262  points used 50  web fetches 432
+  B 705/1262  points used 51  web fetches 443
+  B 720/1262  points used 52  web fetches 454
+  B 735/1262  points used 53  web fetches 459
+  B 750/1262  points used 54  web fetches 467
+  B 765/1262  points used 55  web fetches 476
+  B 780/1262  points used 56  web fetches 482
+  B 795/1262  points used 57  web fetches 491
+  B 810/1262  points used 58  web fetches 501
+  B 825/1262  points used 59  web fetches 511
+  B 840/1262  points used 60  web fetches 521
+  B 855/1262  points used 61  web fetches 530
+  B 870/1262  points used 62  web fetches 538
+  B 885/1262  points used 63  web fetches 544
+  B 900/1262  points used 64  web fetches 553
+  B 915/1262  points used 65  web fetches 561
+  B 930/1262  points used 66  web fetches 569
+  B 945/1262  points used 67  web fetches 578
+  B 960/1262  points used 68  web fetches 581
+  B 975/1262  points used 69  web fetches 589
+  B 990/1262  points used 70  web fetches 597
+  B 1005/1262  points used 71  web fetches 605
+  B 1020/1262  points used 72  web fetches 614
+  B 1035/1262  points used 73  web fetches 623
+  B 1050/1262  points used 74  web fetches 632
+  B 1065/1262  points used 75  web fetches 639
+  B 1080/1262  points used 76  web fetches 649
+  B 1095/1262  points used 77  web fetches 658
+  B 1110/1262  points used 78  web fetches 666
+  B 1125/1262  points used 79  web fetches 672
+  B 1140/1262  points used 80  web fetches 678
+  B 1155/1262  points used 81  web fetches 686
+  B 1170/1262  points used 82  web fetches 691
+  B 1185/1262  points used 83  web fetches 695
+  B 1200/1262  points used 84  web fetches 709
+  B 1215/1262  points used 85  web fetches 721
+  B 1230/1262  points used 86  web fetches 736
+  B 1245/1262  points used 87  web fetches 750
+  B 1260/1262  points used 88  web fetches 764
+  B 1262/1262  points used 89  web fetches 766
+L phase: 735 rows with B >= 0.4 and L IS NULL
+  L 15/735  points used 90
+  L 30/735  points used 91
+  graphql error try 1: {"message": "We couldn't respond to your request in time. Sorry about that. Please try resubmitting your request and contact us if the problem persists."}
+ gh: We couldn't respond to your request in time. Sorry about that. Please try resubmitting your request and contact us if the problem persists. (HTTP 504)
+  L 45/735  points used 92
+  L 60/735  points used 93
+  L 75/735  points used 94
+  L 90/735  points used 95
+  L 105/735  points used 96
+  L 120/735  points used 97
+  L 135/735  points used 98
+  L 150/735  points used 99
+  L 165/735  points used 100
+  L 180/735  points used 101
+  L 195/735  points used 102
+  L 210/735  points used 103
+  L 225/735  points used 104
+  L 240/735  points used 105
+  L 255/735  points used 106
+  L 270/735  points used 107
+  L 285/735  points used 108
+  L 300/735  points used 109
+  L 315/735  points used 110
+  L 330/735  points used 111
+  L 345/735  points used 112
+  L 360/735  points used 113
+  L 375/735  points used 114
+  L 390/735  points used 115
+  L 405/735  points used 116
+  L 420/735  points used 117
+  L 435/735  points used 118
+  L 450/735  points used 119
+  L 465/735  points used 120
+  L 480/735  points used 121
+  L 495/735  points used 122
+  L 510/735  points used 123
+  L 525/735  points used 124
+  L 540/735  points used 125
+  L 555/735  points used 126
+  L 570/735  points used 127
+  graphql error try 1: {"message": "We couldn't respond to your request in time. Sorry about that. Please try resubmitting your request and contact us if the problem persists."}
+ gh: We couldn't respond to your request in time. Sorry about that. Please try resubmitting your request and contact us if the problem persists. (HTTP 504)
+  L 585/735  points used 128
+  L 600/735  points used 129
+  L 615/735  points used 130
+  L 630/735  points used 131
+  L 645/735  points used 132
+  L 660/735  points used 133
+  L 675/735  points used 134
+  L 690/735  points used 135
+  L 705/735  points used 136
+  L 720/735  points used 137
+  L 735/735  points used 138
+done. B null remaining: 0; graphql points used total 138

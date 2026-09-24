@@ -26,7 +26,7 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from outreach_lib import (PIPE, OUT, QUEUE, REJECTED, HUMANIZE, UNSUB, SIGNOFF, REPLY_TO, db, sha256, num_tokens,
                           norm_num, template_constants, split_email, word_count, evidence_text, number_in_evidence,
-                          lane_from_filename, load_blocklist)
+                          lane_from_filename, load_blocklist, contacted_orgs)
 
 CALL_RE = re.compile(r"\b(calls?|zoom|meet|meeting|hop on|calendly|schedule a)\b", re.I)
 MERGED_RE = re.compile(r"\bmerged\b", re.I)
@@ -38,7 +38,7 @@ OFFER_TERM_MERGED = "with at least 5 merged or I refund the difference"
 
 
 def check_evidence_mod():
-    """Reuse the AUDIT agent's check_evidence.py when it exposes a usable function."""
+    """Reuse the AUDIT agent's check_evidence.py (tokens, load_evidence, found) when present."""
     p = os.path.join(PIPE, "check_evidence.py")
     if not os.path.exists(p):
         return None
@@ -104,6 +104,8 @@ def check(path, conn=None, target_override=None):
         full = f"{t['org']}/{t['repo']}"
         if full.lower() in load_blocklist():
             fails.append(("blocklisted", full))
+        if t["org"].lower() in contacted_orgs():
+            fails.append(("org_already_contacted", "listed in state/contacted.tsv"))
         scan = text.replace(OFFER_TERM_MERGED, "") if lane == "L5" else text
         if MERGED_RE.search(scan):
             n = conn.execute("""select count(*) from contributions where lower(repo)=lower(?) and upper(status)='MERGED'""",
@@ -124,21 +126,15 @@ def check(path, conn=None, target_override=None):
     if a is None:
         fails.append(("no_audit_row", str(tid)))
     else:
-        evid = evidence_text(a["evidence_dir"])
         consts = template_constants(lane) if lane else set()
         ce = check_evidence_mod()
-        missing = []
-        for tok in num_tokens(text):
-            if norm_num(tok) in consts:
-                continue
-            found = number_in_evidence(tok, evid)
-            if not found and ce is not None and hasattr(ce, "token_in_evidence"):
-                try:
-                    found = bool(ce.token_in_evidence(tok, a["evidence_dir"]))
-                except Exception:
-                    pass
-            if not found:
-                missing.append(tok)
+        if ce is not None:   # the AUDIT agent's own token rule (check_evidence.tokens / found)
+            evid = ce.load_evidence(a["evidence_dir"]) if a["evidence_dir"] and os.path.isdir(a["evidence_dir"]) else ""
+            toks, is_found = ce.tokens(text), (lambda tok: ce.found(tok, evid))
+        else:
+            evid = evidence_text(a["evidence_dir"])
+            toks, is_found = num_tokens(text), (lambda tok: number_in_evidence(tok, evid))
+        missing = [tok for tok in toks if norm_num(tok.rstrip("%")) not in consts and not is_found(tok)]
         if not evid:
             fails.append(("evidence_dir_empty", str(a["evidence_dir"])))
         elif missing:

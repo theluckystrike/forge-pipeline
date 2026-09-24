@@ -7,7 +7,8 @@ as the report writes them), write outreach/queue/<target_id>-<lane>.txt and inse
 outreach row (channel 'email', sent_at NULL, notes 'draft').
 
 Nothing is sent. Rules enforced in code:
-  one draft per org ever (any lane, any state except 'rejected' when --redraft-rejected)
+  one draft per org ever (any lane, any state except 'rejected' when --redraft-rejected);
+  orgs listed in state/contacted.tsv (emailed outside this pipeline) count as already contacted
   body_sha256 unique across the outreach table
   blocklisted repos skipped (state/blocklist.txt)
   audits with fewer than 3 measured findings skipped
@@ -22,7 +23,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from outreach_lib import (PIPE, OUT, QUEUE, TIER1, db, sha256, num_tokens, template_path, load_blocklist,
-                          db_lane, split_email, word_count, evidence_text, number_in_evidence, template_constants)
+                          db_lane, contacted_orgs, split_email, word_count, evidence_text, number_in_evidence, template_constants)
 
 sys.path.insert(0, os.path.join(PIPE, "tools"))
 try:
@@ -30,99 +31,108 @@ try:
 except Exception:  # scanner missing means we cannot pre-screen; the gate still runs it
     _hz_scan = None
 
-SEED_LOCALE = os.path.join(PIPE, "seed", "locale_results.jsonl")
 BANNED_WORDS = re.compile(r"\b(calls?|zoom|meet|meeting|hop on|calendly|schedule a|merged)\b", re.I)
-EN_ONLY_TAGS = {None, "", "none", "en", "en-only", "english-only", "english", "n/a"}
+# L1 buyer persona is a 5 to 50 developer company; mega-corp websites and orgs are skipped (lead, 2026-09-24)
+MEGA_HOST_SUFFIXES = ("microsoft.com", "google", "google.com", "nvidia.com", "amazon.com", "aws.amazon.com",
+                      "ycombinator.com", "bloomberg.com", "techatbloomberg.com", "hashicorp.com", "ibm.com", "oracle.com", "meta.com",
+                      "facebook.com", "apple.com")
+MEGA_ORGS = {"microsoft", "google", "googleapis", "aws", "amzn", "nvidia", "facebook", "meta", "apple", "ibm", "oracle"}
 
 
-# ---------------------------------------------------------------- findings
-def _clean_line(ln):
-    ln = re.sub(r"^\s*(?:[-*+]|\d+[.)])\s+", "", ln)          # bullet or ordinal
-    ln = re.sub(r"\*\*([^*]+)\*\*", r"\1", ln)                   # bold
-    ln = re.sub(r"(?<!\w)\*([^*]+)\*(?!\w)", r"\1", ln)         # italics
-    ln = ln.replace("`", "")
-    ln = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", ln)            # md links keep text
-    ln = re.sub(r"\s+", " ", ln).strip()
-    return ln
-
-
-def _sentence(t):
-    t = t.strip().rstrip(";,:")
-    if not t:
-        return t
-    if t[0].islower() and not re.match(r"^[a-z0-9_.-]+/[a-z0-9_.-]+", t):
-        t = t[0].upper() + t[1:]
-    if t[-1] not in ".?":
-        t += "."
-    return t
-
-
-def _findings_from_json(evidence_dir):
-    for name in ("findings.json", "findings.jsonl"):
-        p = os.path.join(evidence_dir or "", name)
-        if not os.path.isfile(p):
-            continue
-        raw = open(p, encoding="utf-8").read()
-        try:
-            data = json.loads(raw)
-        except ValueError:
-            data = [json.loads(l) for l in raw.splitlines() if l.strip()]
-        if isinstance(data, dict):
-            data = data.get("findings", [])
-        out = []
-        for f in data:
-            if isinstance(f, str):
-                out.append(f)
-            elif isinstance(f, dict):
-                txt = f.get("sentence") or f.get("text") or f.get("finding") or f.get("summary")
-                if txt and f.get("measured", True) is not False:
-                    out.append(txt)
-        return out
+def is_mega_corp(t):
+    from urllib.parse import urlparse
+    w = (t["website"] or "").strip()
+    host = (urlparse(w if "://" in w else "https://" + w).hostname or "").lower().rstrip(".") if w else ""
+    if host and any(host == suf or host.endswith("." + suf) for suf in MEGA_HOST_SUFFIXES):
+        return f"website {host}"
+    if (t["org"] or "").lower() in MEGA_ORGS:
+        return f"org {t['org']}"
     return None
 
 
-SECTION_OK = re.compile(r"(finding|measured|stale|claim|example|locale|gap|drift|parity|result|summary)", re.I)
-SECTION_SKIP = re.compile(r"(command|how|method|reproduc|evidence|appendix|raw|note|caveat|next step|offer|price)", re.I)
+ROLE_EXCLUDED = re.compile(r"^(support|help|security|privacy|legal|abuse|no-?reply|careers?|jobs?|hr|press|media|billing|dmca|compliance|postmaster|webmaster|unsubscribe|notifications?)$", re.I)
 
 
-def _findings_from_report(report_path):
-    """Measured findings = bullet or numbered lines containing a number, inside a findings-like
-    section when the report has sections. Order is the report's own order (the report ranks)."""
-    if not report_path or not os.path.isfile(report_path):
-        return []
-    lines = open(report_path, encoding="utf-8", errors="replace").read().splitlines()
-    has_sections = any(re.match(r"^#{1,4}\s", l) for l in lines)
-    ok_section = not has_sections
-    out, in_code = [], False
-    for l in lines:
-        if l.strip().startswith("```"):
-            in_code = not in_code
-            continue
-        if in_code:
-            continue
-        h = re.match(r"^#{1,4}\s+(.*)", l)
-        if h:
-            title = h.group(1)
-            ok_section = bool(SECTION_OK.search(title)) and not SECTION_SKIP.search(title)
-            continue
-        if not ok_section:
-            continue
-        if not re.match(r"^\s*(?:[-*+]|\d+[.)])\s+", l):
-            continue
-        t = _clean_line(l)
-        if not num_tokens(t):
-            continue
-        if re.search(r"(\$ |^\$|evidence/|\.txt\b|\.json\b|command:|cmd:)", t, re.I):
-            continue
-        out.append(t)
-    return out
+# ---------------------------------------------------------------- findings
+# The audit agent (audit_report.py) writes reports/<org>__<repo>.md from evidence/drift.json and
+# evidence/locale.json. Findings are rebuilt here from the same JSON with the report's own number
+# formats (percent with one decimal, plain integers), and every number is then required to appear
+# verbatim in the report text, so the email quotes the report exactly.
+def _pct(v):
+    return f"{v:.1f}%"
 
 
-def findings_for(audit):
-    f = _findings_from_json(audit["evidence_dir"])
-    if f is None:
-        f = _findings_from_report(audit["report_path"])
-    return [_sentence(x) for x in f if x and x.strip()]
+def _load(evidence_dir, name):
+    p = os.path.join(evidence_dir or "", name)
+    try:
+        return json.load(open(p, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def _link_sentence(f):
+    where = f"{f['file']} line {f['line_no']}"
+    if f["check"] == "b_missing_relative_target":
+        return f"{where} links to {f['claimed']}, a path that does not exist in the repo."
+    m = f.get("measured") or ""
+    if m.startswith("HTTP"):
+        return f"{where} links to {f['claimed']}, which returns {m}."
+    if "DNS" in m:
+        return f"{where} links to {f['claimed']}, whose domain no longer resolves."
+    return f"{where} links to {f['claimed']}, which is dead ({m})."
+
+
+def findings_for(audit, kinds=("stale", "links", "locale")):
+    """Return (findings, facts). findings is an ordered list of sentences; facts holds the
+    structured values the lane logic and subject line need."""
+    ev = audit["evidence_dir"]
+    dr = _load(ev, "drift.json") or {}
+    loc = _load(ev, "locale.json") or {}
+    F = dr.get("findings", [])
+    stale = [f for f in F if f["check"] in ("c_version_drift", "d_count_claim", "e_engine_claim")]
+    broken = [f for f in F if f["check"] in ("a_dead_link", "b_missing_relative_target")]
+    cc = dr.get("counts", {})
+    facts = {"stale": len(stale), "broken": len(broken), "links_checked": cc.get("links_checked"),
+             "rel_checked": cc.get("relative_links_checked"), "english_only": loc.get("english_only"),
+             "en_keys": loc.get("en_keys"), "worst_tier1": loc.get("worst_tier1"), "tier1": loc.get("tier1") or {},
+             "total_gap": loc.get("total_gap_keys"), "n_measured": loc.get("n_locales_measured"),
+             "locale_group": loc.get("locale_group")}
+    out = []
+    if "stale" in kinds:
+        for f in stale[:3]:
+            out.append(f"README line {f['line_no']} claims {f['claimed']}, but the repo measures {f['measured']}.")
+    if "links" in kinds and broken:
+        if len(broken) >= 2 and facts["links_checked"] is not None:
+            ext, rel = facts["links_checked"], facts["rel_checked"] or 0
+            tail = f"{ext} external link{'s' if ext != 1 else ''}" + (f" and {rel} relative link{'s' if rel != 1 else ''}" if rel else "")
+            out.append(f"Your README and docs have {len(broken)} broken links, out of {tail} checked.")
+        # README links first, then short URLs, so the example reads cleanly in a plain-text email
+        for f in sorted(broken, key=lambda f: (f["file"] != "README.md", len(f["claimed"]) > 70))[:2]:
+            out.append(_link_sentence(f))
+    if "locale" in kinds:
+        eo = facts["english_only"]
+        if eo and eo.get("en_keys"):
+            out.append(f"{eo['src_files'][0]} holds {eo['en_keys']} English keys, and its locale folder holds no other language.")
+        wt = facts["worst_tier1"]
+        if wt and facts["locale_group"] and facts["en_keys"] and wt.get("gap_keys"):
+            out.append(f"Your {wt['locale']} locale is {_pct(wt['gap_pct'])} untranslated "
+                       f"({wt['gap_keys']} of {facts['en_keys']} keys missing or identical to English).")
+            others = sorted((v for k, v in facts["tier1"].items() if v and v.get("locale") != wt["locale"] and v.get("gap_keys")),
+                            key=lambda v: -v["gap_pct"])
+            if others:
+                o = others[0]
+                out.append(f"The {o['locale']} locale is {_pct(o['gap_pct'])} untranslated ({o['gap_keys']} keys).")
+        if facts["locale_group"] and facts["total_gap"]:
+            out.append(f"Across the {facts['n_measured']} locales measured, {facts['total_gap']} keys are untranslated.")
+    return out, facts
+
+
+def quoted_from_report(finding, report_text):
+    """Every number in the finding must appear in the report as written."""
+    for tok in num_tokens(finding):
+        if not re.search(r"(?<![\d.])" + re.escape(tok) + r"(?![\d])", report_text):
+            return False
+    return True
 
 
 def usable(finding, evid, max_words=32):
@@ -146,18 +156,6 @@ def usable(finding, evid, max_words=32):
 
 
 # ---------------------------------------------------------------- lanes
-def seed_locale_counts():
-    d = {}
-    if os.path.exists(SEED_LOCALE):
-        for l in open(SEED_LOCALE, encoding="utf-8"):
-            try:
-                r = json.loads(l)
-                d[r["repo"].lower()] = r.get("n_locales")
-            except Exception:
-                pass
-    return d
-
-
 def pct_value(p):
     if p is None:
         return None
@@ -169,19 +167,19 @@ def base_lang(loc):
     return re.split(r"[-_]", (loc or "").strip().lower())[0]
 
 
-def is_english_only(t, a, seed):
-    wl = (a["worst_locale"] or "").strip().lower() or None
-    gap = a["locale_gap_keys"] or 0
-    if gap <= 0:
+def is_english_only(facts):
+    """English-only flagship: the audit found an English source with no other language beside it,
+    holding at least 300 keys, outside example or demo apps."""
+    eo = facts.get("english_only")
+    if not eo or (eo.get("languages") or []) != ["en"]:
         return False
-    if wl in EN_ONLY_TAGS:
-        n = seed.get(f"{t['org']}/{t['repo']}".lower())
-        return n in (None, 0) or wl in {"en-only", "english-only"}
-    return False
+    if (eo.get("en_keys") or 0) < 300:
+        return False
+    return not re.search(r"(example|demo|sample|fixture|test)", " ".join(eo.get("src_files") or []), re.I)
 
 
-def pick_lane(t, a, seed):
-    if is_english_only(t, a, seed):
+def pick_lane(t, a, facts):
+    if is_english_only(facts):
         return "L2a", "english-only flagship"
     B = t["B"] or 0
     drift = (a["stale_claims"] or 0) + (a["failing_examples"] or 0)
@@ -191,36 +189,34 @@ def pick_lane(t, a, seed):
     tms = (t["tms"] or "").strip().lower()
     if base_lang(a["worst_locale"]) in TIER1 and wp is not None and wp >= 20 and tms in ("", "none", "no", "null"):
         return "L2b", f"tier-1 {a['worst_locale']} {wp:.1f}% no TMS"
-    return None, f"no lane (owner={t['owner_type']} B={B} drift={drift} worst={a['worst_locale']} {wp} tms={tms or '-'})"
+    return None, (f"no lane (owner={t['owner_type']} B={B} drift={drift} worst={a['worst_locale']} "
+                  f"{wp} tms={tms or '-'})")
 
 
-def fmt_pct(p):
-    s = f"{p:.1f}"
-    return s[:-2] if s.endswith(".0") else s
+LANE_KINDS = {"L1": ("stale", "links", "locale"), "L2a": ("locale", "stale", "links"), "L2b": ("locale",)}
 
 
-def subject_fact(lane, a, findings, evid):
-    """Short subject phrase carrying one measured number that the evidence dir contains."""
+def subject_fact(lane, a, facts, report_text):
+    """Short subject phrase carrying one measured number, written as the report writes it."""
     cands = []
     if lane == "L1":
-        if a["stale_claims"]:
-            n = a["stale_claims"]
-            cands.append((str(n), f"{n} stale numeric claim{'s' if n != 1 else ''}"))
-        if a["failing_examples"]:
-            n = a["failing_examples"]
-            cands.append((str(n), f"{n} failing example{'s' if n != 1 else ''}"))
+        if facts["stale"]:
+            n = facts["stale"]
+            cands.append((str(n), f"{n} stale README claim{'s' if n != 1 else ''}"))
+        if facts["broken"]:
+            n = facts["broken"]
+            cands.append((str(n), f"{n} broken doc link{'s' if n != 1 else ''}"))
     elif lane == "L2a":
-        n = a["locale_gap_keys"]
+        n = (facts.get("english_only") or {}).get("en_keys")
         if n:
-            cands.append((str(n), f"{n:,} English-only strings"))
             cands.append((str(n), f"{n} English-only strings"))
     elif lane == "L2b":
-        wp = pct_value(a["worst_pct"])
-        if wp is not None:
-            p = fmt_pct(wp)
-            cands.append((p, f"{p}% of the {a['worst_locale']} UI untranslated"))
+        wt = facts.get("worst_tier1")
+        if wt:
+            p = _pct(wt["gap_pct"])
+            cands.append((p[:-1], f"{p} of the {wt['locale']} UI untranslated"))
     for tok, phrase in cands:
-        if number_in_evidence(tok, evid) or number_in_evidence(f"{int(float(tok)):,}" if tok.isdigit() else tok, evid):
+        if re.search(r"(?<![\d.])" + re.escape(tok) + r"(?![\d])", report_text):
             return phrase
     return None
 
@@ -232,13 +228,13 @@ def greeting(t):
     return "there"
 
 
-def fill(lane, t, a, findings, subj):
+def fill(lane, t, a, findings, subj, locale=""):
     tpl = open(template_path(lane), encoding="utf-8").read()
     repo = f"{t['org']}/{t['repo']}"
     vals = {
         "subject_fact": subj, "repo": repo, "greeting": greeting(t),
         "finding_1": findings[0], "finding_2": findings[1], "finding_3": findings[2],
-        "locale": a["worst_locale"] or "",
+        "locale": locale or a["worst_locale"] or "",
     }
     out = tpl
     for k, v in vals.items():
@@ -260,8 +256,8 @@ def main():
 
     os.makedirs(QUEUE, exist_ok=True)
     c = db()
-    seed = seed_locale_counts()
     block = load_blocklist()
+    contacted = contacted_orgs()
     rows = c.execute("""
         select t.*, a.id as audit_id, a.stale_claims, a.failing_examples, a.locale_gap_keys, a.worst_locale,
                a.worst_pct, a.report_path, a.evidence_dir, a.created_at as audit_at
@@ -286,10 +282,18 @@ def main():
         full = f"{r['org']}/{r['repo']}".lower()
         if full in block:
             skip("blocklisted", r); continue
+        mega = is_mega_corp(r)
+        if mega:
+            skip(f"mega-corp: {mega}", r); continue
         if re.search(r"github", r["contact_source"] or "", re.I):
             skip("contact from GitHub (AUP 4)", r); continue
-        if not re.match(r"^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$", r["contact_email"].strip()):
+        em = r["contact_email"].strip()
+        if not re.match(r"^[A-Za-z0-9][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$", em) or re.match(r"^u00[0-9a-f]{2}", em, re.I):
             skip("bad email", r); continue
+        if ROLE_EXCLUDED.match(em.split("@")[0]):
+            skip("role address not for sales (jobs, support, ...)", r); continue
+        if r["org"].lower() in contacted:
+            skip("org already contacted (state/contacted.tsv)", r); continue
         prior = c.execute("""select o.id, o.notes, o.sent_at from outreach o join targets t2 on t2.id=o.target_id
                              where lower(t2.org)=lower(?)""", (r["org"],)).fetchall()
         live_prior = [p for p in prior if not (args.redraft_rejected and p["sent_at"] is None
@@ -299,7 +303,15 @@ def main():
         if any(m["org"].lower() == r["org"].lower() for m in made):
             skip("org already drafted this run", r); continue
 
-        lane, why = pick_lane(r, r, seed)
+        evid = evidence_text(r["evidence_dir"])
+        if not evid:
+            skip("evidence dir empty or missing", r); continue
+        try:
+            report_text = open(r["report_path"], encoding="utf-8").read()
+        except (OSError, TypeError):
+            skip("report missing", r); continue
+        _, facts = findings_for(r)
+        lane, why = pick_lane(r, r, facts)
         if not lane:
             skip(why, r); continue
         bucket = db_lane(lane)
@@ -307,26 +319,24 @@ def main():
         if counts[bucket] >= cap:
             skip(f"{bucket} cap reached", r); continue
 
-        evid = evidence_text(r["evidence_dir"])
-        if not evid:
-            skip("evidence dir empty or missing", r); continue
-        allf = findings_for(r)
-        good, bad = [], []
+        allf, _ = findings_for(r, LANE_KINDS[lane])
+        good = []
         for f in allf:
             ok, why_bad = usable(f, evid)
-            (good if ok else bad).append((f, why_bad))
+            if ok and not quoted_from_report(f, report_text):
+                ok = False
+            if ok:
+                good.append(f)
         if len(good) < 3:
             skip(f"fewer than 3 measured findings ({len(good)} usable of {len(allf)})", r); continue
-        top = [g[0] for g in good[:3]]
-        subj = subject_fact(lane, r, top, evid)
+        subj = subject_fact(lane, r, facts, report_text)
         if not subj:
-            skip("no subject number found in evidence", r); continue
-        body = fill(lane, r, r, top, subj)
-        hdr, main_body = split_email(body)
-        if word_count(main_body) > 170:
-            # try shorter findings before giving up
-            shorter = sorted(good, key=lambda g: len(g[0].split()))[:3]
-            body = fill(lane, r, r, [g[0] for g in shorter], subj)
+            skip("no subject number found in report", r); continue
+        loc = (facts.get("worst_tier1") or {}).get("locale", "")
+        body = fill(lane, r, r, good[:3], subj, loc)
+        if word_count(split_email(body)[1]) > 170:
+            shorter = sorted(good, key=lambda g: len(g.split()))[:3]
+            body = fill(lane, r, r, shorter, subj, loc)
             if word_count(split_email(body)[1]) > 170:
                 skip("over 170 words with shortest findings", r); continue
         h = sha256(body)

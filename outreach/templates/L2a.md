@@ -3,7 +3,7 @@ Reply-To: mike@zovo.one
 
 Hi {greeting},
 
-{finding_1} I measured that on the public {repo} repo, along with two related items. {finding_2} {finding_3}
+{finding_1} I measured that on the public {repo} repo, along with two other items. {finding_2} {finding_3}
 
 I can add an i18n framework plus your first 3 languages at full key parity, delivered as merge-ready pull requests, for $6,000 fixed.
 

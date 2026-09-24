@@ -31,12 +31,12 @@ OTHER_OK = ["partnership", "partner", "business", "biz", "bd", "enterprise", "fo
 EXCLUDED = re.compile(r"^(support|help|helpdesk|security|secure|privacy|dpo|gdpr|legal|abuse|no-?reply|do-?not-?reply|"
                       r"donotreply|careers?|jobs?|hr|recruit\w*|talent|hiring|press|media|pr|billing|invoices?|accounts?|"
                       r"payments?|ap|ar|finance|accounting|investors?|ir|dmca|compliance|trust|postmaster|webmaster|hostmaster|mailer-daemon|bounces?|"
-                      r"unsubscribe|notifications?|alerts?|status|conduct|coc|vulnerabilit\w*|bugs?|feedback)$", re.I)
+                      r"events?|webinars?|unsubscribe|notifications?|alerts?|status|conduct|coc|vulnerabilit\w*|bugs?|feedback)$", re.I)
 PLACEHOLDER = re.compile(r"^(you|your|yourname|name|email|user|username|example|test|someone|john|jane|john\.doe|"
                          r"jane\.doe|firstname|first\.last|me|foo|bar)$", re.I)
 SOCIAL = re.compile(r"(^|\.)(twitter\.com|x\.com|github\.com|github\.io|gitlab\.com|gitlab\.io|linkedin\.com|facebook\.com|"
                     r"youtube\.com|medium\.com|discord\.gg|discord\.com|t\.me|npmjs\.com|readthedocs\.io|notion\.site|"
-                    r"substack\.com|instagram\.com|reddit\.com|bsky\.app|mastodon\.social|huggingface\.co|"
+                    r"substack\.com|instagram\.com|reddit\.com|bsky\.app|mastodon\.social|"
                     r"opencollective\.com|patreon\.com|vercel\.app|netlify\.app|pages\.dev|gitbook\.io|linktr\.ee)$", re.I)
 MULTI_SUFFIX = {"co.uk", "org.uk", "ac.uk", "com.au", "net.au", "org.au", "co.jp", "ne.jp", "or.jp", "com.br", "com.cn",
                 "com.tw", "co.kr", "co.in", "co.nz", "co.za", "com.mx", "com.ar", "com.tr", "com.sg", "com.hk", "co.il",
@@ -69,6 +69,19 @@ SECTION_BAD = re.compile(r"(?i)\b(investors?|backed by|backers|advisors?|advisor
                          r"loved by|case stud|our partners)\b")
 SECTION_GOOD = re.compile(r"(?i)\b(our team|the team|team members|leadership|founding team|the founders|our founders|founders|"
                           r"management|meet the|our people|executive team|who we are)\b")
+LOCATIONS = set("""san francisco new york london berlin paris amsterdam remote tokyo singapore toronto bay area seattle austin
+boston los angeles munich lisbon madrid barcelona warsaw krakow bangalore bengaluru mumbai delhi sydney melbourne dublin
+zurich stockholm helsinki oslo copenhagen tel aviv vienna prague uk usa us germany france india israel canada brazil
+spain italy poland portugal netherlands sweden finland norway denmark switzerland austria ireland japan china
+australia hamburg montreal vancouver chicago denver miami atlanta portland brooklyn hong kong shanghai beijing
+seoul taipei dubai cape town nairobi lagos mexico city buenos aires sao paulo bogota santiago lima kyiv bucharest
+budapest athens istanbul belgrade sofia riga tallinn vilnius edinburgh manchester cambridge oxford salt lake city st louis san diego san jose palo alto mountain view""".split())
+NAME_TITLE_RE = re.compile(
+    r"(?P<name>" + NAME_WORD + r"(?:\s+" + NAME_WORD + r"){1,2})\s*(?:,|-|\u2013|\||\()\s*"
+    r"(?P<title>(?:Co-?\s?founder|Founder|CEO|CTO|Chief (?:Technology|Executive) Officer|Head of Engineering|"
+    r"VP,? (?:of )?Engineering|Head of (?:DevRel|Developer Relations)|Developer Relations)"
+    r"(?:\s*(?:&|and|,|/)\s*(?:CEO|CTO|Co-?founder|Founder))*)"
+    r"(?:\s*(?:,|\s(?:at|@|of|from))\s*(?P<co>[\w .&-]{2,40}))?")
 EMAIL_RE = re.compile(r"(?<![\w.+-])([A-Za-z0-9][A-Za-z0-9._%+-]{0,63})@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+)")
 OBF_RE = re.compile(r"\b([A-Za-z0-9._%+-]{1,64})\s*[\[\(\{]\s*at\s*[\]\)\}]\s*([A-Za-z0-9-]+)\s*[\[\(\{]\s*dot\s*[\]\)\}]\s*"
                     r"([A-Za-z]{2,10})\b", re.I)
@@ -148,6 +161,8 @@ def fetch(url, log):
 
 def load_robots(origin, log):
     rec, text = fetch(origin + "/robots.txt", log)
+    if rec["code"] == 0:
+        rec, text = fetch(origin + "/robots.txt", log)  # one retry on network failure
     rp = urllib.robotparser.RobotFileParser()
     code = rec["code"]
     if code == 0:
@@ -192,6 +207,7 @@ def html_to_lines(raw):
 def extract_emails(raw, url):
     """Returns list of (email, method)."""
     out = []
+    raw = re.sub(r"\\u00[0-9a-fA-F]{2}", lambda m: "@" if m.group(0).lower() == "\\u0040" else " ", raw)
     unesc = html.unescape(raw)
     for m in re.finditer(r"(?i)mailto:([^\"'<>\s?]+)", unesc):
         e = urllib.parse.unquote(m.group(1)).strip().strip(".,;")
@@ -211,7 +227,9 @@ def extract_emails(raw, url):
     for m in OBF_RE.finditer(text):
         out.append((("%s@%s.%s" % m.groups()).lower(), "obfuscated"))
     # emails inside inline JSON / script payloads of the site's own page (e.g. Next.js data)
-    for m in EMAIL_RE.finditer(unesc.replace("\\u0040", "@")):
+    src = re.sub(r"\\u00(?:3[cC]|3[eE]|22|27|26)", " ", unesc.replace("\\u0040", "@"))  # JSON-escaped < > " ' &
+    src = re.sub(r"\\[nrt/]", " ", src)
+    for m in EMAIL_RE.finditer(src):
         out.append((("%s@%s" % (m.group(1), m.group(2))).lower().strip("."), "page-source"))
     seen, res = set(), []
     for e, meth in out:
@@ -227,8 +245,8 @@ def extract_emails(raw, url):
 
 def role_rank(local):
     l = local.lower()
-    if EXCLUDED.match(l) or PLACEHOLDER.match(l):
-        return None
+    if EXCLUDED.match(l) or PLACEHOLDER.match(l) or re.fullmatch(r"[0-9a-f]{16,}", l):
+        return None  # hex locals are Sentry DSNs / tracking keys embedded in page source
     if l in PREFERRED:
         return PREFERRED.index(l)
     if l in OTHER_OK:
@@ -269,7 +287,7 @@ def good_name(n, org_words):
     if not NAME_RE.match(n):
         return None
     words = [w.strip(".").lower() for w in n.split()]
-    if any(w in NAME_STOP or w in org_words for w in words):
+    if any(w in NAME_STOP or w in org_words for w in words) or all(w.strip(",") in LOCATIONS for w in words):
         return None
     if len(n) > 40:
         return None
@@ -357,17 +375,19 @@ def extract_personas(raw, url, org_words):
                     if n:
                         found.append((n, t, "name-line/title-line", core)); continue
                     nxt = lines[i + 1] if i + 1 < len(lines) else ""
+                    if nxt and all(w.strip(",.").lower() in LOCATIONS for w in nxt.split()) and i + 2 < len(lines):
+                        nxt = lines[i + 2]  # "Title / City / Name" card layout
                     n = good_name(nxt, org_words)
                     if n:
                         found.append((n, t, "title-line/name-line", core)); continue
         # "Name, Title" / "Name - Title" / "Name (Title)" / "Title: Name"
-        for m in re.finditer(rf"({NAME_WORD}(?:\s+{NAME_WORD}){{1,2}})\s*(?:,|-|–|\||\()\s*((?:Co-?\s?founder|Founder|CEO|CTO|Chief (?:Technology|Executive) Officer|Head of Engineering|VP,? (?:of )?Engineering|Head of (?:DevRel|Developer Relations)|Developer Relations)(?:\s*(?:&|and|,|/)\s*(?:CEO|CTO|Co-?founder|Founder))*)(?:\s+(?:at|@|of)\s+([\w .&-]{2,40}))?", ln):
-            if not co_ok(m.group(3), org_words):
+        for m in NAME_TITLE_RE.finditer(ln):
+            if not co_ok(m.group("co"), org_words):
                 continue
-            n = good_name(m.group(1), org_words)
-            t = best_title(titles_in(m.group(2)))
+            n = good_name(m.group("name"), org_words)
+            t = best_title(titles_in(m.group("title")))
             if n and t:
-                found.append((n, t, "name, title"))
+                found.append((n, t, "name, title", m.group("title")))
         for m in re.finditer(rf"\b(CTO|CEO|Co-?\s?founder|Founder|Head of Engineering|VP Engineering|Head of DevRel)\s*:\s*({NAME_WORD}(?:\s+{NAME_WORD}){{1,2}})", ln):
             n = good_name(m.group(2), org_words)
             t = best_title(titles_in(m.group(1)))
@@ -418,6 +438,78 @@ def discover_links(raw, origin, final_host):
     return links
 
 
+def analyze(res, pages_raw, host, final_host, org_words):
+    res["pages"] = []
+    site_rds = {reg_domain(h) for h in (host, final_host) if h and not SOCIAL.search(h)}
+    res["site_domains"] = sorted(site_rds)
+    cand = {}
+    personas = []
+    slug = re.sub(r"[^a-z0-9]", "", host.split(".")[0])
+    for path, rec, text in pages_raw:
+        pg = {"path": path, "url": rec["url"], "final": rec["final"], "code": rec["code"], "bytes": rec["bytes"],
+              "err": rec["err"]}
+        res["pages"].append(pg)
+        if rec["code"] != 200 or not text:
+            continue
+        # never read a page served by GitHub or another third-party platform (AGENT-RULES: website only)
+        if SOCIAL.search(urllib.parse.urlsplit(rec["final"]).hostname or ""):
+            pg["note"] = "redirected_to_third_party"
+            continue
+        # a page that redirected back to home is not a separate page
+        fpath = urllib.parse.urlsplit(rec["final"]).path.rstrip("/") or "/"
+        if path != "/" and fpath == "/":
+            pg["note"] = "redirected_home"
+            continue
+        for e, meth in extract_emails(text, rec["final"]):
+            local, dom = e.split("@")
+            dom_rd = reg_domain(dom)
+            if dom_rd not in site_rds:
+                continue
+            if dom != dom_rd and re.match(r"(?:hr|jobs|careers|support|help|security|noreply|no-reply|bounce|lists?|mail-?lists?|o[0-9]+\.ingest|social)\.", dom):
+                continue  # e.g. info@hr.ibm.com is an HR mailbox
+            if e not in cand:
+                cand[e] = {"email": e, "local": local, "domain": dom, "method": meth, "source": rec["final"],
+                           "rank": role_rank(local), "type": role_type(local)}
+        if path in PERSONA_PAGES:
+            ow = set(org_words) | {slug}
+            for f in extract_personas(text, rec["final"], ow):
+                n, t, how = f[:3]
+                disp = f[3] if len(f) > 3 else t
+                disp = re.sub(r"\s+", " ", disp).strip(" ,-|:")[:60]
+                disp = re.sub(r"(?i)[\s,]*(?:&|and|/)$", "", disp).strip(" ,")
+                personas.append({"name": n, "title": t, "display": disp, "how": how, "source": rec["final"]})
+    res["emails"] = sorted(cand.values(), key=lambda c: (999 if c["rank"] is None else c["rank"], c["email"]))
+    # dedupe personas by name, keep best title
+    byname = {}
+    for p in personas:
+        q = byname.get(p["name"])
+        if not q or TITLE_ORDER.index(p["title"]) < TITLE_ORDER.index(q["title"]):
+            byname[p["name"]] = p
+    res["personas"] = sorted(byname.values(), key=lambda p: TITLE_ORDER.index(p["title"]))
+    if all(p["code"] != 200 for p in res["pages"]):
+        res["status"] = "no_pages_200"
+    # choose best email + MX. Role addresses first (brief order); if the only usable addresses are personal
+    # ones published on the site, prefer the one matching a named persona and make that persona the contact.
+    best = next((c for c in res["emails"] if c["rank"] is not None), None)
+    if best and best["rank"] >= 50 and res.get("personas"):
+        for pz in res["personas"]:
+            first = pz["name"].split()[0].lower()
+            last = pz["name"].split()[-1].lower()
+            m = next((c for c in res["emails"] if c["rank"] == 50 and
+                      c["local"] in (first, last, first + "." + last, first + last, first[0] + last)), None)
+            if m:
+                best = dict(m, matched_persona=pz["name"])
+                res["personas"] = [pz] + [q for q in res["personas"] if q is not pz]
+                break
+    res["best"] = None
+    if best:
+        mx, mxnote = mx_lookup(best["domain"])
+        best = dict(best, mx=mx, mx_note=mxnote)
+        res["best"] = best
+    res["persona"] = res["personas"][0] if res["personas"] else None
+    return res
+
+
 def crawl_origin(origin, org_words):
     host = urllib.parse.urlsplit(origin).hostname
     log = []
@@ -458,66 +550,39 @@ def crawl_origin(origin, org_words):
                 blocked.append(url); continue
             rec, text = fetch(url, log)
             pages_raw.append((path, rec, text))
-        site_rds = {reg_domain(host), reg_domain(final_host)}
-        res["site_domains"] = sorted(site_rds)
-        cand = {}
-        personas = []
-        slug = re.sub(r"[^a-z0-9]", "", host.split(".")[0])
         for path, rec, text in pages_raw:
-            pg = {"path": path, "url": rec["url"], "final": rec["final"], "code": rec["code"], "bytes": rec["bytes"],
-                  "err": rec["err"]}
-            res["pages"].append(pg)
-            if rec["code"] != 200 or not text:
-                continue
-            # a page that redirected back to home is not a separate page
-            fpath = urllib.parse.urlsplit(rec["final"]).path.rstrip("/") or "/"
-            if path != "/" and fpath == "/":
-                pg["note"] = "redirected_home"
-                continue
-            fname = re.sub(r"[^A-Za-z0-9._-]", "_", (path.strip("/") or "home")) + ".html"
-            d = os.path.join(RAW, host)
-            os.makedirs(d, exist_ok=True)
-            with open(os.path.join(d, fname), "w") as f:
-                f.write(text)
-            for e, meth in extract_emails(text, rec["final"]):
-                local, dom = e.split("@")
-                dom_rd = reg_domain(dom)
-                if dom_rd not in site_rds:
-                    continue
-                if e not in cand:
-                    cand[e] = {"email": e, "local": local, "domain": dom, "method": meth, "source": rec["final"],
-                               "rank": role_rank(local), "type": role_type(local)}
-            if path in PERSONA_PAGES:
-                ow = set(org_words) | {slug}
-                for f in extract_personas(text, rec["final"], ow):
-                    n, t, how = f[:3]
-                    disp = f[3] if len(f) > 3 else t
-                    disp = re.sub(r"\s+", " ", disp).strip(" ,-|:")[:60]
-                    personas.append({"name": n, "title": t, "display": disp, "how": how, "source": rec["final"]})
-        res["emails"] = sorted(cand.values(), key=lambda c: (999 if c["rank"] is None else c["rank"], c["email"]))
-        # dedupe personas by name, keep best title
-        byname = {}
-        for p in personas:
-            q = byname.get(p["name"])
-            if not q or TITLE_ORDER.index(p["title"]) < TITLE_ORDER.index(q["title"]):
-                byname[p["name"]] = p
-        res["personas"] = sorted(byname.values(), key=lambda p: TITLE_ORDER.index(p["title"]))
-        if all(p["code"] != 200 for p in res["pages"]):
-            res["status"] = "no_pages_200"
+            if rec["code"] == 200 and text:
+                fname = re.sub(r"[^A-Za-z0-9._-]", "_", (path.strip("/") or "home")) + ".html"
+                d = os.path.join(RAW, host)
+                os.makedirs(d, exist_ok=True)
+                with open(os.path.join(d, fname), "w") as f:
+                    f.write(text)
+        analyze(res, pages_raw, host, final_host, org_words)
     res["blocked_by_robots"] = blocked
-    # choose best email + MX
-    best = next((c for c in res["emails"] if c["rank"] is not None), None)
-    res["best"] = None
-    if best:
-        mx, mxnote = mx_lookup(best["domain"])
-        best = dict(best, mx=mx, mx_note=mxnote)
-        res["best"] = best
-    res["persona"] = res["personas"][0] if res["personas"] else None
+    if res["status"] != "ok":
+        res["best"], res["persona"] = None, None
     res["fetch_log"] = log
     with open(os.path.join(RAW, "fetch-log.jsonl"), "a") as f:
         for r in log:
             f.write(json.dumps(dict(r, origin=origin)) + "\n")
     return res
+
+
+def reparse(res, org_words):
+    """Re-run extraction on the saved raw HTML of a cached crawl (no network except dig MX)."""
+    if res.get("status") not in ("ok", "no_pages_200") or not res.get("pages"):
+        return res
+    host = urllib.parse.urlsplit(res["origin"]).hostname
+    final_host = res.get("final_host") or host
+    pages_raw = []
+    for pg in res["pages"]:
+        fname = re.sub(r"[^A-Za-z0-9._-]", "_", (pg["path"].strip("/") or "home")) + ".html"
+        fp = os.path.join(RAW, host, fname)
+        text = open(fp).read() if (pg["code"] == 200 and os.path.exists(fp)) else ""
+        rec = {k: pg.get(k) for k in ("url", "final", "code", "bytes", "err")}
+        pages_raw.append((pg["path"], rec, text))
+    res = dict(res, status="ok", reparsed_at=now())
+    return analyze(res, pages_raw, host, final_host, org_words)
 
 
 def cache_path():
@@ -542,13 +607,18 @@ def org_words_for(org, repo=""):
     return {w for w in ws if len(w) >= 3}
 
 
-def run_crawl(items, workers=2, use_cache=True):
+def run_crawl(items, workers=2, use_cache=True, do_reparse=False):
     """items: list of (origin, org_words). Returns {origin: result}. Max 2 hosts at a time."""
     cache = load_cache() if use_cache else {}
     out, todo = {}, []
     for origin, ow in items:
         if origin in cache:
-            out[origin] = cache[origin]
+            r = cache[origin]
+            if do_reparse:
+                r = reparse(r, ow)
+                with open(cache_path(), "a") as f:
+                    f.write(json.dumps(r) + "\n")
+            out[origin] = r
         else:
             todo.append((origin, ow))
     lock = threading.Lock()
@@ -643,6 +713,57 @@ def recompute(conn, ids=None, log=None):
     return n
 
 
+def report(conn, ids):
+    cache = load_cache()
+    rows = conn.execute("select id, org, repo, website, contact_name, contact_email, contact_source, B, R, L, score "
+                        "from targets where id in (%s)" % ",".join(str(i) for i in ids)).fetchall()
+    origins = {}
+    for r in rows:
+        o = normalize_origin(r[3])
+        if o and o in cache:
+            origins[o] = cache[o]
+    st = {"target_rows": len(rows), "unique_origins_crawled": len(origins)}
+    st["sites_with_200_page"] = sum(1 for v in origins.values() if any(p.get("code") == 200 for p in v.get("pages", [])))
+    st["sites_status"] = {}
+    for v in origins.values():
+        st["sites_status"][v.get("status")] = st["sites_status"].get(v.get("status"), 0) + 1
+    bt, mxp, mxf = {}, 0, 0
+    for v in origins.values():
+        b = v.get("best")
+        if b:
+            bt[b["type"]] = bt.get(b["type"], 0) + 1
+            if b.get("mx"):
+                mxp += 1
+            else:
+                mxf += 1
+    st["sites_best_email_by_role"] = dict(sorted(bt.items(), key=lambda x: -x[1]))
+    st["sites_mx_pass"], st["sites_mx_fail"] = mxp, mxf
+    st["sites_only_excluded_addresses"] = sum(1 for v in origins.values() if v.get("emails") and not v.get("best"))
+    st["sites_with_named_persona"] = sum(1 for v in origins.values() if v.get("persona"))
+    st["targets_email_mx_ok"] = sum(1 for r in rows if r[5])
+    st["targets_named_persona"] = sum(1 for r in rows if r[4])
+    st["targets_persona_and_email"] = sum(1 for r in rows if r[4] and r[5])
+    st["targets_generic_only"] = sum(1 for r in rows if r[5] and not r[4])
+    st["share_generic_only_of_emailed"] = round(st["targets_generic_only"] / max(1, st["targets_email_mx_ok"]), 3)
+    to, blocked, errs = [], [], {}
+    for o, v in origins.items():
+        for f in v.get("fetch_log", []):
+            if f.get("err"):
+                k = "timeout" if ("timed out" in f["err"] or f.get("rc") == 28) else ("dns" if "resolve" in f["err"] else "other")
+                errs[k] = errs.get(k, 0) + 1
+                if k == "timeout":
+                    to.append(f["url"])
+        blocked += v.get("blocked_by_robots", [])
+    st["fetch_errors"] = errs
+    st["timeouts"] = to
+    st["blocked_by_robots"] = blocked
+    st["unreachable_sites"] = [o for o, v in origins.items() if v.get("status") != "ok"]
+    ex = [(r[1], r[4], r[5], r[6]) for r in rows if r[5]]
+    ex.sort(key=lambda x: (x[1] is None, x[0]))
+    st["examples"] = ex[:20]
+    return st
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--orgs", nargs="*", help="test mode: org=website pairs, no DB writes")
@@ -650,6 +771,9 @@ def main():
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--recompute", action="store_true")
     ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--reparse", action="store_true", help="re-extract cached sites from saved HTML")
+    ap.add_argument("--refresh-cached", action="store_true", help="rewrite contact columns for every cached/written row")
+    ap.add_argument("--report", type=int, default=0, help="report over top N B>=0.4 rows")
     a = ap.parse_args()
     os.makedirs(RAW, exist_ok=True)
     if a.orgs:
@@ -660,7 +784,7 @@ def main():
             if not o or SOCIAL.search(urllib.parse.urlsplit(o).hostname):
                 print("%-40s skip non_company_website %s" % (org, site)); continue
             items.append((o, org_words_for(org)))
-        res = run_crawl(items, use_cache=not a.no_cache)
+        res = run_crawl(items, use_cache=not a.no_cache, do_reparse=a.reparse)
         print(json.dumps({k: {"best": v.get("best"), "persona": v.get("persona"), "personas": v.get("personas")[:5],
                               "emails": [(e["email"], e["type"], e["source"]) for e in v.get("emails", [])][:10],
                               "status": v.get("status"), "robots": v.get("robots"),
@@ -669,9 +793,16 @@ def main():
                           for k, v in res.items()}, indent=1))
         return
     conn = db()
-    if a.top:
-        rows = conn.execute("select id, org, repo, website from targets where B >= 0.4 order by B desc, L desc "
-                            "limit ? offset ?", (a.top, a.offset)).fetchall()
+    if a.top or a.refresh_cached:
+        if a.refresh_cached:
+            # every row whose site is already crawled or that holds contact data from an earlier parser version;
+            # no network except dig MX
+            cache_keys = set(load_cache())
+            allrows = conn.execute("select id, org, repo, website, contact_email, contact_name from targets").fetchall()
+            rows = [r[:4] for r in allrows if normalize_origin(r[3]) in cache_keys or r[4] or r[5]]
+        else:
+            rows = conn.execute("select id, org, repo, website from targets where B >= 0.4 order by B desc, L desc "
+                                "limit ? offset ?", (a.top, a.offset)).fetchall()
         items, seen, row_origin, skipped = [], set(), {}, []
         for tid, org, repo, site in rows:
             o = normalize_origin(site)
@@ -684,7 +815,10 @@ def main():
         with open(os.path.join(RAW, "skipped-non-company.jsonl"), "a") as f:
             for s in skipped:
                 f.write(json.dumps({"ts": now(), "id": s[0], "org": s[1], "website": s[2]}) + "\n")
-        res = run_crawl(items, use_cache=not a.no_cache)
+        if a.refresh_cached:
+            ck = load_cache()
+            items = [it for it in items if it[0] in ck]
+        res = run_crawl(items, use_cache=not a.no_cache, do_reparse=a.reparse)
         written = 0
         for tid, (o, org) in row_origin.items():
             r = res.get(o) or {}
@@ -704,6 +838,10 @@ def main():
             for r in rl:
                 f.write(json.dumps(r) + "\n")
         print("R/score recomputed:", n)
+    if a.report:
+        ids = [r[0] for r in conn.execute("select id from targets where B >= 0.4 order by B desc, L desc limit ?",
+                                          (a.report,))]
+        print(json.dumps(report(conn, ids), indent=1))
     if a.recompute:
         rl = []
         n = recompute(conn, log=rl)

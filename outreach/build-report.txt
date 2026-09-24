@@ -1,0 +1,32 @@
+build_outreach 2026-09-24T12:05:06Z
+candidate rows (targets with audit and contact_email): 25
+distinct targets considered: 25
+drafted: L1=1, L2a=0, L2b=2
+skipped by reason:
+    18  no lane
+     3  mega-corp
+     1  fewer than 3 measured findings
+
+skip detail
+fewer than 3 measured findings	n8n-io/n8n fewer than 3 measured findings (2 usable of 2)
+mega-corp	NVIDIA/TensorRT-LLM mega-corp: website nvidia.com
+mega-corp	NVIDIA/Megatron-LM mega-corp: website nvidia.com
+mega-corp	NVIDIA-NeMo/Speech mega-corp: website nvidia.com
+no lane	grafana/grafana no lane (owner=Organization B=0.9 drift=0 worst=nl-NL 7.6 tms=crowdin)
+no lane	zitadel/zitadel no lane (owner=Organization B=0.75 drift=2 worst=de 14.9 tms=-)
+no lane	coder/coder no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	weaviate/weaviate no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	e2b-dev/E2B no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	logto-io/logto no lane (owner=Organization B=0.75 drift=0 worst=fr 4.4 tms=-)
+no lane	elastic/beats no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	dagger/dagger no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	treeverse/dvc no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	cvat-ai/cvat no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	langbot-app/LangBot no lane (owner=Organization B=0.75 drift=0 worst=es-ES 7.1 tms=-)
+no lane	browseros-ai/BrowserOS no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	botpress/botpress no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	Foundry376/Mailspring no lane (owner=Organization B=0.75 drift=2 worst=nl 12.0 tms=-)
+no lane	resend/react-email no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	formbricks/formbricks no lane (owner=Organization B=0.5 drift=0 worst=de-DE 4.9 tms=-)
+no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=None None tms=tx)
+no lane	tinymce/tinymce no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)

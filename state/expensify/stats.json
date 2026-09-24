@@ -2604,5 +2604,67 @@
    }
   ],
   "comments": 47
+ },
+ "101902": {
+  "url": "https://github.com/Expensify/App/issues/101902",
+  "title": "Scan Receipt- X button is shown instead of three dots on receipt after offline scan",
+  "days_open": 1,
+  "created": "2026-09-22",
+  "help_wanted_since": "2026-09-24",
+  "bounty_usd": null,
+  "competing_proposal_authors": 7,
+  "melvin_proposed": true,
+  "proposal_authors": [
+   "MelvinBot",
+   "Abdulloh0109",
+   "mukhrr",
+   "dilshodmackbook-sketch",
+   "wildan-m",
+   "abbasifaizan70",
+   "neerajbachani"
+  ],
+  "proposals": [
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-22T16:57",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5780560549"
+   },
+   {
+    "author": "MelvinBot",
+    "at": "2026-09-23T19:31",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5801517807"
+   },
+   {
+    "author": "Abdulloh0109",
+    "at": "2026-09-24T09:59",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5811964622"
+   },
+   {
+    "author": "mukhrr",
+    "at": "2026-09-24T09:59",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5811964677"
+   },
+   {
+    "author": "dilshodmackbook-sketch",
+    "at": "2026-09-24T09:59",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5811965050"
+   },
+   {
+    "author": "wildan-m",
+    "at": "2026-09-24T09:59",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5811965087"
+   },
+   {
+    "author": "abbasifaizan70",
+    "at": "2026-09-24T09:59",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5811965294"
+   },
+   {
+    "author": "neerajbachani",
+    "at": "2026-09-24T10:02",
+    "url": "https://github.com/Expensify/App/issues/101902#issuecomment-5812019102"
+   }
+  ],
+  "comments": 20
  }
 }
