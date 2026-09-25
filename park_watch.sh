@@ -14,7 +14,8 @@ snap() {
   c30229=$(gh api repos/calcom/cal.diy/pulls/30229 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
   c30230=$(gh api repos/calcom/cal.diy/pulls/30230 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
   f9394=$(gh api repos/formbricks/formbricks/issues/9394 --jq '"\(.state):\(.comments)"' 2>/dev/null)
-  echo "j9054=$j9054|6669=$h6669|6671=$h6671|6672=$h6672|6676=$h6676|s523=$s523|s501=$s501|c30229=$c30229|c30230=$c30230|f9394=$f9394"
+  tb2610=$(gh api repos/baptisteArno/typebot.io/pulls/2610 --jq '"\(.state):\(.merged):\(.comments)"' 2>/dev/null)
+  echo "j9054=$j9054|6669=$h6669|6671=$h6671|6672=$h6672|6676=$h6676|s523=$s523|s501=$s501|c30229=$c30229|c30230=$c30230|f9394=$f9394|tb2610=$tb2610"
 }
 prev=$(snap)
 while true; do

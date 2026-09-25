@@ -1,10 +1,10 @@
-build_outreach 2026-09-25T01:28:39Z
+build_outreach 2026-09-25T02:13:48Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    40  no lane
-    10  org already has an outreach row
+    39  no lane
+    11  org already has an outreach row
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -41,7 +41,6 @@ no lane	botpress/botpress no lane (owner=Organization B=0.75 drift=1 worst=None 
 no lane	aeron-io/aeron no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	Foundry376/Mailspring no lane (owner=Organization B=0.75 drift=2 worst=nl 12.0 tms=-)
 no lane	cvat-ai/cvat no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	resend/react-email no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
 no lane	makeplane/plane no lane (owner=Organization B=0.75 drift=2 worst=fr 3.7 tms=-)
 no lane	invoiceninja/invoiceninja no lane (owner=Organization B=0.75 drift=1 worst=es 14.0 tms=-)
@@ -60,6 +59,7 @@ org already has an outreach row	ServiceStack/ServiceStack org already has an out
 org already has an outreach row	strapi/strapi org already has an outreach row
 org already has an outreach row	BoundaryML/baml org already has an outreach row
 org already has an outreach row	unoplatform/uno org already has an outreach row
+org already has an outreach row	resend/react-email org already has an outreach row
 org already has an outreach row	langgenius/dify org already has an outreach row
 org already has an outreach row	Infisical/infisical org already has an outreach row
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
