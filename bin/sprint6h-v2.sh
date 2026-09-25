@@ -66,6 +66,16 @@ for tid, org, repo, website in rows:
             m = re.search(r'mailto:([\w.+-]+@[\w.-]+\.\w+)', html) or re.search(r'[\w.+-]+@[' + r'\w.-]+\.(?:com|io|org|dev|net|app|ai)\b', html)
             if m: email, src = m.group(1) if m.groups() else m.group(0), 'website'
         except Exception: pass
+    if not email:
+        # deepen: GitHub commit author emails from recent commits on the default branch
+        try:
+            commits = gh(f'/repos/{org}/{repo}/commits?per_page=20')
+            for c in commits:
+                ce = ((c.get('commit') or {}).get('author') or {}).get('email') or ''
+                if ce and not ce.endswith('users.noreply.github.com') and '@' in ce:
+                    email, src = ce, 'gh-commit'
+                    break
+        except Exception: pass
     if email and not email.endswith(('sentry.io','example.com','users.noreply.github.com')):
         db.execute("update targets set contact_email=?, contact_source=? where id=?", (email, src, tid))
         db.execute("insert into outreach(target_id, notes) values(?, 'auto-mined contact')", (tid,))
@@ -85,7 +95,7 @@ n = db.execute("""update targets set R = max(R, 0.5)
 # L4 candidates: funded or dual-licensed repos with quality issues = licensing referral leads
 rows = db.execute("""select id, org, repo from targets
   where B>=0.4 and funding_signal is not null and funding_signal != ''
-  and id not in (select target_id from outreach where notes like '%L4%') limit 10""").fetchall()
+  and id not in (select target_id from outreach where notes like 'L4-seed:%') limit 10""").fetchall()
 for tid, org, repo in rows:
     db.execute("insert into outreach(target_id, notes) values(?, 'L4-seed: funded repo, codebase-licensing referral candidate')", (tid,))
 print(f"L4-seed: {len(rows)} candidates logged")
