@@ -420,3 +420,5 @@ Verdict: night verified-green except merges (none — CI/human latency). Next-se
 - Documenso scouted 15.2k stars but machine-synced translations (translations-pull.yml) = not a PR target.
 - Watcher 12 targets live pid 594. ANVIL-REPORT.html + dashboards current.
 - Next: monitor merges; send Jan email 09-28; Twenty follow-up 09-28; if typebot PRs merge, pitch retainer same week.
+
+## 09-25 RO-12: Typebot D0 email SENT to baptiste@typebot.io (PRs #2610 de + #2611 es, ro/pt completion offer). Jan email drafted + HUMANIZE PASS, send 09-28.
