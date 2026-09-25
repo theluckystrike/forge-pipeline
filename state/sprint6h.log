@@ -358,3 +358,5 @@ wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8781 bytes)
   funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
   contributions OPEN=41, MERGED=25, CLOSED=14, PR-BLOCKED-ISSUE-FIRST=1, IN_PROGRESS=1
   days_to_fuse=12
+[2026-09-24T22:11:44Z] === SPRINT 8 done in 135s kpi=1281,749,213,141,39,25,13,0,0,0 ===
+[2026-09-24T22:54:29Z] sprint6h COMPLETE after 8 sprints
