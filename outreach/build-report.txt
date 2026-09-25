@@ -1,10 +1,10 @@
-build_outreach 2026-09-25T06:43:36Z
+build_outreach 2026-09-25T07:28:38Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    34  no lane
-    16  org already has an outreach row
+    33  no lane
+    17  org already has an outreach row
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -34,7 +34,6 @@ no lane	loft-sh/vcluster no lane (owner=Organization B=0.75 drift=0 worst=None N
 no lane	elastic/beats no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	encoredev/encore no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	dagger/dagger no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	browseros-ai/BrowserOS no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	aeron-io/aeron no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	cvat-ai/cvat no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
@@ -54,6 +53,7 @@ org already has an outreach row	ServiceStack/ServiceStack org already has an out
 org already has an outreach row	strapi/strapi org already has an outreach row
 org already has an outreach row	infinitered/reactotron org already has an outreach row
 org already has an outreach row	logto-io/logto org already has an outreach row
+org already has an outreach row	browseros-ai/BrowserOS org already has an outreach row
 org already has an outreach row	botpress/botpress org already has an outreach row
 org already has an outreach row	Foundry376/Mailspring org already has an outreach row
 org already has an outreach row	BoundaryML/baml org already has an outreach row
