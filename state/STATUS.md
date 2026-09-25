@@ -412,3 +412,11 @@ Verdict: night verified-green except merges (none — CI/human latency). Next-se
 ## 09-24 RO-6
 - outline#13873 closed instantly: shared/i18n/locales is machine-synced from their translation platform — NEVER PR locale files at outline. Target via their i18n platform or skip.
 - Cal.diy repo renamed from calcom/cal.com; PRs 30229/30230 valid there.
+
+## S89 RO-9/10/11 (2026-09-25)
+- RO-9 typebot de parity PR #2610 OPEN (240->625). RO-10 es parity PR #2611 OPEN (245->625). ro/pt offers in PR body.
+- RO-8 Twenty pivoted: locales machine-synced hourly (.po), empty-locale pitch dead; 09-28 follow-up uses drift-topup angle.
+- RO-11 Jan email drafted + HUMANIZE-gated (PASS) at state/ro3_jan_email.md; send 09-28. Facts verified live (PR #9054 OPEN MERGEABLE +795/12 files).
+- Documenso scouted 15.2k stars but machine-synced translations (translations-pull.yml) = not a PR target.
+- Watcher 12 targets live pid 594. ANVIL-REPORT.html + dashboards current.
+- Next: monitor merges; send Jan email 09-28; Twenty follow-up 09-28; if typebot PRs merge, pitch retainer same week.

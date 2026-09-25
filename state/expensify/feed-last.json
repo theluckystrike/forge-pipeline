@@ -1,24 +1,6 @@
 {
- "at": "2026-09-25T09:15:34+00:00",
+ "at": "2026-09-25T10:00:37+00:00",
  "rows": [
-  {
-   "number": 102215,
-   "url": "https://github.com/Expensify/App/issues/102215",
-   "title": "[$250] Approved report with a $0 total shows no Pay > Mark as paid button",
-   "bounty_usd": 250.0,
-   "created_at": "2026-09-24T17:54:52Z",
-   "labels": [
-    "External",
-    "Daily",
-    "Help Wanted",
-    "Bug"
-   ],
-   "assignees": [
-    "mollfpr",
-    "mkhutornyi"
-   ],
-   "taken": "c+-approved"
-  },
   {
    "number": 101937,
    "url": "https://github.com/Expensify/App/issues/101937",
