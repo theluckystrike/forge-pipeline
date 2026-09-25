@@ -1,4 +1,4 @@
-build_outreach 2026-09-25T01:24:39Z
+build_outreach 2026-09-25T01:28:39Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0

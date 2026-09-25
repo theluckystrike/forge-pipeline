@@ -42,7 +42,7 @@ while [ $(( $(date +%s) - START )) -lt "$DURATION" ]; do
   # 2. contact mining: backfill emails for qualified targets lacking them (up to 25/sprint)
   python3 - >> "$LOG" 2>&1 <<'PYEOF'
 import sqlite3, json, urllib.request, re, time
-db = sqlite3.connect('state/kpi.db'); db.timeout = 30
+db = sqlite3.connect('state/kpi.db', timeout=30)
 rows = db.execute("select id, org, repo, website from targets where B>=0.4 and (contact_email is null or contact_email='') limit 25").fetchall()
 tok = None
 try:
@@ -78,7 +78,7 @@ PYEOF
   # 3. L4 seed: find targets whose repo shows licensing/monetization friction signals
   python3 - >> "$LOG" 2>&1 <<'PYEOF'
 import sqlite3
-db = sqlite3.connect('state/kpi.db'); db.timeout = 30
+db = sqlite3.connect('state/kpi.db', timeout=30)
 n = db.execute("""update targets set R = max(R, 0.5)
   where B>=0.4 and L4_seeded is null and (
     tms like '%dual%' or tms like '%license%' or funding_signal is not null)""").rowcount if False else 0
