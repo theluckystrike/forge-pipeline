@@ -1,10 +1,10 @@
-build_outreach 2026-09-25T02:58:43Z
+build_outreach 2026-09-25T03:43:44Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    38  no lane
-    12  org already has an outreach row
+    37  no lane
+    13  org already has an outreach row
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -52,7 +52,6 @@ no lane	Automattic/harper no lane (owner=Organization B=0.75 drift=0 worst=None 
 no lane	elastic/logstash no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	kubeshark/kubeshark no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
-no lane	tinymce/tinymce no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
@@ -65,3 +64,4 @@ org already has an outreach row	Infisical/infisical org already has an outreach 
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
 org already has an outreach row	ToolJet/ToolJet org already has an outreach row
 org already has an outreach row	xberg-io/xberg org already has an outreach row
+org already has an outreach row	tinymce/tinymce org already has an outreach row
