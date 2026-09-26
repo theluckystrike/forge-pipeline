@@ -1,10 +1,10 @@
-build_outreach 2026-09-26T12:36:13Z
+build_outreach 2026-09-26T13:18:48Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    36  org already has an outreach row
-    14  no lane
+    37  org already has an outreach row
+    13  no lane
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -28,7 +28,6 @@ no lane	invoiceninja/invoiceninja no lane (owner=Organization B=0.75 drift=1 wor
 no lane	formbricks/formbricks no lane (owner=Organization B=0.5 drift=0 worst=de-DE 4.9 tms=-)
 no lane	Graylog2/graylog2-server no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=ja 96.9 tms=tx)
-no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
 org already has an outreach row	grafana/grafana org already has an outreach row
@@ -64,4 +63,5 @@ org already has an outreach row	elastic/logstash org already has an outreach row
 org already has an outreach row	kubeshark/kubeshark org already has an outreach row
 org already has an outreach row	ToolJet/ToolJet org already has an outreach row
 org already has an outreach row	xberg-io/xberg org already has an outreach row
+org already has an outreach row	databendlabs/databend org already has an outreach row
 org already has an outreach row	tinymce/tinymce org already has an outreach row
