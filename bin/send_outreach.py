@@ -13,8 +13,7 @@ A draft is sendable only when all of these hold:
 Usage:
   python3 bin/send_outreach.py                    dry run, list what would go out today
   python3 bin/send_outreach.py --full             dry run and print every sendable body
-  python3 bin/send_outreach.py --arm              real send (raises NotImplementedError until the
-                                                   owner selects a transport)
+  python3 bin/send_outreach.py --arm              real send (Gmail SMTP via Keychain; add --mark-sent per file to record)
   python3 bin/send_outreach.py --mark-sent FILE   record a draft the owner sent by hand through
                                                    Porkbun webmail (sets sent_at, moves it to sent/)
 """
