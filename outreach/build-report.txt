@@ -1,10 +1,10 @@
-build_outreach 2026-09-26T09:33:37Z
+build_outreach 2026-09-26T10:18:48Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    32  org already has an outreach row
-    18  no lane
+    33  org already has an outreach row
+    17  no lane
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -15,7 +15,6 @@ mega-corp	NVIDIA/TensorRT-LLM mega-corp: website nvidia.com
 mega-corp	NVIDIA/OpenShell mega-corp: website nvidia.com
 mega-corp	IBM/sarama mega-corp: website www.ibm.com
 mega-corp	NVIDIA-NeMo/Speech mega-corp: website nvidia.com
-no lane	TykTechnologies/tyk no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
 no lane	appsmithorg/appsmith no lane (owner=Organization B=0.75 drift=1 worst=ce 100.0 tms=-)
 no lane	vespa-engine/vespa no lane (owner=Organization B=0.75 drift=0 worst=id 100.0 tms=-)
 no lane	lightbend/config no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
@@ -41,6 +40,7 @@ org already has an outreach row	weaviate/weaviate org already has an outreach ro
 org already has an outreach row	grafana/pyroscope org already has an outreach row
 org already has an outreach row	e2b-dev/E2B org already has an outreach row
 org already has an outreach row	coder/coder org already has an outreach row
+org already has an outreach row	TykTechnologies/tyk org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
 org already has an outreach row	infinitered/reactotron org already has an outreach row
 org already has an outreach row	logto-io/logto org already has an outreach row
