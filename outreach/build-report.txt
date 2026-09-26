@@ -1,10 +1,10 @@
-build_outreach 2026-09-26T08:02:54Z
+build_outreach 2026-09-26T08:47:52Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    25  org already has an outreach row
-    25  no lane
+    29  org already has an outreach row
+    21  no lane
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -25,8 +25,6 @@ no lane	mindsdb/mindshub no lane (owner=Organization B=0.75 drift=0 worst=None N
 no lane	flyway/flyway no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	payloadcms/payload no lane (owner=Organization B=0.75 drift=0 worst=fr 2.4 tms=-)
 no lane	loft-sh/vcluster no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	elastic/beats no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	encoredev/encore no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	aeron-io/aeron no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
 no lane	makeplane/plane no lane (owner=Organization B=0.75 drift=2 worst=fr 3.7 tms=-)
@@ -37,8 +35,6 @@ no lane	Graylog2/graylog2-server no lane (owner=Organization B=0.75 drift=0 wors
 no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=ja 96.9 tms=tx)
 no lane	cocoindex-io/cocoindex no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	Automattic/harper no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	elastic/logstash no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	kubeshark/kubeshark no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
@@ -51,6 +47,8 @@ org already has an outreach row	infinitered/reactotron org already has an outrea
 org already has an outreach row	logto-io/logto org already has an outreach row
 org already has an outreach row	treeverse/dvc org already has an outreach row
 org already has an outreach row	langbot-app/LangBot org already has an outreach row
+org already has an outreach row	elastic/beats org already has an outreach row
+org already has an outreach row	encoredev/encore org already has an outreach row
 org already has an outreach row	dagger/dagger org already has an outreach row
 org already has an outreach row	browseros-ai/BrowserOS org already has an outreach row
 org already has an outreach row	botpress/botpress org already has an outreach row
@@ -62,6 +60,8 @@ org already has an outreach row	resend/react-email org already has an outreach r
 org already has an outreach row	langgenius/dify org already has an outreach row
 org already has an outreach row	Infisical/infisical org already has an outreach row
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
+org already has an outreach row	elastic/logstash org already has an outreach row
+org already has an outreach row	kubeshark/kubeshark org already has an outreach row
 org already has an outreach row	ToolJet/ToolJet org already has an outreach row
 org already has an outreach row	xberg-io/xberg org already has an outreach row
 org already has an outreach row	tinymce/tinymce org already has an outreach row
