@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FORGE Decisions — 2026-09-26</title>
+<style>
+body{font-family:-apple-system,Helvetica,sans-serif;max-width:960px;margin:40px auto;padding:0 20px;color:#1a1a1a;line-height:1.5}
+h1{font-size:1.5em;border-bottom:3px solid #2563eb;padding-bottom:8px}
+h2{font-size:1.15em;margin-top:2em;background:#eef4ff;padding:6px 10px;border-radius:6px}
+.card{border:1px solid #ddd;border-radius:8px;padding:14px 18px;margin:14px 0}
+.tag{display:inline-block;font-size:.75em;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:6px}
+.red{background:#fee2e2;color:#b91c1c}.green{background:#dcfce7;color:#15803d}.amber{background:#fef3c7;color:#92400e}.gray{background:#e5e7eb;color:#374151}
+code,pre{background:#f4f4f5;border-radius:4px;font-size:.9em}
+pre{padding:10px;overflow-x:auto}
+.btn{display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border-radius:6px;text-decoration:none;font-weight:600;color:#fff;background:#2563eb}
+.btn.g{background:#16a34a}.btn.r{background:#dc2626}
+ul{margin:6px 0}
+.small{color:#666;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>FORGE Decisions — Saturday 2026-09-26, evening</h1>
+<p><span class="tag green">78 contributions</span><span class="tag green">26 MERGED (33%)</span><span class="tag gray">6h loop running (PID 25601)</span><span class="tag gray">medusa lane saturated</span></p>
+
+<h2>1. Outreach transport — the monetization blocker</h2>
+<div class="card">
+<p><span class="tag red">BLOCKED</span> Funnel: 751 qualified targets · 213 audits · drafts gated. The sender (<code>~/oss-pipeline/bin/send_outreach.py</code>) is a stub: <code>--arm</code> raises NotImplementedError until you pick a route. Caps today: <b>8/8 sent, 0 room until UTC rollover</b>.</p>
+<p><b>Route A — manual webmail (available today, no keys):</b> approve drafts in <code>~/oss-pipeline/outreach/approved.txt</code>, send from mike@zovo.one in Porkbun webmail, then <code>python3 ~/oss-pipeline/bin/send_outreach.py --mark-sent &lt;file&gt;</code>.</p>
+<p><b>Route B — Resend API (only after rotation):</b> old key compromised Aug 2026 (12,935 phishing sends, 3 key copies on disk). Requires: revoke+reissue key scoped to zovo.one, delete all copies, verify SPF. Full checklist: <code>~/oss-pipeline/outreach/SENDING.md</code></p>
+<p><a class="btn" href="https://dashboard.resend.com/api-keys">Resend dashboard (rotate key)</a>
+<a class="btn g" href="https://mreg.porkbun.com/">Porkbun webmail (manual sends)</a>
+<a class="btn" href="file:///Users/mike/oss-pipeline/outreach/SENDING.md">SENDING.md</a></p>
+</div>
+
+<h2>2. Draft 716-L1 — Boundary (BoundaryML/baml)</h2>
+<div class="card">
+<p><span class="tag amber">REJECTED: sha_mismatch</span> — file was edited after drafting; gate quarantined it to <code>outreach/rejected/</code>. Draft below. <b>You approve the text; I move it back to the queue.</b></p>
+<pre>Subject: 3 broken doc links in BoundaryML/baml
+Reply-To: mike@zovo.one
+
+Hi there,
+
+Your README and docs have 3 broken links, out of 19 external links and
+15 relative links checked. A drift check on your public repo turned that
+up, along with two more items. docs/prepare-changelog.md line 28 links to
+step1b-prs-only-user-visible.md, a path that does not exist in the repo.
+docs/prepare-changelog.md line 33 links to step2a-pr-user-effects.md, a
+path that does not exist in the repo.
+
+I fix issues like these as pull requests against your repo that your team
+reviews, for $1,500 per month (cancel any month) or a one-off "first 20
+fixes" for $900.
+
+The work runs through an AI-assisted pipeline, and every change is
+verified against your code and tests and reviewed before it reaches you.
+
+If you want the one-page report with the command behind each number,
+reply and I'll send it.
+
+If this is not relevant, reply 'no' and I will not write again.
+
+Michael Lip, zovo.one
+mike@zovo.one</pre>
+<p class="small">File: /Users/mike/oss-pipeline/outreach/rejected/716-L1.txt (rejection reason beside it). Note the UTC cap is exhausted — first send happens after rollover anyway.</p>
+</div>
+
+<h2>3. Medusa PR watch (automated, no action needed)</h2>
+<div class="card">
+<p><span class="tag green">16934 th-locale</span> rebased onto develop via git trees API — mergeable=true, behind=0, ahead=1, 1 file, waiting on required CI.</p>
+<p><span class="tag gray">16942 / 16944 / 16946</span> closed honestly — upstream already shipped ro/bg/hu keys, diffs were empty.</p>
+<p><span class="tag gray">16932, 17014</span> open, in the 30-min merge sweep inside the 6h loop (<code>forge-6h.sh</code>).</p>
+<p><a class="btn" href="https://github.com/medusajs/medusa/pull/16934">medusa#16934</a>
+<a class="btn" href="https://github.com/medusajs/medusa/pull/17014">medusa#17014</a></p>
+</div>
+
+<h2>4. Discovery dry spell</h2>
+<div class="card">
+<p>Discovery keeps finding 0 perfect-100 candidates (rubric requires exact 100 to ship a PR). If the next 2 cycles (~4h) stay dry, plan: widen locale window (more languages under 70% coverage) + lower issue-age window from 7d to 14d. No action from you unless you want to change the rubric.</p>
+</div>
+
+<p class="small">Loop log: <code>/Users/mike/oss-pipeline/forge-6h.sh</code> output via Hermes process poll · STATUS.md updated · KPI.md current.</p>
+</body>
+</html>
