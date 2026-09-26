@@ -1565,3 +1565,50 @@ wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8827 bytes)
   funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
   contributions OPEN=39, MERGED=28, CLOSED=22, IN_PROGRESS=3, SENT=1, PR-BLOCKED-ISSUE-FIRST=1
   days_to_fuse=11
+[2026-09-26T15:35:37Z] === SPRINT 1 done in 181s kpi=1286,751,213,174,37,28,21,8,0,0 ===
+[2026-09-26T16:17:36Z] === SPRINT 2 start ===
+[23:17:36] RUN python3 discover.py
+[23:18:39] rc=0 python3 discover.py
+[23:18:39] RUN python3 qualify.py --batch 15 --from-db
+[23:18:40] rc=0 python3 qualify.py
+[23:18:40] RUN python3 audit_report.py --from-db 60 --skip-done --workers 4
+[23:18:40] rc=0 python3 audit_report.py
+[23:18:40] RUN python3 contacts.py --top 400
+[23:18:41] rc=0 python3 contacts.py
+[23:18:41] RUN python3 contacts.py --recompute
+[23:18:46] rc=0 python3 contacts.py
+[23:18:46] RUN python3 build_outreach.py --max-l1 40 --max-l2 20
+[23:18:46] rc=0 python3 build_outreach.py
+[23:18:46] RUN python3 outreach_gate.py
+[23:18:46] rc=0 python3 outreach_gate.py
+[23:18:46] RUN python3 bin/dashboard.py
+[23:18:46] rc=0 python3 bin/dashboard.py
+[23:18:46] SUMMARY targets=1286 B>=0.4=751 audits=213 audits3+=21 contacts=152 drafts_unsent=0
+sent today 8/8, last 7 days 8/40, room now 0
+queued 0, sendable 0, would send now 0
+dry run: nothing sent. Add --arm to send (transport is a stub until the owner picks one).
+[23:18:46] DONE log=state/cycle-20260926T231736.log
+contact-mining: 22/25 new contacts added
+L4-seed: 10 candidates logged
+[2026-09-26T16:19:22Z] SUMMARY open_urls=38 polled=38 errors=0 changes=0 merged=0 closed=0 new_comments=0 red_flags=0 bot_author_matches=0 medusa_fuse=11d_to_2026-10-07
+[2026-09-26T16:19:22Z] Medusa fuse 2026-10-07: 11 days remaining
+[2026-09-26T16:19:22Z] expensify_feed.py exit=0
+wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8827 bytes)
+  Qualified targets (B >= 0.4) added: 751
+  Audits with evidence dirs: 213
+  L1 sends / reply rate: 5 sends / 0%
+  Signed retainers (cumulative): no data yet [empty table: deals]
+  Proof-PR merge rate on qualified targets: 0
+  Client-repo PR merge rate: no data yet [empty table: deals]
+  Expensify assignment rate: no data yet [query returned NULL (no matching rows)]
+  Public "automated" or "spam" callouts: 0 [5 bot-author matches logged separately; source state/watch.log]
+  Cash collected (cumulative): no data yet [empty table: deals]
+  Operator hours / $ per hour: no data yet [empty table: deals, hours]
+  funnel All lanes (shared discovery pool) | 1286 | 751 | 213 |  |  |  | 
+  funnel L1 Owner-side maintenance retainer | 5 | 5 | 5 | 5 | 3 | 0 | 0 ($0)
+  funnel L2 Locale parity and add-i18n sale | 5 | 5 | 5 | 5 | 5 | 0 | 0 ($0)
+  funnel L3 Expensify Help Wanted proposals | n/a | n/a | n/a | 28 | 0 | 0 | 0 ($0)
+  funnel L4 Codebase-licensing referral | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  contributions OPEN=39, MERGED=28, CLOSED=22, IN_PROGRESS=3, SENT=1, PR-BLOCKED-ISSUE-FIRST=1
+  days_to_fuse=11
