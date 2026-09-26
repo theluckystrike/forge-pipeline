@@ -1,0 +1,23 @@
+WHITEHERO draft-backlog analysis 2026-09-26
+==================================================
+
+DRAFTABLE NOW (audited+email+untouched): 33
+   1208 saleor/saleor-dashboard               B=0.9 stars=1033 hello@saleor.io
+   1227 grafana/grafana                        B=0.9 stars=76884 partners@grafana.com
+   1262 n8n-io/n8n                            B=0.85 stars=205831 partners@n8n.io
+    362 e2b-dev/E2B                            B=0.75 stars=13942 hello@e2b.dev
+    433 weaviate/weaviate                       B=0.75 stars=16841 hello@weaviate.io
+    439 coder/coder                          B=0.75 stars=16667 ask@coder.com
+    442 dagger/dagger                         B=0.75 stars=16298 contact@dagger.io
+    462 zitadel/zitadel                        B=0.75 stars=15085 hi@zitadel.com
+    516 elastic/beats                          B=0.75 stars=12655 info@elastic.co
+    520 IBM/sarama                         B=0.75 stars=12518 info@ro.ibm.com
+    523 encoredev/encore                         B=0.75 stars=12385 hello@encore.dev
+    534 kubeshark/kubeshark                      B=0.75 stars=12085 info@kubeshark.com
+
+BLOCKED-ON-OWNER: 8 gate-passed drafts in outreach/queue/ + 8/40 weekly cap room
+  Route A (webmail, today): 8 sends ready — owner manual action
+  Route B (Resend): blocked on key rotation
+BLOCKED-ON-MINING: 114 audited targets lack email (mining yield plateaued ~9/sprint)
+MEGA-CORP EXCLUDED: 15 of untouched are >20k stars (persona gate, correct)
+
