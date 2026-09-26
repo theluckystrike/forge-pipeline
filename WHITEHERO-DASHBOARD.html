@@ -23,15 +23,15 @@ pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;backg
 .small{font-size:12.5px;color:var(--ink2)}
 </style></head><body>
 <h1>WhiteHERO v3 dashboard</h1>
-<p class="small">Generated at 2026-09-25 12:06:29 UTC by bin/dashboard.py from state/kpi.db. Every value below is computed from the database at generation time.</p>
+<p class="small">Generated at 2026-09-26 03:36:36 UTC by bin/dashboard.py from state/kpi.db. Every value below is computed from the database at generation time.</p>
 <div class="kpis">
-<div class="kpi"><span class="v warn">12</span><span>days to the Medusa fuse (2026-10-07)</span></div>
-<div class="kpi"><span class="v ">1284</span><span>targets in the pool</span></div>
+<div class="kpi"><span class="v warn">11</span><span>days to the Medusa fuse (2026-10-07)</span></div>
+<div class="kpi"><span class="v ">1285</span><span>targets in the pool</span></div>
 <div class="kpi"><span class="v ">213</span><span>audits written</span></div>
-<div class="kpi"><span class="v ">341</span><span>outreach rows</span></div>
+<div class="kpi"><span class="v ">373</span><span>outreach rows</span></div>
 <div class="kpi"><span class="v ">0</span><span>deals</span></div>
-<div class="kpi"><span class="v ">26 / 90</span><span>contributions merged / total</span></div>
-<div class="kpi"><span class="v ">44</span><span>contributions still open</span></div>
+<div class="kpi"><span class="v ">28 / 92</span><span>contributions merged / total</span></div>
+<div class="kpi"><span class="v ">42</span><span>contributions still open</span></div>
 </div>
 <h2>Weekly metrics and red flags (plan section 12)</h2>
 <div class="tw"><table><tr><th>Metric</th><th>Target from week 3</th><th>Red flag</th><th>Current value</th><th>SQL (exact, from the plan)</th></tr>
@@ -42,45 +42,45 @@ pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;backg
 <tr><td>Proof-PR merge rate on qualified targets</td><td>50%+</td><td>under 30%</td><td class="n">0</td><td><code>select avg(status=&#x27;MERGED&#x27;) from contributions where target_qualified=1</code></td></tr>
 <tr><td>Client-repo PR merge rate</td><td>68%+</td><td>under 50%</td><td class="nd">no data yet<br><span class="small">empty table: deals</span></td><td><code>select sum(merged_prs)*1.0/sum(delivered_prs) from deals where status=&#x27;paid&#x27;</code></td></tr>
 <tr><td>Expensify assignment rate</td><td>5%+</td><td>under 3% after 40</td><td class="nd">no data yet<br><span class="small">query returned NULL (no matching rows)</span></td><td><code>select avg(assigned) from proposals where posted_at is not null</code></td></tr>
-<tr><td>Public &quot;automated&quot; or &quot;spam&quot; callouts</td><td>0</td><td>1</td><td class="n">0<br><span class="small">2 bot-author matches logged separately; source state/watch.log</span></td><td><code>watch.sh greps PR comments for &quot;bot|automated|spam|AI-generated&quot;</code></td></tr>
+<tr><td>Public &quot;automated&quot; or &quot;spam&quot; callouts</td><td>0</td><td>1</td><td class="n">0<br><span class="small">3 bot-author matches logged separately; source state/watch.log</span></td><td><code>watch.sh greps PR comments for &quot;bot|automated|spam|AI-generated&quot;</code></td></tr>
 <tr><td>Cash collected (cumulative)</td><td>on the base curve</td><td>below conservative at day 60</td><td class="nd">no data yet<br><span class="small">empty table: deals</span></td><td><code>select sum(paid_usd) from deals</code></td></tr>
 <tr><td>Operator hours / $ per hour</td><td>under 80 h, $100/h+</td><td>under $35/h at day 60</td><td class="nd">no data yet<br><span class="small">empty table: deals, hours</span></td><td><code>select (select sum(paid_usd) from deals where paid_at &gt; date(&#x27;now&#x27;,&#x27;-30 day&#x27;)) / (select sum(hours) from hours where week &gt; date(&#x27;now&#x27;,&#x27;-30 day&#x27;))</code></td></tr>
 </table></div>
 <h2>Lane funnel</h2>
 <p class="small">Targets carry no lane until outreach names one, so the first row is the shared pool. Lane rows count targets that have an outreach row for that lane. L3 reads the proposals table (drafted, posted, assigned, paid).</p>
 <div class="tw"><table><tr><th>Lane</th><th>Targets</th><th>B &gt;= 0.4</th><th>Audited</th><th>Drafted</th><th>Sent</th><th>Replied</th><th>Paid</th></tr>
-<tr><td>All lanes (shared discovery pool)</td><td class="n">1284</td><td class="n">751</td><td class="n">213</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n"></td></tr>
+<tr><td>All lanes (shared discovery pool)</td><td class="n">1285</td><td class="n">751</td><td class="n">213</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n"></td></tr>
 <tr><td>L1 Owner-side maintenance retainer</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
 <tr><td>L2 Locale parity and add-i18n sale</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
-<tr><td>L3 Expensify Help Wanted proposals</td><td class="n">n/a</td><td class="n">n/a</td><td class="n">n/a</td><td class="n">24</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
+<tr><td>L3 Expensify Help Wanted proposals</td><td class="n">n/a</td><td class="n">n/a</td><td class="n">n/a</td><td class="n">26</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
 <tr><td>L4 Codebase-licensing referral</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
 <tr><td>L5 Contribution-as-marketing packs</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0 ($0)</td></tr>
 </table></div>
 <h2>Contributions by status</h2>
 <div class="tw"><table><tr><th>Status</th><th>Rows</th></tr>
-<tr><td>OPEN</td><td class="n">44</td></tr>
-<tr><td>MERGED</td><td class="n">26</td></tr>
+<tr><td>OPEN</td><td class="n">42</td></tr>
+<tr><td>MERGED</td><td class="n">28</td></tr>
 <tr><td>CLOSED</td><td class="n">17</td></tr>
+<tr><td>IN_PROGRESS</td><td class="n">3</td></tr>
 <tr><td>SENT</td><td class="n">1</td></tr>
 <tr><td>PR-BLOCKED-ISSUE-FIRST</td><td class="n">1</td></tr>
-<tr><td>IN_PROGRESS</td><td class="n">1</td></tr>
-<tr><td>Total</td><td class="n">90</td></tr></table></div>
+<tr><td>Total</td><td class="n">92</td></tr></table></div>
 <p class="small">5 rows store the status in lower case and are grouped with the upper case value.</p>
 <h2>Watcher</h2>
-<p>Medusa fuse: 12 days remain until 2026-10-07. No human review by then means stop.</p>
-<p>Red flag lines in state/watch.log: 0 from human authors, 2 from bot authors.</p>
-<pre>[2026-09-25T12:05:38Z] SUMMARY open_urls=43 polled=43 errors=0 changes=0 merged=0 closed=0 new_comments=0 red_flags=0 bot_author_matches=0 medusa_fuse=12d_to_2026-10-07</pre>
+<p>Medusa fuse: 11 days remain until 2026-10-07. No human review by then means stop.</p>
+<p>Red flag lines in state/watch.log: 0 from human authors, 3 from bot authors.</p>
+<pre>[2026-09-26T03:34:45Z] SUMMARY open_urls=41 polled=41 errors=0 changes=0 merged=0 closed=0 new_comments=0 red_flags=0 bot_author_matches=0 medusa_fuse=11d_to_2026-10-07</pre>
 <h2>Table row counts</h2>
 <div class="tw"><table><tr><th>Table</th><th>Rows</th></tr>
 <tr><td>audits</td><td class="n">213</td></tr>
-<tr><td>contributions</td><td class="n">90</td></tr>
+<tr><td>contributions</td><td class="n">92</td></tr>
 <tr><td>deals</td><td class="n">0</td></tr>
 <tr><td>hours</td><td class="n">0</td></tr>
 <tr><td>kpi</td><td class="n">8</td></tr>
-<tr><td>outreach</td><td class="n">341</td></tr>
-<tr><td>proposals</td><td class="n">24</td></tr>
-<tr><td>runs</td><td class="n">114</td></tr>
+<tr><td>outreach</td><td class="n">373</td></tr>
+<tr><td>proposals</td><td class="n">26</td></tr>
+<tr><td>runs</td><td class="n">116</td></tr>
 <tr><td>sellers</td><td class="n">0</td></tr>
-<tr><td>targets</td><td class="n">1284</td></tr>
+<tr><td>targets</td><td class="n">1285</td></tr>
 </table></div>
 </body></html>

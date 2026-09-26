@@ -712,3 +712,52 @@ wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8827 bytes)
   funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
   contributions OPEN=44, MERGED=26, CLOSED=17, SENT=1, PR-BLOCKED-ISSUE-FIRST=1, IN_PROGRESS=1
   days_to_fuse=12
+[2026-09-25T12:06:32Z] === SPRINT 5 done in 169s kpi=1284,751,213,174,42,26,16,0,0,0 ===
+[2026-09-26T00:41:46Z] sprint6h v2 COMPLETE after 5 sprints
+[2026-09-26T03:31:36Z] sprint6h v2 start, duration 6h
+[2026-09-26T03:31:36Z] === SPRINT 1 start ===
+[10:31:36] RUN python3 discover.py
+[10:33:14] rc=0 python3 discover.py
+[10:33:14] RUN python3 qualify.py --batch 15 --from-db
+[10:33:20] rc=0 python3 qualify.py
+[10:33:20] RUN python3 audit_report.py --from-db 60 --skip-done --workers 4
+[10:33:20] rc=0 python3 audit_report.py
+[10:33:20] RUN python3 contacts.py --top 400
+[10:33:22] rc=0 python3 contacts.py
+[10:33:22] RUN python3 contacts.py --recompute
+[10:33:32] rc=0 python3 contacts.py
+[10:33:32] RUN python3 build_outreach.py --max-l1 40 --max-l2 20
+[10:33:32] rc=0 python3 build_outreach.py
+[10:33:32] RUN python3 outreach_gate.py
+[10:33:33] rc=0 python3 outreach_gate.py
+[10:33:33] RUN python3 bin/dashboard.py
+[10:33:33] rc=0 python3 bin/dashboard.py
+[10:33:33] SUMMARY targets=1285 B>=0.4=751 audits=213 audits3+=21 contacts=152 drafts_unsent=9
+SEND 714-L2b.txt to=contact@xberg.io subject='89.7% of the ja UI untranslated in xberg-io/xberg'
+HOLD 716-L1.txt to=vbv@boundaryml.com subject='3 broken doc links in BoundaryML/baml'
+dry run: nothing sent. Add --arm to send (transport is a stub until the owner picks one).
+[10:33:34] DONE log=state/cycle-20260926T103136.log
+contact-mining: 22/25 new contacts added
+L4-seed: 10 candidates logged
+[2026-09-26T03:34:45Z] SUMMARY open_urls=41 polled=41 errors=0 changes=0 merged=0 closed=0 new_comments=0 red_flags=0 bot_author_matches=0 medusa_fuse=11d_to_2026-10-07
+[2026-09-26T03:34:45Z] Medusa fuse 2026-10-07: 11 days remaining
+[2026-09-26T03:34:45Z] expensify_feed.py exit=0
+wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8827 bytes)
+  Qualified targets (B >= 0.4) added: 751
+  Audits with evidence dirs: 213
+  L1 sends / reply rate: 5 sends / 0%
+  Signed retainers (cumulative): no data yet [empty table: deals]
+  Proof-PR merge rate on qualified targets: 0
+  Client-repo PR merge rate: no data yet [empty table: deals]
+  Expensify assignment rate: no data yet [query returned NULL (no matching rows)]
+  Public "automated" or "spam" callouts: 0 [3 bot-author matches logged separately; source state/watch.log]
+  Cash collected (cumulative): no data yet [empty table: deals]
+  Operator hours / $ per hour: no data yet [empty table: deals, hours]
+  funnel All lanes (shared discovery pool) | 1285 | 751 | 213 |  |  |  | 
+  funnel L1 Owner-side maintenance retainer | 5 | 5 | 5 | 5 | 0 | 0 | 0 ($0)
+  funnel L2 Locale parity and add-i18n sale | 5 | 5 | 5 | 5 | 0 | 0 | 0 ($0)
+  funnel L3 Expensify Help Wanted proposals | n/a | n/a | n/a | 26 | 0 | 0 | 0 ($0)
+  funnel L4 Codebase-licensing referral | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  contributions OPEN=42, MERGED=28, CLOSED=17, IN_PROGRESS=3, SENT=1, PR-BLOCKED-ISSUE-FIRST=1
+  days_to_fuse=11
