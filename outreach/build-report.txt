@@ -1,10 +1,10 @@
-build_outreach 2026-09-26T03:33:32Z
+build_outreach 2026-09-26T04:17:53Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    30  no lane
-    20  org already has an outreach row
+    29  no lane
+    21  org already has an outreach row
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -19,7 +19,6 @@ no lane	grafana/grafana no lane (owner=Organization B=0.9 drift=0 worst=nl-NL 7.
 no lane	zitadel/zitadel no lane (owner=Organization B=0.75 drift=2 worst=de 14.9 tms=-)
 no lane	weaviate/weaviate no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	grafana/pyroscope no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
-no lane	e2b-dev/E2B no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
 no lane	coder/coder no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	TykTechnologies/tyk no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
 no lane	appsmithorg/appsmith no lane (owner=Organization B=0.75 drift=1 worst=ce 100.0 tms=-)
@@ -47,6 +46,7 @@ no lane	kubeshark/kubeshark no lane (owner=Organization B=0.75 drift=0 worst=Non
 no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
+org already has an outreach row	e2b-dev/E2B org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
 org already has an outreach row	infinitered/reactotron org already has an outreach row
 org already has an outreach row	logto-io/logto org already has an outreach row
