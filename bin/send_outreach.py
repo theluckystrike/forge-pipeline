@@ -32,7 +32,26 @@ SENT = os.path.join(OUT, "sent")
 
 
 def transport_send(to_addr, subject, body, reply_to):
-    raise NotImplementedError("owner selects transport: webmail or rotated Resend key")
+    """Gmail SMTP transport (465 SSL). Credentials via Keychain, never on disk."""
+    import smtplib, subprocess
+    from email.message import EmailMessage
+    user = "lipmichal@gmail.com"
+    pw = subprocess.run(
+        ["security", "find-internet-password", "-s", "smtp.gmail.com", "-a", user, "-w"],
+        capture_output=True, text=True).stdout.strip()
+    if not pw:
+        raise RuntimeError("could not read smtp.gmail.com app password from Keychain")
+    msg = EmailMessage()
+    msg["From"] = "Mike <mike@zovo.one>"
+    msg["To"] = to_addr
+    msg["Subject"] = subject
+    if reply_to:
+        msg["Reply-To"] = reply_to
+    msg.set_content(body)
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as s:
+        s.login(user, pw)
+        s.send_message(msg)
+    print(f"  smtp: delivered to {to_addr}")
 
 
 def caps(conn):
