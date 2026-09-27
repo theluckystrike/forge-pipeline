@@ -1,11 +1,11 @@
-build_outreach 2026-09-27T18:20:04Z
+build_outreach 2026-09-27T19:05:24Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    48  org already has an outreach row
+    50  org already has an outreach row
      5  mega-corp
-     3  no lane
+     1  no lane
 
 skip detail
 mega-corp	NVIDIA/Megatron-LM mega-corp: website nvidia.com
@@ -13,8 +13,6 @@ mega-corp	NVIDIA/TensorRT-LLM mega-corp: website nvidia.com
 mega-corp	NVIDIA/OpenShell mega-corp: website nvidia.com
 mega-corp	IBM/sarama mega-corp: website www.ibm.com
 mega-corp	NVIDIA-NeMo/Speech mega-corp: website nvidia.com
-no lane	mindsdb/mindshub no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
-no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None None tms=-)
 no lane	formbricks/formbricks no lane (owner=Organization B=0.5 drift=0 worst=de-DE 4.9 tms=-)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
@@ -28,6 +26,7 @@ org already has an outreach row	TykTechnologies/tyk org already has an outreach 
 org already has an outreach row	appsmithorg/appsmith org already has an outreach row
 org already has an outreach row	vespa-engine/vespa org already has an outreach row
 org already has an outreach row	lightbend/config org already has an outreach row
+org already has an outreach row	mindsdb/mindshub org already has an outreach row
 org already has an outreach row	flyway/flyway org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
 org already has an outreach row	n8n-io/n8n org already has an outreach row
@@ -49,6 +48,7 @@ org already has an outreach row	unoplatform/uno org already has an outreach row
 org already has an outreach row	cvat-ai/cvat org already has an outreach row
 org already has an outreach row	resend/react-email org already has an outreach row
 org already has an outreach row	langgenius/dify org already has an outreach row
+org already has an outreach row	warpdotdev/warp org already has an outreach row
 org already has an outreach row	makeplane/plane org already has an outreach row
 org already has an outreach row	invoiceninja/invoiceninja org already has an outreach row
 org already has an outreach row	Infisical/infisical org already has an outreach row
