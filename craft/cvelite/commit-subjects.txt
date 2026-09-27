@@ -1,0 +1,2 @@
+scan explain what tripped the fail-on gate on failure
+docs scope only-used to vulnerability findings

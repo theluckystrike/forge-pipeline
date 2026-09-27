@@ -1,0 +1,48 @@
+OA010 is unreachable from the documented scan path and no-ops silently
+> Note: this is an in-house item already being handled by the maintainer - not open for contribution. Filed for tracking only.
+
+OA010 is the rule that answers "does this override floor still admit a known-vulnerable version". It works, and it is one of the strongest things the tool does. Almost nobody will ever see it run.
+
+It is reachable only as:
+
+```
+cve-lite overrides . --check-network
+```
+
+It is **not** reachable from the documented scan path. `--check-network` is parsed only by the `overrides` subcommand, so this errors out:
+
+```
+$ cve-lite . --check-overrides --check-network
+Error: Unknown option: --check-network
+```
+
+And on the path adopters actually use, OA010 no-ops silently. It early-returns when `ctx.admittedVulnerable` is empty (`oa010-vulnerable-floor.ts:68`), and that map is only populated when `opts.checkNetwork && opts.advisorySource` (`overrides/api.ts:63`). So `cve-lite . --check-overrides` reports "no override hygiene issues" on an override block full of stale floors, with nothing saying a rule was skipped.
+
+### How this was found, which is the argument for fixing it
+
+A reviewer on an external pull request we opened found by hand that a floor of `>=5.7.0` for `fast-xml-parser` still admits 5.9.3 and 5.10.0, which carry GHSA-8r6m-32jq-jx6q. We had not run OA010 on our own pull request.
+
+Running it afterwards on that repository's override block finds the whole class unprompted, at HIGH: `fast-xml-parser`, `tar`, `axios`, `hono`, `dompurify`, `js-yaml`, `svgo`, `socket.io-parser`, `vite`, `minimatch`, `immutable`, `basic-ftp`, `flatted`, `brace-expansion`. That is essentially the change we wrote by hand.
+
+A reviewer doing manually what our own HIGH-severity rule does automatically is the clearest possible signal the rule is not discoverable.
+
+### Accuracy is not the problem
+
+Spot-checked five findings against the live npm advisory endpoint, all correct:
+
+| package | floor admits | advisory |
+|---|---|---|
+| validator | 13.15.20 | `<13.15.22`, high |
+| serialize-javascript | 7.0.4 | `>=5.0.0 <7.0.5` |
+| flatted | 3.4.1 | `<=3.4.1`, high |
+| markdown-it | 14.1.1 | `<=14.1.1` |
+| file-type | 21.3.1 | `>=20.0.0 <=21.3.1` |
+
+### Scope
+
+1. Accept `--check-network` on the main scan so `cve-lite . --check-overrides --check-network` works.
+2. When `--check-overrides` runs without it, say that OA007 and OA010 were skipped and name the flag, rather than reporting a clean bill of health. The skipped-detector mechanism already exists and is the right home.
+3. Decide whether opt-in is still the right default. It was opt-in because it enumerates every admitted version and queries advisories for all of them, which is a real cost. That is a defensible default, but silence about the skip is not.
+
+Item 2 is the one that matters. A tool that says "no override hygiene issues found" when it did not run the rule that would have found them is worse than one that says nothing.
+
