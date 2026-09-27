@@ -422,3 +422,9 @@ Verdict: night verified-green except merges (none — CI/human latency). Next-se
 - Next: monitor merges; send Jan email 09-28; Twenty follow-up 09-28; if typebot PRs merge, pitch retainer same week.
 
 ## 09-25 RO-12: Typebot D0 email SENT to baptiste@typebot.io (PRs #2610 de + #2611 es, ro/pt completion offer). Jan email drafted + HUMANIZE PASS, send 09-28.
+
+## RO-13 (09-27) outreach-prep sprint
+- Typebot ro/pt measured (ro 399 gap, pt 329 gap) - HELD as paid hook, not free-completed
+- Cal.com email drafted+HUMANIZE PASS (state/ro13_cal_email.md) target robertwharrison17@gmail.com
+- Formbricks email drafted+HUMANIZE PASS (state/ro13_formbricks_email.md)
+- Ready queue for Resend: jan (ro3), typebot#2 (ro12 followup), cal, formbricks

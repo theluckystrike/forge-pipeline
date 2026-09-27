@@ -1,10 +1,10 @@
-build_outreach 2026-09-27T07:31:42Z
+build_outreach 2026-09-27T16:05:09Z
 candidate rows (targets with audit and contact_email): 56
 distinct targets considered: 56
 drafted: L1=0, L2a=0, L2b=0
 skipped by reason:
-    42  org already has an outreach row
-     8  no lane
+    43  org already has an outreach row
+     7  no lane
      5  mega-corp
      1  fewer than 3 measured findings
 
@@ -22,7 +22,6 @@ no lane	warpdotdev/warp no lane (owner=Organization B=0.75 drift=2 worst=None No
 no lane	makeplane/plane no lane (owner=Organization B=0.75 drift=2 worst=fr 3.7 tms=-)
 no lane	invoiceninja/invoiceninja no lane (owner=Organization B=0.75 drift=1 worst=es 14.0 tms=-)
 no lane	formbricks/formbricks no lane (owner=Organization B=0.5 drift=0 worst=de-DE 4.9 tms=-)
-no lane	saleor/saleor-dashboard no lane (owner=Organization B=0.9 drift=1 worst=ja 96.9 tms=tx)
 org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
 org already has an outreach row	grafana/grafana org already has an outreach row
@@ -57,6 +56,7 @@ org already has an outreach row	Infisical/infisical org already has an outreach 
 org already has an outreach row	stalwartlabs/stalwart org already has an outreach row
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
 org already has an outreach row	Graylog2/graylog2-server org already has an outreach row
+org already has an outreach row	saleor/saleor-dashboard org already has an outreach row
 org already has an outreach row	cocoindex-io/cocoindex org already has an outreach row
 org already has an outreach row	Automattic/harper org already has an outreach row
 org already has an outreach row	elastic/logstash org already has an outreach row
