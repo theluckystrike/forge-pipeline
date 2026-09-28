@@ -1,0 +1,11 @@
+import json
+fixes = {
+"11557|text": "Jeder [[Kultist]]-Gegner erhält Sieg 0 und Zurückhaltend.\n[action]: <b>Verhandlung.</b> Lege eine [intellect]-Probe (2) oder [combat]-Probe (2) ab. Für jeden Punkt, um den die Probe gelingt, bewege einen anderen [[Kultist]]-Gegner an deinem Ort einmal in eine beliebige Richtung.\n<b>Erzwungen</b> - Wenn die Gegnerphase endet: Jeder [[Kultist]]-Gegner erleidet 1 Schaden für jeden [[Blinder Passagier]]-Gegner an seinem Ort.\n<b>Ziel</b> - Wenn die Runde endet, falls sich eine Gesamtzahl von 5 oder mehr [[Kultist]]-Karten auf dem Siegespunktestapel und/oder unter dieser Szene befindet, musst du vorrücken.",
+"11559b|text": "Wenn ein [[Blinder Passagier]]-Gegner gezogen wird, erschaffe ihn am Eingang der Bienenfarm statt an seinem normalen Erscheinungsort.\n[action] Gib 1 [per_investigator] Hinweise aus, als Gruppe: Lege einen [[Kultist]]-Vorteil oder -Gegner an diesem Ort unter die Szene.\n[action]: <b>Aufgeben.</b> Du machst dich davon.",
+"11573|text": "Gewaltig. Erbarmungslos.\n<b>Erzwungen</b> - Wenn ein anderer [[Blinder Passagier]]-Gegner besiegt wird: Bewege allen Schaden von jenem Gegner auf die Mutter. <i>(Falls sich Verderben auf jenem Gegner befand, mische ihn ebenfalls in das Begegnungsdeck zurück.)</i>",
+"11577|text": "<b>Enthüllung</b> - Lege eine [willpower]-Probe (X) ab, wobei X der Schleierwert deines Ortes ist. Falls die Probe misslingt, erleide 1 Schaden und lege Karten von der Oberseite des Begegnungsdecks ab, bis ein [[Blinder Passagier]]-Gegner abgelegt wird, und ziehe ihn. Mische jeden durch diesen Effekt abgelegten Ort zurück in das Begegnungsdeck.",
+"11626|text": "Dieser Ort bekommt -1 Schleier für jede [[Glyphe]]-Karte auf dem Siegespunktestapel.\n<b>Erzwungen</b> - Wenn dieser Ort enthüllt wird: Erschaffe den beiseitegelegten Sternengezücht-Beobachter an diesem Ort.\n[action]: <b>Bewegen.</b> Bewege dich zu einem enthüllten [[Durchgang]]-Ort.",
+"11649|text": "Die Zentrale Turmspitze kann nicht bewegt werden und kann das Spiel nicht verlassen.\n[action] Gib 1-3 Ressourcen aus: Lege entsprechend viele Hinweise <i>(aus dem Markervorrat)</i> auf einen beliebigen enthüllten Ort. (Nur ein Mal pro Runde.)"
+}
+json.dump(fixes, open('/tmp/tdc_extra_fixes5.json','w'), ensure_ascii=False, indent=1)
+print('written', len(fixes))
