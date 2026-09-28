@@ -1,10 +1,10 @@
-build_outreach 2026-09-28T15:48:43Z
+build_outreach 2026-09-28T15:50:45Z
 candidate rows (targets with audit and contact_email): 65
 distinct targets considered: 65
-drafted: L1=2, L2a=0, L2b=0
+drafted: L1=1, L2a=0, L2b=0
 skipped by reason:
-    39  no lane
-    16  org already has an outreach row
+    45  no lane
+    11  org already has an outreach row
      5  mega-corp
      2  role address not for sales
      1  fewer than 3 measured findings
@@ -55,8 +55,16 @@ no lane	elastic/logstash no lane (owner=Organization B=0.75 drift=0 worst=None N
 no lane	kubeshark/kubeshark no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
 no lane	databendlabs/databend no lane (owner=Organization B=0.75 drift=0 worst=ee 66.7 tms=-)
 no lane	tinymce/tinymce no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	tradingview/lightweight-charts no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+no lane	redis/node-redis no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	ionic-team/capacitor no lane (owner=Organization B=0.75 drift=1 worst=None None tms=-)
+no lane	labring/sealos no lane (owner=Organization B=0.75 drift=1 worst=zh 2.5 tms=-)
+no lane	teambit/bit no lane (owner=Organization B=0.75 drift=1 worst=in 100.0 tms=-)
+no lane	apollographql/apollo-client no lane (owner=Organization B=0.75 drift=0 worst=None None tms=-)
+org already has an outreach row	iflytek/astron-agent org already has an outreach row
 org already has an outreach row	ServiceStack/ServiceStack org already has an outreach row
 org already has an outreach row	strapi/strapi org already has an outreach row
+org already has an outreach row	BoundaryML/baml org already has an outreach row
 org already has an outreach row	unoplatform/uno org already has an outreach row
 org already has an outreach row	langgenius/dify org already has an outreach row
 org already has an outreach row	Infisical/infisical org already has an outreach row
@@ -64,12 +72,5 @@ org already has an outreach row	formbricks/formbricks org already has an outreac
 org already has an outreach row	RocketChat/Rocket.Chat org already has an outreach row
 org already has an outreach row	ToolJet/ToolJet org already has an outreach row
 org already has an outreach row	xberg-io/xberg org already has an outreach row
-org already has an outreach row	tradingview/lightweight-charts org already has an outreach row
-org already has an outreach row	redis/node-redis org already has an outreach row
-org already has an outreach row	ionic-team/capacitor org already has an outreach row
-org already has an outreach row	labring/sealos org already has an outreach row
-org already has an outreach row	teambit/bit org already has an outreach row
-org already has an outreach row	apollographql/apollo-client org already has an outreach row
-org already has an outreach row	graphql/graphiql org already has an outreach row
 role address not for sales	langchain-ai/langchainjs role address not for sales (jobs, support, ...)
 role address not for sales	getmaxun/maxun role address not for sales (jobs, support, ...)
