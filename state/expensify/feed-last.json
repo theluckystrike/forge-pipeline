@@ -1,5 +1,5 @@
 {
- "at": "2026-09-27T19:51:43+00:00",
+ "at": "2026-09-28T04:10:25+00:00",
  "rows": [
   {
    "number": 102117,
@@ -117,7 +117,6 @@
     "External",
     "Daily",
     "Help Wanted",
-    "Overdue",
     "Bug"
    ],
    "assignees": [
@@ -371,10 +370,11 @@
     "External",
     "Daily",
     "Help Wanted",
-    "Overdue",
+    "Awaiting Payment",
     "Bug"
    ],
    "assignees": [
+    "mallenexpensify",
     "marcaaron",
     "mkhutornyi"
    ],

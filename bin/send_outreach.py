@@ -31,26 +31,24 @@ SENT = os.path.join(OUT, "sent")
 
 
 def transport_send(to_addr, subject, body, reply_to):
-    """Gmail SMTP transport (465 SSL). Credentials via Keychain, never on disk."""
-    import smtplib, subprocess
-    from email.message import EmailMessage
-    user = "lipmichal@gmail.com"
-    pw = subprocess.run(
-        ["security", "find-internet-password", "-s", "smtp.gmail.com", "-a", user, "-w"],
-        capture_output=True, text=True).stdout.strip()
-    if not pw:
-        raise RuntimeError("could not read smtp.gmail.com app password from Keychain")
-    msg = EmailMessage()
-    msg["From"] = "Mike <mike@zovo.one>"
-    msg["To"] = to_addr
-    msg["Subject"] = subject
-    if reply_to:
-        msg["Reply-To"] = reply_to
-    msg.set_content(body)
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as s:
-        s.login(user, pw)
-        s.send_message(msg)
-    print(f"  smtp: delivered to {to_addr}")
+    """Resend API transport. Key via ~/.secrets/resend_zovo.key (0600), never hardcoded."""
+    import json, urllib.request, pathlib
+    key = pathlib.Path.home().joinpath(".secrets/resend_zovo.key").read_text().strip()
+    if not key.startswith("re_"):
+        raise RuntimeError("resend key missing or malformed at ~/.secrets/resend_zovo.key")
+    payload = {"from": "Mike <mike@zovo.one>", "to": [to_addr], "subject": subject, "text": body}
+    # routing rule (owner, 2026-09-28): send as mike@zovo.one, replies delivered to gmail
+    payload["reply_to"] = "lipmichal@gmail.com"
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=json.dumps(payload).encode(),
+        headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
+                 "User-Agent": "whitehero-outreach/1.0"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        resp = json.load(r)
+    if not resp.get("id"):
+        raise RuntimeError(f"resend send failed: {resp}")
+    print(f"  resend: delivered to {to_addr} (id {resp['id']})")
 
 
 def caps(conn):

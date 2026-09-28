@@ -1,12 +1,20 @@
-outreach_gate 2026-09-27T19:50:06Z
-drafts checked: 0
-passed: 0
+outreach_gate 2026-09-28T04:08:56Z
+drafts checked: 6
+passed: 6
 failed: 0
 
 by lane (pass / fail):
+  L1: 1 / 0
+  L2b: 5 / 0
 
 fail count by rule (a draft can fail several rules):
 
 passed files:
+  1203-L1.txt
+  1206-L2b.txt
+  1214-L2b.txt
+  1219-L2b.txt
+  1230-L2b.txt
+  714-L2b.txt
 
 failed files:
