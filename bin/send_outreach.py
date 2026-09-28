@@ -26,6 +26,7 @@ from outreach_lib import OUT, QUEUE, db, sha256, split_email, lane_from_filename
 import outreach_gate
 
 DAY_CAP, WEEK_CAP = 8, 40
+LANED = "('L1','L2a','L2b','L3')"  # only gated-lane sends consume the automation budget; tests/fixes do not
 APPROVED = os.path.join(OUT, "approved.txt")
 SENT = os.path.join(OUT, "sent")
 
@@ -52,10 +53,10 @@ def transport_send(to_addr, subject, body, reply_to):
 
 
 def caps(conn):
-    day = conn.execute("""select count(*) from outreach where channel='email' and sent_at is not null
-                          and date(sent_at) = date('now')""").fetchone()[0]
-    week = conn.execute("""select count(*) from outreach where channel='email' and sent_at is not null
-                           and datetime(sent_at) > datetime('now','-7 days')""").fetchone()[0]
+    day = conn.execute(f"""select count(*) from outreach where channel='email' and sent_at is not null
+                          and date(sent_at) = date('now') and lane in {LANED}""").fetchone()[0]
+    week = conn.execute(f"""select count(*) from outreach where channel='email' and sent_at is not null
+                           and datetime(sent_at) > datetime('now','-7 days') and lane in {LANED}""").fetchone()[0]
     return day, week, max(0, min(DAY_CAP - day, WEEK_CAP - week))
 
 
