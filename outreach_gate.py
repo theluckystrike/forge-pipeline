@@ -115,6 +115,8 @@ def check(path, conn=None, target_override=None):
         if t["org"].lower() in contacted_orgs():
             fails.append(("org_already_contacted", "listed in state/contacted.tsv"))
         scan = text.replace(OFFER_TERM_MERGED, "") if lane == "L5" else text
+        # footer portfolio line is a lifetime count verified at github.com/theluckystrike, not a repo claim
+        scan = re.sub(r"https://github\.com/theluckystrike[^\n]*", "", scan)
         if MERGED_RE.search(scan):
             n = conn.execute("""select count(*) from contributions where lower(repo)=lower(?) and upper(status)='MERGED'""",
                              (full,)).fetchone()[0]

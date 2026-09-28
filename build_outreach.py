@@ -298,8 +298,11 @@ def main():
             skip("org already contacted (state/contacted.tsv)", r); continue
         prior = c.execute("""select o.id, o.notes, o.sent_at from outreach o join targets t2 on t2.id=o.target_id
                              where lower(t2.org)=lower(?)""", (r["org"],)).fetchall()
-        live_prior = [p for p in prior if not (args.redraft_rejected and p["sent_at"] is None
-                                                and (p["notes"] or "").startswith("rejected"))]
+        def _redraftable(p):
+            if not args.redraft_rejected or p["sent_at"] is not None:
+                return False
+            return (p["notes"] or "").startswith("rejected") or (p["notes"] or "") == "draft"
+        live_prior = [p for p in prior if not _redraftable(p)]
         if live_prior:
             skip("org already has an outreach row", r); continue
         if any(m["org"].lower() == r["org"].lower() for m in made):

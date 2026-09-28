@@ -13,5 +13,6 @@ If you want the key-by-key list behind these numbers, reply and I'll send it.
 
 If this is not relevant, reply 'no' and I will not write again.
 
-Michael Lip, zovo.one
-mike@zovo.one
+Michael
+https://github.com/theluckystrike - 28 merged open-source PRs you can check today
+zovo.one | mike@zovo.one

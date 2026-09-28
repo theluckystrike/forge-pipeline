@@ -14,15 +14,21 @@ TPL = pathlib.Path(__file__).parent.joinpath("template-pr.html").read_text()
 def unsent(limit):
     db = sqlite3.connect(DB)
     return db.execute("""
-        select t.id, t.org, t.repo, t.contact_email, t.score, t.stars
-        from targets t where t.contact_email is not null
+        select t.id, t.org, t.repo, t.contact_email, t.score, t.stars,
+               coalesce(nullif(t.contact_name, ''), 'there'), t.lang
+        from targets t where t.contact_email is not null and t.contact_email != ''
         and not exists (select 1 from outreach o where o.target_id = t.id)
         order by t.score desc limit ?""", (limit,)).fetchall()
 
 def template(row):
-    _, org, repo, _, _, _ = row
-    return {"subject": "A working PR for your repo, this week",
-            "html": TPL.replace("{org}", org).replace("{repo}", repo)}
+    _, org, repo, _, _, stars, cname, _ = row
+    name = cname.split()[0] if cname != "there" else "there"
+    html = (TPL.replace("{name}", name)
+               .replace("{repo}", repo)
+               .replace("{stars}", f"{stars:,}"))
+    assert "{name}" not in html and "{repo}" not in html and "{stars}" not in html
+    subject = f"A working PR for {repo}, this week"
+    return {"subject": subject, "html": html}
 
 def send(row):
     t = template(row)

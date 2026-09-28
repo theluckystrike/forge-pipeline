@@ -17,7 +17,7 @@ CONTACTED = os.environ.get("OUTREACH_CONTACTED") or os.path.join(PIPE, "state", 
 HUMANIZE = os.path.join(PIPE, "tools", "humanize_scan.py")
 
 UNSUB = "If this is not relevant, reply 'no' and I will not write again."
-SIGNOFF = "Michael Lip, zovo.one"
+SIGNOFF = "https://github.com/theluckystrike"
 REPLY_TO = "mike@zovo.one"
 TIER1 = {"fr", "de", "es", "it", "ja", "pt", "zh", "ko", "nl"}  # matches audit_locale.py TIER1 base codes
 
