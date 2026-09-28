@@ -8,11 +8,7 @@ while [ $SECONDS -lt $END ]; do
   echo "=== FORGE cycle $CYCLE $(date -u +%H:%M) ==="
   cd /Users/mike/Desktop/oss-contrib-pipeline
   # merge sweep of tracked PRs
-  for num in 16932 16934 17014; do
-    st=$(gh api repos/medusajs/medusa/pulls/$num --jq '.state+" m="+(.merged|tostring)+" "+.mergeable_state' 2>/dev/null)
-    echo "medusa#$num $st"
-  done
-  for pr in "Kochava-Studios/witsy 596" "revenz/Fenrus 258" "Samuels-Development/ox_inventory 7" "dumpus-app/dumpus-app 446" "666ghj/MiroFish 826" "jsxc/jsxc 1136"; do
+  for pr in "calcom/cal.diy 30245" "calcom/cal.diy 30246" "calcom/cal.diy 30247" "PapillonApp/Papillon 840" "WiVRn/WiVRn 1136" "OWASP/cve-lite-cli 1239" "Kochava-Studios/witsy 596" "revenz/Fenrus 258" "Samuels-Development/ox_inventory 7"; do
     set -- $pr; st=$(gh api repos/$1/pulls/$2 --jq '.state+" m="+(.merged|tostring)+" "+.mergeable_state' 2>/dev/null)
     echo "$1#$2 $st"
   done
