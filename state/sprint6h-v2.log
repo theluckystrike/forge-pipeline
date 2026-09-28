@@ -3077,3 +3077,50 @@ wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8888 bytes)
   contributions OPEN=40, MERGED=28, CLOSED=25, SENT=4, DELIVERED-FORK=4, IN_PROGRESS=3, PR-BLOCKED-ISSUE-FIRST=1
   days_to_fuse=9
 [2026-09-28T15:32:17Z] === SPRINT 1 done in 180s kpi=1295,757,213,174,38,28,23,22,0,0 ===
+[2026-09-28T16:14:17Z] === SPRINT 2 start ===
+[23:14:17] RUN python3 discover.py
+[23:15:37] rc=0 python3 discover.py
+[23:15:37] RUN python3 qualify.py --batch 15 --from-db
+[23:15:41] rc=0 python3 qualify.py
+[23:15:41] RUN python3 audit_report.py --from-db 60 --skip-done --workers 4
+[23:15:41] rc=0 python3 audit_report.py
+[23:15:41] RUN python3 contacts.py --top 400
+[23:15:44] rc=0 python3 contacts.py
+[23:15:44] RUN python3 contacts.py --recompute
+[23:15:52] rc=0 python3 contacts.py
+[23:15:52] RUN python3 build_outreach.py --max-l1 40 --max-l2 20
+[23:15:52] rc=0 python3 build_outreach.py
+[23:15:52] RUN python3 outreach_gate.py
+[23:15:53] rc=0 python3 outreach_gate.py
+[23:15:53] RUN python3 bin/dashboard.py
+[23:15:53] rc=0 python3 bin/dashboard.py
+[23:15:53] SUMMARY targets=1296 B>=0.4=757 audits=213 audits3+=21 contacts=152 drafts_unsent=3
+HOLD 716-L1.txt to=vbv@boundaryml.com subject='3 broken doc links in BoundaryML/baml'
+HOLD 895-L1.txt to=opensource@iflytek.com subject='9 broken doc links in iflytek/astron-agent'
+dry run: nothing sent. Add --arm to send (transport is a stub until the owner picks one).
+[23:15:53] DONE log=state/cycle-20260928T231417.log
+contact-mining: 22/25 new contacts added
+L4-seed: 0 candidates logged
+[2026-09-28T16:16:44Z] RED FLAG [bot-author] https://github.com/OpenAEV-Platform/openaev/pull/8116 comment by filigran-cla-bot: word='spam' ... 8UIyliIejKVkSBTQLAHzB3bvzidE=) 2. :email: **Via email** — Check your inbox (and spam folder) for a signing invitation from Concord Once signed, this comment will b ...
+[2026-09-28T16:16:44Z] SUMMARY open_urls=41 polled=41 errors=0 changes=0 merged=0 closed=0 new_comments=4 red_flags=0 bot_author_matches=1 medusa_fuse=9d_to_2026-10-07
+[2026-09-28T16:16:44Z] Medusa fuse 2026-10-07: 9 days remaining
+[2026-09-28T16:16:44Z] expensify_feed.py exit=0
+wrote /Users/mike/oss-pipeline/WHITEHERO-DASHBOARD.html (8886 bytes)
+  Qualified targets (B >= 0.4) added: 757
+  Audits with evidence dirs: 213
+  L1 sends / reply rate: 14 sends / 0%
+  Signed retainers (cumulative): no data yet [empty table: deals]
+  Proof-PR merge rate on qualified targets: 0
+  Client-repo PR merge rate: no data yet [empty table: deals]
+  Expensify assignment rate: no data yet [query returned NULL (no matching rows)]
+  Public "automated" or "spam" callouts: 0 [6 bot-author matches logged separately; source state/watch.log]
+  Cash collected (cumulative): no data yet [empty table: deals]
+  Operator hours / $ per hour: no data yet [empty table: deals, hours]
+  funnel All lanes (shared discovery pool) | 1296 | 757 | 213 |  |  |  | 
+  funnel L1 Owner-side maintenance retainer | 14 | 14 | 7 | 14 | 10 | 0 | 0 ($0)
+  funnel L2 Locale parity and add-i18n sale | 5 | 5 | 5 | 5 | 0 | 0 | 0 ($0)
+  funnel L3 Expensify Help Wanted proposals | n/a | n/a | n/a | 29 | 0 | 0 | 0 ($0)
+  funnel L4 Codebase-licensing referral | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  funnel L5 Contribution-as-marketing packs | 0 | 0 | 0 | 0 | 0 | 0 | 0 ($0)
+  contributions OPEN=42, MERGED=28, CLOSED=25, SENT=4, DELIVERED-FORK=4, IN_PROGRESS=3, PR-BLOCKED-ISSUE-FIRST=1
+  days_to_fuse=9
