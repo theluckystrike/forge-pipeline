@@ -299,6 +299,8 @@ def main():
         prior = c.execute("""select o.id, o.notes, o.sent_at from outreach o join targets t2 on t2.id=o.target_id
                              where lower(t2.org)=lower(?)""", (r["org"],)).fetchall()
         def _redraftable(p):
+            if (p["notes"] or "").startswith("L4-seed:"):
+                return True  # internal note row, never a real outreach
             if not args.redraft_rejected or p["sent_at"] is not None:
                 return False
             return (p["notes"] or "").startswith("rejected") or (p["notes"] or "") == "draft"
