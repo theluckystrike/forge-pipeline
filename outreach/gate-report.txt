@@ -1,14 +1,13 @@
-outreach_gate 2026-09-28T19:16:24Z
-drafts checked: 9
+outreach_gate 2026-09-28T20:01:06Z
+drafts checked: 8
 passed: 8
-failed: 1
+failed: 0
 
 by lane (pass / fail):
-  L1: 3 / 1
+  L1: 3 / 0
   L2b: 5 / 0
 
 fail count by rule (a draft can fail several rules):
-     1  sha_mismatch
 
 passed files:
   1203-L1.txt
@@ -21,4 +20,3 @@ passed files:
   895-L1.txt
 
 failed files:
-  60-L1.txt  sha_mismatch: file edited after drafting; rerun the builder or update the row
