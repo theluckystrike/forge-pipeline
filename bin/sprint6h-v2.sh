@@ -78,7 +78,6 @@ for tid, org, repo, website in rows:
         except Exception: pass
     if email and not email.endswith(('sentry.io','example.com','users.noreply.github.com')):
         db.execute("update targets set contact_email=?, contact_source=? where id=?", (email, src, tid))
-        db.execute("insert into outreach(target_id, notes) values(?, 'auto-mined contact')", (tid,))
         found += 1
     time.sleep(0.3)
 db.commit()

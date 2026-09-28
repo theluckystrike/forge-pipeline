@@ -1,12 +1,9 @@
-1061-L1.txt
-1164-L1.txt
 1203-L1.txt
 1206-L2b.txt
 1214-L2b.txt
 1219-L2b.txt
 1230-L2b.txt
+60-L1.txt
 714-L2b.txt
 716-L1.txt
-716-L1.txt
 895-L1.txt
-60-L1.txt
