@@ -12,7 +12,7 @@ For comparison, the investigator expansion (tdcp.json) is complete, and the Fren
 payload = {
     "title": "German translation of The Drowned City campaign cards",
     "body": body,
-    "labels": ["translation"]
+
 }
 import os
 f=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False)
