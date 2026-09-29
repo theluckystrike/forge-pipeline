@@ -1,12 +1,16 @@
-outreach_gate 2026-09-29T02:28:31Z
-drafts checked: 0
-passed: 0
-failed: 0
+outreach_gate 2026-09-29T03:14:20Z
+drafts checked: 2
+passed: 1
+failed: 1
 
 by lane (pass / fail):
+  L2a: 1 / 1
 
 fail count by rule (a draft can fail several rules):
+     1  org_already_contacted
 
 passed files:
+  1212-L2a.txt
 
 failed files:
+  1202-L2a.txt  org_already_contacted: listed in state/contacted.tsv

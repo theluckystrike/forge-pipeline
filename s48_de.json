@@ -1,0 +1,128 @@
+{
+ "12020": {
+  "en_name": "Machete",
+  "de_name": "Machete",
+  "de_text": "[action]: <b>Kampf.</b> Du bekommst für diesen Angriff +1 [combat]. Falls der angegriffene Gegner der einzige Gegner ist, der mit dir in einen Kampf verwickelt ist, fügt dieser Angriff +1 Schaden zu.",
+  "en_text": "[action]: <b>Fight.</b> You get +1 [combat] for this attack. If the attacked enemy is the only enemy engaged with you, this attack deals +1 damage."
+ },
+ "12031": {
+  "en_name": "Fingerprint Kit",
+  "de_name": "Fingerabdruck-Set",
+  "de_text": "Anwendungen (3 Vorräte).\n[action] Erschöpfe das Fingerabdruck-Set und gib 1 Vorrat aus: <b>Ermitteln.</b> Du bekommst für diese Ermittlung +1 [intellect]. Falls die Probe gelingt, entdeckst du 1 zusätzlichen Hinweis an deinem Ort.",
+  "en_text": "Uses (3 supplies).\n[action] Exhaust Fingerprint Kit and spend 1 supply: <b>Investigate.</b> You get +1 [intellect] for this investigation. If you succeed, you discover 1 additional clue at your location."
+ },
+ "12032": {
+  "en_name": "Laboratory Assistant",
+  "de_name": "Laborassistentin",
+  "de_text": "Dein Handkartenlimit wird um 2 erhöht, solange dein Handkartenlimit während der Unterhaltsphase überprüft wird.\n[reaction] Nachdem Laborassistentin ins Spiel gekommen ist: Ziehe 2 Karten.",
+  "en_text": "Your maximum hand size is increased by 2.\n[reaction] After Laboratory Assistant enters play: Draw 2 cards."
+ },
+ "12049": {
+  "en_name": "Thieves' Kit",
+  "de_name": "Diebeswerkzeug",
+  "de_text": "Anwendungen (6 Vorräte).\n[action] Gib 1 Vorrat aus: <b>Ermitteln.</b> Du darfst für diese Ermittlung [agility] statt [intellect] verwenden. Falls die Probe gelingt, erhältst du 1 Ressource.",
+  "en_text": "Uses (6 supplies).\n[action] Spend 1 supply: <b>Investigate.</b> You may use [agility] instead of [intellect] for this investigation. If you succeed, gain 1 resource."
+ },
+ "12050": {
+  "en_name": "Breaking and Entering",
+  "de_name": "Einbruchdiebstahl",
+  "de_text": "<b>Ermitteln.</b> Füge für diese Ermittlung deinen [agility]-Wert deinem Fertigkeitswert hinzu. Falls die Probe um 2 oder mehr gelingt, darfst du einem Gegner an diesem Ort automatisch entkommen. Diese Aktion provoziert keine Gelegenheitsangriffe.",
+  "en_text": "<b>Investigate.</b> Add your [agility] value to your skill value for this investigation. If you succeed by 2 or more, you may automatically evade an enemy at this location. This action does not provoke attacks of opportunity."
+ },
+ "12064": {
+  "en_name": "Premonition",
+  "de_name": "Vorahnung",
+  "de_text": "Schnell. Spiele diese Karte in einem beliebigen [free]-Spielerfenster.\nBringe Vorahnung ins Spiel, enthülle einen zufälligen Chaosmarker und versiegel ihn auf Vorahnung.\n<b>Erzwungen</b> - Sobald ein Chaosmarker aus dem Chaosbeutel enthüllt werden würde: Handle stattdessen den hier versiegelten Marker ab, als ob er gerade aus dem Chaosbeutel enthüllt worden wäre. Lege dann Vorahnung ab.",
+  "en_text": "Fast. Play during any [fast] player window.\nPut Premonition into play, reveal a random chaos token from the chaos bag, and seal it on Premonition.\n<b>Forced</b> - When a chaos token would be revealed from the chaos bag: Resolve the token sealed here as if it were just revealed from the chaos bag, instead. Then, discard Premonition."
+ },
+ "12065": {
+  "en_name": "Ward of Protection",
+  "de_name": "Schutzsiegel",
+  "de_text": "Schnell. Spiele diese Karte, sobald du eine Nicht-Schwäche-Verratskarte ziehst.\nHebe den Enthüllungseffekt dieser Karte auf. Dann nimmst du 1 Horror.",
+  "en_text": "Fast. Play when you draw a non-weakness treachery card.\nCancel that card's revelation effect. Then, take 1 horror."
+ },
+ "12073": {
+  "en_name": "Bandages",
+  "de_name": "Wundverbände",
+  "de_text": "Anwendungen (3 Vorräte). Falls Wundverbände keine Vorräte hat, lege diese Karte ab.\n[reaction] Nachdem ein Ermittler oder eine [[Verbündeter]]-Vorteilskarte an deinem Ort 1 oder mehr Schaden nimmt, gib 1 Vorrat aus: Heile 1 Schaden von jener Karte.",
+  "en_text": "Uses (3 supplies). If Bandages has no supplies, discard it.\n[reaction] After an investigator or [[Ally]] asset at your location takes 1 or more damage, spend 1 supply: Heal 1 damage from that card."
+ },
+ "12077": {
+  "en_name": "Meat Cleaver",
+  "de_name": "Fleischerbeil",
+  "de_text": "[action]: <b>Kampf.</b> Du bekommst für diesen Angriff +1 [combat] (stattdessen +2 [combat], falls du 3 oder weniger verbliebene geistige Gesundheit hast). Falls dieser Angriff einen Gegner besiegt, darfst du 1 Horror heilen. Als zusätzliche Kosten, um diese Fähigkeit zu initiieren, darfst du 1 Horror nehmen, um in diesem Angriff +1 Schaden zuzufügen.",
+  "en_text": "[action]: <b>Fight.</b> You get +1 [combat] for this attack (+2 [combat] instead if you have 3 or fewer remaining sanity). If this attack defeats an enemy, you may heal 1 horror. As an additional cost to initiate this ability, you may take 1 horror to have this attack deal +1 damage."
+ },
+ "12078": {
+  "en_name": "\"Look what I found!\"",
+  "de_name": "„Sieh mal, was ich gefunden habe!“",
+  "de_text": "Schnell. Spiele diese Karte, nachdem dir eine Fertigkeitsprobe um 2 oder weniger misslungen ist, solange du ermittelst.\nDu entdeckst 2 Hinweise an deinem Ort.",
+  "en_text": "Fast. Play after you fail a skill test by 2 or less while investigating.\nDiscover 2 clues in your location."
+ },
+ "12090": {
+  "en_name": "Guts",
+  "de_name": "Mumm",
+  "de_text": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, ziehe 1 Karte.",
+  "en_text": "Max 1 committed per skill test.\nIf this test is successful, draw 1 card."
+ },
+ "12091": {
+  "en_name": "Manual Dexterity",
+  "de_name": "Fingerfertigkeit",
+  "de_text": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, ziehe 1 Karte.",
+  "en_text": "Max 1 committed per skill test.\nIf this test is successful, draw 1 card."
+ },
+ "12092": {
+  "en_name": "Overpower",
+  "de_name": "Überwältigen",
+  "de_text": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, ziehe 1 Karte.",
+  "en_text": "Max 1 committed per skill test.\nIf this test is successful, draw 1 card."
+ },
+ "12093": {
+  "en_name": "Perception",
+  "de_name": "Wahrnehmung",
+  "de_text": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, ziehe 1 Karte.",
+  "en_text": "Max 1 committed per skill test.\nIf this test is successful, draw 1 card."
+ },
+ "12101": {
+  "en_name": "Paranoia",
+  "de_name": "Paranoia",
+  "de_text": "<b>Enthüllung</b> - Lege alle deine Ressourcen ab.",
+  "en_text": "<b>Revelation</b> - Discard all your resources."
+ },
+ "60361": {
+  "en_name": "Lockpicks",
+  "de_name": "Dietriche",
+  "de_text": "[action] Erschöpfe Dietriche: <b>Ermitteln.</b> Füge für diese Ermittlung deinen [agility]-Wert zu deinem Fertigkeitswert hinzu. Falls dir diese Probe nicht mindestens um 2 gelingt, lege Dietriche ab.",
+  "en_text": "[action] Exhaust Lockpicks: <b>Investigate.</b> Add your [agility] value to your skill value for this investigation. If you do not succeed by at least 2, discard Lockpicks."
+ },
+ "60371": {
+  "en_name": "\"Watch this!\"",
+  "de_name": "„Guck mal!“",
+  "de_text": "Trage diese Karte nur zu einer Fertigkeitsprobe bei, die du ablegst. Als zusätzliche Kosten um „Guck mal!“ zu einer Fertigkeitsprobe beizutragen, gib bis zu 3 Ressourcen aus.\nFalls die Probe um 1 oder mehr gelingt, erhältst du doppelt so viele Ressourcen.",
+  "en_text": "Commit only to a skill test you are performing. As an additional cost to commit \"Watch this!\" to a skill test, spend up to 3 resources.\nIf you succeed by 1 or more, gain twice that many resources."
+ },
+ "60372": {
+  "en_name": "Lockpicks",
+  "de_name": "Dietriche",
+  "de_text": "Anwendungen (3 Vorräte). Falls Dietriche keine Vorräte hat, lege sie ab.\n[action] Erschöpfe Dietriche: <b>Ermitteln.</b> Füge für diese Ermittlung deinen [agility]-Wert zum Fertigkeitswert hinzu. Falls dir die Probe nicht um mindestens 2 Punkte gelingt, entferne 1 Vorrat von Dietriche.",
+  "en_text": "Uses (3 supplies). If Lockpicks has no supplies, discard it.\n[action] Exhaust Lockpicks: <b>Investigate.</b> Add your [agility] value to your skill value for this investigation. If you do not succeed by at least 2, remove 1 supply from Lockpicks."
+ },
+ "60379": {
+  "en_name": "The Black Fan",
+  "de_name": "Der Schwarze Fächer",
+  "de_text": "Außergewöhnlich.\nSolange du …\n- … 10+ Ressourcen hast, bekommst du +1 Ausdauer und +1 geistige Gesundheit.\n- … 15+ Ressourcen hast, darfst du in deinem Zug eine zusätzliche Aktion nehmen.\n- … 20+ Ressourcen hast, bekommst du +1 auf jeden deiner Fertigkeitswerte.",
+  "en_text": "Exceptional.\nWhile you have...\n- ...10+ resources, you get +1 health and +1 sanity.\n- ...15+ resources, you may take one additional action during your turn.\n- ...20+ resources, you get +1 to each of your skills."
+ },
+ "60384": {
+  "en_name": "The Red Clock",
+  "de_name": "Die Rote Uhr",
+  "de_text": "Außergewöhnlich. Anwendungen (0 Ladungen).\n<b>Erzwungen</b> - Nachdem dein Zug begonnen hat: Du darfst dir alle Marker von hier als Ressourcen nehmen. Platziere hier 1 Ladung. Falls hier genau…\n- … 1 Ladung liegt, bekommst du +4 auf den Fertigkeitswert deiner nächsten Fertigkeitsprobe.\n- … 2 Ladungen liegen, darfst du dich bis zu 3 Mal bewegen.\n- … 3 Ladungen liegen, darfst du in diesem Zug 2 zusätzliche Aktionen nehmen.",
+  "en_text": "Exceptional. Uses (0 charges).\n<b>Forced</b> - After your turn begins: You may take all charges here, as resources. Place 1 charge here. If it has exactly...\n- 1 charge, you get +4 skill value for your next skill test.\n- 2 charges, you may move up to 3 times.\n- 3 charges, you may take 2 additional actions this turn."
+ },
+ "6132": {
+  "en_name": "Ruins of Ib",
+  "de_name": "Ruinen von Ib",
+  "de_text": "Veiled.\n<b>Forced</b> - After you reveal a [skull] or [cultist] token while investigating Ruins of Ib: Discard an asset you control.",
+  "en_text": "Veiled.\n<b>Forced</b> - After you reveal a [skull] or [cultist] token while investigating Ruins of Ib: Discard an asset you control."
+ }
+}

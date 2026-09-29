@@ -1,0 +1,22 @@
+{
+"12020": "[action]: <b>Kampf</b> ([combat]). Du bekommst für diesen Angriff +1 [combat]. Falls der Angriff gelingt und der angegriffene Gegner der einzige Gegner ist, der mit dir in einen Kampf verwickelt ist, darfst du das Beil erschöpfen, um mit diesem Angriff +1 Schaden zuzufügen.",
+"12031": "Anwendungen (3 Vorräte).\n[action] Erschöpfe das Fingerabdruck-Set und gib 1 Vorrat aus: <b>Ermitteln</b> ([intellect]). Du bekommst für diese Ermittlung +1 [intellect]. Falls die Probe gelingt, entdeckst du 1 zusätzlichen Hinweis an deinem Ort.",
+"12032": "Dein Handkartenlimit wird um 2 erhöht.\n[reaction] Nachdem du die Laborassistentin ausgespielt hast: Ziehe 2 Karten.",
+"12049": "Anwendungen (6 Vorräte).\n[action] Gib 1 Vorrat aus: <b>Ermitteln</b> ([intellect] oder [agility]). Falls die Probe gelingt, erhältst du 1 Ressource.",
+"12050": "<b>Ermitteln</b> ([intellect]). Addiere für diese Ermittlung deinen [agility]-Wert zu deinem [intellect]-Wert. Falls die Probe um 2 oder mehr gelingt, darfst du einem Gegner an diesem Ort automatisch ausweichen. Diese Aktion provoziert keine Gelegenheitsangriffe.",
+"12064": "Schnell. Spiele diese Karte in einem beliebigen [free]-Spielerfenster.\nBringe Vorahnung ins Spiel und versiegle einen zufälligen Chaosmarker aus dem Chaosbeutel auf Vorahnung.\n<b>Erzwungen</b> - Sobald ein Marker aus dem Chaosbeutel enthüllt werden würde: Handle stattdessen den hier versiegelten Marker ab, als ob er gerade enthüllt worden wäre. Gib dann diesen Marker frei und lege Vorahnung ab.",
+"12065": "Schnell. Spiele diese Karte, sobald du eine Nicht-Schwäche-Verratskarte ziehst.\nHebe den Enthüllungseffekt dieser Karte auf und nimm 1 Horror.",
+"12073": "Anwendungen (3 Vorräte). Falls Wundverbände keine Vorräte hat, lege diese Karte ab.\n[reaction] Nachdem ein Ermittler oder eine [[Verbündeter]]-Vorteilskarte an deinem Ort 1 oder mehr Schaden nimmt, gib 1 Vorrat aus: Heile 1 Schaden von jener Karte.",
+"12077": "[action]: <b>Kampf</b> ([combat]). Du bekommst für diesen Angriff +1 [combat] (stattdessen +2 [combat], falls du 3 oder weniger verbleibende geistige Gesundheit hast). Falls dieser Angriff einen Gegner besiegt, darfst du 1 Horror heilen.\n[reaction] Wenn du die obige [action]-Fähigkeit auslösst, nimm 1 Horror: Dieser Angriff fügt +1 Schaden zu.",
+"12078": "Schnell. Spiele diese Karte, nachdem dir eine Fertigkeitsprobe um 2 oder weniger misslungen ist, solange du ermittelst.\nDu entdeckst 2 Hinweise an deinem Ort.",
+"12090": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, zieht der ausführende Ermittler 1 Karte.",
+"12091": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, zieht der ausführende Ermittler 1 Karte.",
+"12092": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, zieht der ausführende Ermittler 1 Karte.",
+"12093": "Max. 1 pro Fertigkeitsprobe beitragen.\nFalls die Probe erfolgreich ist, zieht der ausführende Ermittler 1 Karte.",
+"12101": "<b>Enthüllung</b> - Verliere alle deine Ressourcen.",
+"60361": "[action] Erschöpfe Dietriche: <b>Ermitteln</b> ([intellect]). Addiere für diese Probe deinen [agility]-Wert zu deinem [intellect]-Wert. Falls du nicht mindestens um 2 gelingst, lege Dietriche ab.",
+"60371": "Trage diese Karte nur zu einer Fertigkeitsprobe bei, die du selbst ablegst. Als zusätzliche Kosten, um „Guck mal!“ beizutragen, gib bis zu 3 Ressourcen aus.\nFalls die Probe um 1 oder mehr gelingt, erhältst du doppelt so viele Ressourcen.",
+"60372": "Anwendungen (3 Vorräte). Falls Dietriche keine Vorräte hat, lege sie ab.\n[action] Erschöpfe Dietriche: <b>Ermitteln</b> ([intellect]). Addiere für diese Probe deinen [agility]-Wert zu deinem [intellect]-Wert. Falls du nicht mindestens um 2 gelingst, entferne 1 Vorrat von Dietriche.",
+"60379": "Außergewöhnlich.\nSolange du …\n- … 10+ Ressourcen hast, bekommst du +1 Ausdauer und +1 geistige Gesundheit.\n- … 15+ Ressourcen hast, darfst du in deinem Zug eine zusätzliche Aktion nehmen.\n- … 20+ Ressourcen hast, bekommst du +1 auf jeden deiner Fertigkeitswerte.",
+"60384": "Außergewöhnlich. Anwendungen (0 Ladungen).\n<b>Erzwungen</b> - Nachdem dein Zug begonnen hat: Du darfst dir alle Ladungen von hier als Ressourcen nehmen. Platziere hier 1 Ladung. Falls hier genau …\n- … 1 Ladung liegt, bekommst du +4 auf den Fertigkeitswert deiner nächsten Fertigkeitsprobe.\n- … 2 Ladungen liegen, darfst du dich bis zu 3 Mal bewegen.\n- … 3 Ladungen liegen, darfst du in diesem Zug 2 zusätzliche Aktionen nehmen."
+}

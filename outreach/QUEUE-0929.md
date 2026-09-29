@@ -24,3 +24,7 @@ Fresh social proof to cite: umami-software/umami PR #4580 (14 keys x 52 locales,
 
 - GitHub Sponsors listing exists but isPrivate; GraphQL has NO publish mutation — Mike must click "Publish" in https://github.com/sponsors/theluckystrike (draft profile). Tiers $3/$10/$25/$100 + one-time $50 audit / $500 locale-parity already drafted in outreach/sponsors-tiers.md.
 - Best conversion path: first-PR-free offer -> paid locale-parity PR ($500 tier) -> retainer.
+
+## 09-30 prep note (N5)
+- 1212-L2a.txt (Chatwoot nudge) is gate-clean and will send tomorrow when run with --arm.
+- 1202-L2a.txt (Twenty nudge) is BLOCKED by org_already_contacted (first-touch 09-24 from prior session). Either send the follow-up manually from lipmichal@gmail.com or remove the contacted.tsv row if that prior send bounced.
