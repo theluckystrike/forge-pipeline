@@ -1,0 +1,128 @@
+{
+ "12020": {
+  "text": "[action]: <b>Kämpfen</b> ([combat]). Sie erhalten +1 [combat] für diesen Angriff. Wenn Sie Erfolg haben und der angegriffene Gegner der einzige Gegner ist, der an Sie angebunden ist, dürfen Sie die Machete ermüden, um für diesen Angriff +1 Schaden zu verursachen.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12031": {
+  "text": "Benötigt (3 Vorräte).\n[action] Ermüden Sie den Fingerabdruck-Kasten und geben Sie 1 Vorrat aus: <b>Untersuchen</b> ([intellect]). Sie erhalten +1 [intellect] für diese Untersuchung. Wenn Sie Erfolg haben, entdecken Sie an Ihrem Ort 1 zusätzlichen Hinweis.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12032": {
+  "text": "Ihr Handkartenlimit ist um 2 erhöht.\n[reaction] Nachdem Sie den Laborassistenten gespielt haben: Ziehen Sie 2 Karten.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12049": {
+  "text": "Benötigt (6 Vorräte).\n[action] Geben Sie 1 Vorrat aus: <b>Untersuchen</b> ([intellect] oder [agility]). Wenn Sie Erfolg haben, erhalten Sie 1 Ressource.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12050": {
+  "text": "<b>Untersuchen</b> ([intellect]). Addieren Sie für diese Untersuchung Ihren [agility] zu Ihrem [intellect]. Wenn Sie mit 2 oder mehr Erfolg haben, dürfen Sie automatisch einem Gegner an Ihrem Ort ausweichen. Diese Aktion provoziert keine Gelegenheitsangriffe.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12064": {
+  "text": "Schnell. Kann in jedem [fast] Fenster gespielt werden.\nBringen Sie die Vorahnung ins Spiel und siegeln Sie einen zufälligen Marker aus dem Chaosbeutel auf der Vorahnung.\n<b>Erzwungen</b> - Wenn ein Marker aus dem Chaosbeutel aufgedeckt würde: Lösen Sie stattdessen den hier gesiegelten Marker auf, als wäre er gerade aufgedeckt worden. Danach geben Sie diesen Marker frei und legen die Vorahnung ab.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12065": {
+  "text": "Schnell. Spielen Sie, wenn Sie eine Tücke-Karte ziehen, die keine Schwäche ist.\nHeben Sie den Enthüllungseffekt dieser Karte auf und nehmen Sie 1 Schrecken.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12073": {
+  "text": "Benötigt (3 Vorräte). Wenn sich keine Vorräte auf den Bandagen befinden, legen Sie sie ab.\n[reaction] Nachdem ein Ermittler oder ein [[Verbündeter]]-Objekt an Ihrem Ort 1 oder mehr Schaden erlitten hat, geben Sie 1 Vorrat aus: Heilen Sie 1 Schaden von dieser Karte.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12077": {
+  "text": "[action]: <b>Kämpfen</b> ([combat]). Sie erhalten +1 [combat] für diesen Angriff (+2 [combat] stattdessen, wenn Sie 3 oder weniger verbleibende Geisteskraft haben). Wenn dieser Angriff einen Gegner besiegt, dürfen Sie 1 Schrecken heilen.\n[reaction] Wenn Sie die obige [action] Fähigkeit auslösen, nehmen Sie 1 Schrecken: Dieser Angriff verursacht +1 Schaden.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12078": {
+  "text": "Schnell. Spielen Sie, nachdem Sie bei einem Fertigkeitstest mit 2 oder weniger gescheitert sind, während Sie untersuchen.\nEntdecken Sie an Ihrem Ort 2 Hinweise.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12090": {
+  "text": "Maximal 1 pro Fertigkeitstest beigeben.\nWenn dieser Test erfolgreich ist, zieht der durchführende Ermittler 1 Karte.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12091": {
+  "text": "Maximal 1 pro Fertigkeitstest beigeben.\nWenn dieser Test erfolgreich ist, zieht der durchführende Ermittler 1 Karte.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12092": {
+  "text": "Maximal 1 pro Fertigkeitstest beigeben.\nWenn dieser Test erfolgreich ist, zieht der durchführende Ermittler 1 Karte.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12093": {
+  "text": "Maximal 1 pro Fertigkeitstest beigeben.\nWenn dieser Test erfolgreich ist, zieht der durchführende Ermittler 1 Karte.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "12101": {
+  "text": "<b>Enthüllung</b> - Verlieren Sie alle Ihre Ressourcen.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "60361": {
+  "text": "[action] Ermüden Sie die Dietrichs: <b>Untersuchen</b> ([intellect]). Addieren Sie für diesen Test Ihren [agility] zu Ihrem [intellect]. Wenn Sie nicht mit mindestens 2 Erfolg haben, legen Sie die Dietrichs ab.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "60371": {
+  "text": "Geben Sie nur einen Fertigkeitstest bei, den Sie selbst durchführen. Als zusätzliche Kosten, um „Schau her!“ beizugeben, geben Sie bis zu 3 Ressourcen aus.\nWenn Sie mit 1 oder mehr Erfolg haben, erhalten Sie doppelt so viele Ressourcen.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "60372": {
+  "text": "Benötigt (3 Vorräte). Wenn sich keine Vorräte auf den Dietrichs befinden, legen Sie sie ab.\n[action] Ermüden Sie die Dietrichs: <b>Untersuchen</b> ([intellect]). Addieren Sie für diesen Test Ihren [agility] zu Ihrem [intellect]. Wenn Sie nicht mit mindestens 2 Erfolg haben, entfernen Sie 1 Vorrat von den Dietrichs.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "60379": {
+  "text": "Außergewöhnlich.\nSolange Sie...\n- ...10+ Ressourcen haben, erhalten Sie +1 Lebenspunkte und +1 Geisteskraft.\n- ...15+ Ressourcen haben, dürfen Sie während Ihres Zuges eine zusätzliche Aktion ausführen.\n- ...20+ Ressourcen haben, erhalten Sie +1 auf jede Ihrer Fertigkeiten.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "60384": {
+  "text": "Außergewöhnlich. Benötigt (0 Ladungen).\n<b>Erzwungen</b> - Nachdem Ihr Zug begonnen hat: Sie dürfen alle Ladungen hier als Ressourcen nehmen. Legen Sie 1 Ladung hier ab. Wenn es genau...\n- ...1 Ladung hat, erhalten Sie +4 Fertigkeitswert für Ihren nächsten Fertigkeitstest.\n- ...2 Ladungen hat, dürfen Sie sich bis zu 3 Mal bewegen.\n- ...3 Ladungen hat, dürfen Sie in diesem Zug 2 zusätzliche Aktionen ausführen.",
+  "back_text": null,
+  "name": null,
+  "subname": null
+ },
+ "06132": {
+  "text": "Verhüllt.\n<b>Erzwungen</b> - Nachdem Sie einen [skull] oder [cultist] Marker aufgedeckt haben, während Sie die Ruinen von Ib untersuchen: Legen Sie ein Objekt ab, das Sie kontrollieren.",
+  "back_text": null,
+  "name": "Ruinen von Ib",
+  "subname": null
+ }
+}
