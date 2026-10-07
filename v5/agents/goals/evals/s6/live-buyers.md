@@ -332,3 +332,4 @@ repro: fresh census from forge raw rec-open-115230.json (128 orgs, fresher than 
 | 2026-10-07T1526Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-152549.json; warm∩open = PrefectHQ/medusajs, all already have rows; missing=[]) |  | raw/rec-open-152549.json |
 | 2026-10-07T1532Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-153210.json; warm∩open = PrefectHQ/medusajs, all already have rows; missing=[]) |  | raw/rec-open-153210.json |
 | 2026-10-07T1538Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-153810.json; warm∩open = PrefectHQ/medusajs, all already have rows; missing=[]) |  | raw/rec-open-153810.json |
+| 2026-10-07T1541Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-154157.json; warm∩open = PrefectHQ/medusajs, all already have rows; missing=[]) |  | raw/rec-open-154157.json |
