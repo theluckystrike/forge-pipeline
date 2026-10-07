@@ -1,0 +1,7 @@
+9fd9e6123eb7270624bca3a1b390ef2d47c1a391
+100644 3aa11942f8782c84542877f6129a878822b2c433 1	packages/just-bash/src/interpreter/interpreter.ts
+100644 c7f1a7b973153bf509e3d279abe312e1c36ef8a6 2	packages/just-bash/src/interpreter/interpreter.ts
+100644 ae63b9f19aa8d87a65c8e73cc25bbd2c262e2819 3	packages/just-bash/src/interpreter/interpreter.ts
+
+Auto-merging packages/just-bash/src/interpreter/interpreter.ts
+CONFLICT (content): Merge conflict in packages/just-bash/src/interpreter/interpreter.ts

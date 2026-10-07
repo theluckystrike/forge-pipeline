@@ -1,0 +1,36 @@
+diff --git a/packages/just-bash/src/interpreter/interpreter.ts b/packages/just-bash/src/interpreter/interpreter.ts
+index 3aa1194..ae63b9f 100644
+--- a/packages/just-bash/src/interpreter/interpreter.ts
++++ b/packages/just-bash/src/interpreter/interpreter.ts
+@@ -79,7 +79,7 @@ import {
+   PosixFatalError,
+   ReturnError,
+ } from "./errors.js";
+-import { expandWord, expandWordWithGlob } from "./expansion.js";
++import { expandWordWithGlob } from "./expansion.js";
+ import { advanceFd } from "./fd-table.js";
+ import { executeFunctionDef } from "./functions.js";
+ import { failure, OK, result, testResult } from "./helpers/result.js";
+@@ -774,7 +774,8 @@ export class Interpreter {
+       }
+     }
+ 
+-    let commandName = await expandWord(this.ctx, node.name);
++    const expandedName = await expandWordWithGlob(this.ctx, node.name);
++    let commandName = expandedName.values[0] ?? "";
+ 
+     const args: string[] = [];
+     const quotedArgs: boolean[] = [];
+@@ -789,6 +790,12 @@ export class Interpreter {
+       quotedArgs.push(quoted);
+     };
+ 
++    // An unquoted expansion in the command word is field split like any other
++    // word: the first field names the command and the rest lead its arguments.
++    for (const value of expandedName.values.slice(1)) {
++      appendArgument(value, expandedName.quoted);
++    }
++
+     // Handle local/declare/export/readonly arguments specially:
+     // - For array assignments like `local a=(1 "2 3")`, preserve quote structure
+     // - For scalar assignments like `local foo=$bar`, DON'T glob expand the value

@@ -1,0 +1,1 @@
+vercel-labs/just-bash	467	open	grep BRE: $ before \| is literal instead of an end-of-line anchor	bug, commands	2026-09-29T10:50:29Z

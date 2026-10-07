@@ -1,0 +1,1 @@
+{"author":{"id":"MDQ6VXNlcjUxMDMzNDA0","is_bot":false,"login":"theluckystrike","name":"Michael Lip"},"mergedAt":"2026-10-07T14:10:23Z","state":"MERGED","title":"DATEVALUE: roll the date over when the time part reaches 24 hours like Excel (#1379)"}

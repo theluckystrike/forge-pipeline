@@ -1,0 +1,1 @@
+1486	DATEVALUE: roll the date over when the time part reaches 24 hours like Excel (#1379)	theluckystrike:fix/ironcalc-datevalue-rollover	MERGED	2026-10-07T12:51:55Z

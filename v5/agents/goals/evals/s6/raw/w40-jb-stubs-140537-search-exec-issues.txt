@@ -1,0 +1,2 @@
+vercel-labs/just-bash	458	open	Executable run by path ignores a non-shell shebang (#!/usr/bin/env node) and is parsed as bash	bug, shell	2026-09-29T11:01:23Z
+vercel-labs/just-bash	459	open	ls -l shows hardcoded -rw-r--r-- / drwxr-xr-x instead of the file mode	bug, commands	2026-09-29T10:50:33Z

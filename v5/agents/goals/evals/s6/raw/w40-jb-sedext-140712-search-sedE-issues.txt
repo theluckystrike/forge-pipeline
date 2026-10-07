@@ -1,0 +1,1 @@
+vercel-labs/just-bash	496	open	sed: n and p output out of order (p;s,.*/,,;n)	bug, commands	2026-09-29T10:50:11Z

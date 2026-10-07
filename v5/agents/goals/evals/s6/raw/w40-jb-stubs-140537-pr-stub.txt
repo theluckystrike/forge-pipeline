@@ -1,0 +1,3 @@
+531	feat(api): add commandNotFound option for commands just-bash lacks	pltoledo:feat/command-not-found-option	OPEN	2026-10-04T16:48:20Z
+551	fix(grep): anchor $ at the end of a BRE alternative	theluckystrike:fix/just-bash-grep-bre-alternation-anchor	OPEN	2026-10-07T05:10:17Z
+70	Fixes for workflow serde on latest 'workflow' package	workflow-serde-nate	OPEN	2026-01-31T00:03:49Z

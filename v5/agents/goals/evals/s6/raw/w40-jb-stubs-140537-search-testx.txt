@@ -1,0 +1,2 @@
+vercel-labs/just-bash	551	open	fix(grep): anchor $ at the end of a BRE alternative		2026-10-07T05:11:49Z
+vercel-labs/just-bash	459	open	ls -l shows hardcoded -rw-r--r-- / drwxr-xr-x instead of the file mode	bug, commands	2026-09-29T10:50:33Z

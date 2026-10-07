@@ -1,0 +1,9 @@
+vercel-labs/just-bash	531	open	feat(api): add commandNotFound option for commands just-bash lacks		2026-10-05T22:02:07Z
+vercel-labs/just-bash	448	open	feat(interpreter): expose stdinConnected on the command context		2026-10-05T21:02:44Z
+vercel-labs/just-bash	428	open	feat(js-exec): accept node's -e and -p, and give process.argv node's shape		2026-10-05T20:52:35Z
+vercel-labs/just-bash	501	open	fix(python3): stop the bridge when the worker dies before its EXIT		2026-10-05T21:02:02Z
+vercel-labs/just-bash	547	open	fix(bash): inherit exported options in nested shells		2026-10-06T17:46:36Z
+vercel-labs/just-bash	401	open	fix(rg): preserve empty piped stdin		2026-09-07T23:32:27Z
+vercel-labs/just-bash	318	open	fix(interpreter): interleave duplicated streams in write order		2026-10-05T21:12:53Z
+vercel-labs/just-bash	362	open	Fix arithmetic command substitution semantics		2026-08-11T17:01:34Z
+vercel-labs/just-bash	366	open	fix(expansion): evaluate indexed parameters once		2026-08-12T09:14:46Z

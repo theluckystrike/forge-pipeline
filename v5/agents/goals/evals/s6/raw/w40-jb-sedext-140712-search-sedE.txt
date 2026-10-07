@@ -1,0 +1,1 @@
+vercel-labs/just-bash	407	open	feat(regex): pluggable engine behind UserRegex via BashOptions.regexEngine		2026-09-27T20:36:34Z

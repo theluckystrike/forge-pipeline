@@ -1,0 +1,2 @@
+551	fix(grep): anchor $ at the end of a BRE alternative	theluckystrike:fix/just-bash-grep-bre-alternation-anchor	OPEN	2026-10-07T05:10:17Z
+550	fix(sed): keep an escaped backslash before a backreference in the replacement	theluckystrike:fix/just-bash-sed-escaped-backslash	OPEN	2026-10-07T05:02:05Z

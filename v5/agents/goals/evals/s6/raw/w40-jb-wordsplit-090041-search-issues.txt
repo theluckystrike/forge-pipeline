@@ -1,0 +1,4 @@
+vercel-labs/just-bash	457	open	Unquoted expansion in command position is not word-split ($CC -c x.c with CC="cc -O2" → command not found)	bug, shell	2026-09-29T10:59:07Z
+vercel-labs/just-bash	367	open	fix(expansion): preserve leading IFS boundaries		2026-08-12T09:15:12Z
+vercel-labs/just-bash	366	open	fix(expansion): evaluate indexed parameters once		2026-08-12T09:14:46Z
+vercel-labs/just-bash	361	open	fix: preserve structured extglob alternatives		2026-08-12T09:24:12Z
