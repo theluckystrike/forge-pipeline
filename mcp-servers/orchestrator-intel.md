@@ -106,3 +106,10 @@ Human-gated items to hand to operator: npm token refresh, mcp-marketplace.io ema
 verify, glama indexing escalation.
 
 budget: 7 of 30 used, next: none — brief is complete and shippable.
+
+## 7. Reconciliation with 2026-10-07 session (bf177289)
+The KPI block above is the 09-29 kpi.json snapshot — today's verified figures supersede:
+- Checkout: 46/54 servers live Stripe (bundle $39 / individual $19); zero 503s; counter guard verified exact-once.
+- Organic: GSC 28d mcp.zovo.one 0 clicks / 22 imps / 2 indexed pages; sitemap 237 URLs (cut-to-96 happened 09-07, since restored); IndexNow re-pinged 200 with corrected key db6dbf5c....
+- Dist R30: ExMapo #24 + Albertchamberlain #75 OPEN+MERGEABLE (item 6.3 surface re-probe remains valid).
+- Priorities 6.1-6.5 stand; today's adds: user 2-command unblock (mcp-publisher login github, npm login) covers 6's npm-token human gate.
