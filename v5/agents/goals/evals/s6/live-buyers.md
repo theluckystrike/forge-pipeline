@@ -320,3 +320,4 @@ repro: fresh census from forge raw rec-open-115230.json (128 orgs, fresher than 
 | 2026-10-06T171725Z | RECURRING | no next-warm orgs (120 orgs, rec-open-171527.json; warm∩open = PrefectHQ/medusajs, all already have rows; missing=[]) |  | raw/rec-warm-171529.txt |
 | 2026-10-07T1431Z | RECURRING | no next-warm orgs (198 prs, raw/rec-open-143005.json; warm∩open = medusajs/PrefectHQ, all already have rows; missing=[]) |  | raw/rec-open-143005.json |
 | 2026-10-07T1443Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-144213.json; warm∩open = medusajs/PrefectHQ, all already have rows; missing=[]) |  | raw/rec-open-144213.json |
+| 2026-10-07T1445Z | RECURRING | no next-warm orgs (200 prs, raw/rec-open-144541.json; warm∩open = medusajs/PrefectHQ, all already have rows; missing=[]) |  | raw/rec-open-144541.json |
