@@ -1,0 +1,137 @@
+# LOCAL PROPOSAL ONLY. No application patch and no workflow input.
+name: Goclaw clean-base Go fix evidence
+'on':
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: goclaw-clean-base-gofix-evidence
+  cancel-in-progress: false
+jobs:
+  baseline:
+    if: github.repository == 'theluckystrike/forge-pipeline' && github.actor == 'theluckystrike' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GOFLAGS: '-mod=readonly'
+      GOTOOLCHAIN: local
+      AWS_PROFILE: goclaw-tests-no-credentials
+      AWS_SHARED_CREDENTIALS_FILE: /dev/null
+      AWS_CONFIG_FILE: /dev/null
+      AWS_EC2_METADATA_DISABLED: 'true'
+    steps:
+      - name: Fetch exact public clean base without credentials
+        id: base
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init source
+          cd source
+          git remote add origin https://github.com/theluckystrike/goclaw.git
+          git fetch --no-tags --depth=1 origin def297940696af4280b00880cf65f9c6d7dbb04f
+          git checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = def297940696af4280b00880cf65f9c6d7dbb04f
+          test -z "$(git status --porcelain)"
+      - id: toolchain
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # same pinned action as first failed run
+        with:
+          go-version: '1.26.0'
+          check-latest: false
+          cache: false
+          token: ''
+      - name: Run bounded Go fix fixed point and emit full audit evidence
+        id: evidence
+        working-directory: source
+        shell: python
+        run: |
+          import subprocess,sys,json,hashlib,datetime,os,re
+          from pathlib import Path
+          base='def297940696af4280b00880cf65f9c6d7dbb04f'
+          sha=lambda value:hashlib.sha256(value).hexdigest()
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==base
+          assert subprocess.check_output(['git','status','--porcelain'])==b''
+          version=subprocess.check_output(['go','version'],text=True).strip()
+          print(version,flush=True)
+          if version!='go version go1.26.0 linux/amd64':
+              print(json.dumps({'stage':'toolchain-verification','exit_code':80,'actual':version,'expected':'go version go1.26.0 linux/amd64'}),flush=True)
+              raise SystemExit(80)
+          command=['timeout','--kill-after=10s','240','go','fix','./...']
+          start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+          max_passes=6
+          passes=[];fixed_point=False;workflow_code=81;failure_reason='max_pass_budget_without_stable_exit0'
+          partial=re.compile(r'fix: applied [0-9]+ of [0-9]+ fixes; [0-9]+ files? updated\. \(Re-run the command to apply more\.\)')
+          allowed=[
+              re.compile(r'go: downloading [A-Za-z0-9._~+/@-]+ [A-Za-z0-9.+-]+'),
+              re.compile(r'# (?:[A-Za-z0-9._~+/@-]+|\[[A-Za-z0-9._~+/@-]+\])'),
+              re.compile(r'fix: omitzero: ignoring alternative fix "Replace omitempty with omitzero \(behavior change\)"'),
+              partial,
+          ]
+          for number in range(1,max_passes+1):
+              before=subprocess.check_output(['git','diff','--binary','HEAD'])
+              pass_start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+              print('GOFIX_PASS_OUTPUT_BEGIN '+str(number),flush=True)
+              process=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+              chunks=[]
+              for chunk in process.stdout:
+                  chunks.append(chunk)
+                  sys.stdout.buffer.write(chunk);sys.stdout.buffer.flush()
+              command_code=process.wait()
+              output=b''.join(chunks)
+              if output and not output.endswith(b'\n'):print(flush=True)
+              print('GOFIX_PASS_OUTPUT_END '+str(number),flush=True)
+              after=subprocess.check_output(['git','diff','--binary','HEAD'])
+              source_changed=before!=after
+              lines=[line.strip() for line in output.decode('utf-8',errors='replace').splitlines() if line.strip()]
+              partial_present=any(partial.fullmatch(line) for line in lines)
+              unclassified=[line for line in lines if not any(pattern.fullmatch(line) for pattern in allowed)]
+              untracked=subprocess.check_output(['git','ls-files','--others','--exclude-standard','-z']).decode().split('\0')
+              untracked=[name for name in untracked if name]
+              retry_partial=command_code==1 and source_changed and partial_present and not unclassified and not untracked
+              stable=command_code==0 and not source_changed and not untracked
+              retry_verification=command_code==0 and source_changed and not untracked
+              entry={'pass':number,'command':command,'command_exit_code':command_code,'start_utc':pass_start,'end_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'before_diff_sha256':sha(before),'after_diff_sha256':sha(after),'source_changed':source_changed,'output_sha256':sha(output),'partial_diagnostic_present':partial_present,'unclassified_output_lines':unclassified,'untracked_files':untracked,'decision':'FIXED_POINT' if stable else 'RETRY_DOCUMENTED_PARTIAL' if retry_partial else 'RETRY_EXIT0_VERIFICATION' if retry_verification else 'FAIL_CLOSED'}
+              passes.append(entry)
+              print('GOFIX_PASS_RECEIPT '+json.dumps(entry,sort_keys=True),flush=True)
+              if stable:
+                  fixed_point=True;workflow_code=0;failure_reason=None
+                  break
+              if not (retry_partial or retry_verification):
+                  workflow_code=command_code if command_code!=0 else 82
+                  failure_reason='unclassified_nonzero_or_missing_documented_progress_or_untracked_source'
+                  break
+              if number==max_passes:
+                  workflow_code=81;failure_reason='max_pass_budget_without_stable_exit0'
+          # A successful last real command is not sufficient if it still changed source.
+          # Every allowed partial exit1 remains recorded and must eventually reach stable exit0.
+          # Evidence collection runs even when the command returns nonzero.
+          patch=subprocess.check_output(['git','diff','--binary','HEAD'])
+          changed=subprocess.check_output(['git','diff','--name-only','-z','HEAD']).decode().split('\0')
+          changed=[name for name in changed if name]
+          files={}
+          for name in changed:
+              prior=subprocess.run(['git','show',base+':'+name],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+              after=Path(name)
+              files[name]={'base_sha256':sha(prior.stdout) if prior.returncode==0 else None,'post_go_fix_sha256':sha(after.read_bytes()) if after.is_file() else None}
+          print('BASELINE_PATCH_BEGIN',flush=True)
+          sys.stdout.buffer.write(patch)
+          sys.stdout.buffer.flush()
+          print('BASELINE_PATCH_END',flush=True)
+          receipt={'kind':'clean-base-go-fix-evidence','base_sha':base,'go_version':version,'command':command,'command_exit_code':command_code,'workflow_exit_code':workflow_code,'fixed_point':fixed_point,'failure_reason':failure_reason,'max_passes':max_passes,'passes':passes,'start_utc':start,'end_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'patch_sha256':sha(patch),'patch_bytes':len(patch),'changed_files':files,'changed_file_count':len(files),'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'claim':'Clean-base fixed point proven only when fixed_point=true and actual final command exit0 has unchanged before/after diff; resulting source remains audit evidence only'}
+          print('BASELINE_RECEIPT '+json.dumps(receipt,sort_keys=True),flush=True)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as summary:
+              summary.write('```json\n'+json.dumps(receipt,indent=2,sort_keys=True)+'\n```\n')
+          raise SystemExit(workflow_code)
+      - name: Final baseline admission receipt
+        if: always()
+        shell: python
+        env:
+          JOB_STATUS: ${{ job.status }}
+          BASE_OUTCOME: ${{ steps.base.outcome }}
+          TOOLCHAIN_OUTCOME: ${{ steps.toolchain.outcome }}
+          EVIDENCE_OUTCOME: ${{ steps.evidence.outcome }}
+        run: |
+          import os,json
+          stages={key:os.environ.get(key+'_OUTCOME','') for key in ('BASE','TOOLCHAIN','EVIDENCE')}
+          complete=os.environ['JOB_STATUS']=='success' and all(value=='success' for value in stages.values())
+          receipt={'kind':'baseline-final','state':'BASELINE_FIXED_POINT_EVIDENCE_COMPLETE' if complete else 'FAILED_OR_NOT_RUN','exit_code':0 if complete else 1,'stage_outcomes':stages,'run_id':os.environ['GITHUB_RUN_ID'],'application_gates_passed':False}
+          print(json.dumps(receipt),flush=True)
+          raise SystemExit(receipt['exit_code'])
