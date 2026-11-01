@@ -1,0 +1,177 @@
+# Diagnostic tests only. This workflow does not clear Go fix or approve publication.
+name: Goclaw exact patch diagnostic tests
+'on':
+  workflow_dispatch:
+    inputs:
+      patch_gzip64:
+        description: Exact approved gzip+base64 patch; public source only
+        required: true
+        type: string
+permissions: {}
+concurrency:
+  group: goclaw-phase2-diagnostic-only
+  cancel-in-progress: false
+jobs:
+  gates:
+    if: github.repository == 'theluckystrike/forge-pipeline' && github.actor == 'theluckystrike' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        gate:
+        - focused-race
+        - sqlite-race
+        - integration-tagged
+    services:
+      pg:
+        image: pgvector/pgvector:pg18
+        env:
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: goclaw_test
+        ports:
+        - 5432:5432
+        options: --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/goclaw_test?sslmode=disable
+      AWS_PROFILE: goclaw-tests-no-credentials
+      AWS_SHARED_CREDENTIALS_FILE: /dev/null
+      AWS_CONFIG_FILE: /dev/null
+      AWS_EC2_METADATA_DISABLED: 'true'
+      GOFLAGS: -mod=readonly
+      GOTOOLCHAIN: local
+    steps:
+    - name: Fetch public exact base without checkout credentials
+      id: base
+      shell: bash
+      run: 'set -euo pipefail
+
+        git init source
+
+        cd source
+
+        git remote add origin https://github.com/theluckystrike/goclaw.git
+
+        git fetch --no-tags --depth=1 origin def297940696af4280b00880cf65f9c6d7dbb04f
+
+        git checkout --detach FETCH_HEAD
+
+        test "$(git rev-parse HEAD)" = def297940696af4280b00880cf65f9c6d7dbb04f
+
+        '
+    - name: Apply pinned patch and verify all14 source hashes
+      id: patch
+      shell: python
+      run: "import base64,gzip,hashlib,json,os,subprocess\nfrom pathlib import Path\nevent=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())\nencoded=event['inputs']['patch_gzip64']\n\
+        assert len(encoded)<60000\nraw=base64.b64decode(encoded,validate=True)\nassert hashlib.sha256(raw).hexdigest()=='d0c3bfbea541406931cd5ea06583a2c1e3c64d69c92bc46144e683194b920595'\n\
+        patch=gzip.decompress(raw)\nassert len(patch)==77297\nassert hashlib.sha256(patch).hexdigest()=='92905937514ebdcc20e16732b485f93dcc886d4ef792bc68bb145411d44c4d30'\n\
+        target=Path('source')\npp=Path(os.environ['RUNNER_TEMP'])/'approved.patch'\npp.write_bytes(patch)\nsubprocess.run(['git','apply','--check',str(pp)],cwd=target,check=True)\n\
+        subprocess.run(['git','apply',str(pp)],cwd=target,check=True)\nexpected={'docs/14-skills-runtime.md': '07a50e39853ffbee19ad10f49aaef8eb5f8f9c691080844b2ed53f86047d2c2f',\
+        \ 'internal/http/skills.go': 'e56ff4a3a8478793c11474490a2b8730295104cca6daf90efb7e0cf04a5502c2', 'internal/http/skills_lifecycle.go': '82acd271ad6ec5e245c31b75033a4a4b2d213b3047e4ba7502ffef01011ee3c1',\
+        \ 'internal/http/skills_lifecycle_deps.go': 'c38d00d3e61ed161d14edbcc811509615eab5434274567110df1842a61f64db7', 'internal/http/skills_lifecycle_test.go':\
+        \ '59eaf3b6ad0fbeb00addc361125a90237c4a2bfb6431317a761d51e148cbc2f2', 'internal/http/skills_upload_test.go': '0e056effca738b02ede4babc3fba272b65cabaec52d36d8e59b719c5f6c8901a',\
+        \ 'internal/skills/dep_checker.go': 'f01c423d66d013c9726a1c250bd4b57c58bc0861349a85c392782f0ded9a3e88', 'internal/skills/dep_checker_test.go': '343ecbace7230c5a57c6920ffdcda1158da3395928756dc43eeaf734ac456acc',\
+        \ 'internal/skills/seeder.go': '31f37c788b948e3757a6361b6d33288f2fee6c290487be7d0b6cb4e8dbbcf379', 'internal/skills/seeder_test.go': 'c974aa0385ad63a7d1969a122d5bdc9cccaf0a686da5a1db6a2d8287a4177bed',\
+        \ 'internal/store/pg/skills_admin.go': '8b1c26714d86660b5037bd2c52916760ad88879f5c79207708fc6ce986ddd593', 'internal/store/sqlitestore/skills_content.go':\
+        \ '50da975e2ed6134ffde6e0b97201ae53905966354a8ff1561c15f694acd7009f', 'internal/store/sqlitestore/skills_test.go': '63033832e04706b7642d812abf3d2f77cd3d298539a98f8ea28ec580efd20bdd',\
+        \ 'tests/integration/v3_skills_store_test.go': '27aea553054bd11be543a8430a0aacf9e5043aa5e4de36f6556d7fa37f2010e8'}\nfor name,digest in expected.items():\n\
+        \    assert hashlib.sha256((target/name).read_bytes()).hexdigest()==digest,name\nactual=subprocess.check_output(['git','diff','--binary','HEAD'],cwd=target)\n\
+        assert actual==patch\nprint(json.dumps({'base':'def297940696af4280b00880cf65f9c6d7dbb04f','patch_sha256':'92905937514ebdcc20e16732b485f93dcc886d4ef792bc68bb145411d44c4d30','verified_files':len(expected)}))\n"
+    - name: Verify isolated PG18 and pgvector service
+      id: postgres
+      shell: python
+      env:
+        PG_CONTAINER_ID: ${{ job.services.pg.id }}
+      run: "import os,subprocess,json\ncid=os.environ['PG_CONTAINER_ID']\ndef sql(query):\n    return subprocess.check_output(['docker','exec',cid,'psql','-U','postgres','-d','goclaw_test','-At','-v','ON_ERROR_STOP=1','-c',query],text=True).strip()\n\
+        version=int(sql('SHOW server_version_num'))\nassert 180000<=version<190000,version\nsql('CREATE EXTENSION IF NOT EXISTS vector')\nextension=sql(\"SELECT extversion\
+        \ FROM pg_extension WHERE extname='vector'\")\nassert extension\nimage=subprocess.check_output(['docker','inspect','--format','{{.Image}}',cid],text=True).strip()\n\
+        print(json.dumps({'pg_server_version_num':version,'pgvector_version':extension,'service_image_id':image}))\n"
+    - id: toolchain
+      uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+      with:
+        cache: false
+        token: ''
+        go-version: 1.26.0
+        check-latest: false
+    - name: Run exact selected gate and emit receipt
+      id: gate
+      working-directory: source
+      shell: python
+      env:
+        SELECTED_GATE: ${{ matrix.gate }}
+      run: "import os,subprocess,json,datetime,pathlib,hashlib\ngates={\n  'fix':['go','fix','./...'],\n  'focused-race':['go','test','-json','-count=1','-race','-timeout=5m','./internal/skills/','./internal/http/'],\n\
+        \  'sqlite-race':['go','test','-json','-count=1','-race','-tags','sqliteonly','-timeout=5m','./internal/store/sqlitestore/'],\n  'build-pg':['go','build','./...'],\n\
+        \  'build-sqlite':['go','build','-tags','sqliteonly','./...'],\n  'vet':['go','vet','./...'],\n  'integration-untagged':['go','test','-json','-count=1','-race','./tests/integration/'],\n\
+        \  'integration-tagged':['go','test','-json','-count=1','-race','-tags','integration','-timeout=10m','-skip','^(TestHooksB2_MemoryBombBoundedByTimeout|TestHooksB4_PerTenantFairnessUnderLoad)$','./tests/integration/'],\n\
+        \  'invariants':['go','test','-json','-count=1','-race','-tags','integration','-timeout=90s','./tests/invariants/...'],\n}\ngate=os.environ['SELECTED_GATE'];cmd=gates[gate]\n\
+        started=datetime.datetime.now(datetime.timezone.utc).isoformat()\ncoverage={'reviewed_at': '2026-11-01T04:59:45.032601+00:00', 'reviewed_workflow_sha256':\
+        \ 'b1042471f62decdfee338eb7f6be624f8b0ec7c9638ad13535049937f20bd950', 'required_pg_skill_test_names': ['TestStoreSkill_CreateAndGet', 'TestStoreSkill_UpsertSystemSkillPreservesCustomCollision',\
+        \ 'TestStoreSkill_Update', 'TestStoreSkill_Delete', 'TestStoreSkill_ListSkills', 'TestStoreSkill_GrantToAgent', 'TestStoreSkill_UserGrantListPromotesAndDemotesVisibility',\
+        \ 'TestStoreSkill_UserGrantsAreTenantScopedForSystemSkill', 'TestStoreSkill_GrantToAgentRejectsCrossTenantSkill', 'TestStoreSkill_RevokeFromAgentDoesNotDemoteCrossTenantSkill',\
+        \ 'TestStoreSkill_ListWithGrantStatusIgnoresForeignTenantGrant', 'TestStoreSkill_TenantIsolation', 'TestStoreSkill_DependencyStateUpdateIsAtomicOnInvalidJSON'],\
+        \ 'required_invariant_test_names': ['TestPermission_AdminOnlyRejectsOperator', 'TestPermission_WriteRejectsViewer', 'TestPermission_OwnerSupersetOfAdmin',\
+        \ 'TestPermission_RoleHierarchy', 'TestPermission_ScopesToRoleMapping', 'TestPermission_OwnerRecognition', 'TestPermission_ConfigPermissionTenantIsolation',\
+        \ 'TestPermission_ScopeBasedAccess', 'TestSessionBoundary_MessageHistory', 'TestSessionBoundary_Summary', 'TestSessionBoundary_Metadata', 'TestSessionBoundary_Label',\
+        \ 'TestSessionBoundary_TokenCounts', 'TestSessionBoundary_ResetIsolation', 'TestTenantIsolation_SessionStore', 'TestTenantIsolation_AgentStore', 'TestTenantIsolation_MemoryStore',\
+        \ 'TestTenantIsolation_TeamStore', 'TestTenantIsolation_SkillStore', 'TestTenantIsolation_CronStore', 'TestTenantIsolation_APIKeyStore', 'TestTenantIsolation_MCPServerStore',\
+        \ 'TestTenantIsolation_VaultStore', 'TestWebhookTenantIsolationListGet', 'TestWebhookTenantIsolationRotateRevoke', 'TestWebhookTenantIsolationUpdate', 'TestWebhookTenantIsolationGetByHash'],\
+        \ 'required_new_sqlite_test_names': ['TestSQLiteSkillStore_UpsertSystemSkillReturnsPersistedArchivedStatus', 'TestSQLiteSkillStore_DependencyStateUpdateIsAtomicOnWriteFailure'],\
+        \ 'expected_optional_skip_names_no_provider_keys': ['TestQwenCacheSmoke', 'TestGeminiLive_UpstreamContract'], 'existing_unimplemented_skip_names': ['TestBridgeTool_Execute_RevokeAgentGrant_ReturnsError',\
+        \ 'TestBridgeTool_Execute_RevokeUserGrant_ReturnsError'], 'expected_optional_skip_names_no_lightpanda_sidecar': ['TestLightpanda_SingleTenant_Golden', 'TestLightpanda_Snapshot_AndEval',\
+        \ 'TestLightpanda_MultiTenant_Isolation', 'TestLightpanda_Backend_ReportedCorrectly', 'TestLightpanda_Screenshot_BlockedByToolGuard'], 'explicit_stress_load_exclusions':\
+        \ ['TestHooksB2_MemoryBombBoundedByTimeout', 'TestHooksB4_PerTenantFairnessUnderLoad'], 'status': 'IMPLEMENTED IN LOCAL PROPOSAL; no runtime gate has run',\
+        \ 'required_focused_by_package': {'github.com/nextlevelbuilder/goclaw/internal/skills': ['TestCheckSkillDepsContextCancelledIsUnknown', 'TestCheckSkillDepsContextDeadlineIsUnknown',\
+        \ 'TestDepCheckTimeout', 'TestCheckSkillDepsContextKnownMissingAndTimeoutIsIncomplete', 'TestSeeder_CheckDepsRestoresArchivedSkillOnKnownSuccess', 'TestSeeder_CheckDepsLeavesArchivedSkillOnUnknown',\
+        \ 'TestSeeder_FailedDependencyStateWriteDoesNotPublishSuccess'], 'github.com/nextlevelbuilder/goclaw/internal/http': ['TestRescanAndUpdate_CancelledPassLeavesSkillsUntouched',\
+        \ 'TestRescanAndUpdate_RecoversArchivedSkillsAfterKnownSuccess', 'TestRescanAndUpdate_CancellationDuringProbeStopsRemainingChecks', 'TestSingleSkillLifecycle_UnknownPreservesStateAndDoesNotInstall',\
+        \ 'TestSingleSkillLifecycle_CancellationReachesProbeWithoutRepeatedChecks', 'TestRescanAndUpdate_KnownResultAfterCancellationDoesNotWrite', 'TestRescanAndUpdate_PersistenceFailurePreservesBothValues',\
+        \ 'TestSingleSkillInstall_UnknownAfterInstallPreservesArchivedState', 'TestSingleSkillInstall_PartialMissingResultDoesNotLabelUncheckedPackagesInstalled']}}\n\
+        prefix='github.com/nextlevelbuilder/goclaw/'\nrequired={}\nif gate=='integration-tagged':required[prefix+'tests/integration']=coverage['required_pg_skill_test_names']\n\
+        if gate=='invariants':required[prefix+'tests/invariants']=coverage['required_invariant_test_names']\nif gate=='sqlite-race':required[prefix+'internal/store/sqlitestore']=coverage['required_new_sqlite_test_names']\n\
+        if gate=='focused-race':required=coverage['required_focused_by_package']\noptional={}\nfor field in ('expected_optional_skip_names_no_provider_keys','existing_unimplemented_skip_names','expected_optional_skip_names_no_lightpanda_sidecar'):\n\
+        \    for name in coverage[field]:optional[name]=field\nfrom collections import defaultdict,deque\nterminal=defaultdict(list);output=defaultdict(lambda:deque(maxlen=20))\n\
+        skips=[];tests=passed=skipped=0\nprocess=subprocess.Popen(['timeout','1200',*cmd],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)\nfor line in\
+        \ process.stdout:\n    print(line,end='',flush=True)\n    try:item=json.loads(line)\n    except json.JSONDecodeError:continue\n    name=item.get('Test');package=item.get('Package','');action=item.get('Action')\n\
+        \    if not name:continue\n    key=(package,name)\n    if action=='output':output[key].append(item.get('Output','').rstrip())\n    tests+=action=='run';passed+=action=='pass';skipped+=action=='skip'\n\
+        \    if action in ('pass','skip','fail'):terminal[key].append(action)\n    if action=='skip':\n        classification=optional.get(name,'UNEXPECTED_REQUIRES_REVIEW')\
+        \ if package==prefix+'tests/integration' else 'UNEXPECTED_REQUIRES_REVIEW'\n        skips.append({'package':package,'test':name,'classification':classification,'reason_output':list(output[key])})\n\
+        process_code=process.wait();code=process_code\nrequired_results=[]\nfor package,names in required.items():\n    for name in names:\n        actions=terminal[(package,name)]\n\
+        \        required_results.append({'package':package,'test':name,'terminal_actions':actions,'required_pass':bool(actions) and all(action=='pass' for action\
+        \ in actions)})\nmissing_or_failed=[item for item in required_results if not item['required_pass']]\nunexpected_skips=[item for item in skips if item['classification']=='UNEXPECTED_REQUIRES_REVIEW']\n\
+        # Require each exact top-level regression and invariant PASS, never a substitute aggregate count.\n# Optional known integration skips are reported; unknown\
+        \ skips fail for classification.\nif missing_or_failed or (gate=='invariants' and skips) or (gate=='integration-tagged' and unexpected_skips):\n    print(json.dumps({'coverage_failure':missing_or_failed,'unexpected_skips':unexpected_skips,'strict_invariant_skips':skips\
+        \ if gate=='invariants' else []}),flush=True)\n    code=code or 78\nexclusions=coverage['explicit_stress_load_exclusions'] if gate=='integration-tagged' else\
+        \ []\ncurrent=subprocess.check_output(['git','diff','--binary','HEAD'])\nif hashlib.sha256(current).hexdigest()!='92905937514ebdcc20e16732b485f93dcc886d4ef792bc68bb145411d44c4d30':code=code\
+        \ or 79\nreceipt={'gate':gate,'command':cmd,'start_utc':started,'exit_code':code,'tests_started':tests,'tests_passed':passed,'tests_skipped':skipped,'process_exit_code':process_code,'required_test_results':required_results,'required_test_failures':missing_or_failed,'skipped_tests':skips,'unexpected_skips':unexpected_skips,'explicit_exclusions':exclusions,'exclusion_rule':'Goclaw\
+        \ AGENTS: skip load/stress/benchmarks; only two exact reviewed names excluded' if exclusions else None,'base_sha':'def297940696af4280b00880cf65f9c6d7dbb04f','patch_sha256':'92905937514ebdcc20e16732b485f93dcc886d4ef792bc68bb145411d44c4d30','run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT']}\n\
+        print(json.dumps(receipt),flush=True)\nwith open(os.environ['GITHUB_STEP_SUMMARY'],'a') as summary:summary.write('```json\\n'+json.dumps(receipt,indent=2)+'\\\
+        n```\\n')\nraise SystemExit(code)\n"
+    - name: Final diagnostic receipt. Go fix and publication remain held
+      if: always()
+      shell: python
+      env:
+        SELECTED_GATE: ${{ matrix.gate }}
+        JOB_STATUS: ${{ job.status }}
+        BASE_OUTCOME: ${{ steps.base.outcome }}
+        PATCH_OUTCOME: ${{ steps.patch.outcome }}
+        POSTGRES_OUTCOME: ${{ steps.postgres.outcome }}
+        TOOLCHAIN_OUTCOME: ${{ steps.toolchain.outcome }}
+        GATE_OUTCOME: ${{ steps.gate.outcome }}
+      run: 'import os,json
+
+        stages={key:os.environ.get(key+''_OUTCOME'','''') for key in (''BASE'',''PATCH'',''POSTGRES'',''TOOLCHAIN'',''GATE'')}
+
+        complete=os.environ[''JOB_STATUS'']==''success'' and all(value==''success'' for value in stages.values())
+
+        receipt={''gate'':os.environ[''SELECTED_GATE''],''state'':''DIAGNOSTIC_TESTS_PASSED'' if complete else ''FAILED_OR_NOT_RUN'',''application_gates_passed'':False,''go_fix_gate'':''NOT_CLEARED;
+        clean-base audit and scoped modernization review pending'',''exit_code'':0 if complete else 1,''command_exit_code'':''see direct selected-gate/pre-gate-fix
+        receipt when executed'',''stage_outcomes'':stages,''base_sha'':''def297940696af4280b00880cf65f9c6d7dbb04f'',''patch_sha256'':''92905937514ebdcc20e16732b485f93dcc886d4ef792bc68bb145411d44c4d30'',''run_id'':os.environ[''GITHUB_RUN_ID'']}
+
+        print(json.dumps(receipt),flush=True)
+
+        with open(os.environ[''GITHUB_STEP_SUMMARY''],''a'') as summary:summary.write(''```json\n''+json.dumps(receipt,indent=2)+''\n```\n'')
+
+        raise SystemExit(receipt[''exit_code''])
+
+        '
