@@ -1,5 +1,5 @@
-# LOCAL PROPOSAL: contracts-only retry for explicit migration directory. Original failed setup receipt remains FAILED.
-name: Goclaw real-server contract diagnostic
+# LOCAL PROPOSAL: same-fixture clean-parent control; no application or contract rewrite.
+name: Goclaw clean-parent real-server contract control
 'on':
   workflow_dispatch: null
 permissions: {}
@@ -41,7 +41,7 @@ jobs:
 
         git -C source remote add origin https://github.com/theluckystrike/goclaw.git
 
-        git -C source fetch --no-tags --depth=1 origin b98309ac06449942b2833e7745c7449ee75ae85f
+        git -C source fetch --no-tags --depth=1 origin def297940696af4280b00880cf65f9c6d7dbb04f
 
         git -C source checkout --detach FETCH_HEAD
 
@@ -53,24 +53,24 @@ jobs:
 
         from pathlib import Path
 
-        assert subprocess.check_output([''git'',''rev-parse'',''HEAD''],text=True).strip()==''b98309ac06449942b2833e7745c7449ee75ae85f''
+        assert subprocess.check_output([''git'',''rev-parse'',''HEAD''],text=True).strip()==''def297940696af4280b00880cf65f9c6d7dbb04f''
 
         assert subprocess.check_output([''git'',''status'',''--porcelain''])==b''''
 
-        expected={''docs/14-skills-runtime.md'': ''07a50e39853ffbee19ad10f49aaef8eb5f8f9c691080844b2ed53f86047d2c2f'', ''internal/http/skills.go'':
-        ''e56ff4a3a8478793c11474490a2b8730295104cca6daf90efb7e0cf04a5502c2'', ''internal/http/skills_lifecycle.go'': ''82acd271ad6ec5e245c31b75033a4a4b2d213b3047e4ba7502ffef01011ee3c1'',
-        ''internal/http/skills_lifecycle_deps.go'': ''c38d00d3e61ed161d14edbcc811509615eab5434274567110df1842a61f64db7'', ''internal/http/skills_lifecycle_test.go'':
-        ''59eaf3b6ad0fbeb00addc361125a90237c4a2bfb6431317a761d51e148cbc2f2'', ''internal/http/skills_upload_test.go'': ''0e056effca738b02ede4babc3fba272b65cabaec52d36d8e59b719c5f6c8901a'',
-        ''internal/skills/dep_checker.go'': ''f01c423d66d013c9726a1c250bd4b57c58bc0861349a85c392782f0ded9a3e88'', ''internal/skills/dep_checker_test.go'':
-        ''343ecbace7230c5a57c6920ffdcda1158da3395928756dc43eeaf734ac456acc'', ''internal/skills/seeder.go'': ''31f37c788b948e3757a6361b6d33288f2fee6c290487be7d0b6cb4e8dbbcf379'',
-        ''internal/skills/seeder_test.go'': ''c974aa0385ad63a7d1969a122d5bdc9cccaf0a686da5a1db6a2d8287a4177bed'', ''internal/store/pg/skills_admin.go'':
-        ''8b1c26714d86660b5037bd2c52916760ad88879f5c79207708fc6ce986ddd593'', ''internal/store/sqlitestore/skills_content.go'': ''50da975e2ed6134ffde6e0b97201ae53905966354a8ff1561c15f694acd7009f'',
-        ''internal/store/sqlitestore/skills_test.go'': ''63033832e04706b7642d812abf3d2f77cd3d298539a98f8ea28ec580efd20bdd'', ''tests/integration/v3_skills_store_test.go'':
-        ''27aea553054bd11be543a8430a0aacf9e5043aa5e4de36f6556d7fa37f2010e8''}
+        expected={''docs/14-skills-runtime.md'': ''606a5677af9d6ab4abeb9f47965b28cdf37366bd530b91be8cb8d1067ee6057f'', ''internal/http/skills.go'':
+        ''3d8937bf5c96dcd7775a0d1c78195bd55430745bd0f540cc8f836abbf7f08449'', ''internal/http/skills_lifecycle.go'': ''e45d814fd975c500b4eedb4ce3ee4d816302dd20a735e4e23ded2110acc9ecb4'',
+        ''internal/http/skills_lifecycle_deps.go'': ''ee66e305d56b016e9c3c8ed56ca01d8280ff7beada6709c18b52ad397af81ccf'', ''internal/http/skills_lifecycle_test.go'':
+        ''bd8a8215626a6ed79608ea944c7805df62daa7db02a3a13dde85e2f59a51b2b5'', ''internal/http/skills_upload_test.go'': ''1d5cbe0828c3597e9fb8b733505c0327086727e900d98301713a0d3290e2e621'',
+        ''internal/skills/dep_checker.go'': ''c7c23ff0adba6fa40c0024cff62c784c585ff3cff8d70f46ab5c5e200d17ae34'', ''internal/skills/dep_checker_test.go'':
+        ''7e6016dfb15e796b37b9c81fdc7ad9223103388828ccbc11fd8d02deccc30ad9'', ''internal/skills/seeder.go'': ''5f9907a165f8247e97bd2e9d4c7b33b0166c9180e35396de12e1f7076c106541'',
+        ''internal/skills/seeder_test.go'': ''339fb7846354b22fb9859c04690d3216dfaa3b501da4881243907f20279f3792'', ''internal/store/pg/skills_admin.go'':
+        ''54e892d0aeec75795d537735530e6ee16d6d3505cf9a378cfa26d59a2e62190d'', ''internal/store/sqlitestore/skills_content.go'': ''6a837937aaf16d203b971201060804d1b3f77db325697c23af5896d84bcea2e2'',
+        ''internal/store/sqlitestore/skills_test.go'': ''3c538d664f8906410bf7894a187487ec711be1f1f0b27120602daf9cdebb81a5'', ''tests/integration/v3_skills_store_test.go'':
+        ''73347026855599109ad49e61787c1ee84fdf37263036acb024ef8b63ea432f15''}
 
         for name,digest in expected.items():assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest,name
 
-        print(json.dumps({''source_commit'':''b98309ac06449942b2833e7745c7449ee75ae85f'',''verified_files'':len(expected),''state'':''EXACT_REVIEWED_COMMITTED_SOURCE''}))
+        print(json.dumps({''source_commit'':''def297940696af4280b00880cf65f9c6d7dbb04f'',''verified_files'':len(expected),''state'':''EXACT_REVIEWED_COMMITTED_SOURCE''}))
 
         '
     - name: Pinned Go1.26.0, no cache or repository credential
@@ -99,21 +99,21 @@ jobs:
         PG_CONTAINER_ID: ${{ job.services.pg.id }}
       run: "# Remote-only proposal. Never execute this harness on the Mac.\nimport os,sys,json,subprocess,hashlib,time,threading,traceback,urllib.request,urllib.error,ipaddress\n\
         from pathlib import Path\nfrom http.server import ThreadingHTTPServer,BaseHTTPRequestHandler\nfrom collections import defaultdict\n\n\
-        source=Path.cwd()\nfixture=Path(os.environ['RUNNER_TEMP'])/'goclaw-contract-fixture'\nfixture.mkdir(exist_ok=True)\ncommit='b98309ac06449942b2833e7745c7449ee75ae85f'\n\
+        source=Path.cwd()\nfixture=Path(os.environ['RUNNER_TEMP'])/'goclaw-contract-fixture'\nfixture.mkdir(exist_ok=True)\ncommit='def297940696af4280b00880cf65f9c6d7dbb04f'\n\
         pg=os.environ['PG_CONTAINER_ID']\nnetwork='goclaw-contract-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']\ngateway_name=network+'-gateway'\n\
         user='contract-test-user';token='contract-local-token';mock_requests=[]\nrequired={'github.com/nextlevelbuilder/goclaw/tests/contracts/http_api':\
         \ ['TestContract_HTTP_AgentsList', 'TestContract_HTTP_ChatCompletions', 'TestContract_HTTP_ChatCompletions_Usage', 'TestContract_HTTP_ProvidersList'],\
         \ 'github.com/nextlevelbuilder/goclaw/tests/contracts/ws_methods': ['TestContract_WS_AgentsList', 'TestContract_WS_ChatSend', 'TestContract_WS_SessionsList',\
         \ 'TestContract_WS_ConfigGet', 'TestContract_WS_Connect', 'TestContract_WS_SkillsList']}\nexpected_files={'docs/14-skills-runtime.md':\
-        \ '07a50e39853ffbee19ad10f49aaef8eb5f8f9c691080844b2ed53f86047d2c2f', 'internal/http/skills.go': 'e56ff4a3a8478793c11474490a2b8730295104cca6daf90efb7e0cf04a5502c2',\
-        \ 'internal/http/skills_lifecycle.go': '82acd271ad6ec5e245c31b75033a4a4b2d213b3047e4ba7502ffef01011ee3c1', 'internal/http/skills_lifecycle_deps.go':\
-        \ 'c38d00d3e61ed161d14edbcc811509615eab5434274567110df1842a61f64db7', 'internal/http/skills_lifecycle_test.go': '59eaf3b6ad0fbeb00addc361125a90237c4a2bfb6431317a761d51e148cbc2f2',\
-        \ 'internal/http/skills_upload_test.go': '0e056effca738b02ede4babc3fba272b65cabaec52d36d8e59b719c5f6c8901a', 'internal/skills/dep_checker.go':\
-        \ 'f01c423d66d013c9726a1c250bd4b57c58bc0861349a85c392782f0ded9a3e88', 'internal/skills/dep_checker_test.go': '343ecbace7230c5a57c6920ffdcda1158da3395928756dc43eeaf734ac456acc',\
-        \ 'internal/skills/seeder.go': '31f37c788b948e3757a6361b6d33288f2fee6c290487be7d0b6cb4e8dbbcf379', 'internal/skills/seeder_test.go': 'c974aa0385ad63a7d1969a122d5bdc9cccaf0a686da5a1db6a2d8287a4177bed',\
-        \ 'internal/store/pg/skills_admin.go': '8b1c26714d86660b5037bd2c52916760ad88879f5c79207708fc6ce986ddd593', 'internal/store/sqlitestore/skills_content.go':\
-        \ '50da975e2ed6134ffde6e0b97201ae53905966354a8ff1561c15f694acd7009f', 'internal/store/sqlitestore/skills_test.go': '63033832e04706b7642d812abf3d2f77cd3d298539a98f8ea28ec580efd20bdd',\
-        \ 'tests/integration/v3_skills_store_test.go': '27aea553054bd11be543a8430a0aacf9e5043aa5e4de36f6556d7fa37f2010e8'}\nsha=lambda b:hashlib.sha256(b).hexdigest()\n\
+        \ '606a5677af9d6ab4abeb9f47965b28cdf37366bd530b91be8cb8d1067ee6057f', 'internal/http/skills.go': '3d8937bf5c96dcd7775a0d1c78195bd55430745bd0f540cc8f836abbf7f08449',\
+        \ 'internal/http/skills_lifecycle.go': 'e45d814fd975c500b4eedb4ce3ee4d816302dd20a735e4e23ded2110acc9ecb4', 'internal/http/skills_lifecycle_deps.go':\
+        \ 'ee66e305d56b016e9c3c8ed56ca01d8280ff7beada6709c18b52ad397af81ccf', 'internal/http/skills_lifecycle_test.go': 'bd8a8215626a6ed79608ea944c7805df62daa7db02a3a13dde85e2f59a51b2b5',\
+        \ 'internal/http/skills_upload_test.go': '1d5cbe0828c3597e9fb8b733505c0327086727e900d98301713a0d3290e2e621', 'internal/skills/dep_checker.go':\
+        \ 'c7c23ff0adba6fa40c0024cff62c784c585ff3cff8d70f46ab5c5e200d17ae34', 'internal/skills/dep_checker_test.go': '7e6016dfb15e796b37b9c81fdc7ad9223103388828ccbc11fd8d02deccc30ad9',\
+        \ 'internal/skills/seeder.go': '5f9907a165f8247e97bd2e9d4c7b33b0166c9180e35396de12e1f7076c106541', 'internal/skills/seeder_test.go': '339fb7846354b22fb9859c04690d3216dfaa3b501da4881243907f20279f3792',\
+        \ 'internal/store/pg/skills_admin.go': '54e892d0aeec75795d537735530e6ee16d6d3505cf9a378cfa26d59a2e62190d', 'internal/store/sqlitestore/skills_content.go':\
+        \ '6a837937aaf16d203b971201060804d1b3f77db325697c23af5896d84bcea2e2', 'internal/store/sqlitestore/skills_test.go': '3c538d664f8906410bf7894a187487ec711be1f1f0b27120602daf9cdebb81a5',\
+        \ 'tests/integration/v3_skills_store_test.go': '73347026855599109ad49e61787c1ee84fdf37263036acb024ef8b63ea432f15'}\nsha=lambda b:hashlib.sha256(b).hexdigest()\n\
         receipt={'kind':'real-server-contract-diagnostic','source_commit':commit,'contracts_passed':False,'go_fix_gate':'KNOWN_FAILED; not retried\
         \ or waived','stage':'initial','exit_code':90,'application_merge_clearance':False}\nserver=None;created_gateway=False;created_network=False\n\
         opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))\n\ndef run(cmd,**kw):\n    print('COMMAND '+json.dumps(cmd),flush=True)\n\
@@ -198,7 +198,7 @@ jobs:
 
         ok=os.environ[''JOB_STATUS'']==''success'' and all(value==''success'' for value in stages.values())
 
-        receipt={''state'':''SERVER_BACKED_CONTRACTS_PASSED'' if ok else ''FAILED_OR_NOT_RUN'',''exit_code'':0 if ok else 1,''stage_outcomes'':stages,''source_commit'':''b98309ac06449942b2833e7745c7449ee75ae85f'',''go_fix_gate'':''KNOWN_FAILED;
+        receipt={''state'':''SERVER_BACKED_CONTRACTS_PASSED'' if ok else ''FAILED_OR_NOT_RUN'',''exit_code'':0 if ok else 1,''stage_outcomes'':stages,''source_commit'':''def297940696af4280b00880cf65f9c6d7dbb04f'',''go_fix_gate'':''KNOWN_FAILED;
         not retried or waived'',''merge_clearance'':False}
 
         print(json.dumps(receipt),flush=True)
