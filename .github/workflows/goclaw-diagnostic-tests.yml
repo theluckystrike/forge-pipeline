@@ -1,5 +1,5 @@
 # Diagnostic tests only. This workflow does not clear Go fix or approve publication.
-name: Goclaw exact patch diagnostic tests
+name: Goclaw remaining exact patch diagnostic gates
 'on':
   workflow_dispatch:
     inputs:
@@ -21,9 +21,10 @@ jobs:
       max-parallel: 1
       matrix:
         gate:
-        - focused-race
-        - sqlite-race
-        - integration-tagged
+        - build-pg
+        - build-sqlite
+        - vet
+        - invariants
     services:
       pg:
         image: pgvector/pgvector:pg18
