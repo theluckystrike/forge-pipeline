@@ -1,10 +1,10 @@
-# LOCAL PROPOSAL ONLY. Real-server contracts plus independent whole-module race; failures remain failures.
+# LOCAL PROPOSAL: contracts-only retry for explicit migration directory. Original failed setup receipt remains FAILED.
 name: Goclaw real-server contract diagnostic
 'on':
   workflow_dispatch: null
 permissions: {}
 concurrency:
-  group: goclaw-real-server-contract-diagnostic
+  group: goclaw-real-server-contracts-only-retry
   cancel-in-progress: false
 jobs:
   contracts:
@@ -141,7 +141,7 @@ jobs:
         \    server=ThreadingHTTPServer((bridge,18791),Provider)\n    threading.Thread(target=server.serve_forever,daemon=True).start()\n    config={'gateway':{'host':'0.0.0.0','port':18790,'owner_ids':[user],'rate_limit_rpm':0},'data_dir':'/fixture/data','agents':{'defaults':{'workspace':'/fixture/workspace','provider':'contract-local','model':'contract-test','max_tool_iterations':2,'restrict_to_workspace':True}},'tools':{'browser':{'enabled':False}},'telemetry':{'enabled':False}}\n\
         \    (fixture/'config.json').write_text(json.dumps(config))\n    for name in ('data','workspace'):(fixture/name).mkdir(exist_ok=True)\n\
         \    skill=fixture/'workspace'/'skills'/'contract-fixture';skill.mkdir(parents=True,exist_ok=True)\n    (skill/'SKILL.md').write_text('---\\\
-        nname: contract-fixture\\ndescription: Deterministic contract fixture\\n---\\nLocal fixture only.\\n')\n    env=['--env','GOCLAW_POSTGRES_DSN=postgres://postgres:test@pg:5432/goclaw_test?sslmode=disable','--env','GOCLAW_GATEWAY_TOKEN='+token,'--env','GOCLAW_OWNER_IDS='+user,'--env','GOCLAW_DATA_DIR=/fixture/data','--env','GOCLAW_TELEMETRY_ENABLED=false','--env','AWS_EC2_METADATA_DISABLED=true','--env','AWS_PROFILE=goclaw-contracts-no-credentials','--env','AWS_SHARED_CREDENTIALS_FILE=/dev/null','--env','AWS_CONFIG_FILE=/dev/null','--env','GOCLAW_ENCRYPTION_KEY=']\n\
+        nname: contract-fixture\\ndescription: Deterministic contract fixture\\n---\\nLocal fixture only.\\n')\n    env=['--env','GOCLAW_POSTGRES_DSN=postgres://postgres:test@pg:5432/goclaw_test?sslmode=disable','--env','GOCLAW_GATEWAY_TOKEN='+token,'--env','GOCLAW_OWNER_IDS='+user,'--env','GOCLAW_DATA_DIR=/fixture/data','--env','GOCLAW_MIGRATIONS_DIR=/src/migrations','--env','GOCLAW_TELEMETRY_ENABLED=false','--env','AWS_EC2_METADATA_DISABLED=true','--env','AWS_PROFILE=goclaw-contracts-no-credentials','--env','AWS_SHARED_CREDENTIALS_FILE=/dev/null','--env','AWS_CONFIG_FILE=/dev/null','--env','GOCLAW_ENCRYPTION_KEY=']\n\
         \    mounts=['--mount','type=bind,src='+str(fixture)+',dst=/fixture','--mount','type=bind,src='+str(source)+',dst=/src,readonly']\n  \
         \  base_container=['docker','run','--rm','--network',network,*mounts,'--workdir','/src',*env,'--entrypoint','/fixture/goclaw','ubuntu:24.04']\n\
         \    receipt['stage']='migrations'\n    run([*base_container,'--config','/fixture/config.json','migrate','up'])\n    receipt['stage']='seed-isolated-database'\n\
@@ -204,123 +204,5 @@ jobs:
         print(json.dumps(receipt),flush=True)
 
         raise SystemExit(receipt[''exit_code''])
-
-        '
-  whole-module-race:
-    if: github.repository == 'theluckystrike/forge-pipeline' && github.actor == 'theluckystrike' && github.event.repository.private == false
-    runs-on: ubuntu-24.04
-    timeout-minutes: 30
-    services:
-      pg:
-        image: pgvector/pgvector:pg18
-        env:
-          POSTGRES_PASSWORD: test
-          POSTGRES_DB: goclaw_test
-        ports:
-        - 5432:5432
-        options: --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 3s --health-retries 10
-    env:
-      GOTOOLCHAIN: local
-      GOFLAGS: -mod=readonly
-      AWS_PROFILE: goclaw-contracts-no-credentials
-      AWS_SHARED_CREDENTIALS_FILE: /dev/null
-      AWS_CONFIG_FILE: /dev/null
-      AWS_EC2_METADATA_DISABLED: 'true'
-      TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/goclaw_test?sslmode=disable
-    defaults:
-      run:
-        working-directory: source
-    steps:
-    - name: Fetch public exact reviewed commit without credentials
-      id: source
-      working-directory: .
-      shell: bash
-      run: 'set -euo pipefail
-
-        git init source
-
-        git -C source remote add origin https://github.com/theluckystrike/goclaw.git
-
-        git -C source fetch --no-tags --depth=1 origin b98309ac06449942b2833e7745c7449ee75ae85f
-
-        git -C source checkout --detach FETCH_HEAD
-
-        '
-    - name: Verify committed source and all14 hashes
-      id: admit
-      shell: python
-      run: 'import subprocess,hashlib,json
-
-        from pathlib import Path
-
-        assert subprocess.check_output([''git'',''rev-parse'',''HEAD''],text=True).strip()==''b98309ac06449942b2833e7745c7449ee75ae85f''
-
-        assert subprocess.check_output([''git'',''status'',''--porcelain''])==b''''
-
-        expected={''docs/14-skills-runtime.md'': ''07a50e39853ffbee19ad10f49aaef8eb5f8f9c691080844b2ed53f86047d2c2f'', ''internal/http/skills.go'':
-        ''e56ff4a3a8478793c11474490a2b8730295104cca6daf90efb7e0cf04a5502c2'', ''internal/http/skills_lifecycle.go'': ''82acd271ad6ec5e245c31b75033a4a4b2d213b3047e4ba7502ffef01011ee3c1'',
-        ''internal/http/skills_lifecycle_deps.go'': ''c38d00d3e61ed161d14edbcc811509615eab5434274567110df1842a61f64db7'', ''internal/http/skills_lifecycle_test.go'':
-        ''59eaf3b6ad0fbeb00addc361125a90237c4a2bfb6431317a761d51e148cbc2f2'', ''internal/http/skills_upload_test.go'': ''0e056effca738b02ede4babc3fba272b65cabaec52d36d8e59b719c5f6c8901a'',
-        ''internal/skills/dep_checker.go'': ''f01c423d66d013c9726a1c250bd4b57c58bc0861349a85c392782f0ded9a3e88'', ''internal/skills/dep_checker_test.go'':
-        ''343ecbace7230c5a57c6920ffdcda1158da3395928756dc43eeaf734ac456acc'', ''internal/skills/seeder.go'': ''31f37c788b948e3757a6361b6d33288f2fee6c290487be7d0b6cb4e8dbbcf379'',
-        ''internal/skills/seeder_test.go'': ''c974aa0385ad63a7d1969a122d5bdc9cccaf0a686da5a1db6a2d8287a4177bed'', ''internal/store/pg/skills_admin.go'':
-        ''8b1c26714d86660b5037bd2c52916760ad88879f5c79207708fc6ce986ddd593'', ''internal/store/sqlitestore/skills_content.go'': ''50da975e2ed6134ffde6e0b97201ae53905966354a8ff1561c15f694acd7009f'',
-        ''internal/store/sqlitestore/skills_test.go'': ''63033832e04706b7642d812abf3d2f77cd3d298539a98f8ea28ec580efd20bdd'', ''tests/integration/v3_skills_store_test.go'':
-        ''27aea553054bd11be543a8430a0aacf9e5043aa5e4de36f6556d7fa37f2010e8''}
-
-        for name,digest in expected.items():assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest,name
-
-        print(json.dumps({''source_commit'':''b98309ac06449942b2833e7745c7449ee75ae85f'',''verified_files'':len(expected),''state'':''EXACT_REVIEWED_COMMITTED_SOURCE''}))
-
-        '
-    - name: Pinned Go1.26.0, no cache or repository credential
-      id: toolchain
-      uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
-      with:
-        go-version: 1.26.0
-        cache: false
-        token: ''
-    - name: Whole-module race command and direct receipt
-      id: race
-      shell: python
-      run: "import os,subprocess,json,hashlib\nfrom pathlib import Path\nexpected={'docs/14-skills-runtime.md': '07a50e39853ffbee19ad10f49aaef8eb5f8f9c691080844b2ed53f86047d2c2f',\
-        \ 'internal/http/skills.go': 'e56ff4a3a8478793c11474490a2b8730295104cca6daf90efb7e0cf04a5502c2', 'internal/http/skills_lifecycle.go':\
-        \ '82acd271ad6ec5e245c31b75033a4a4b2d213b3047e4ba7502ffef01011ee3c1', 'internal/http/skills_lifecycle_deps.go': 'c38d00d3e61ed161d14edbcc811509615eab5434274567110df1842a61f64db7',\
-        \ 'internal/http/skills_lifecycle_test.go': '59eaf3b6ad0fbeb00addc361125a90237c4a2bfb6431317a761d51e148cbc2f2', 'internal/http/skills_upload_test.go':\
-        \ '0e056effca738b02ede4babc3fba272b65cabaec52d36d8e59b719c5f6c8901a', 'internal/skills/dep_checker.go': 'f01c423d66d013c9726a1c250bd4b57c58bc0861349a85c392782f0ded9a3e88',\
-        \ 'internal/skills/dep_checker_test.go': '343ecbace7230c5a57c6920ffdcda1158da3395928756dc43eeaf734ac456acc', 'internal/skills/seeder.go':\
-        \ '31f37c788b948e3757a6361b6d33288f2fee6c290487be7d0b6cb4e8dbbcf379', 'internal/skills/seeder_test.go': 'c974aa0385ad63a7d1969a122d5bdc9cccaf0a686da5a1db6a2d8287a4177bed',\
-        \ 'internal/store/pg/skills_admin.go': '8b1c26714d86660b5037bd2c52916760ad88879f5c79207708fc6ce986ddd593', 'internal/store/sqlitestore/skills_content.go':\
-        \ '50da975e2ed6134ffde6e0b97201ae53905966354a8ff1561c15f694acd7009f', 'internal/store/sqlitestore/skills_test.go': '63033832e04706b7642d812abf3d2f77cd3d298539a98f8ea28ec580efd20bdd',\
-        \ 'tests/integration/v3_skills_store_test.go': '27aea553054bd11be543a8430a0aacf9e5043aa5e4de36f6556d7fa37f2010e8'}\nversion=subprocess.check_output(['go','version'],text=True).strip()\n\
-        assert version=='go version go1.26.0 linux/amd64'\ncommand=['timeout','1500','go','test','-json','-count=1','-race','-timeout=5m','-skip','^(TestCorpus_MemoryBombArray|TestCorpus_MemoryBombString)$','./...']\n\
-        process=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)\npasses=0;skips=[];failures=[]\nfor line in\
-        \ process.stdout:\n    print(line,end='',flush=True)\n    try:item=json.loads(line)\n    except json.JSONDecodeError:continue\n    if\
-        \ item.get('Test') and item.get('Action')=='pass':passes+=1\n    if item.get('Action')=='skip':skips.append(item)\n    if item.get('Action')=='fail':failures.append(item)\n\
-        code=process.wait();direct_code=code\nsource_ok=subprocess.check_output(['git','status','--porcelain'])==b'' and all(hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest\
-        \ for name,digest in expected.items())\nif not source_ok:code=79\nif code==0 and passes==0:code=78\nreceipt={'kind':'whole-module-race','source_commit':'b98309ac06449942b2833e7745c7449ee75ae85f','go_version':version,'command':command,'process_exit_code':direct_code,'gate_exit_code':code,'pass_events':passes,'skip_events':skips,'failures':failures,'source14_and_tree_unchanged':source_ok,'explicit_exclusions':['TestCorpus_MemoryBombArray','TestCorpus_MemoryBombString'],'exclusion_rule':'Goclaw\
-        \ AGENTS skips load/stress; these default-scope tests allocate1e9 array/string elements; no broad-short','go_fix_gate':'KNOWN_FAILED;\
-        \ not retried or waived','merge_clearance':False}\nprint('WHOLE_MODULE_RACE_RECEIPT '+json.dumps(receipt,sort_keys=True),flush=True)\n\
-        with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as summary:summary.write('```json\\n'+json.dumps(receipt,indent=2,sort_keys=True)+'\\\
-        n```\\n')\nraise SystemExit(code)\n"
-    - name: Whole-module race final admission receipt
-      if: always()
-      shell: python
-      env:
-        JOB_STATUS: ${{ job.status }}
-        SOURCE: ${{ steps.source.outcome }}
-        ADMIT: ${{ steps.admit.outcome }}
-        TOOLCHAIN: ${{ steps.toolchain.outcome }}
-        RACE: ${{ steps.race.outcome }}
-      run: 'import os,json
-
-        stages={key:os.environ.get(key,'''') for key in (''SOURCE'',''ADMIT'',''TOOLCHAIN'',''RACE'')}
-
-        ok=os.environ[''JOB_STATUS'']==''success'' and all(value==''success'' for value in stages.values())
-
-        print(json.dumps({''state'':''WHOLE_MODULE_RACE_PASSED'' if ok else ''FAILED_OR_NOT_RUN'',''exit_code'':0 if ok else 1,''stage_outcomes'':stages,''source_commit'':''b98309ac06449942b2833e7745c7449ee75ae85f'',''go_fix_gate'':''KNOWN_FAILED;
-        not retried or waived'',''merge_clearance'':False}),flush=True)
-
-        raise SystemExit(0 if ok else 1)
 
         '
