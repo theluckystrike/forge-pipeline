@@ -1,4 +1,3 @@
-# Diagnostic tests only. This workflow does not clear Go fix or approve publication.
 name: Goclaw remaining exact patch diagnostic gates
 'on':
   workflow_dispatch:
@@ -25,6 +24,7 @@ jobs:
         - build-sqlite
         - vet
         - invariants
+        - integration-untagged
     services:
       pg:
         image: pgvector/pgvector:pg18
